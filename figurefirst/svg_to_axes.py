@@ -4,17 +4,25 @@
 from xml.dom import minidom
 import matplotlib.pyplot as plt
 
-def read_svg_to_axes(svgfile, width_inches=10):
-    
+def read_svg_to_axes(svgfile, px_res = 96):
+    #96 pixels per inch
     doc = minidom.parse(svgfile)
     
-    print doc.firstChild.getAttribute('width')
-    
-    width_svg_pixels = float(doc.firstChild.getAttribute('width'))
-    height_svg_pixels = float(doc.firstChild.getAttribute('height'))
-    aspect_ratio = height_svg_pixels / float(width_svg_pixels)
-    height_inches = width_inches*aspect_ratio
+    #print doc.firstChild.getAttribute('width')
+    print type(doc.firstChild.getAttribute('width'))
 
+    if 'in' in doc.firstChild.getAttribute('width'):
+        width_inches = float(doc.firstChild.getAttribute('width').split('in')[0])
+        height_inches = float(doc.firstChild.getAttribute('height').split('in')[0])
+        height_svg_pixels = height_inches*px_res
+        width_svg_pixels = width_inches*px_res
+    else:
+        width_svg_pixels = float(doc.firstChild.getAttribute('width'))
+        height_svg_pixels = float(doc.firstChild.getAttribute('height'))
+        print width_svg_pixels
+        aspect_ratio = height_svg_pixels / float(width_svg_pixels)
+        height_inches = width_inches*aspect_ratio
+    
     fig = plt.figure(figsize=(width_inches, height_inches))
     
     rects = doc.getElementsByTagName('rect')
@@ -27,7 +35,7 @@ def read_svg_to_axes(svgfile, width_inches=10):
         width_px = float(rect.getAttribute("width"))
         height_px = float(rect.getAttribute("height"))
         label = str(rect.getAttribute("id"))
-                
+        print width_px       
         left = x_px/width_svg_pixels
         width = width_px/width_svg_pixels
         height = height_px/height_svg_pixels
@@ -37,7 +45,7 @@ def read_svg_to_axes(svgfile, width_inches=10):
         axes.setdefault(label, ax)
         
     
-    fig.savefig('/home/caveman/Desktop/testsvg_2.svg', format='svg')
+    #fig.savefig('/home/caveman/Desktop/testsvg_2.svg', format='svg')
     
     
     return fig, axes
