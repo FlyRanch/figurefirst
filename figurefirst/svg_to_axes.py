@@ -55,22 +55,30 @@ def read_svg_to_axes(svgfile, px_res = 72):
 
     fig = plt.figure(figsize=(width_inches, height_inches))
 
-    rects = doc.getElementsByTagName('rect')
-
+    #rects = doc.getElementsByTagName('rect')
+    
+    axis_elements = doc.getElementsByTagNameNS('www.flyranch.com','axis')
+    
     axes = {}
-    for rect in rects:
-        x_px = float(rect.getAttribute("x"))
-        y_px = float(rect.getAttribute("y"))
-        width_px = float(rect.getAttribute("width"))
-        height_px = float(rect.getAttribute("height"))
-        label = str(rect.getAttribute("id"))
+    for axis_element in axis_elements:
+        svg_element = axis_element.parentNode
+        
+        x_px = float(svg_element.getAttribute("x"))
+        y_px = float(svg_element.getAttribute("y"))
+        width_px = float(svg_element.getAttribute("width"))
+        height_px = float(svg_element.getAttribute("height"))
+
         left = x_px/width_svg_pixels
         width = width_px/width_svg_pixels
         height = height_px/height_svg_pixels
         bottom = (height_svg_pixels-y_px-height_px)/height_svg_pixels
-
+        # a little verbose but may be a way to pass user data from the svg document to python
+        datadict = {}
+        [datadict.update({key:value}) for key,value in axis_element.attributes.items()]
+        name = datadict.pop('figurefirst:name')
+        
         ax = fig.add_axes([left, bottom, width, height])
-        axes.setdefault(label, ax)
+        axes.setdefault(name, {'axis':ax,'data':data})
 
     return fig,axes,doc
 
