@@ -37,7 +37,7 @@ class FigureLayout(object):
         indoc.writexml(outfile)
         outfile.close()
 
-def read_svg_to_axes(svgfile, px_res = 72):
+def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
     #72 pixels per inch
     doc = minidom.parse(svgfile)
     svgnode = doc.getElementsByTagName('svg')[0]
@@ -72,10 +72,12 @@ def read_svg_to_axes(svgfile, px_res = 72):
         width = width_px/width_svg_pixels
         height = height_px/height_svg_pixels
         bottom = (height_svg_pixels-y_px-height_px)/height_svg_pixels
+        axis_aspect_ratio = height / float(width)
         # a little verbose but may be a way to pass user data from the svg document to python
         datadict = {}
         [datadict.update({key:value}) for key,value in axis_element.attributes.items()]
         name = datadict.pop('figurefirst:name')
+        datadict['aspect_ratio'] = axis_aspect_ratio
         
         ax = fig.add_axes([left, bottom, width, height])
         axes.setdefault(name, {'axis':ax,'data':datadict})
