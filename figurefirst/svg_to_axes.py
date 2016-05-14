@@ -40,16 +40,16 @@ class FigureLayout(object):
 def read_svg_to_axes(svgfile, px_res = 72):
     #72 pixels per inch
     doc = minidom.parse(svgfile)
-
-    if 'in' in doc.firstChild.getAttribute('width'):
-        width_inches = float(doc.firstChild.getAttribute('width').split('in')[0])
-        height_inches = float(doc.firstChild.getAttribute('height').split('in')[0])
+    svgnode = doc.getElementsByTagName('svg')[0]
+    if 'in' in svgnode.getAttribute('width'):
+        print 'here'
+        width_inches = float(svgnode.getAttribute('width').split('in')[0])
+        height_inches = float(svgnode.getAttribute('height').split('in')[0])
         height_svg_pixels = height_inches*px_res
         width_svg_pixels = width_inches*px_res
     else:
-        width_svg_pixels = float(doc.firstChild.getAttribute('width'))
-        height_svg_pixels = float(doc.firstChild.getAttribute('height'))
-        print width_svg_pixels
+        width_svg_pixels = float(svgnode.getAttribute('width'))
+        height_svg_pixels = float(svgnode.getAttribute('height'))
         aspect_ratio = height_svg_pixels / float(width_svg_pixels)
         height_inches = width_inches*aspect_ratio
 
@@ -78,7 +78,7 @@ def read_svg_to_axes(svgfile, px_res = 72):
         name = datadict.pop('figurefirst:name')
         
         ax = fig.add_axes([left, bottom, width, height])
-        axes.setdefault(name, {'axis':ax,'data':data})
+        axes.setdefault(name, {'axis':ax,'data':datadict})
 
     return fig,axes,doc
 
