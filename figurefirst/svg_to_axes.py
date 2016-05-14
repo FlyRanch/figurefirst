@@ -72,7 +72,7 @@ def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
         width = width_px/width_svg_pixels
         height = height_px/height_svg_pixels
         bottom = (height_svg_pixels-y_px-height_px)/height_svg_pixels
-        axis_aspect_ratio = height / float(width)
+        axis_aspect_ratio = height_px / float(width_px)
         # a little verbose but may be a way to pass user data from the svg document to python
         datadict = {}
         [datadict.update({key:value}) for key,value in axis_element.attributes.items()]
