@@ -37,42 +37,73 @@ class FigureLayout(object):
         indoc.writexml(outfile)
         outfile.close()
 
-def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
+def upar(s):
+    s = str(s)
+    try:
+        ind=map(str.isalpha,s).index(True)
+        num,unit=float(s[:ind]),s[ind:]
+    except ValueError:
+        num = float(s)
+        unit = 'px'
+    return num,unit
+
+def tounit(s,dst):
+    """returns a float with the value of string s
+    in the units of dst"""
+    # need to support em, ex, px, pt, pc, cm, mm, in
+    # for svg as well as percent - implemented px,in,mm and cm here
+    # not sure the best way to deal with the other options
+    scale_factors = {'px':{'in':72.,
+                        'cm':72/2.54,
+                        'mm':72/25.4,
+                        'px':1.},
+                  'in':{'in':1.,
+                        'cm':0.3937,
+                        'mm':0.0393,
+                        'px':1/72.},
+                  'mm':{'in':25.4,
+                        'cm':10.,
+                        'mm':1,
+                        'px':25.4/72},
+                  'cm':{'in':2.54,
+                        'cm':1.,
+                        'mm':0.1,
+                        'px':2.54/72}}
+    num,unit = upar(s)
+    return num/scale_factors[unit][dst]
+
+def read_svg_to_axes(svgfile, output_width = None):
     #72 pixels per inch
     doc = minidom.parse(svgfile)
     svgnode = doc.getElementsByTagName('svg')[0]
-    if 'in' in svgnode.getAttribute('width'):
-        print 'here'
-        width_inches = float(svgnode.getAttribute('width').split('in')[0])
-        height_inches = float(svgnode.getAttribute('height').split('in')[0])
-        height_svg_pixels = height_inches*px_res
-        width_svg_pixels = width_inches*px_res
+    width_svg_inches = tounit(svgnode.getAttribute('width'),'in')
+    height_svg_inches = tounit(svgnode.getAttribute('height'),'in')
+    if not(output_width is None):
+        osc = output_width/width_svg_inches #output scale
     else:
-        width_svg_pixels = float(svgnode.getAttribute('width'))
-        height_svg_pixels = float(svgnode.getAttribute('height'))
-        aspect_ratio = height_svg_pixels / float(width_svg_pixels)
-        height_inches = width_inches*aspect_ratio
-
-    fig = plt.figure(figsize=(width_inches, height_inches))
-
-    #rects = doc.getElementsByTagName('rect')
-    
+        osc = 1
+    fig = plt.figure(figsize=(width_svg_inches, height_svg_inches))    
     axis_elements = doc.getElementsByTagNameNS('www.flyranch.com','axis')
-    
     axes = {}
+    
     for axis_element in axis_elements:
         svg_element = axis_element.parentNode
+        x_in = tounit(svg_element.getAttribute("x"),'in')
+        y_in = tounit(svg_element.getAttribute("y"),'in')
+        print x_in
+        width_in = tounit(svg_element.getAttribute("width"),'in')
+        height_in = tounit(svg_element.getAttribute("height"),'in')
         
-        x_px = float(svg_element.getAttribute("x"))
-        y_px = float(svg_element.getAttribute("y"))
-        width_px = float(svg_element.getAttribute("width"))
-        height_px = float(svg_element.getAttribute("height"))
-
-        left = x_px/width_svg_pixels
-        width = width_px/width_svg_pixels
-        height = height_px/height_svg_pixels
-        bottom = (height_svg_pixels-y_px-height_px)/height_svg_pixels
-        axis_aspect_ratio = height_px / float(width_px)
+        left = x_in/width_svg_inches
+        width = width_in/width_svg_inches
+        height = height_in/height_svg_inches
+        bottom = (height_svg_inches-y_in-height_in)/height_svg_inches
+        axis_aspect_ratio = height_in/float(width_in)
+        #left = x_px/width_svg_pixels
+        #width = width_px/width_svg_pixels
+        #height = height_px/height_svg_pixels
+        #bottom = (height_svg_pixels-y_px-height_px)/height_svg_pixels
+        #axis_aspect_ratio = height_px / float(width_px)
         # a little verbose but may be a way to pass user data from the svg document to python
         datadict = {}
         [datadict.update({key:value}) for key,value in axis_element.attributes.items()]
