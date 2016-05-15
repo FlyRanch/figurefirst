@@ -4,10 +4,72 @@
 from xml.dom import minidom
 import matplotlib.pyplot as plt
 
+scale_factors = {'px':{'in':72.,
+                    'cm':72/2.54,
+                    'mm':72/25.4,
+                    'px':1.},
+              'in':{'in':1.,
+                    'cm':0.3937,
+                    'mm':0.0393,
+                    'px':1/72.},
+              'mm':{'in':25.4,
+                    'cm':10.,
+                    'mm':1,
+                    'px':25.4/72},
+              'cm':{'in':2.54,
+                    'cm':1.,
+                    'mm':0.1,
+                    'px':2.54/72}}
+def upar(s):
+    s = str(s)
+    try:
+        ind=map(str.isalpha,s).index(True)
+        num,unit=float(s[:ind]),s[ind:]
+    except ValueError:
+        num = float(s)
+        unit = 'u'
+    return num,unit
+
+def tounit(s,dst):
+    """returns a float with the value of string s
+    in the units of dst"""
+    # need to support em, ex, px, pt, pc, cm, mm, in
+    # for svg as well as percent - implemented px,in,mm and cm here
+    # not sure the best way to deal with the other options
+    num,unit = upar(s)
+    return num/scale_factors[unit][dst]
+
 class FigureLayout(object):
     def __init__(self,layout_filename):
         self.layout_filename = layout_filename
-        self.fig,self.axes,self.layout = read_svg_to_axes(layout_filename)
+        from xml.dom import minidom
+        #layout_filename = layout_filename
+        self.layout = minidom.parse(self.layout_filename).getElementsByTagName('svg')[0]
+        self.layout_width = upar(self.layout.getAttribute('width'))
+        self.layout_height = upar(self.layout.getAttribute('height'))
+        self.layout_viewBox = self.layout.getAttribute('viewBox').split()
+        self.layout_user_sx = float(self.layout_viewBox[2])/self.layout_width[0],self.layout_width[1]
+        self.layout_user_sy = float(self.layout_viewBox[3])/self.layout_height[0],self.layout_height[1]
+        # dont allow sx and sy to differ
+        # inkscape seems to ignore inconsistent aspect ratios by
+        # only using the horizontal element of the viewbox, but 
+        # it is probably best to assert that the a.r's are the same
+        # for now
+        assert self.layout_user_sx == self.layout_user_sy
+
+    def from_userx(self,x,dst):
+        x = float(x) # allow passing of strings
+        #convert into layout units
+        x_l = x/self.layout_user_sx[0]
+        #convert from layout units into destination units
+        return x_l/scale_factors[self.layout_user_sx[1]][dst]
+
+    def from_usery(self,y,dst):
+        y = float(y) # allow passing of strings
+        #convert into layout units
+        y_l = y/self.layout_user_sx[0]
+        #convert from layout units into destination units
+        return y_l/self.scale_factors[self.layout_user_sx[1]][dst]
 
     def save_svg(self,output_filename):
         self.fig,self.axes,self.layout
@@ -36,41 +98,7 @@ class FigureLayout(object):
         outfile = open(output_filename,'wt')
         indoc.writexml(outfile)
         outfile.close()
-
-def upar(s):
-    s = str(s)
-    try:
-        ind=map(str.isalpha,s).index(True)
-        num,unit=float(s[:ind]),s[ind:]
-    except ValueError:
-        num = float(s)
-        unit = 'px'
-    return num,unit
-
-def tounit(s,dst):
-    """returns a float with the value of string s
-    in the units of dst"""
-    # need to support em, ex, px, pt, pc, cm, mm, in
-    # for svg as well as percent - implemented px,in,mm and cm here
-    # not sure the best way to deal with the other options
-    scale_factors = {'px':{'in':72.,
-                        'cm':72/2.54,
-                        'mm':72/25.4,
-                        'px':1.},
-                  'in':{'in':1.,
-                        'cm':0.3937,
-                        'mm':0.0393,
-                        'px':1/72.},
-                  'mm':{'in':25.4,
-                        'cm':10.,
-                        'mm':1,
-                        'px':25.4/72},
-                  'cm':{'in':2.54,
-                        'cm':1.,
-                        'mm':0.1,
-                        'px':2.54/72}}
-    num,unit = upar(s)
-    return num/scale_factors[unit][dst]
+    
 
 def read_svg_to_axes(svgfile, output_width = None):
     #72 pixels per inch
