@@ -1,0 +1,941 @@
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="8in" id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="f2_layout.svg" version="1.1" viewBox="0 0 600 800" width="6in" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:figurefirst="www.flyranch.com" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs4"/>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" id="base" inkscape:current-layer="layer2" inkscape:cx="-44.566672" inkscape:cy="431.51879" inkscape:document-units="in" inkscape:guide-bbox="true" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1249" inkscape:window-maximized="0" inkscape:window-width="1670" inkscape:window-x="110" inkscape:window-y="55" inkscape:zoom="1.0913463" pagecolor="#ffffff" showgrid="false" showguides="true" units="in"/>
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1" style="display:inline">
+    <text id="text4182" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="23.778313" xml:space="preserve" y="21.558617"><tspan id="tspan4184" sodipodi:role="line" x="23.778313" y="21.558617">freq</tspan></text>
+    <text id="text4182-5" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="57.186462" xml:space="preserve" y="22.41317"><tspan id="tspan4184-5" sodipodi:role="line" x="57.186462" y="22.41317">rwing</tspan></text>
+    <text id="text4182-5-5" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="98.182892" xml:space="preserve" y="22.986382"><tspan id="tspan4184-5-9" sodipodi:role="line" x="98.182892" y="22.986382">b1</tspan></text>
+    <text id="text4182-5-5-6" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="134.14554" xml:space="preserve" y="22.986382"><tspan id="tspan4184-5-9-7" sodipodi:role="line" x="134.14554" y="22.986382">b2</tspan></text>
+    <text id="text4182-5-5-1" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="175.2276" xml:space="preserve" y="22.986382"><tspan id="tspan4184-5-9-1" sodipodi:role="line" x="175.2276" y="22.986382">b3</tspan></text>
+    <text id="text4182-5-5-3" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="217.77965" xml:space="preserve" y="22.986382"><tspan id="tspan4184-5-9-78" sodipodi:role="line" x="217.77965" y="22.986382">i1</tspan></text>
+    <text id="text4182-5-5-9" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="260.88214" xml:space="preserve" y="24.333336"><tspan id="tspan4184-5-9-6" sodipodi:role="line" x="260.88214" y="24.333336">i2</tspan></text>
+    <text id="text4182-5-5-5" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="294.30988" xml:space="preserve" y="23.659874"><tspan id="tspan4184-5-9-9" sodipodi:role="line" x="294.30988" y="23.659874">iii1</tspan></text>
+    <text id="text4182-5-5-8" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="334.5954" xml:space="preserve" y="24.333336"><tspan id="tspan4184-5-9-8" sodipodi:role="line" x="334.5954" y="24.333336">iii24</tspan></text>
+    <text id="text4182-5-5-0" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="375.25009" xml:space="preserve" y="24.333336"><tspan id="tspan4184-5-9-15" sodipodi:role="line" x="375.25009" y="24.333336">iii3</tspan></text>
+    <text id="text4182-5-5-62" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="412.96475" xml:space="preserve" y="25.006798"><tspan id="tspan4184-5-9-2" sodipodi:role="line" x="412.96475" y="25.006798">hg1</tspan></text>
+    <text id="text4182-5-5-00" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="455.08948" xml:space="preserve" y="24.333336"><tspan id="tspan4184-5-9-5" sodipodi:role="line" x="455.08948" y="24.333336">hg2</tspan></text>
+    <text id="text4182-5-5-52" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="500.14758" xml:space="preserve" y="24.333336"><tspan id="tspan4184-5-9-61" sodipodi:role="line" x="500.14758" y="24.333336">hg3</tspan></text>
+    <text id="text4182-5-5-85" sodipodi:linespacing="125%" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none" transform="scale(1.0112974,0.9888288)" x="542.27222" xml:space="preserve" y="24.333336"><tspan id="tspan4184-5-9-12" sodipodi:role="line" x="542.27222" y="24.333336">hg4</tspan></text>
+    <rect height="36.58358" id="rect3205" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="18.620684" y="35.958595">
+      <figurefirst:axis figurefirst:name="frequency.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="58.664585" y="35.958595">
+      <figurefirst:axis figurefirst:name="rwing.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-3" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="98.708504" y="35.958595">
+      <figurefirst:axis figurefirst:name="b1.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-5" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="138.75243" y="35.958595">
+      <figurefirst:axis figurefirst:name="b2.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-0" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="178.79631" y="35.958595">
+      <figurefirst:axis figurefirst:name="b3.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-8" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="218.84023" y="35.958595">
+      <figurefirst:axis figurefirst:name="i1.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-06" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="298.92798" y="35.958595">
+      <figurefirst:axis figurefirst:name="iii1.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-1" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="338.97189" y="35.958595">
+      <figurefirst:axis figurefirst:name="iii24.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-56" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="379.01581" y="35.958595">
+      <figurefirst:axis figurefirst:name="iii3.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-59" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="419.05972" y="35.958595">
+      <figurefirst:axis figurefirst:name="hg1.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-2" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="459.10358" y="35.958595">
+      <figurefirst:axis figurefirst:name="hg2.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-9" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="499.14752" y="35.958595">
+      <figurefirst:axis figurefirst:name="hg3.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-8-0" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="259.3949" y="35.836952">
+      <figurefirst:axis figurefirst:name="i2.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-9-3" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="540.00195" y="35.836952">
+      <figurefirst:axis figurefirst:name="hg4.22H05.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-2" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="19.136835" y="78.518684">
+      <figurefirst:axis figurefirst:name="frequency.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-36" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="59.180737" y="78.518684">
+      <figurefirst:axis figurefirst:name="rwing.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-3-4" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="99.224663" y="78.518684">
+      <figurefirst:axis figurefirst:name="b1.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-5-7" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="139.26859" y="78.518684">
+      <figurefirst:axis figurefirst:name="b2.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-0-2" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="179.3125" y="78.518684">
+      <figurefirst:axis figurefirst:name="b3.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-8-4" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="219.35638" y="78.518684">
+      <figurefirst:axis figurefirst:name="i1.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-06-9" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="299.44418" y="78.518684">
+      <figurefirst:axis figurefirst:name="iii1.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-1-0" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="339.4881" y="78.518684">
+      <figurefirst:axis figurefirst:name="iii24.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-56-7" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="379.53198" y="78.518684">
+      <figurefirst:axis figurefirst:name="iii3.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-59-3" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="419.57587" y="78.518684">
+      <figurefirst:axis figurefirst:name="hg1.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-2-0" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="459.61969" y="78.518684">
+      <figurefirst:axis figurefirst:name="hg2.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-9-8" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="499.66364" y="78.518684">
+      <figurefirst:axis figurefirst:name="hg3.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-8-0-2" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="259.91107" y="78.397041">
+      <figurefirst:axis figurefirst:name="i2.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-9-3-8" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="540.51807" y="78.397041">
+      <figurefirst:axis figurefirst:name="hg4.39E01.start"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-3" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="18.878759" y="124.49986">
+      <figurefirst:axis figurefirst:name="frequency.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-7" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="58.922672" y="124.49986">
+      <figurefirst:axis figurefirst:name="rwing.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-3-1" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="98.966591" y="124.49986">
+      <figurefirst:axis figurefirst:name="b1.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-5-1" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="139.01053" y="124.49986">
+      <figurefirst:axis figurefirst:name="b2.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-0-6" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="179.0544" y="124.49986">
+      <figurefirst:axis figurefirst:name="b3.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-8-1" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="219.0983" y="124.49986">
+      <figurefirst:axis figurefirst:name="i1.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-06-7" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="299.18604" y="124.49986">
+      <figurefirst:axis figurefirst:name="iii1.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-1-8" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="339.22998" y="124.49986">
+      <figurefirst:axis figurefirst:name="iii24.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-56-6" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="379.27386" y="124.49986">
+      <figurefirst:axis figurefirst:name="iii3.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-59-33" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="419.31778" y="124.49986">
+      <figurefirst:axis figurefirst:name="hg1.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-2-8" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="459.36163" y="124.49986">
+      <figurefirst:axis figurefirst:name="hg2.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-9-84" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="499.40558" y="124.49986">
+      <figurefirst:axis figurefirst:name="hg3.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-8-0-0" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="259.65298" y="124.37819">
+      <figurefirst:axis figurefirst:name="i2.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-9-3-3" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="540.26001" y="124.37819">
+      <figurefirst:axis figurefirst:name="hg4.22H05.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-2-7" inkscape:transform-center-y="60.068519" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="19.394928" y="167.06003">
+      <figurefirst:axis figurefirst:name="frequency.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-36-3" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="59.438835" y="167.06">
+      <figurefirst:axis figurefirst:name="rwing.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-3-4-2" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="99.482727" y="167.06">
+      <figurefirst:axis figurefirst:name="b1.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-5-7-1" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="139.52669" y="167.06">
+      <figurefirst:axis figurefirst:name="b2.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-0-2-2" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="179.57057" y="167.06">
+      <figurefirst:axis figurefirst:name="b3.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-8-4-4" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="219.61446" y="167.06">
+      <figurefirst:axis figurefirst:name="i1.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-06-9-5" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="299.70227" y="167.06">
+      <figurefirst:axis figurefirst:name="iii1.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-1-0-1" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="339.74615" y="167.06">
+      <figurefirst:axis figurefirst:name="iii24.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-56-7-7" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="379.79004" y="167.06">
+      <figurefirst:axis figurefirst:name="iii3.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-59-3-5" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="419.83392" y="167.06">
+      <figurefirst:axis figurefirst:name="hg1.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-2-0-4" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="459.87778" y="167.06">
+      <figurefirst:axis figurefirst:name="hg2.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-9-8-7" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="499.92166" y="167.06">
+      <figurefirst:axis figurefirst:name="hg3.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-8-0-2-5" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="260.16913" y="166.93832">
+      <figurefirst:axis figurefirst:name="i2.39E01.stop"/>
+    </rect>
+    <rect height="36.58358" id="rect3205-8-9-3-8-7" style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" width="36.031319" x="540.77618" y="166.93832">
+      <figurefirst:axis figurefirst:name="hg4.39E01.stop"/>
+    </rect>
+  </g>
+  <g id="layer2" inkscape:groupmode="layer" inkscape:label="Layer 2" style="display:inline" transform="scale(1.38888888889,1.38888888889)">
+    <figurefirst:targetlayer figurefirst:name="mpl_panel_a"/>
+  
+ <defs>
+  <style type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;}
+  </style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 576  L 432 576  L 432 0  L 0 0  L 0 576  z " style="fill:none;"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 13.406892 52.230366  L 39.349442 52.230366  L 39.349442 25.890188  L 13.406892 25.890188  L 13.406892 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_1">
+    <path clip-path="url(#pa645b5a968)" d="M 13.406892 50.506123  L 14.271644 33.543103  L 15.136396 47.296304  L 16.001147 47.692162  L 16.865899 50.790998  L 17.730651 32.482007  L 18.595402 42.447169  L 19.460154 39.194331  L 20.324906 30.475508  L 21.189657 26.304078  L 22.054409 47.610994  L 22.919161 50.16586  L 23.783912 37.023973  L 24.648664 35.288493  L 25.513416 46.946717  L 26.378167 38.083173  L 27.242919 43.528754  L 28.107671 50.895087  L 28.972422 43.7487  L 29.837174 32.80528  L 30.701926 42.450103  L 31.566677 32.130957  L 32.431429 43.520328  L 33.296181 33.581727  L 34.160932 45.789997  L 35.025684 48.03137  L 35.890436 44.144883  L 36.755187 52.075129  L 37.619939 28.491166  L 38.484691 37.242336  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+  </g>
+  <g id="axes_2">
+   <g id="patch_3">
+    <path d="M 42.238501 52.230366  L 68.181051 52.230366  L 68.181051 25.890188  L 42.238501 25.890188  L 42.238501 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_2">
+    <path clip-path="url(#p8be51c22f5)" d="M 42.238501 38.044878  L 43.103253 49.828535  L 43.968005 41.122424  L 44.832756 41.002823  L 45.697508 43.050993  L 46.562259 41.688489  L 47.427011 38.863366  L 48.291763 49.636578  L 49.156514 39.879061  L 50.021266 28.940403  L 50.886018 32.662335  L 51.750769 48.18975  L 52.615521 32.097723  L 53.480273 25.922279  L 54.345024 34.34746  L 55.209776 30.741543  L 56.074528 39.18609  L 56.939279 43.603076  L 57.804031 39.357443  L 58.668783 49.101494  L 59.533534 33.649229  L 60.398286 29.323032  L 61.263038 26.598427  L 62.127789 42.24423  L 62.992541 47.019385  L 63.857293 44.872894  L 64.722044 27.963576  L 65.586796 47.639912  L 66.451548 44.838666  L 67.316299 28.24889  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_3"/>
+   <g id="matplotlib.axis_4"/>
+  </g>
+  <g id="axes_3">
+   <g id="patch_4">
+    <path d="M 71.070123 52.230366  L 97.012673 52.230366  L 97.012673 25.890188  L 71.070123 25.890188  L 71.070123 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_3">
+    <path clip-path="url(#p10bf581048)" d="M 71.070123 26.554608  L 71.934875 51.081226  L 72.799626 35.315794  L 73.664378 51.988764  L 74.52913 33.474288  L 75.393881 28.356275  L 76.258633 52.013578  L 77.123384 50.868746  L 77.988136 50.480761  L 78.852888 52.227927  L 79.717639 41.419052  L 80.582391 44.006282  L 81.447143 32.849804  L 82.311894 47.234691  L 83.176646 30.396241  L 84.041398 26.232005  L 84.906149 42.088124  L 85.770901 44.18673  L 86.635653 37.174562  L 87.500404 42.358721  L 88.365156 29.14233  L 89.229908 28.409917  L 90.094659 37.608632  L 90.959411 36.839537  L 91.824163 44.804732  L 92.688914 51.547517  L 93.553666 32.930236  L 94.418418 48.390448  L 95.283169 36.040523  L 96.147921 43.577232  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_5"/>
+   <g id="matplotlib.axis_6"/>
+  </g>
+  <g id="axes_4">
+   <g id="patch_5">
+    <path d="M 99.90175 52.230366  L 125.844299 52.230366  L 125.844299 25.890188  L 99.90175 25.890188  L 99.90175 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_4">
+    <path clip-path="url(#p6e72579ce0)" d="M 99.90175 36.041404  L 100.766501 39.373606  L 101.631253 46.861995  L 102.496005 33.558783  L 103.360756 43.17674  L 104.225508 49.700354  L 105.09026 26.901846  L 105.955011 50.837088  L 106.819763 39.637781  L 107.684515 50.047732  L 108.549266 43.622505  L 109.414018 44.912223  L 110.278769 28.061954  L 111.143521 41.870725  L 112.008273 47.847593  L 112.873024 47.201504  L 113.737776 27.58156  L 114.602528 38.336323  L 115.467279 33.309723  L 116.332031 51.361459  L 117.196783 34.332465  L 118.061534 38.420561  L 118.926286 43.500413  L 119.791038 37.217895  L 120.655789 26.454903  L 121.520541 40.164524  L 122.385293 28.959202  L 123.250044 30.344375  L 124.114796 47.454557  L 124.979548 41.389841  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_7"/>
+   <g id="matplotlib.axis_8"/>
+  </g>
+  <g id="axes_5">
+   <g id="patch_6">
+    <path d="M 128.733343 52.230366  L 154.675893 52.230366  L 154.675893 25.890188  L 128.733343 25.890188  L 128.733343 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_5">
+    <path clip-path="url(#p7372324594)" d="M 128.733343 38.200052  L 129.598095 26.528911  L 130.462847 37.411938  L 131.327598 44.561895  L 132.19235 31.524584  L 133.057101 34.15746  L 133.921853 36.475242  L 134.786605 34.371909  L 135.651356 52.161968  L 136.516108 50.134707  L 137.38086 37.020626  L 138.245611 44.48911  L 139.110363 32.710206  L 139.975115 46.703909  L 140.839866 43.833447  L 141.704618 40.874285  L 142.56937 49.329925  L 143.434121 35.031816  L 144.298873 39.06052  L 145.163625 43.073419  L 146.028376 47.349869  L 146.893128 42.471704  L 147.75788 51.374689  L 148.622631 52.157337  L 149.487383 46.818981  L 150.352135 46.514196  L 151.216886 47.921311  L 152.081638 41.039357  L 152.94639 38.660863  L 153.811141 31.663934  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_9"/>
+   <g id="matplotlib.axis_10"/>
+  </g>
+  <g id="axes_6">
+   <g id="patch_7">
+    <path d="M 157.564966 52.230366  L 183.507515 52.230366  L 183.507515 25.890188  L 157.564966 25.890188  L 157.564966 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_6">
+    <path clip-path="url(#p9244a73058)" d="M 157.564966 47.398498  L 158.429717 45.418517  L 159.294469 37.155752  L 160.159221 37.664138  L 161.023972 30.882104  L 161.888724 51.361304  L 162.753476 30.906498  L 163.618227 41.348724  L 164.482979 42.821984  L 165.347731 50.534815  L 166.212482 31.342565  L 167.077234 28.376508  L 167.941985 28.41501  L 168.806737 46.763963  L 169.671489 31.176568  L 170.53624 26.897361  L 171.400992 26.917384  L 172.265744 33.889978  L 173.130495 35.83697  L 173.995247 48.377993  L 174.859999 30.1476  L 175.72475 40.422722  L 176.589502 28.050448  L 177.454254 36.891708  L 178.319005 27.928102  L 179.183757 48.056692  L 180.048509 50.703914  L 180.91326 51.028172  L 181.778012 48.135005  L 182.642764 47.998642  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_11"/>
+   <g id="matplotlib.axis_12"/>
+  </g>
+  <g id="axes_7">
+   <g id="patch_8">
+    <path d="M 215.228146 52.230366  L 241.170695 52.230366  L 241.170695 25.890188  L 215.228146 25.890188  L 215.228146 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_7">
+    <path clip-path="url(#p2ea919aa54)" d="M 215.228146 42.159273  L 216.092897 45.277832  L 216.957649 31.023036  L 217.822401 32.782123  L 218.687152 43.629262  L 219.551904 36.184183  L 220.416656 28.07857  L 221.281407 35.803971  L 222.146159 36.764915  L 223.010911 50.065823  L 223.875662 52.049031  L 224.740414 29.091024  L 225.605165 38.34177  L 226.469917 28.134238  L 227.334669 49.875054  L 228.19942 38.696456  L 229.064172 29.506505  L 229.928924 45.516204  L 230.793675 48.26202  L 231.658427 42.00335  L 232.523179 48.783951  L 233.38793 31.012726  L 234.252682 30.241965  L 235.117434 31.020663  L 235.982185 40.460324  L 236.846937 38.68131  L 237.711689 39.259825  L 238.57644 46.9264  L 239.441192 39.885199  L 240.305944 30.111726  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_13"/>
+   <g id="matplotlib.axis_14"/>
+  </g>
+  <g id="axes_8">
+   <g id="patch_9">
+    <path d="M 244.059761 52.230366  L 270.00231 52.230366  L 270.00231 25.890188  L 244.059761 25.890188  L 244.059761 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_8">
+    <path clip-path="url(#pbe9e8ff5e2)" d="M 244.059761 47.749477  L 244.924512 30.181427  L 245.789264 50.597048  L 246.654016 33.797092  L 247.518767 42.704379  L 248.383519 41.845929  L 249.248271 31.844548  L 250.113022 43.968702  L 250.977774 30.396905  L 251.842526 42.492942  L 252.707277 37.653461  L 253.572029 47.526678  L 254.436781 26.925801  L 255.301532 27.681662  L 256.166284 34.568007  L 257.031036 43.626366  L 257.895787 25.913497  L 258.760539 41.838156  L 259.625291 37.322121  L 260.490042 26.338559  L 261.354794 41.935136  L 262.219546 37.313583  L 263.084297 36.474068  L 263.949049 41.872922  L 264.813801 31.597305  L 265.678552 50.826956  L 266.543304 28.03387  L 267.408056 42.893276  L 268.272807 46.851578  L 269.137559 47.345207  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_15"/>
+   <g id="matplotlib.axis_16"/>
+  </g>
+  <g id="axes_9">
+   <g id="patch_10">
+    <path d="M 272.891383 52.230366  L 298.833933 52.230366  L 298.833933 25.890188  L 272.891383 25.890188  L 272.891383 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_9">
+    <path clip-path="url(#pfa6c171b8c)" d="M 272.891383 49.730086  L 273.756135 40.938023  L 274.620887 35.832874  L 275.485638 51.329919  L 276.35039 27.617259  L 277.215141 50.732462  L 278.079893 32.455123  L 278.944645 48.311965  L 279.809396 44.575377  L 280.674148 50.57724  L 281.5389 49.395789  L 282.403651 44.391034  L 283.268403 46.651325  L 284.133155 36.434483  L 284.997906 32.101646  L 285.862658 28.718734  L 286.72741 38.62612  L 287.592161 46.882352  L 288.456913 29.392076  L 289.321665 38.462045  L 290.186416 27.894514  L 291.051168 50.416012  L 291.91592 27.180249  L 292.780671 33.985258  L 293.645423 32.473418  L 294.510175 35.133582  L 295.374926 29.206601  L 296.239678 32.933062  L 297.10443 28.463433  L 297.969181 36.18554  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_17"/>
+   <g id="matplotlib.axis_18"/>
+  </g>
+  <g id="axes_10">
+   <g id="patch_11">
+    <path d="M 301.722998 52.230366  L 327.665548 52.230366  L 327.665548 25.890188  L 301.722998 25.890188  L 301.722998 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_10">
+    <path clip-path="url(#pcb9f2b9aef)" d="M 301.722998 44.142913  L 302.58775 44.107067  L 303.452502 45.018638  L 304.317253 33.743252  L 305.182005 37.943412  L 306.046757 44.79997  L 306.911508 50.174387  L 307.77626 48.22969  L 308.641012 30.891935  L 309.505763 36.394977  L 310.370515 40.969646  L 311.235267 44.292386  L 312.100018 46.503378  L 312.96477 28.081361  L 313.829522 45.020245  L 314.694273 37.183055  L 315.559025 47.026601  L 316.423777 41.78118  L 317.288528 38.043978  L 318.15328 29.075427  L 319.018032 50.243153  L 319.882783 40.618742  L 320.747535 32.11021  L 321.612286 45.424004  L 322.477038 49.66928  L 323.34179 33.876199  L 324.206541 40.096867  L 325.071293 49.021091  L 325.936045 36.956487  L 326.800796 36.757878  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_19"/>
+   <g id="matplotlib.axis_20"/>
+  </g>
+  <g id="axes_11">
+   <g id="patch_12">
+    <path d="M 330.554578 52.230366  L 356.497127 52.230366  L 356.497127 25.890188  L 330.554578 25.890188  L 330.554578 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_11">
+    <path clip-path="url(#p0fc9985270)" d="M 330.554578 35.415308  L 331.419329 37.012173  L 332.284081 46.156027  L 333.148833 49.00072  L 334.013584 34.881072  L 334.878336 37.874101  L 335.743088 36.64917  L 336.607839 41.635867  L 337.472591 40.66872  L 338.337343 37.682097  L 339.202094 46.78651  L 340.066846 28.400868  L 340.931597 36.248124  L 341.796349 45.682543  L 342.661101 37.687934  L 343.525852 36.991551  L 344.390604 43.758143  L 345.255356 41.988903  L 346.120107 38.481559  L 346.984859 49.526032  L 347.849611 34.275162  L 348.714362 42.229469  L 349.579114 50.030092  L 350.443866 39.044801  L 351.308617 43.174321  L 352.173369 48.569654  L 353.038121 33.407143  L 353.902872 45.676449  L 354.767624 52.191593  L 355.632376 34.443929  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_21"/>
+   <g id="matplotlib.axis_22"/>
+  </g>
+  <g id="axes_12">
+   <g id="patch_13">
+    <path d="M 359.386214 52.230366  L 385.328764 52.230366  L 385.328764 25.890188  L 359.386214 25.890188  L 359.386214 52.230366  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_12">
+    <path clip-path="url(#p30b8a507a9)" d="M 359.386214 25.91501  L 360.250966 49.365143  L 361.115718 47.511447  L 361.980469 42.973398  L 362.845221 29.352547  L 363.709973 32.723588  L 364.574724 47.691298  L 365.439476 38.002681  L 366.304228 49.481941  L 367.168979 29.329593  L 368.033731 34.449071  L 368.898483 47.212813  L 369.763234 48.970785  L 370.627986 28.934244  L 371.492738 29.862374  L 372.357489 32.248545  L 373.222241 43.716944  L 374.086993 31.210802  L 374.951744 32.343914  L 375.816496 49.651843  L 376.681248 30.931794  L 377.545999 27.577952  L 378.410751 44.203314  L 379.275502 47.738081  L 380.140254 38.672892  L 381.005006 32.239235  L 381.869757 49.604722  L 382.734509 42.324332  L 383.599261 31.337726  L 384.464012 46.905714  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_23"/>
+   <g id="matplotlib.axis_24"/>
+  </g>
+  <g id="axes_13">
+   <g id="patch_14">
+    <path d="M 186.764328 52.142783  L 212.706878 52.142783  L 212.706878 25.802605  L 186.764328 25.802605  L 186.764328 52.142783  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_13">
+    <path clip-path="url(#pbf84cb5e20)" d="M 186.764328 29.928277  L 187.62908 45.37499  L 188.493831 45.743697  L 189.358583 39.951373  L 190.223335 49.454545  L 191.088086 33.692463  L 191.952838 31.428247  L 192.81759 30.780567  L 193.682341 39.233166  L 194.547093 50.490431  L 195.411845 34.528891  L 196.276596 47.709896  L 197.141348 33.388058  L 198.0061 43.306024  L 198.870851 39.342553  L 199.735603 51.340972  L 200.600354 51.083008  L 201.465106 45.55326  L 202.329858 37.513462  L 203.194609 36.796394  L 204.059361 45.79986  L 204.924113 37.012906  L 205.788864 49.058114  L 206.653616 33.334224  L 207.518368 27.822837  L 208.383119 28.816779  L 209.247871 44.361641  L 210.112623 39.117106  L 210.977374 40.285871  L 211.842126 29.524654  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_25"/>
+   <g id="matplotlib.axis_26"/>
+  </g>
+  <g id="axes_14">
+   <g id="patch_15">
+    <path d="M 388.801404 52.142783  L 414.743954 52.142783  L 414.743954 25.802605  L 388.801404 25.802605  L 388.801404 52.142783  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_14">
+    <path clip-path="url(#p3f5cf470ed)" d="M 388.801404 49.252698  L 389.666156 44.70301  L 390.530907 34.186011  L 391.395659 41.898808  L 392.260411 49.263612  L 393.125162 45.655224  L 393.989914 29.892934  L 394.854666 28.834023  L 395.719417 28.00514  L 396.584169 35.123227  L 397.448921 26.114657  L 398.313672 40.780924  L 399.178424 36.783061  L 400.043176 39.366107  L 400.907927 37.066689  L 401.772679 35.307821  L 402.63743 39.622814  L 403.502182 41.163095  L 404.366934 46.625496  L 405.231685 30.547748  L 406.096437 42.819038  L 406.961189 38.239578  L 407.82594 44.103057  L 408.690692 49.875498  L 409.555444 49.564786  L 410.420195 50.054139  L 411.284947 45.822733  L 412.149699 31.449687  L 413.01445 30.536088  L 413.879202 34.667661  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_27"/>
+   <g id="matplotlib.axis_28"/>
+  </g>
+  <g id="axes_15">
+   <g id="patch_16">
+    <path d="M 13.778521 82.87363  L 39.721071 82.87363  L 39.721071 56.533452  L 13.778521 56.533452  L 13.778521 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_15">
+    <path clip-path="url(#p78d3fe080b)" d="M 13.778521 69.361354  L 14.643273 59.844577  L 15.508025 66.450873  L 16.372776 62.202002  L 17.237528 76.075655  L 18.102279 60.570008  L 18.967031 63.581954  L 19.831783 79.394235  L 20.696534 64.168228  L 21.561286 67.852827  L 22.426038 69.940866  L 23.290789 79.601537  L 24.155541 60.253306  L 25.020293 80.011071  L 25.885044 70.805848  L 26.749796 66.847258  L 27.614548 68.590894  L 28.479299 69.208609  L 29.344051 57.051511  L 30.208803 80.49982  L 31.073554 61.406079  L 31.938306 58.725313  L 32.803058 75.859992  L 33.667809 61.166823  L 34.532561 58.145106  L 35.397313 79.477596  L 36.262064 63.026676  L 37.126816 56.576003  L 37.991568 62.958796  L 38.856319 61.854475  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_29"/>
+   <g id="matplotlib.axis_30"/>
+  </g>
+  <g id="axes_16">
+   <g id="patch_17">
+    <path d="M 42.610131 82.87363  L 68.55268 82.87363  L 68.55268 56.533452  L 42.610131 56.533452  L 42.610131 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_16">
+    <path clip-path="url(#pcb4ec9bf3e)" d="M 42.610131 61.912733  L 43.474882 73.290933  L 44.339634 71.915425  L 45.204386 59.241697  L 46.069137 81.928182  L 46.933889 58.478457  L 47.798641 77.476225  L 48.663392 69.017639  L 49.528144 67.446479  L 50.392896 65.117523  L 51.257647 67.674128  L 52.122399 75.099551  L 52.987151 76.610015  L 53.851902 71.840585  L 54.716654 56.888241  L 55.581405 62.0593  L 56.446157 58.914804  L 57.310909 57.815547  L 58.17566 70.306376  L 59.040412 62.283538  L 59.905164 68.575335  L 60.769915 59.373003  L 61.634667 61.815065  L 62.499419 76.124978  L 63.36417 67.631354  L 64.228922 60.89871  L 65.093674 79.24783  L 65.958425 56.59289  L 66.823177 81.566668  L 67.687929 74.13751  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_31"/>
+   <g id="matplotlib.axis_32"/>
+  </g>
+  <g id="axes_17">
+   <g id="patch_18">
+    <path d="M 71.441757 82.87363  L 97.384307 82.87363  L 97.384307 56.533452  L 71.441757 56.533452  L 71.441757 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_17">
+    <path clip-path="url(#pf16719b572)" d="M 71.441757 78.252219  L 72.306509 74.755546  L 73.171261 60.685866  L 74.036012 58.292023  L 74.900764 61.886057  L 75.765516 72.42905  L 76.630267 56.837024  L 77.495019 77.21599  L 78.359771 59.040622  L 79.224522 56.896526  L 80.089274 60.854296  L 80.954026 59.73092  L 81.818777 72.150876  L 82.683529 82.064601  L 83.548281 79.333621  L 84.413032 67.034423  L 85.277784 59.940788  L 86.142536 68.436427  L 87.007287 59.104914  L 87.872039 71.166246  L 88.73679 61.867788  L 89.601542 70.958163  L 90.466294 74.582916  L 91.331045 72.544802  L 92.195797 67.095163  L 93.060549 72.592583  L 93.9253 66.620847  L 94.790052 75.70069  L 95.654804 60.72953  L 96.519555 59.625399  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_33"/>
+   <g id="matplotlib.axis_34"/>
+  </g>
+  <g id="axes_18">
+   <g id="patch_19">
+    <path d="M 100.273385 82.87363  L 126.215934 82.87363  L 126.215934 56.533452  L 100.273385 56.533452  L 100.273385 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_18">
+    <path clip-path="url(#pfd7ca518c8)" d="M 100.273385 75.43136  L 101.138136 65.036828  L 102.002888 76.818822  L 102.86764 57.506849  L 103.732391 74.216042  L 104.597143 64.156629  L 105.461895 79.526922  L 106.326646 58.029131  L 107.191398 65.849825  L 108.05615 62.071252  L 108.920901 64.558674  L 109.785653 78.125869  L 110.650405 75.940222  L 111.515156 74.627007  L 112.379908 64.747685  L 113.24466 64.865791  L 114.109411 58.584828  L 114.974163 60.404035  L 115.838915 75.989768  L 116.703666 70.014258  L 117.568418 74.737792  L 118.43317 64.05626  L 119.297921 73.974211  L 120.162673 75.130141  L 121.027425 78.588414  L 121.892176 67.851389  L 122.756928 68.947614  L 123.62168 80.696608  L 124.486431 70.851096  L 125.351183 78.911479  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_35"/>
+   <g id="matplotlib.axis_36"/>
+  </g>
+  <g id="axes_19">
+   <g id="patch_20">
+    <path d="M 129.105 82.87363  L 155.04755 82.87363  L 155.04755 56.533452  L 129.105 56.533452  L 129.105 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_19">
+    <path clip-path="url(#p095599089e)" d="M 129.105 75.46819  L 129.969752 59.543742  L 130.834503 78.995753  L 131.699255 69.114531  L 132.564007 59.435506  L 133.428758 74.98419  L 134.29351 82.26173  L 135.158262 64.395816  L 136.023013 57.546471  L 136.887765 62.203569  L 137.752517 79.974512  L 138.617268 82.700407  L 139.48202 69.492823  L 140.346772 64.935739  L 141.211523 73.354353  L 142.076275 72.339009  L 142.941026 57.763287  L 143.805778 67.736467  L 144.67053 75.199178  L 145.535281 60.208135  L 146.400033 61.343036  L 147.264785 58.162373  L 148.129536 56.666374  L 148.994288 61.003445  L 149.85904 81.133991  L 150.723791 73.123851  L 151.588543 70.798492  L 152.453295 81.738145  L 153.318046 76.395071  L 154.182798 63.230129  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_37"/>
+   <g id="matplotlib.axis_38"/>
+  </g>
+  <g id="axes_20">
+   <g id="patch_21">
+    <path d="M 157.936594 82.87363  L 183.879143 82.87363  L 183.879143 56.533452  L 157.936594 56.533452  L 157.936594 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_20">
+    <path clip-path="url(#pc4a61f690c)" d="M 157.936594 72.587403  L 158.801345 74.598649  L 159.666097 74.006531  L 160.530849 60.918867  L 161.3956 68.929089  L 162.260352 56.946627  L 163.125104 72.503639  L 163.989855 65.776879  L 164.854607 78.437696  L 165.719359 67.418803  L 166.58411 77.659359  L 167.448862 72.499686  L 168.313613 77.022759  L 169.178365 64.506359  L 170.043117 59.691302  L 170.907868 70.749871  L 171.77262 80.9477  L 172.637372 67.638331  L 173.502123 69.627214  L 174.366875 82.762193  L 175.231627 63.250962  L 176.096378 74.819767  L 176.96113 58.526205  L 177.825882 61.462037  L 178.690633 61.535019  L 179.555385 73.96506  L 180.420137 56.915325  L 181.284888 73.91654  L 182.14964 58.852421  L 183.014392 79.273803  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_39"/>
+   <g id="matplotlib.axis_40"/>
+  </g>
+  <g id="axes_21">
+   <g id="patch_22">
+    <path d="M 215.59981 82.87363  L 241.542359 82.87363  L 241.542359 56.533452  L 215.59981 56.533452  L 215.59981 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_21">
+    <path clip-path="url(#pf11d7e7bfe)" d="M 215.59981 70.158813  L 216.464561 62.221532  L 217.329313 69.857851  L 218.194065 60.253178  L 219.058816 57.844158  L 219.923568 74.651922  L 220.78832 82.350142  L 221.653071 80.797527  L 222.517823 70.301579  L 223.382575 67.031457  L 224.247326 64.491198  L 225.112078 67.583167  L 225.976829 58.062899  L 226.841581 68.948044  L 227.706333 75.282518  L 228.571084 71.469892  L 229.435836 67.48391  L 230.300588 63.560342  L 231.165339 77.865625  L 232.030091 68.878108  L 232.894843 73.765545  L 233.759594 67.882989  L 234.624346 68.156682  L 235.489098 61.73695  L 236.353849 81.199463  L 237.218601 64.605498  L 238.083353 70.289133  L 238.948104 72.225617  L 239.812856 62.214325  L 240.677608 72.779515  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_41"/>
+   <g id="matplotlib.axis_42"/>
+  </g>
+  <g id="axes_22">
+   <g id="patch_23">
+    <path d="M 244.431432 82.87363  L 270.373982 82.87363  L 270.373982 56.533452  L 244.431432 56.533452  L 244.431432 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_22">
+    <path clip-path="url(#pe888f1a22a)" d="M 244.431432 57.790317  L 245.296184 59.118614  L 246.160935 67.039672  L 247.025687 58.146947  L 247.890439 59.327696  L 248.75519 77.510455  L 249.619942 62.281371  L 250.484694 79.553321  L 251.349445 56.918969  L 252.214197 62.480056  L 253.078949 78.125761  L 253.9437 73.409851  L 254.808452 75.665101  L 255.673204 78.550283  L 256.537955 60.797471  L 257.402707 57.704312  L 258.267458 82.77477  L 259.13221 56.586354  L 259.996962 63.659799  L 260.861713 75.946951  L 261.726465 59.77944  L 262.591217 76.402264  L 263.455968 73.904278  L 264.32072 79.280254  L 265.185472 66.784508  L 266.050223 58.133951  L 266.914975 82.837247  L 267.779727 68.552733  L 268.644478 61.451492  L 269.50923 59.597052  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_43"/>
+   <g id="matplotlib.axis_44"/>
+  </g>
+  <g id="axes_23">
+   <g id="patch_24">
+    <path d="M 273.263026 82.87363  L 299.205575 82.87363  L 299.205575 56.533452  L 273.263026 56.533452  L 273.263026 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_23">
+    <path clip-path="url(#p66d4ff7b12)" d="M 273.263026 61.463811  L 274.127777 74.059151  L 274.992529 70.25171  L 275.857281 57.104772  L 276.722032 80.680427  L 277.586784 72.552456  L 278.451536 81.854595  L 279.316287 57.900211  L 280.181039 80.730134  L 281.045791 80.083353  L 281.910542 61.595372  L 282.775294 80.79464  L 283.640045 78.583679  L 284.504797 78.123259  L 285.369549 76.196656  L 286.2343 63.422695  L 287.099052 81.674359  L 287.963804 60.731571  L 288.828555 78.224189  L 289.693307 61.775277  L 290.558059 69.344485  L 291.42281 78.17419  L 292.287562 80.181133  L 293.152314 77.86777  L 294.017065 75.249393  L 294.881817 75.158507  L 295.746569 67.019174  L 296.61132 79.520035  L 297.476072 70.198418  L 298.340824 68.492235  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_45"/>
+   <g id="matplotlib.axis_46"/>
+  </g>
+  <g id="axes_24">
+   <g id="patch_25">
+    <path d="M 302.094626 82.87363  L 328.037176 82.87363  L 328.037176 56.533452  L 302.094626 56.533452  L 302.094626 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_24">
+    <path clip-path="url(#pb30cad7ab2)" d="M 302.094626 58.444039  L 302.959378 62.917573  L 303.82413 81.286258  L 304.688881 60.343316  L 305.553633 63.695457  L 306.418385 82.527301  L 307.283136 69.945395  L 308.147888 62.529012  L 309.01264 72.828448  L 309.877391 67.749038  L 310.742143 71.480725  L 311.606895 60.55458  L 312.471646 81.643174  L 313.336398 64.47427  L 314.20115 82.582816  L 315.065901 70.526075  L 315.930653 69.377205  L 316.795405 57.92009  L 317.660156 71.70369  L 318.524908 78.993934  L 319.38966 81.89441  L 320.254411 73.982567  L 321.119163 58.795507  L 321.983914 76.552991  L 322.848666 58.081279  L 323.713418 78.746979  L 324.578169 62.398081  L 325.442921 74.07321  L 326.307673 71.717856  L 327.172424 79.527891  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_47"/>
+   <g id="matplotlib.axis_48"/>
+  </g>
+  <g id="axes_25">
+   <g id="patch_26">
+    <path d="M 330.926177 82.87363  L 356.868726 82.87363  L 356.868726 56.533452  L 330.926177 56.533452  L 330.926177 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_25">
+    <path clip-path="url(#p78328334ef)" d="M 330.926177 66.808248  L 331.790928 73.809482  L 332.65568 71.922065  L 333.520432 57.550376  L 334.385183 64.067934  L 335.249935 76.375538  L 336.114687 75.899235  L 336.979438 82.201563  L 337.84419 73.908223  L 338.708942 61.781518  L 339.573693 63.788383  L 340.438445 79.160076  L 341.303197 71.701239  L 342.167948 61.197127  L 343.0327 59.175727  L 343.897452 71.707212  L 344.762203 64.245303  L 345.626955 57.789147  L 346.491707 73.417359  L 347.356458 69.242172  L 348.22121 63.156863  L 349.085962 82.617011  L 349.950713 80.539098  L 350.815465 73.437486  L 351.680217 74.860835  L 352.544968 58.128848  L 353.40972 79.323348  L 354.274472 65.008681  L 355.139223 80.268908  L 356.003975 82.429391  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_49"/>
+   <g id="matplotlib.axis_50"/>
+  </g>
+  <g id="axes_26">
+   <g id="patch_27">
+    <path d="M 359.757821 82.87363  L 385.70037 82.87363  L 385.70037 56.533452  L 359.757821 56.533452  L 359.757821 82.87363  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_26">
+    <path clip-path="url(#p8cdafaef5a)" d="M 359.757821 58.249739  L 360.622572 70.099901  L 361.487324 59.252132  L 362.352076 58.861545  L 363.216827 75.256101  L 364.081579 79.02103  L 364.946331 73.100302  L 365.811082 66.008349  L 366.675834 78.266542  L 367.540586 64.845589  L 368.405337 80.388055  L 369.270089 62.46531  L 370.134841 66.197877  L 370.999592 61.244083  L 371.864344 68.48923  L 372.729096 59.311229  L 373.593847 62.342285  L 374.458599 56.859866  L 375.323351 59.726631  L 376.188102 76.536804  L 377.052854 69.010903  L 377.917606 61.732869  L 378.782357 67.956414  L 379.647109 77.777674  L 380.511861 67.251523  L 381.376612 70.505635  L 382.241364 68.464948  L 383.106116 68.589287  L 383.970867 79.877825  L 384.835619 79.376788  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_51"/>
+   <g id="matplotlib.axis_52"/>
+  </g>
+  <g id="axes_27">
+   <g id="patch_28">
+    <path d="M 187.13597 82.786047  L 213.07852 82.786047  L 213.07852 56.44587  L 187.13597 56.44587  L 187.13597 82.786047  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_27">
+    <path clip-path="url(#p79d15651a5)" d="M 187.13597 79.744566  L 188.000722 73.983558  L 188.865474 70.797216  L 189.730225 61.688515  L 190.594977 74.245022  L 191.459729 66.801428  L 192.32448 58.457156  L 193.189232 69.533658  L 194.053984 65.298077  L 194.918735 72.415048  L 195.783487 66.801881  L 196.648239 61.225698  L 197.51299 63.882315  L 198.377742 74.823385  L 199.242494 70.999285  L 200.107245 81.293182  L 200.971997 76.607122  L 201.836749 76.630256  L 202.7015 67.611614  L 203.566252 81.757111  L 204.431004 72.615224  L 205.295755 76.133685  L 206.160507 78.35566  L 207.025258 62.735097  L 207.89001 70.276348  L 208.754762 60.906746  L 209.619513 61.638018  L 210.484265 63.675055  L 211.349017 73.741958  L 212.213768 79.022642  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_53"/>
+   <g id="matplotlib.axis_54"/>
+  </g>
+  <g id="axes_28">
+   <g id="patch_29">
+    <path d="M 389.17301 82.786047  L 415.11556 82.786047  L 415.11556 56.44587  L 389.17301 56.44587  L 389.17301 82.786047  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_28">
+    <path clip-path="url(#p6351caf74a)" d="M 389.17301 65.282439  L 390.037762 62.171394  L 390.902514 60.051596  L 391.767265 74.376513  L 392.632017 76.725153  L 393.496769 68.899049  L 394.36152 68.672961  L 395.226272 70.316574  L 396.091024 63.713148  L 396.955775 73.650927  L 397.820527 58.573771  L 398.685279 71.337466  L 399.55003 67.746385  L 400.414782 62.685085  L 401.279534 60.111458  L 402.144285 69.252605  L 403.009037 77.847626  L 403.873789 59.298735  L 404.73854 63.643208  L 405.603292 57.788384  L 406.468044 74.979996  L 407.332795 76.832006  L 408.197547 82.572935  L 409.062298 58.299973  L 409.92705 59.114111  L 410.791802 77.372365  L 411.656553 58.5089  L 412.521305 60.078206  L 413.386057 63.964553  L 414.250808 71.662323  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_55"/>
+   <g id="matplotlib.axis_56"/>
+  </g>
+  <g id="axes_29">
+   <g id="patch_30">
+    <path d="M 13.592706 115.980077  L 39.535256 115.980077  L 39.535256 89.639899  L 13.592706 89.639899  L 13.592706 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_29">
+    <path clip-path="url(#p3a67db8320)" d="M 13.592706 91.426476  L 14.457458 111.624444  L 15.32221 99.451618  L 16.186961 92.987483  L 17.051713 100.648524  L 17.916465 92.315435  L 18.781216 89.999591  L 19.645968 89.974784  L 20.51072 100.084849  L 21.375471 109.723705  L 22.240223 115.214976  L 23.104975 111.086764  L 23.969726 103.156437  L 24.834478 102.48891  L 25.69923 92.478771  L 26.563981 110.535193  L 27.428733 99.760806  L 28.293485 99.023756  L 29.158236 90.134644  L 30.022988 102.119454  L 30.88774 113.595618  L 31.752491 108.213043  L 32.617243 92.025006  L 33.481995 106.34354  L 34.346746 104.292157  L 35.211498 113.838558  L 36.07625 94.221633  L 36.941001 106.836188  L 37.805753 94.349838  L 38.670505 91.33281  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_57"/>
+   <g id="matplotlib.axis_58"/>
+  </g>
+  <g id="axes_30">
+   <g id="patch_31">
+    <path d="M 42.424324 115.980077  L 68.366874 115.980077  L 68.366874 89.639899  L 42.424324 89.639899  L 42.424324 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_30">
+    <path clip-path="url(#peff708cf86)" d="M 42.424324 91.48664  L 43.289075 94.25541  L 44.153827 98.437416  L 45.018579 112.678292  L 45.88333 112.072581  L 46.748082 102.29613  L 47.612834 98.623931  L 48.477585 99.925868  L 49.342337 90.148527  L 50.207089 108.440674  L 51.07184 105.29339  L 51.936592 107.712637  L 52.801344 97.873448  L 53.666095 105.131899  L 54.530847 93.009889  L 55.395599 107.659628  L 56.26035 102.883806  L 57.125102 96.29097  L 57.989854 108.0617  L 58.854605 106.005121  L 59.719357 102.581214  L 60.584109 99.84231  L 61.44886 115.363238  L 62.313612 93.765062  L 63.178364 104.770688  L 64.043115 92.136978  L 64.907867 107.87777  L 65.772619 115.078788  L 66.63737 99.052421  L 67.502122 91.254083  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_59"/>
+   <g id="matplotlib.axis_60"/>
+  </g>
+  <g id="axes_31">
+   <g id="patch_32">
+    <path d="M 71.255946 115.980077  L 97.198495 115.980077  L 97.198495 89.639899  L 71.255946 89.639899  L 71.255946 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_31">
+    <path clip-path="url(#pbc8f44cfc5)" d="M 71.255946 105.079179  L 72.120697 115.953348  L 72.985449 98.18538  L 73.8502 111.508022  L 74.714952 89.830016  L 75.579704 113.044945  L 76.444455 106.380819  L 77.309207 94.239516  L 78.173959 106.640405  L 79.03871 101.185424  L 79.903462 108.670274  L 80.768214 93.033514  L 81.632965 113.866629  L 82.497717 103.410607  L 83.362469 112.648954  L 84.22722 90.608364  L 85.091972 108.211216  L 85.956724 99.378723  L 86.821475 107.783626  L 87.686227 106.623082  L 88.550979 114.442227  L 89.41573 102.420445  L 90.280482 93.784331  L 91.145234 97.833212  L 92.009985 97.564495  L 92.874737 91.700406  L 93.739489 98.999145  L 94.60424 105.113398  L 95.468992 111.862644  L 96.333744 114.872464  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_61"/>
+   <g id="matplotlib.axis_62"/>
+  </g>
+  <g id="axes_32">
+   <g id="patch_33">
+    <path d="M 100.087582 115.980077  L 126.030131 115.980077  L 126.030131 89.639899  L 100.087582 89.639899  L 100.087582 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_32">
+    <path clip-path="url(#pce925ef9ef)" d="M 100.087582 90.801775  L 100.952333 94.263571  L 101.817085 105.807609  L 102.681837 89.978597  L 103.546588 114.032099  L 104.41134 95.373939  L 105.276092 98.242242  L 106.140843 98.180073  L 107.005595 111.923149  L 107.870347 95.75499  L 108.735098 113.411011  L 109.59985 92.312396  L 110.464601 90.336177  L 111.329353 93.123216  L 112.194105 100.329233  L 113.058856 93.345881  L 113.923608 107.78837  L 114.78836 90.665187  L 115.653111 113.928713  L 116.517863 94.293369  L 117.382615 95.388947  L 118.247366 101.436486  L 119.112118 110.336282  L 119.97687 101.648167  L 120.841621 112.707919  L 121.706373 100.876655  L 122.571125 107.051887  L 123.435876 105.462178  L 124.300628 96.741318  L 125.16538 99.799402  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_63"/>
+   <g id="matplotlib.axis_64"/>
+  </g>
+  <g id="axes_33">
+   <g id="patch_34">
+    <path d="M 128.919168 115.980077  L 154.861718 115.980077  L 154.861718 89.639899  L 128.919168 89.639899  L 128.919168 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_33">
+    <path clip-path="url(#p0aa380b062)" d="M 128.919168 98.458201  L 129.78392 97.232632  L 130.648671 115.766254  L 131.513423 113.472632  L 132.378175 109.76509  L 133.242926 113.160352  L 134.107678 99.704785  L 134.97243 109.533726  L 135.837181 91.970681  L 136.701933 99.480087  L 137.566685 111.256518  L 138.431436 100.381713  L 139.296188 104.171964  L 140.16094 94.825543  L 141.025691 109.404041  L 141.890443 102.535114  L 142.755194 98.84101  L 143.619946 111.879424  L 144.484698 91.11753  L 145.349449 105.943472  L 146.214201 99.962962  L 147.078953 98.224752  L 147.943704 114.140792  L 148.808456 98.760229  L 149.673208 98.083129  L 150.537959 89.646304  L 151.402711 92.594263  L 152.267463 110.464519  L 153.132214 103.147655  L 153.996966 96.18644  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_65"/>
+   <g id="matplotlib.axis_66"/>
+  </g>
+  <g id="axes_34">
+   <g id="patch_35">
+    <path d="M 157.750776 115.980077  L 183.693326 115.980077  L 183.693326 89.639899  L 157.750776 89.639899  L 157.750776 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_34">
+    <path clip-path="url(#pfae4c12aff)" d="M 157.750776 113.835942  L 158.615528 90.224397  L 159.480279 94.727117  L 160.345031 108.916638  L 161.209783 92.541014  L 162.074534 97.202976  L 162.939286 98.571481  L 163.804038 107.790087  L 164.668789 99.117345  L 165.533541 112.023388  L 166.398293 114.992689  L 167.263044 97.550186  L 168.127796 107.397275  L 168.992548 103.85283  L 169.857299 89.814458  L 170.722051 112.405906  L 171.586802 95.774627  L 172.451554 101.100197  L 173.316306 115.829636  L 174.181057 92.382835  L 175.045809 90.634185  L 175.910561 96.291881  L 176.775312 112.6979  L 177.640064 114.237408  L 178.504816 99.595153  L 179.369567 104.536352  L 180.234319 101.297342  L 181.099071 91.110922  L 181.963822 94.897246  L 182.828574 109.615677  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_67"/>
+   <g id="matplotlib.axis_68"/>
+  </g>
+  <g id="axes_35">
+   <g id="patch_36">
+    <path d="M 215.413949 115.980077  L 241.356498 115.980077  L 241.356498 89.639899  L 215.413949 89.639899  L 215.413949 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_35">
+    <path clip-path="url(#pb979470af7)" d="M 215.413949 90.077011  L 216.2787 111.29949  L 217.143452 108.020461  L 218.008204 106.26893  L 218.872955 96.644012  L 219.737707 91.828574  L 220.602459 97.904117  L 221.46721 111.465693  L 222.331962 102.651586  L 223.196714 99.673228  L 224.061465 107.910946  L 224.926217 97.415605  L 225.790969 93.400891  L 226.65572 89.945473  L 227.520472 98.95708  L 228.385224 103.799927  L 229.249975 115.476841  L 230.114727 104.461716  L 230.979479 102.147499  L 231.84423 96.791606  L 232.708982 98.536053  L 233.573734 96.024523  L 234.438485 97.640848  L 235.303237 115.055583  L 236.167989 93.291195  L 237.03274 92.721926  L 237.897492 101.54458  L 238.762244 95.656285  L 239.626995 91.086653  L 240.491747 108.760208  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_69"/>
+   <g id="matplotlib.axis_70"/>
+  </g>
+  <g id="axes_36">
+   <g id="patch_37">
+    <path d="M 244.245586 115.980077  L 270.188135 115.980077  L 270.188135 89.639899  L 244.245586 89.639899  L 244.245586 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_36">
+    <path clip-path="url(#pb474cb5754)" d="M 244.245586 113.254562  L 245.110337 100.936564  L 245.975089 101.446054  L 246.839841 92.953179  L 247.704592 115.86935  L 248.569344 90.168086  L 249.434096 103.760872  L 250.298847 102.406856  L 251.163599 101.511174  L 252.028351 108.892474  L 252.893102 108.05213  L 253.757854 96.62854  L 254.622605 115.246613  L 255.487357 114.075484  L 256.352109 114.333062  L 257.21686 95.384447  L 258.081612 90.738333  L 258.946364 115.291219  L 259.811115 109.709595  L 260.675867 92.049524  L 261.540619 107.783073  L 262.40537 115.778209  L 263.270122 112.962996  L 264.134874 109.896867  L 264.999625 113.146154  L 265.864377 94.827359  L 266.729129 90.643833  L 267.59388 90.899405  L 268.458632 92.797549  L 269.323384 101.905703  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_71"/>
+   <g id="matplotlib.axis_72"/>
+  </g>
+  <g id="axes_37">
+   <g id="patch_38">
+    <path d="M 273.077179 115.980077  L 299.019729 115.980077  L 299.019729 89.639899  L 273.077179 89.639899  L 273.077179 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_37">
+    <path clip-path="url(#p84332a04b5)" d="M 273.077179 101.415162  L 273.941931 107.283459  L 274.806683 94.549183  L 275.671434 92.261276  L 276.536186 94.889645  L 277.400937 92.778872  L 278.265689 100.814348  L 279.130441 93.130535  L 279.995192 101.403864  L 280.859944 90.964479  L 281.724696 104.600746  L 282.589447 97.995778  L 283.454199 100.952396  L 284.318951 91.902472  L 285.183702 106.72353  L 286.048454 104.698554  L 286.913206 115.88442  L 287.777957 105.737656  L 288.642709 108.222832  L 289.507461 114.876914  L 290.372212 101.43693  L 291.236964 96.227559  L 292.101716 98.649664  L 292.966467 99.953854  L 293.831219 98.596154  L 294.695971 89.97997  L 295.560722 91.602824  L 296.425474 115.479908  L 297.290226 104.464125  L 298.154977 96.760286  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_73"/>
+   <g id="matplotlib.axis_74"/>
+  </g>
+  <g id="axes_38">
+   <g id="patch_39">
+    <path d="M 301.908802 115.980077  L 327.851351 115.980077  L 327.851351 89.639899  L 301.908802 89.639899  L 301.908802 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_38">
+    <path clip-path="url(#pd6c514491d)" d="M 301.908802 93.84233  L 302.773553 91.65002  L 303.638305 108.265965  L 304.503057 104.848126  L 305.367808 109.444112  L 306.23256 95.613296  L 307.097312 102.715728  L 307.962063 92.051002  L 308.826815 102.247528  L 309.691567 113.12994  L 310.556318 95.905046  L 311.42107 109.451019  L 312.285821 98.004698  L 313.150573 114.140283  L 314.015325 94.685004  L 314.880076 104.953219  L 315.744828 100.811993  L 316.60958 112.504953  L 317.474331 105.514617  L 318.339083 92.803422  L 319.203835 95.277348  L 320.068586 106.194922  L 320.933338 97.217728  L 321.79809 98.339597  L 322.662841 104.529023  L 323.527593 113.593921  L 324.392345 91.038104  L 325.257096 100.43376  L 326.121848 90.086218  L 326.9866 107.167733  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_75"/>
+   <g id="matplotlib.axis_76"/>
+  </g>
+  <g id="axes_39">
+   <g id="patch_40">
+    <path d="M 330.740374 115.980077  L 356.682923 115.980077  L 356.682923 89.639899  L 330.740374 89.639899  L 330.740374 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_39">
+    <path clip-path="url(#p2da191c1ad)" d="M 330.740374 104.369717  L 331.605125 101.032987  L 332.469877 108.270526  L 333.334629 111.107616  L 334.19938 102.258353  L 335.064132 94.982349  L 335.928884 104.846063  L 336.793635 108.389781  L 337.658387 98.188692  L 338.523139 107.988796  L 339.38789 90.714025  L 340.252642 107.477005  L 341.117393 110.601458  L 341.982145 94.555635  L 342.846897 90.954998  L 343.711648 90.710858  L 344.5764 109.071947  L 345.441152 100.968757  L 346.305903 109.197101  L 347.170655 114.397579  L 348.035407 95.021199  L 348.900158 104.890513  L 349.76491 92.103599  L 350.629662 110.902704  L 351.494413 105.099265  L 352.359165 103.532305  L 353.223917 98.700132  L 354.088668 106.299877  L 354.95342 101.389613  L 355.818172 103.56685  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_77"/>
+   <g id="matplotlib.axis_78"/>
+  </g>
+  <g id="axes_40">
+   <g id="patch_41">
+    <path d="M 359.572018 115.980077  L 385.514567 115.980077  L 385.514567 89.639899  L 359.572018 89.639899  L 359.572018 115.980077  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_40">
+    <path clip-path="url(#pe85c2b5d3b)" d="M 359.572018 99.252177  L 360.436769 112.929435  L 361.301521 105.145951  L 362.166273 90.704496  L 363.031024 95.617073  L 363.895776 113.377695  L 364.760528 95.482155  L 365.625279 97.214812  L 366.490031 91.316698  L 367.354783 114.129468  L 368.219534 94.63545  L 369.084286 107.073018  L 369.949037 114.749945  L 370.813789 114.140237  L 371.678541 109.700327  L 372.543292 102.923534  L 373.408044 115.446637  L 374.272796 112.939399  L 375.137547 101.263469  L 376.002299 93.918218  L 376.867051 112.889959  L 377.731802 101.125157  L 378.596554 108.542754  L 379.461306 106.121633  L 380.326057 102.526853  L 381.190809 103.571783  L 382.055561 95.398568  L 382.920312 111.998634  L 383.785064 96.343992  L 384.649816 98.095073  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_79"/>
+   <g id="matplotlib.axis_80"/>
+  </g>
+  <g id="axes_41">
+   <g id="patch_42">
+    <path d="M 186.950146 115.892474  L 212.892695 115.892474  L 212.892695 89.552297  L 186.950146 89.552297  L 186.950146 115.892474  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_41">
+    <path clip-path="url(#p3501dd2142)" d="M 186.950146 94.188349  L 187.814897 96.914284  L 188.679649 108.535809  L 189.544401 104.360997  L 190.409152 112.584148  L 191.273904 104.412014  L 192.138656 103.738249  L 193.003407 100.894378  L 193.868159 93.931622  L 194.732911 107.567078  L 195.597662 89.91743  L 196.462414 105.163018  L 197.327165 94.73995  L 198.191917 93.770869  L 199.056669 110.687407  L 199.92142 111.545041  L 200.786172 111.772433  L 201.650924 95.617538  L 202.515675 95.270787  L 203.380427 99.95969  L 204.245179 115.732834  L 205.10993 113.531078  L 205.974682 107.93674  L 206.839434 113.740216  L 207.704185 100.59316  L 208.568937 110.940849  L 209.433689 94.013044  L 210.29844 115.439547  L 211.163192 102.228842  L 212.027944 114.689908  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_81"/>
+   <g id="matplotlib.axis_82"/>
+  </g>
+  <g id="axes_42">
+   <g id="patch_43">
+    <path d="M 388.987207 115.892474  L 414.929757 115.892474  L 414.929757 89.552297  L 388.987207 89.552297  L 388.987207 115.892474  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_42">
+    <path clip-path="url(#p22db8e2b1c)" d="M 388.987207 98.545259  L 389.851959 94.24629  L 390.716711 106.624347  L 391.581462 112.674656  L 392.446214 98.831552  L 393.310965 112.45906  L 394.175717 102.222022  L 395.040469 103.979586  L 395.90522 92.141879  L 396.769972 105.186001  L 397.634724 114.751086  L 398.499475 105.791059  L 399.364227 103.528622  L 400.228979 112.354876  L 401.09373 92.612759  L 401.958482 92.575775  L 402.823234 111.01726  L 403.687985 100.430407  L 404.552737 95.352812  L 405.417489 113.073793  L 406.28224 102.645135  L 407.146992 95.301307  L 408.011744 100.751687  L 408.876495 111.368413  L 409.741247 100.06962  L 410.605999 99.823646  L 411.47075 99.291773  L 412.335502 94.510168  L 413.200254 93.96755  L 414.065005 111.369236  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_83"/>
+   <g id="matplotlib.axis_84"/>
+  </g>
+  <g id="axes_43">
+   <g id="patch_44">
+    <path d="M 13.964348 146.623399  L 39.906898 146.623399  L 39.906898 120.283222  L 13.964348 120.283222  L 13.964348 146.623399  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_43">
+    <path clip-path="url(#p7e752e8db1)" d="M 13.964348 122.944683  L 14.8291 132.45122  L 15.693851 134.098871  L 16.558603 121.883856  L 17.423355 139.451096  L 18.288106 121.400904  L 19.152858 121.244042  L 20.01761 128.957105  L 20.882361 136.222948  L 21.747113 129.211059  L 22.611865 134.123877  L 23.476616 146.599019  L 24.341368 120.621086  L 25.20612 138.934926  L 26.070871 132.442678  L 26.935623 132.401387  L 27.800375 129.94686  L 28.665126 127.985929  L 29.529878 131.686361  L 30.39463 144.914077  L 31.259381 135.254297  L 32.124133 123.33037  L 32.988885 124.271019  L 33.853636 134.806057  L 34.718388 141.191413  L 35.58314 124.155521  L 36.447891 146.377724  L 37.312643 139.597165  L 38.177395 135.72734  L 39.042146 143.490834  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_85"/>
+   <g id="matplotlib.axis_86"/>
+  </g>
+  <g id="axes_44">
+   <g id="patch_45">
+    <path d="M 42.795961 146.623378  L 68.738511 146.623378  L 68.738511 120.2832  L 42.795961 120.2832  L 42.795961 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_44">
+    <path clip-path="url(#p6564c34bf7)" d="M 42.795961 135.230721  L 43.660713 137.304182  L 44.525465 144.478986  L 45.390216 143.903796  L 46.254968 146.402042  L 47.119719 141.012555  L 47.984471 127.126961  L 48.849223 143.860654  L 49.713974 137.172337  L 50.578726 132.281891  L 51.443478 144.354379  L 52.308229 126.433909  L 53.172981 121.301126  L 54.037733 129.064373  L 54.902484 125.623399  L 55.767236 129.057315  L 56.631988 135.466373  L 57.496739 144.123361  L 58.361491 145.062958  L 59.226243 135.266253  L 60.090994 143.509315  L 60.955746 145.914754  L 61.820498 141.297097  L 62.685249 130.60149  L 63.550001 123.015136  L 64.414753 135.764415  L 65.279504 136.94677  L 66.144256 145.229337  L 67.009008 144.748523  L 67.873759 141.784401  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_87"/>
+   <g id="matplotlib.axis_88"/>
+  </g>
+  <g id="axes_45">
+   <g id="patch_46">
+    <path d="M 71.627563 146.623378  L 97.570113 146.623378  L 97.570113 120.2832  L 71.627563 120.2832  L 71.627563 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_45">
+    <path clip-path="url(#p5f9dcfa23b)" d="M 71.627563 123.527049  L 72.492315 130.414011  L 73.357067 145.32802  L 74.221818 128.056456  L 75.08657 136.96052  L 75.951322 145.452779  L 76.816073 139.658491  L 77.680825 144.559292  L 78.545577 131.827641  L 79.410328 123.480174  L 80.27508 134.31554  L 81.139832 143.836393  L 82.004583 139.039003  L 82.869335 121.662209  L 83.734087 132.425216  L 84.598838 131.80761  L 85.46359 121.92342  L 86.328342 144.772676  L 87.193093 137.94015  L 88.057845 125.180609  L 88.922597 125.287872  L 89.787348 138.613609  L 90.6521 129.21091  L 91.516852 141.731904  L 92.381603 137.800267  L 93.246355 144.68101  L 94.111106 128.912838  L 94.975858 129.881892  L 95.84061 130.877779  L 96.705361 128.137813  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_89"/>
+   <g id="matplotlib.axis_90"/>
+  </g>
+  <g id="axes_46">
+   <g id="patch_47">
+    <path d="M 100.459217 146.623378  L 126.401766 146.623378  L 126.401766 120.2832  L 100.459217 120.2832  L 100.459217 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_46">
+    <path clip-path="url(#pc173d97ee3)" d="M 100.459217 122.8252  L 101.323968 122.541554  L 102.18872 126.533794  L 103.053472 122.302107  L 103.918223 134.796645  L 104.782975 142.04523  L 105.647727 138.004628  L 106.512478 123.160983  L 107.37723 144.09509  L 108.241982 133.374211  L 109.106733 125.084077  L 109.971485 122.440825  L 110.836237 125.495985  L 111.700988 142.399125  L 112.56574 121.792546  L 113.430492 145.616612  L 114.295243 137.098289  L 115.159995 131.997521  L 116.024747 143.766316  L 116.889498 122.883053  L 117.75425 139.982312  L 118.619002 125.570008  L 119.483753 137.381187  L 120.348505 125.457015  L 121.213257 141.86867  L 122.078008 144.823047  L 122.94276 140.81101  L 123.807512 130.917068  L 124.672263 123.932349  L 125.537015 133.119662  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_91"/>
+   <g id="matplotlib.axis_92"/>
+  </g>
+  <g id="axes_47">
+   <g id="patch_48">
+    <path d="M 129.29081 146.623378  L 155.23336 146.623378  L 155.23336 120.2832  L 129.29081 120.2832  L 129.29081 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_47">
+    <path clip-path="url(#p97246617a0)" d="M 129.29081 123.442166  L 130.155562 146.106168  L 131.020314 124.572927  L 131.885065 130.130212  L 132.749817 122.187211  L 133.614569 121.27081  L 134.47932 142.44498  L 135.344072 136.448882  L 136.208824 140.250317  L 137.073575 136.642248  L 137.938327 121.412712  L 138.803079 128.24565  L 139.66783 136.237031  L 140.532582 129.671064  L 141.397334 143.821219  L 142.262085 141.264459  L 143.126837 130.584227  L 143.991589 144.603703  L 144.85634 130.460155  L 145.721092 125.7076  L 146.585844 128.781051  L 147.450595 130.416439  L 148.315347 132.677051  L 149.180098 130.134157  L 150.04485 136.720644  L 150.909602 134.959356  L 151.774353 128.164888  L 152.639105 128.118951  L 153.503857 137.205658  L 154.368608 137.071433  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_93"/>
+   <g id="matplotlib.axis_94"/>
+  </g>
+  <g id="axes_48">
+   <g id="patch_49">
+    <path d="M 158.122411 146.623378  L 184.064961 146.623378  L 184.064961 120.2832  L 158.122411 120.2832  L 158.122411 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_48">
+    <path clip-path="url(#p2270b87f53)" d="M 158.122411 135.694068  L 158.987163 142.5454  L 159.851915 126.176039  L 160.716666 136.288067  L 161.581418 121.086825  L 162.446169 121.904714  L 163.310921 135.403526  L 164.175673 126.229027  L 165.040424 127.03336  L 165.905176 142.492167  L 166.769928 129.155948  L 167.634679 123.63206  L 168.499431 122.717904  L 169.364183 135.043446  L 170.228934 126.16049  L 171.093686 131.378908  L 171.958438 141.636789  L 172.823189 137.709704  L 173.687941 120.433359  L 174.552693 146.54782  L 175.417444 141.664559  L 176.282196 128.749472  L 177.146948 145.371698  L 178.011699 122.292912  L 178.876451 120.383613  L 179.741203 123.780684  L 180.605954 144.240751  L 181.470706 138.205638  L 182.335458 135.625147  L 183.200209 126.183081  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_95"/>
+   <g id="matplotlib.axis_96"/>
+  </g>
+  <g id="axes_49">
+   <g id="patch_50">
+    <path d="M 215.785634 146.623378  L 241.728184 146.623378  L 241.728184 120.2832  L 215.785634 120.2832  L 215.785634 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_49">
+    <path clip-path="url(#ped14fe2377)" d="M 215.785634 145.653384  L 216.650386 136.393036  L 217.515138 139.078472  L 218.379889 120.766047  L 219.244641 124.586667  L 220.109393 136.277784  L 220.974144 134.773496  L 221.838896 145.317392  L 222.703648 132.049259  L 223.568399 123.669377  L 224.433151 145.765259  L 225.297903 139.78493  L 226.162654 132.863908  L 227.027406 140.061466  L 227.892158 142.999046  L 228.756909 128.798907  L 229.621661 135.942471  L 230.486413 137.340013  L 231.351164 138.562062  L 232.215916 134.436963  L 233.080668 140.399333  L 233.945419 123.946505  L 234.810171 134.079412  L 235.674922 132.951847  L 236.539674 122.078509  L 237.404426 120.338357  L 238.269177 145.739413  L 239.133929 139.767966  L 239.998681 127.583813  L 240.863432 125.00153  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_97"/>
+   <g id="matplotlib.axis_98"/>
+  </g>
+  <g id="axes_50">
+   <g id="patch_51">
+    <path d="M 244.617228 146.623378  L 270.559778 146.623378  L 270.559778 120.2832  L 244.617228 120.2832  L 244.617228 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_50">
+    <path clip-path="url(#pb822d1aade)" d="M 244.617228 128.103003  L 245.48198 134.37988  L 246.346731 128.568103  L 247.211483 121.720267  L 248.076235 142.547174  L 248.940986 128.380335  L 249.805738 131.869663  L 250.67049 126.113585  L 251.535241 120.71252  L 252.399993 136.12507  L 253.264745 137.069512  L 254.129496 144.800643  L 254.994248 127.84447  L 255.859 128.59838  L 256.723751 130.045458  L 257.588503 124.874393  L 258.453254 144.702549  L 259.318006 120.76773  L 260.182758 133.224462  L 261.047509 126.353214  L 261.912261 131.591988  L 262.777013 144.019613  L 263.641764 137.563339  L 264.506516 135.228364  L 265.371268 123.571387  L 266.236019 139.117837  L 267.100771 140.802319  L 267.965523 142.125857  L 268.830274 144.005829  L 269.695026 143.543525  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_99"/>
+   <g id="matplotlib.axis_100"/>
+  </g>
+  <g id="axes_51">
+   <g id="patch_52">
+    <path d="M 273.448829 146.623378  L 299.391378 146.623378  L 299.391378 120.2832  L 273.448829 120.2832  L 273.448829 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_51">
+    <path clip-path="url(#p16ef21bf6c)" d="M 273.448829 136.496258  L 274.31358 134.112383  L 275.178332 136.111684  L 276.043084 130.102037  L 276.907835 126.251924  L 277.772587 143.306271  L 278.637339 139.179983  L 279.50209 134.674081  L 280.366842 126.190102  L 281.231594 124.29346  L 282.096345 121.35223  L 282.961097 144.905234  L 283.825849 128.073967  L 284.6906 124.459269  L 285.555352 140.842552  L 286.420104 125.763181  L 287.284855 131.929154  L 288.149607 136.799088  L 289.014359 136.393559  L 289.87911 124.086712  L 290.743862 122.97329  L 291.608614 126.457376  L 292.473365 146.300259  L 293.338117 133.77248  L 294.202869 132.673829  L 295.06762 141.866594  L 295.932372 128.956344  L 296.797124 143.714365  L 297.661875 122.79456  L 298.526627 137.258194  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_101"/>
+   <g id="matplotlib.axis_102"/>
+  </g>
+  <g id="axes_52">
+   <g id="patch_53">
+    <path d="M 302.280422 146.623378  L 328.222972 146.623378  L 328.222972 120.2832  L 302.280422 120.2832  L 302.280422 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_52">
+    <path clip-path="url(#p207da5140a)" d="M 302.280422 125.770905  L 303.145174 136.986054  L 304.009926 144.040583  L 304.874677 142.23274  L 305.739429 133.484839  L 306.604181 123.195798  L 307.468932 133.672284  L 308.333684 146.400406  L 309.198436 124.188822  L 310.063187 128.061414  L 310.927939 126.336535  L 311.792691 125.140364  L 312.657442 145.374401  L 313.522194 123.190448  L 314.386946 127.004882  L 315.251697 145.015995  L 316.116449 127.254359  L 316.981201 143.413039  L 317.845952 121.445699  L 318.710704 130.459995  L 319.575456 130.365469  L 320.440207 121.05412  L 321.304959 143.658374  L 322.16971 138.78386  L 323.034462 132.440373  L 323.899214 139.514896  L 324.763965 144.312475  L 325.628717 128.743145  L 326.493469 133.358561  L 327.35822 146.544111  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_103"/>
+   <g id="matplotlib.axis_104"/>
+  </g>
+  <g id="axes_53">
+   <g id="patch_54">
+    <path d="M 331.112002 146.623378  L 357.054551 146.623378  L 357.054551 120.2832  L 331.112002 120.2832  L 331.112002 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_53">
+    <path clip-path="url(#pb86d912825)" d="M 331.112002 141.145307  L 331.976753 139.710127  L 332.841505 140.820303  L 333.706257 132.700532  L 334.571008 137.556134  L 335.43576 132.614968  L 336.300512 132.582889  L 337.165263 146.242589  L 338.030015 140.010423  L 338.894767 135.963993  L 339.759518 134.009917  L 340.62427 142.150599  L 341.489021 144.23154  L 342.353773 130.280887  L 343.218525 128.053489  L 344.083276 139.224604  L 344.948028 135.918203  L 345.81278 140.473366  L 346.677531 134.651931  L 347.542283 142.908757  L 348.407035 123.835418  L 349.271786 139.849802  L 350.136538 136.151102  L 351.00129 131.538411  L 351.866041 135.823449  L 352.730793 122.721364  L 353.595545 127.087681  L 354.460296 146.392333  L 355.325048 131.179503  L 356.1898 133.188396  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_105"/>
+   <g id="matplotlib.axis_106"/>
+  </g>
+  <g id="axes_54">
+   <g id="patch_55">
+    <path d="M 359.943595 146.623378  L 385.886145 146.623378  L 385.886145 120.2832  L 359.943595 120.2832  L 359.943595 146.623378  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_54">
+    <path clip-path="url(#p4505443e81)" d="M 359.943595 132.772844  L 360.808347 143.411154  L 361.673099 124.923999  L 362.53785 127.342391  L 363.402602 124.68327  L 364.267353 129.967802  L 365.132105 142.287159  L 365.996857 144.439827  L 366.861608 124.210083  L 367.72636 136.965295  L 368.591112 140.422217  L 369.455863 140.502336  L 370.320615 146.296888  L 371.185367 141.908883  L 372.050118 141.049832  L 372.91487 137.741683  L 373.779622 130.885597  L 374.644373 132.511939  L 375.509125 145.811826  L 376.373877 135.238086  L 377.238628 139.338298  L 378.10338 145.252666  L 378.968132 123.621842  L 379.832883 135.222513  L 380.697635 140.274362  L 381.562387 139.603841  L 382.427138 145.608275  L 383.29189 129.24069  L 384.156642 136.437149  L 385.021393 121.394667  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_107"/>
+   <g id="matplotlib.axis_108"/>
+  </g>
+  <g id="axes_55">
+   <g id="patch_56">
+    <path d="M 187.321774 146.535768  L 213.264323 146.535768  L 213.264323 120.19559  L 187.321774 120.19559  L 187.321774 146.535768  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_55">
+    <path clip-path="url(#p14eb7d56b7)" d="M 187.321774 142.246061  L 188.186525 144.173455  L 189.051277 136.514891  L 189.916029 141.43286  L 190.78078 130.867404  L 191.645532 126.000477  L 192.510284 141.874814  L 193.375035 139.493093  L 194.239787 124.154052  L 195.104539 124.713614  L 195.96929 124.83421  L 196.834042 131.397589  L 197.698793 132.580491  L 198.563545 127.34724  L 199.428297 122.047423  L 200.293048 122.190813  L 201.1578 128.054653  L 202.022552 124.837051  L 202.887303 145.377799  L 203.752055 133.19422  L 204.616807 142.342293  L 205.481558 135.485484  L 206.34631 120.22774  L 207.211062 142.881465  L 208.075813 132.819965  L 208.940565 121.390289  L 209.805317 142.705431  L 210.670068 134.346577  L 211.53482 144.083166  L 212.399572 130.629093  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_109"/>
+   <g id="matplotlib.axis_110"/>
+  </g>
+  <g id="axes_56">
+   <g id="patch_57">
+    <path d="M 389.35885 146.535768  L 415.301399 146.535768  L 415.301399 120.19559  L 389.35885 120.19559  L 389.35885 146.535768  z " style="fill:none;"/>
+   </g>
+   <g id="line2d_56">
+    <path clip-path="url(#p3094ffb829)" d="M 389.35885 127.841326  L 390.223601 128.397355  L 391.088353 144.070089  L 391.953105 136.41588  L 392.817856 127.366103  L 393.682608 121.200315  L 394.54736 130.276755  L 395.412111 131.586652  L 396.276863 120.324487  L 397.141615 122.630993  L 398.006366 133.817343  L 398.871118 142.582077  L 399.735869 126.59366  L 400.600621 122.155613  L 401.465373 132.404867  L 402.330124 126.225475  L 403.194876 131.731874  L 404.059628 140.158457  L 404.924379 120.762165  L 405.789131 120.807371  L 406.653883 144.84382  L 407.518634 120.61393  L 408.383386 137.548497  L 409.248138 139.188154  L 410.112889 127.999772  L 410.977641 135.310579  L 411.842393 130.125716  L 412.707144 124.051388  L 413.571896 125.365482  L 414.436648 139.330013  " style="fill:none;stroke:#000000;stroke-linecap:square;"/>
+   </g>
+   <g id="matplotlib.axis_111"/>
+   <g id="matplotlib.axis_112"/>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd6c514491d">
+   <rect height="26.3401776" width="25.94254968" x="301.9088016" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="pbc8f44cfc5">
+   <rect height="26.3401776" width="25.94254968" x="71.25594552" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p2da191c1ad">
+   <rect height="26.3401776" width="25.94254968" x="330.7403736" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p6e72579ce0">
+   <rect height="26.3401776" width="25.94254968" x="99.9017496" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="pbe9e8ff5e2">
+   <rect height="26.3401776" width="25.94254968" x="244.0597608" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="p8cdafaef5a">
+   <rect height="26.3401776" width="25.94254968" x="359.7578208" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="pce925ef9ef">
+   <rect height="26.3401776" width="25.94254968" x="100.0875816" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p16ef21bf6c">
+   <rect height="26.3401776" width="25.94254968" x="273.4488288" y="120.2832"/>
+  </clipPath>
+  <clipPath id="pe888f1a22a">
+   <rect height="26.3401776" width="25.94254968" x="244.431432" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="p8be51c22f5">
+   <rect height="26.3401776" width="25.94254968" x="42.2385012" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="p3094ffb829">
+   <rect height="26.3401776" width="25.94254968" x="389.3588496" y="120.1955904"/>
+  </clipPath>
+  <clipPath id="p4505443e81">
+   <rect height="26.3401776" width="25.94254968" x="359.9435952" y="120.2832"/>
+  </clipPath>
+  <clipPath id="p207da5140a">
+   <rect height="26.3401776" width="25.94254968" x="302.2804224" y="120.2832"/>
+  </clipPath>
+  <clipPath id="pb474cb5754">
+   <rect height="26.3401776" width="25.94254968" x="244.2455856" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p10bf581048">
+   <rect height="26.3401776" width="25.94254968" x="71.07012288" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="pb979470af7">
+   <rect height="26.3401776" width="25.94254968" x="215.4139488" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p30b8a507a9">
+   <rect height="26.3401776" width="25.94254968" x="359.3862144" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="p9244a73058">
+   <rect height="26.3401776" width="25.94254968" x="157.5649656" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="pf11d7e7bfe">
+   <rect height="26.3401776" width="25.94254968" x="215.5998096" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="p79d15651a5">
+   <rect height="26.3401776" width="25.94254968" x="187.1359704" y="56.44586952"/>
+  </clipPath>
+  <clipPath id="p0aa380b062">
+   <rect height="26.3401776" width="25.94254968" x="128.919168" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p3501dd2142">
+   <rect height="26.3401776" width="25.94254968" x="186.9501456" y="89.5522968"/>
+  </clipPath>
+  <clipPath id="pfae4c12aff">
+   <rect height="26.3401776" width="25.94254968" x="157.750776" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p095599089e">
+   <rect height="26.3401776" width="25.94254968" x="129.105" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="pe85c2b5d3b">
+   <rect height="26.3401776" width="25.94254968" x="359.5720176" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="pa645b5a968">
+   <rect height="26.3401776" width="25.94254968" x="13.40689248" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="p84332a04b5">
+   <rect height="26.3401776" width="25.94254968" x="273.0771792" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p3a67db8320">
+   <rect height="26.3401776" width="25.94254968" x="13.59270648" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="p78328334ef">
+   <rect height="26.3401776" width="25.94254968" x="330.9261768" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="p7372324594">
+   <rect height="26.3401776" width="25.94254968" x="128.7333432" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="p22db8e2b1c">
+   <rect height="26.3401776" width="25.94254968" x="388.9872072" y="89.5522968"/>
+  </clipPath>
+  <clipPath id="p5f9dcfa23b">
+   <rect height="26.3401776" width="25.94254968" x="71.62756344" y="120.2832"/>
+  </clipPath>
+  <clipPath id="p66d4ff7b12">
+   <rect height="26.3401776" width="25.94254968" x="273.2630256" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="p6564c34bf7">
+   <rect height="26.3401776" width="25.94254968" x="42.7959612" y="120.2832"/>
+  </clipPath>
+  <clipPath id="pfd7ca518c8">
+   <rect height="26.3401776" width="25.94254968" x="100.2733848" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="pc4a61f690c">
+   <rect height="26.3401776" width="25.94254968" x="157.9365936" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="p6351caf74a">
+   <rect height="26.3401776" width="25.94254968" x="389.1730104" y="56.44586952"/>
+  </clipPath>
+  <clipPath id="p14eb7d56b7">
+   <rect height="26.3401776" width="25.94254968" x="187.3217736" y="120.1955904"/>
+  </clipPath>
+  <clipPath id="pfa6c171b8c">
+   <rect height="26.3401776" width="25.94254968" x="272.8913832" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="pb822d1aade">
+   <rect height="26.3401776" width="25.94254968" x="244.617228" y="120.2832"/>
+  </clipPath>
+  <clipPath id="p7e752e8db1">
+   <rect height="26.3401776" width="25.94254968" x="13.96434816" y="120.2832216"/>
+  </clipPath>
+  <clipPath id="pbf84cb5e20">
+   <rect height="26.3401776" width="25.94254968" x="186.764328" y="25.80260544"/>
+  </clipPath>
+  <clipPath id="p0fc9985270">
+   <rect height="26.3401776" width="25.94254968" x="330.5545776" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="pb30cad7ab2">
+   <rect height="26.3401776" width="25.94254968" x="302.0946264" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="p2270b87f53">
+   <rect height="26.3401776" width="25.94254968" x="158.1224112" y="120.2832"/>
+  </clipPath>
+  <clipPath id="ped14fe2377">
+   <rect height="26.3401776" width="25.94254968" x="215.7856344" y="120.2832"/>
+  </clipPath>
+  <clipPath id="p97246617a0">
+   <rect height="26.3401776" width="25.94254968" x="129.2908104" y="120.2832"/>
+  </clipPath>
+  <clipPath id="pcb4ec9bf3e">
+   <rect height="26.3401776" width="25.94254968" x="42.61013064" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="p3f5cf470ed">
+   <rect height="26.3401776" width="25.94254968" x="388.801404" y="25.80260544"/>
+  </clipPath>
+  <clipPath id="pc173d97ee3">
+   <rect height="26.3401776" width="25.94254968" x="100.4592168" y="120.2832"/>
+  </clipPath>
+  <clipPath id="p2ea919aa54">
+   <rect height="26.3401776" width="25.94254968" x="215.2281456" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="pf16719b572">
+   <rect height="26.3401776" width="25.94254968" x="71.44175736" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="pcb9f2b9aef">
+   <rect height="26.3401776" width="25.94254968" x="301.7229984" y="25.8901884"/>
+  </clipPath>
+  <clipPath id="p78d3fe080b">
+   <rect height="26.3401776" width="25.94254968" x="13.7785212" y="56.53345248"/>
+  </clipPath>
+  <clipPath id="peff708cf86">
+   <rect height="26.3401776" width="25.94254968" x="42.42432384" y="89.6398992"/>
+  </clipPath>
+  <clipPath id="pb86d912825">
+   <rect height="26.3401776" width="25.94254968" x="331.1120016" y="120.2832"/>
+  </clipPath>
+ </defs>
+</g>
+</svg>

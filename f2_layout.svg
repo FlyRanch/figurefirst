@@ -27,15 +27,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.0913463"
-     inkscape:cx="264.97545"
-     inkscape:cy="447.15935"
+     inkscape:cx="-44.566672"
+     inkscape:cy="431.51879"
      inkscape:document-units="in"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
-     inkscape:window-width="1449"
+     inkscape:window-width="1670"
      inkscape:window-height="1249"
-     inkscape:window-x="96"
-     inkscape:window-y="103"
+     inkscape:window-x="110"
+     inkscape:window-y="55"
      inkscape:window-maximized="0"
      units="in"
      showguides="true"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,732 +56,733 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-248.0275)">
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="25.607864"
-       y="276.24911"
+       x="23.778313"
+       y="21.558617"
        id="text4182"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184"
-         x="25.607864"
-         y="276.24911">freq</tspan></text>
+         x="23.778313"
+         y="21.558617">freq</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="59.01601"
-       y="277.10367"
+       x="57.186462"
+       y="22.41317"
        id="text4182-5"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5"
-         x="59.01601"
-         y="277.10367">rwing</tspan></text>
+         x="57.186462"
+         y="22.41317">rwing</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="100.01244"
-       y="277.67688"
+       x="98.182892"
+       y="22.986382"
        id="text4182-5-5"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9"
-         x="100.01244"
-         y="277.67688">b1</tspan></text>
+         x="98.182892"
+         y="22.986382">b1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="135.97508"
-       y="277.67688"
+       x="134.14554"
+       y="22.986382"
        id="text4182-5-5-6"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-7"
-         x="135.97508"
-         y="277.67688">b2</tspan></text>
+         x="134.14554"
+         y="22.986382">b2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="177.05714"
-       y="277.67688"
+       x="175.2276"
+       y="22.986382"
        id="text4182-5-5-1"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-1"
-         x="177.05714"
-         y="277.67688">b3</tspan></text>
+         x="175.2276"
+         y="22.986382">b3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="219.60919"
-       y="277.67688"
+       x="217.77965"
+       y="22.986382"
        id="text4182-5-5-3"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-78"
-         x="219.60919"
-         y="277.67688">i1</tspan></text>
+         x="217.77965"
+         y="22.986382">i1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="262.7117"
-       y="279.02383"
+       x="260.88214"
+       y="24.333336"
        id="text4182-5-5-9"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-6"
-         x="262.7117"
-         y="279.02383">i2</tspan></text>
+         x="260.88214"
+         y="24.333336">i2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="296.13943"
-       y="278.35037"
+       x="294.30988"
+       y="23.659874"
        id="text4182-5-5-5"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-9"
-         x="296.13943"
-         y="278.35037">iii1</tspan></text>
+         x="294.30988"
+         y="23.659874">iii1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="336.42496"
-       y="279.02383"
+       x="334.5954"
+       y="24.333336"
        id="text4182-5-5-8"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-8"
-         x="336.42496"
-         y="279.02383">iii24</tspan></text>
+         x="334.5954"
+         y="24.333336">iii24</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="377.07965"
-       y="279.02383"
+       x="375.25009"
+       y="24.333336"
        id="text4182-5-5-0"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-15"
-         x="377.07965"
-         y="279.02383">iii3</tspan></text>
+         x="375.25009"
+         y="24.333336">iii3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="414.79431"
-       y="279.6973"
+       x="412.96475"
+       y="25.006798"
        id="text4182-5-5-62"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-2"
-         x="414.79431"
-         y="279.6973">hg1</tspan></text>
+         x="412.96475"
+         y="25.006798">hg1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="456.91904"
-       y="279.02383"
+       x="455.08948"
+       y="24.333336"
        id="text4182-5-5-00"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-5"
-         x="456.91904"
-         y="279.02383">hg2</tspan></text>
+         x="455.08948"
+         y="24.333336">hg2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="501.97714"
-       y="279.02383"
+       x="500.14758"
+       y="24.333336"
        id="text4182-5-5-52"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-61"
-         x="501.97714"
-         y="279.02383">hg3</tspan></text>
+         x="500.14758"
+         y="24.333336">hg3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.86242962px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
-       x="544.10181"
-       y="279.02383"
+       x="542.27222"
+       y="24.333336"
        id="text4182-5-5-85"
        sodipodi:linespacing="125%"
        transform="scale(1.0112974,0.9888288)"><tspan
          sodipodi:role="line"
          id="tspan4184-5-9-12"
-         x="544.10181"
-         y="279.02383">hg4</tspan></text>
+         x="542.27222"
+         y="24.333336">hg4</tspan></text>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205"
        width="36.031319"
        height="36.58358"
-       x="20.470903"
-       y="287.80389">
+       x="18.620684"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="frequency.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8"
        width="36.031319"
        height="36.58358"
-       x="60.514805"
-       y="287.80389">
+       x="58.664585"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="rwing.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-3"
        width="36.031319"
        height="36.58358"
-       x="100.55872"
-       y="287.80389">
+       x="98.708504"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="b1.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-5"
        width="36.031319"
        height="36.58358"
-       x="140.60265"
-       y="287.80389">
+       x="138.75243"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="b2.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-0"
        width="36.031319"
        height="36.58358"
-       x="180.64653"
-       y="287.80389">
+       x="178.79631"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="b3.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-8"
        width="36.031319"
        height="36.58358"
-       x="220.69044"
-       y="287.80389">
+       x="218.84023"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="i1.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-06"
        width="36.031319"
        height="36.58358"
-       x="300.7782"
-       y="287.80389">
+       x="298.92798"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="iii1.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-1"
        width="36.031319"
        height="36.58358"
-       x="340.82211"
-       y="287.80389">
+       x="338.97189"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="iii24.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-56"
        width="36.031319"
        height="36.58358"
-       x="380.86603"
-       y="287.80389">
+       x="379.01581"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="iii3.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-59"
        width="36.031319"
        height="36.58358"
-       x="420.90994"
-       y="287.80389">
+       x="419.05972"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="hg1.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-2"
        width="36.031319"
        height="36.58358"
-       x="460.9538"
-       y="287.80389">
+       x="459.10358"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="hg2.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-9"
        width="36.031319"
        height="36.58358"
-       x="500.99774"
-       y="287.80389">
+       x="499.14752"
+       y="35.958595">
       <figurefirst:axis
          figurefirst:name="hg3.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-8-0"
        width="36.031319"
        height="36.58358"
-       x="261.24512"
-       y="287.68225">
+       x="259.3949"
+       y="35.836952">
       <figurefirst:axis
          figurefirst:name="i2.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-9-3"
        width="36.031319"
        height="36.58358"
-       x="541.85217"
-       y="287.68225">
+       x="540.00195"
+       y="35.836952">
       <figurefirst:axis
          figurefirst:name="hg4.22H05.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-2"
        width="36.031319"
        height="36.58358"
-       x="20.987055"
-       y="330.36398">
+       x="19.136835"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="frequency.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-36"
        width="36.031319"
        height="36.58358"
-       x="61.030956"
-       y="330.36398">
+       x="59.180737"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="rwing.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-3-4"
        width="36.031319"
        height="36.58358"
-       x="101.07488"
-       y="330.36398">
+       x="99.224663"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="b1.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-5-7"
        width="36.031319"
        height="36.58358"
-       x="141.1188"
-       y="330.36398">
+       x="139.26859"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="b2.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-0-2"
        width="36.031319"
        height="36.58358"
-       x="181.16272"
-       y="330.36398">
+       x="179.3125"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="b3.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-8-4"
        width="36.031319"
        height="36.58358"
-       x="221.2066"
-       y="330.36398">
+       x="219.35638"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="i1.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-06-9"
        width="36.031319"
        height="36.58358"
-       x="301.2944"
-       y="330.36398">
+       x="299.44418"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="iii1.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-1-0"
        width="36.031319"
        height="36.58358"
-       x="341.33832"
-       y="330.36398">
+       x="339.4881"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="iii24.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-56-7"
        width="36.031319"
        height="36.58358"
-       x="381.3822"
-       y="330.36398">
+       x="379.53198"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="iii3.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-59-3"
        width="36.031319"
        height="36.58358"
-       x="421.42609"
-       y="330.36398">
+       x="419.57587"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="hg1.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-2-0"
        width="36.031319"
        height="36.58358"
-       x="461.46991"
-       y="330.36398">
+       x="459.61969"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="hg2.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-9-8"
        width="36.031319"
        height="36.58358"
-       x="501.51385"
-       y="330.36398">
+       x="499.66364"
+       y="78.518684">
       <figurefirst:axis
          figurefirst:name="hg3.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-8-0-2"
        width="36.031319"
        height="36.58358"
-       x="261.76129"
-       y="330.24234">
+       x="259.91107"
+       y="78.397041">
       <figurefirst:axis
          figurefirst:name="i2.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-9-3-8"
        width="36.031319"
        height="36.58358"
-       x="542.36829"
-       y="330.24234">
+       x="540.51807"
+       y="78.397041">
       <figurefirst:axis
          figurefirst:name="hg4.39E01.start" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-3"
        width="36.031319"
        height="36.58358"
-       x="20.728979"
-       y="376.34515">
+       x="18.878759"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="frequency.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-7"
        width="36.031319"
        height="36.58358"
-       x="60.772892"
-       y="376.34515">
+       x="58.922672"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="rwing.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-3-1"
        width="36.031319"
        height="36.58358"
-       x="100.81681"
-       y="376.34515">
+       x="98.966591"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="b1.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-5-1"
        width="36.031319"
        height="36.58358"
-       x="140.86075"
-       y="376.34515">
+       x="139.01053"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="b2.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-0-6"
        width="36.031319"
        height="36.58358"
-       x="180.90462"
-       y="376.34515">
+       x="179.0544"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="b3.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-8-1"
        width="36.031319"
        height="36.58358"
-       x="220.94852"
-       y="376.34515">
+       x="219.0983"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="i1.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-06-7"
        width="36.031319"
        height="36.58358"
-       x="301.03625"
-       y="376.34515">
+       x="299.18604"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="iii1.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-1-8"
        width="36.031319"
        height="36.58358"
-       x="341.0802"
-       y="376.34515">
+       x="339.22998"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="iii24.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-56-6"
        width="36.031319"
        height="36.58358"
-       x="381.12408"
-       y="376.34515">
+       x="379.27386"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="iii3.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-59-33"
        width="36.031319"
        height="36.58358"
-       x="421.168"
-       y="376.34515">
+       x="419.31778"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="hg1.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-2-8"
        width="36.031319"
        height="36.58358"
-       x="461.21185"
-       y="376.34515">
+       x="459.36163"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="hg2.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-9-84"
        width="36.031319"
        height="36.58358"
-       x="501.2558"
-       y="376.34515">
+       x="499.40558"
+       y="124.49986">
       <figurefirst:axis
          figurefirst:name="hg3.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-8-0-0"
        width="36.031319"
        height="36.58358"
-       x="261.5032"
-       y="376.22348">
+       x="259.65298"
+       y="124.37819">
       <figurefirst:axis
          figurefirst:name="i2.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-9-3-3"
        width="36.031319"
        height="36.58358"
-       x="542.11023"
-       y="376.22348">
+       x="540.26001"
+       y="124.37819">
       <figurefirst:axis
          figurefirst:name="hg4.22H05.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-2-7"
        width="36.031319"
        height="36.58358"
-       x="21.245146"
-       y="418.9053">
+       x="19.394928"
+       y="167.06003"
+       inkscape:transform-center-y="60.068519">
       <figurefirst:axis
          figurefirst:name="frequency.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-36-3"
        width="36.031319"
        height="36.58358"
-       x="61.289055"
-       y="418.9053">
+       x="59.438835"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="rwing.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-3-4-2"
        width="36.031319"
        height="36.58358"
-       x="101.33295"
-       y="418.9053">
+       x="99.482727"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="b1.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-5-7-1"
        width="36.031319"
        height="36.58358"
-       x="141.37691"
-       y="418.9053">
+       x="139.52669"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="b2.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-0-2-2"
        width="36.031319"
        height="36.58358"
-       x="181.42079"
-       y="418.9053">
+       x="179.57057"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="b3.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-8-4-4"
        width="36.031319"
        height="36.58358"
-       x="221.46468"
-       y="418.9053">
+       x="219.61446"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="i1.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-06-9-5"
        width="36.031319"
        height="36.58358"
-       x="301.55249"
-       y="418.9053">
+       x="299.70227"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="iii1.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-1-0-1"
        width="36.031319"
        height="36.58358"
-       x="341.59637"
-       y="418.9053">
+       x="339.74615"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="iii24.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-56-7-7"
        width="36.031319"
        height="36.58358"
-       x="381.64026"
-       y="418.9053">
+       x="379.79004"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="iii3.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-59-3-5"
        width="36.031319"
        height="36.58358"
-       x="421.68414"
-       y="418.9053">
+       x="419.83392"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="hg1.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-2-0-4"
        width="36.031319"
        height="36.58358"
-       x="461.728"
-       y="418.9053">
+       x="459.87778"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="hg2.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-9-8-7"
        width="36.031319"
        height="36.58358"
-       x="501.77188"
-       y="418.9053">
+       x="499.92166"
+       y="167.06">
       <figurefirst:axis
          figurefirst:name="hg3.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-8-0-2-5"
        width="36.031319"
        height="36.58358"
-       x="262.01935"
-       y="418.78363">
+       x="260.16913"
+       y="166.93832">
       <figurefirst:axis
          figurefirst:name="i2.39E01.stop" />
     </rect>
     <rect
-       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10.00000026;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3205-8-9-3-8-7"
        width="36.031319"
        height="36.58358"
-       x="542.6264"
-       y="418.78363">
+       x="540.77618"
+       y="166.93832">
       <figurefirst:axis
          figurefirst:name="hg4.39E01.stop" />
     </rect>
@@ -789,6 +790,9 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Layer1"
-     transform="translate(0,-248.0275)" />
+     inkscape:label="Layer 2"
+     style="display:inline">
+    <figurefirst:targetlayer
+       figurefirst:name="mpl_panel_a" />
+  </g>
 </svg>
