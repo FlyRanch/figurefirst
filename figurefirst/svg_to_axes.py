@@ -134,7 +134,21 @@ class FigureLayout(object):
             axes.setdefault(name, {'axis':ax,'data':datadict})
         self.loaded.update({'mplfig':fig,'mplaxes':axes})
         return {'mplfig':fig,'mplaxes':axes}
-
+        
+    def apply_mpl_methods(self,mplfig):
+        """ apply valid mpl methods to figure"""
+        for mplax in mplfig['mplaxes'].values():
+            ax = mplax['axis']
+            for key, value in mplax['data'].items():
+                if key.startswith('figurefirst:'):
+                    potential_method = key.split('figurefirst:')[1]
+                    try:
+                        eval("ax."+potential_method+"("+value+")")
+                        print "ax."+potential_method+"("+value+")"
+                        #getattr(ax, potential_method)(eval(value))
+                    except AttributeError:
+                        print potential_method, 'is unknown method for mpl axes'
+        
     def insert_mpl_in_layer(self,mplfig,fflayername):
         """ takes a reference to the matplotlib figure and saves the 
         svg data into the target layer specified with the xml tag <figurefirst:targetlayer>
