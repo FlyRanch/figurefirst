@@ -31,7 +31,7 @@ def upar(s):
     return num,unit
 
 def tounit(in_unit,dst_unit):
-    """returns a float with the value of string s
+    """returns a float with the value xmlns:figurefirst="www.flyranch.com"of string s
     in the units of dst"""
     # need to support em, ex, px, pt, pc, cm, mm, in
     # for svg as well as percent - implemented px,in,mm and cm here
@@ -41,6 +41,34 @@ def tounit(in_unit,dst_unit):
 
 class FigureLayout(object):
     def __init__(self,layout_filename):
+        """construct an object that specifies the figure layout fom the
+        svg file layout_filename. Currently there are a number of restrictions
+        on the format of this file.
+        1) the top level svg node must contain the xmlns declaration. Also, the aspect ratio 
+            of the width and height attributes must match the aspect ratio of the viewBox.
+            <svg xmlns:figurefirst="www.flyranch.com"
+                 width="6in"
+                 height="8in"
+                 viewBox="0 0 600 800"
+                 ... >
+        2) the layer containing the axis labels cannot have a transform attached
+            it should look something like:
+              <g
+                 inkscape:label="Layer 1"
+                 inkscape:groupmode="layer"
+                 id="layer1"
+                 style="display:none">
+            inkscape is funny about silently adding transforms to layers
+        3) the axis objects are  specified by an xml tag eg.:
+            <rect
+               style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               id="rect3205"
+               width="33.142075"
+               height="32.707672"
+               x="24.71546"
+               y="47.592991">
+              <figurefirst:axis
+                 figurefirst:name="frequency.22H05.start" /> """
         self.layout_filename = layout_filename
         from xml.dom import minidom
         #layout_filename = layout_filename
@@ -62,6 +90,7 @@ class FigureLayout(object):
         assert self.layout_user_sx == self.layout_user_sy
 
     def from_userx(self,x,dst):
+        """transfrom from user coords to dst coords"""
         x = float(x) # allow passing of strings
         #convert into layout units
         x_l = x/self.layout_user_sx[0]
@@ -69,6 +98,7 @@ class FigureLayout(object):
         return x_l/scale_factors[self.layout_user_sx[1]][dst]
 
     def from_usery(self,y,dst):
+        """same as userx but for y coords,not used in this version"""
         y = float(y) # allow passing of strings
         #convert into layout units
         y_l = y/self.layout_user_sx[0]
@@ -76,6 +106,10 @@ class FigureLayout(object):
         return y_l/self.scale_factors[self.layout_user_sx[1]][dst]
 
     def make_mplfigure(self):
+        """parse the xml file for elements in the figurefirst namespace of the 'axis' 
+        type, return a dict with the figure and axes. Attribues of the figurefirst tag 
+        are returned as a 'data' item for each axis, the aspect_ratio of the
+        axis is also calculated and inserted into this item"""
         axis_elements = self.layout.getElementsByTagNameNS('www.flyranch.com','axis')
         fw_in = tounit(self.layout_width,'in')
         fh_in = tounit(self.layout_height,'in')
@@ -102,6 +136,9 @@ class FigureLayout(object):
         return {'mplfig':fig,'mplaxes':axes}
 
     def insert_mpl_in_layer(self,mplfig,fflayername):
+        """ takes a reference to the matplotlib figure and saves the 
+        svg data into the target layer specified with the xml tag <figurefirst:targetlayer>
+        this tag must have the attribute figurefirst:name = fflayername"""
         svg_string = to_svg_buffer(mplfig['mplfig'])
         mpldoc = minidom.parse(svg_string)
         target_layers = self.output_xml.getElementsByTagNameNS('www.flyranch.com','targetlayer')
@@ -119,6 +156,7 @@ class FigureLayout(object):
         output_svg.setAttribute('xmlns:xlink',mpl_svg.getAttribute('xmlns:xlink'))
         
     def write_svg(self,output_filename):
+        """ writes the current output_xml document to output_filename"""
         outfile = open(output_filename,'wt')
         self.output_xml.writexml(outfile)
         outfile.close()
@@ -177,6 +215,7 @@ def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
         y_px = float(svg_element.getAttribute("y"))
         width_px = float(svg_element.getAttribute("width"))
         height_px = float(svg_element.getAttribute("height"))
+        """ writes the current output_xml document to output_filename"""
 
         left = x_px/width_svg_pixels
         width = width_px/width_svg_pixels
