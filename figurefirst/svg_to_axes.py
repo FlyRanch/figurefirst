@@ -3,6 +3,7 @@
 
 from xml.dom import minidom
 import matplotlib.pyplot as plt
+import numpy as np
 
 scale_factors = {'px':{'in':72.,
                     'cm':72/2.54,
@@ -81,7 +82,6 @@ class FigureLayout(object):
         self.layout_user_sx = self.layout_uw/self.layout_width[0],self.layout_width[1]
         self.layout_user_sy = self.layout_uh/self.layout_height[0],self.layout_height[1]
         self.output_xml = minidom.parse(self.layout_filename).cloneNode(True)
-        self.loaded = dict()
         # dont allow sx and sy to differ
         # inkscape seems to ignore inconsistent aspect ratios by
         # only using the horizontal element of the viewbox, but 
@@ -115,45 +115,74 @@ class FigureLayout(object):
         fh_in = tounit(self.layout_height,'in')
         fig = plt.figure(figsize=(fw_in, fh_in))
         axes = {}
+        axes_groups = {'none': {}}
         for axis_element in axis_elements:
             svg_e = axis_element.parentNode
             e_x = float(svg_e.getAttribute("x"))
             e_y = float(svg_e.getAttribute("y"))
             e_w = float(svg_e.getAttribute("width"))
             e_h = float(svg_e.getAttribute("height"))
+            
+            # get and apply transforms
+            parent_exists = True
+            node = svg_e
+            transforms = []
+            while parent_exists:
+                try:
+                    transform = node.getAttribute("transform") # if there is no transform, this returns ''
+                    if len(transform)>0:
+                        transforms.append(transform)
+                except:
+                    break
+                try:
+                    node = node.parentNode
+                    parent_exists = True
+                except:
+                    parent_exists = False
+            if 1:
+                for transform in transforms:
+                    if 'matrix' in transform:
+                        transform = 'np.array(' + transform.split('matrix')[1] + ')'
+                        transform = eval(transform)
+                        e_x = e_x*transform[0] + transform[4]
+                        e_y = e_y*transform[3] + transform[5]
+                        e_w = e_w*transform[0]
+                        e_h = e_h*transform[3]
+                
             #express things as proportion for mpl
             left = e_x/self.layout_uw
             width = e_w/self.layout_uw
             height = e_h/self.layout_uh
             bottom = (self.layout_uh-e_y-e_h)/self.layout_uh
+            
             ax = fig.add_axes([left, bottom, width, height])
             datadict = {}
             [datadict.update({key:value}) for key,value in axis_element.attributes.items()]
             name = datadict.pop('figurefirst:name')
             datadict['aspect_ratio'] = e_w/e_h
+            
+            # sort in groups
+            if 'figurefirst:groupname' in axis_element.parentNode.parentNode.attributes.keys():
+                group = axis_element.parentNode.parentNode.getAttribute('figurefirst:groupname')
+                datadict['group'] = group
+            else:
+                group = 'none'
+                
             axes.setdefault(name, {'axis':ax,'data':datadict})
-        self.loaded.update({'mplfig':fig,'mplaxes':axes})
-        return {'mplfig':fig,'mplaxes':axes}
+            if group not in axes_groups.keys():
+                axes_groups.setdefault(group, {})
+            axes_groups[group].setdefault(name, {'axis':ax,'data':datadict})
         
-    def apply_mpl_methods(self,mplfig):
-        """ apply valid mpl methods to figure"""
-        for mplax in mplfig['mplaxes'].values():
-            ax = mplax['axis']
-            for key, value in mplax['data'].items():
-                if key.startswith('figurefirst:'):
-                    potential_method = key.split('figurefirst:')[1]
-                    try:
-                        eval("ax."+potential_method+"("+value+")")
-                        print "ax."+potential_method+"("+value+")"
-                        #getattr(ax, potential_method)(eval(value))
-                    except AttributeError:
-                        print potential_method, 'is unknown method for mpl axes'
-        
-    def insert_mpl_in_layer(self,mplfig,fflayername):
+        self.axes = axes
+        self.axes_groups = axes_groups
+        self.fig  = fig
+        return {'mplfig':fig,'mplaxes':axes, 'mplaxesgrouped': axes_groups}
+
+    def insert_mpl_in_layer(self,fflayername):
         """ takes a reference to the matplotlib figure and saves the 
         svg data into the target layer specified with the xml tag <figurefirst:targetlayer>
         this tag must have the attribute figurefirst:name = fflayername"""
-        svg_string = to_svg_buffer(mplfig['mplfig'])
+        svg_string = to_svg_buffer(self.fig)
         mpldoc = minidom.parse(svg_string)
         target_layers = self.output_xml.getElementsByTagNameNS('www.flyranch.com','targetlayer')
         for tl in target_layers:
@@ -168,7 +197,22 @@ class FigureLayout(object):
         [target_layer.appendChild(n.cloneNode(True)) for n in mpl_svg_nodes]
         target_layer.setAttribute('transform','scale(%s,%s)'%(output_scale,output_scale))
         output_svg.setAttribute('xmlns:xlink',mpl_svg.getAttribute('xmlns:xlink'))
+    
+    def apply_mpl_methods(self,mplfig):
+        """ apply valid mpl methods to figure"""
+        for mplax in mplfig['mplaxes'].values():
+            ax = mplax['axis']
+            for key, value in mplax['data'].items():
+                if key.startswith('figurefirst:'):
+                    potential_method = key.split('figurefirst:')[1]
+                    try:
+                        eval("ax."+potential_method+"("+value+")")
+                        print "ax."+potential_method+"("+value+")"
+                        #getattr(ax, potential_method)(eval(value))
+                    except AttributeError:
+                        print potential_method, 'is unknown method for mpl axes'
         
+
     def write_svg(self,output_filename):
         """ writes the current output_xml document to output_filename"""
         outfile = open(output_filename,'wt')
@@ -198,7 +242,6 @@ class FigureLayout(object):
         indoc.writexml(outfile)
         outfile.close()
         
-
 def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
     #72 pixels per inch
     doc = minidom.parse(svgfile)
@@ -241,6 +284,9 @@ def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
         [datadict.update({key:value}) for key,value in axis_element.attributes.items()]
         name = datadict.pop('figurefirst:name')
         datadict['aspect_ratio'] = axis_aspect_ratio
+        
+        if 'figurefirst:groupname' in axis_element.parentNode.parentNode.attributes.keys():
+            datadict['group'] = axis_element.parentNode.parentNode.getAttribute('figurefirst:groupname')
         
         ax = fig.add_axes([left, bottom, width, height])
         axes.setdefault(name, {'axis':ax,'data':datadict})
