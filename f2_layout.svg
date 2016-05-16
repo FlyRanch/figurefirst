@@ -27,16 +27,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.7615504"
-     inkscape:cx="283.18483"
-     inkscape:cy="607.70509"
+     inkscape:cx="89.889192"
+     inkscape:cy="562.29055"
      inkscape:document-units="in"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="2052"
-     inkscape:window-height="1229"
-     inkscape:window-x="106"
-     inkscape:window-y="337"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
      units="in"
      showguides="false"
      inkscape:guide-bbox="true" />
@@ -65,7 +65,11 @@
        x="24.71546"
        y="47.592991">
       <figurefirst:axis
-         figurefirst:name="frequency.22H05.start" />
+         figurefirst:name="frequency.22H05.start"
+         figurefirst:axhspan="100,200,zorder=10,color='r',alpha=.3"
+         figurefirst:set_ylabel="'y label'"
+         figurefirst:set_ylim="0,250"
+         figurefirst:yaxis.set_ticks="[0,100,200]" />
     </rect>
     <rect
        style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
