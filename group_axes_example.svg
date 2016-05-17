@@ -2,7 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:figurefirst="www.flyranch.com"
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -16,8 +16,8 @@
    viewBox="0 0 600 800"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="f2_layout.svg">
+   inkscape:version="0.91 r"
+   sodipodi:docname="group_axes_example.svg">
   <defs
      id="defs4">
     <clipPath
@@ -72,16 +72,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.8807752"
-     inkscape:cx="169.62254"
-     inkscape:cy="413.98293"
+     inkscape:zoom="1.2456042"
+     inkscape:cx="289.14985"
+     inkscape:cy="432.79425"
      inkscape:document-units="in"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="svg2"
      showgrid="false"
-     inkscape:window-width="1196"
-     inkscape:window-height="891"
-     inkscape:window-x="86"
-     inkscape:window-y="144"
+     inkscape:window-width="1580"
+     inkscape:window-height="1056"
+     inkscape:window-x="143"
+     inkscape:window-y="47"
      inkscape:window-maximized="0"
      units="in"
      showguides="false"
@@ -105,8 +105,9 @@
      style="display:inline">
     <g
        transform="matrix(0.88667385,0,0,0.84804291,-1.6994772,-9.7210708)"
-       id="g3965"
-       figurefirst:groupname="threeport">
+       id="g3965">
+      <figurefirst:figure
+         figurefirst:name="threeport" />
       <image
          transform="matrix(0.10141254,0,0,0.10141254,-2.6167396,-2.381494)"
          clip-path="url(#clipPath3002)"
@@ -250,8 +251,9 @@
     <g
        style="display:inline"
        transform="matrix(0.88667385,0,0,0.84804291,-1.1136586,117.0766)"
-       id="g3965-1"
-       figurefirst:groupname="oval">
+       id="g3965-1">
+      <figurefirst:figure
+         figurefirst:name="oval" />
       <image
          transform="matrix(0.10141254,0,0,0.10141254,-2.6167396,-2.381494)"
          clip-path="url(#clipPath3002-5)"
@@ -395,8 +397,9 @@
     <g
        style="display:inline"
        transform="matrix(0.88667385,0,0,0.84804291,-2.3751779,239.44355)"
-       id="g3965-5"
-       figurefirst:groupname="holy">
+       id="g3965-5">
+      <figurefirst:figure
+         figurefirst:name="holy" />
       <image
          transform="matrix(0.10141254,0,0,0.10141254,-2.6167396,-2.381494)"
          clip-path="url(#clipPath3002-1)"
@@ -549,7 +552,10 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Layer 3" />
+     inkscape:label="Layer 3">
+    <figurefirst:targetlayer
+       figurefirst:name="mpl_layer2" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"

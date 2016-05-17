@@ -1,9 +1,9 @@
 #import set_params
 #set_params.pdf()
-
 from xml.dom import minidom
 import matplotlib.pyplot as plt
 import numpy as np
+XMLNS = "http://flyranch.github.io/figurefirst/"
 
 scale_factors = {'px':{'in':72.,
                     'cm':72/2.54,
@@ -32,7 +32,7 @@ def upar(s):
     return num,unit
 
 def tounit(in_unit,dst_unit):
-    """returns a float with the value xmlns:figurefirst="www.flyranch.com"of string s
+    """returns a float with the value xmlns:figurefirst="http://flyranch.github.io/figurefirst/" of string s
     in the units of dst"""
     # need to support em, ex, px, pt, pc, cm, mm, in
     # for svg as well as percent - implemented px,in,mm and cm here
@@ -47,12 +47,12 @@ class FigureLayout(object):
         on the format of this file.
         1) the top level svg node must contain the xmlns declaration. Also, the aspect ratio 
             of the width and height attributes must match the aspect ratio of the viewBox.
-            <svg xmlns:figurefirst="www.flyranch.com"
+            <svg xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
                  width="6in"
                  height="8in"
                  viewBox="0 0 600 800"
                  ... >
-        2) the layer containing the axis labels cannot have a transform attached
+        2) the layer containing the axis labels cannot have a transform attached.
             it should look something like:
               <g
                  inkscape:label="Layer 1"
@@ -82,6 +82,9 @@ class FigureLayout(object):
         self.layout_user_sx = self.layout_uw/self.layout_width[0],self.layout_width[1]
         self.layout_user_sy = self.layout_uh/self.layout_height[0],self.layout_height[1]
         self.output_xml = minidom.parse(self.layout_filename).cloneNode(True)
+        self.axes = {}
+        self.figures = {}
+        self.axes_groups = {}
         # dont allow sx and sy to differ
         # inkscape seems to ignore inconsistent aspect ratios by
         # only using the horizontal element of the viewbox, but 
@@ -105,24 +108,16 @@ class FigureLayout(object):
         #convert from layout units into destination units
         return y_l/self.scale_factors[self.layout_user_sx[1]][dst]
 
-    def make_mplfigure(self):
-        """parse the xml file for elements in the figurefirst namespace of the 'axis' 
-        type, return a dict with the figure and axes. Attribues of the figurefirst tag 
-        are returned as a 'data' item for each axis, the aspect_ratio of the
-        axis is also calculated and inserted into this item"""
-        axis_elements = self.layout.getElementsByTagNameNS('www.flyranch.com','axis')
-        fw_in = tounit(self.layout_width,'in')
-        fh_in = tounit(self.layout_height,'in')
-        fig = plt.figure(figsize=(fw_in, fh_in))
-        axes = {}
-        axes_groups = {'none': {}}
+    def add_axes(self,fig,axis_elements):
+        """ add axes to an already constructed mpl figure, fig, 
+        from a collection of xml axis_element tags """
+        axes_dict = dict()
         for axis_element in axis_elements:
             svg_e = axis_element.parentNode
             e_x = float(svg_e.getAttribute("x"))
             e_y = float(svg_e.getAttribute("y"))
             e_w = float(svg_e.getAttribute("width"))
             e_h = float(svg_e.getAttribute("height"))
-            
             # get and apply transforms
             parent_exists = True
             node = svg_e
@@ -148,35 +143,74 @@ class FigureLayout(object):
                         e_y = e_y*transform[3] + transform[5]
                         e_w = e_w*transform[0]
                         e_h = e_h*transform[3]
-                
             #express things as proportion for mpl
-            left = e_x/self.layout_uw
+            left = e_x/self.layout_uw 
             width = e_w/self.layout_uw
             height = e_h/self.layout_uh
             bottom = (self.layout_uh-e_y-e_h)/self.layout_uh
-            
             ax = fig.add_axes([left, bottom, width, height])
             datadict = {}
             [datadict.update({key:value}) for key,value in axis_element.attributes.items()]
-            name = datadict.pop('figurefirst:name')
+            ax_name = datadict.pop('figurefirst:name')
             datadict['aspect_ratio'] = e_w/e_h
-            
-            # sort in groups
-            if 'figurefirst:groupname' in axis_element.parentNode.parentNode.attributes.keys():
-                group = axis_element.parentNode.parentNode.getAttribute('figurefirst:groupname')
+            #add grouping 
+            if 'figurefirst:group' in axis_element.parentNode.parentNode.nodeName:
+                group = axis_element.parentNode.parentNode.getAttribute('figurefirst:name')
                 datadict['group'] = group
             else:
                 group = 'none'
-                
-            axes.setdefault(name, {'axis':ax,'data':datadict})
-            if group not in axes_groups.keys():
-                axes_groups.setdefault(group, {})
-            axes_groups[group].setdefault(name, {'axis':ax,'data':datadict})
+            if group not in self.axes_groups.keys():
+                self.axes_groups.setdefault(group, {})
+            #update these global dictionaries whenever an axis is added
+            self.axes_groups[group].setdefault(ax_name, {'axis':ax,'data':datadict})
+            self.axes.setdefault(ax_name, {'axis':ax,'data':datadict})
+            #send this one back
+            axes_dict.update({ax_name: {'axis':ax,'data':datadict}})
+        return axes_dict
+
+    def make_mplfigures(self):
+        """parse the xml file for elements in the figurefirst namespace of the 'axis' 
+        type, return a dict with the figure and axes. Attribues of the figurefirst tag 
+        are returned as a 'data' item for each axis, the aspect_ratio of the
+        axis is also calculated and inserted into this item"""
         
-        self.axes = axes
-        self.axes_groups = axes_groups
-        self.fig  = fig
-        return {'mplfig':fig,'mplaxes':axes, 'mplaxesgrouped': axes_groups}
+        figure_elements = self.layout.getElementsByTagNameNS(XMLNS,'figure')
+        fw_in = tounit(self.layout_width,'in')  
+        fh_in = tounit(self.layout_height,'in')
+        axes = {}
+        axes_in_figures = set()
+        for figure_element in figure_elements:
+            fig = plt.figure(figsize=(fw_in, fh_in)) #create figure
+            figname = figure_element.getAttribute('figurefirst:name')
+            # get the elements within this figure grouping
+            axis_elements = figure_element.parentNode.getElementsByTagNameNS(XMLNS,'axis')
+            axes_in_figures.update(set(axis_elements))
+            figure_axes = self.add_axes(fig,axis_elements)
+            self.figures[figname] = figure_axes
+        all_axes = set(self.layout.getElementsByTagNameNS(XMLNS,'axis'))    
+        axes_not_in_figure = all_axes.difference(axes_in_figures)
+        if len(axes_not_in_figure) > 0:
+            print 'here'
+            fig = plt.figure(figsize=(fw_in, fh_in))
+            figname = 'none'
+            figure_axes = self.add_axes(fig,list(axes_not_in_figure))
+            self.figures[figname] = figure_axes
+
+            ## sort in groups
+            #if 'figurefirst:groupname' in axis_element.parentNode.parentNode.attributes.keys():
+            #    group = axis_element.parentNode.parentNode.getAttribute('figurefirst:groupname')
+            #    datadict['group'] = group
+            #else:
+            #    group = 'none'
+                
+            
+        #    if group not in axes_groups.keys():
+        #        axes_groups.setdefault(group, {})
+        #    axes_groups[group].setdefault(name, {'axis':ax,'data':datadict})
+        
+        #self.axes_groups = axes_groups
+        #self.fig  = fig
+        #return {'mplfig':fig,'mplaxes':axes, 'mplaxesgrouped': axes_groups}
 
     def insert_mpl_in_layer(self,fflayername):
         """ takes a reference to the matplotlib figure and saves the 
@@ -184,7 +218,7 @@ class FigureLayout(object):
         this tag must have the attribute figurefirst:name = fflayername"""
         svg_string = to_svg_buffer(self.fig)
         mpldoc = minidom.parse(svg_string)
-        target_layers = self.output_xml.getElementsByTagNameNS('www.flyranch.com','targetlayer')
+        target_layers = self.output_xml.getElementsByTagNameNS(XMLNS,'targetlayer')
         for tl in target_layers:
             print tl.getAttribute('figurefirst:name')
             if tl.getAttribute('figurefirst:name') == fflayername:
@@ -211,7 +245,13 @@ class FigureLayout(object):
                         #getattr(ax, potential_method)(eval(value))
                     except AttributeError:
                         print potential_method, 'is unknown method for mpl axes'
-        
+
+    def to_svg_buffer(fig):
+        from StringIO import StringIO
+        fid = StringIO()
+        fig.savefig(fid, format='svg',transparent=True)
+        fid.seek(0);
+        return fid        
 
     def write_svg(self,output_filename):
         """ writes the current output_xml document to output_filename"""
@@ -262,7 +302,7 @@ def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
 
     #rects = doc.getElementsByTagName('rect')
     
-    axis_elements = doc.getElementsByTagNameNS('www.flyranch.com','axis')
+    axis_elements = doc.getElementsByTagNameNS(XMLNS,'axis')
     
     axes = {}
     for axis_element in axis_elements:
@@ -293,10 +333,5 @@ def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
 
     return fig,axes,doc
 
-def to_svg_buffer(fig):
-    from StringIO import StringIO
-    fid = StringIO()
-    fig.savefig(fid, format='svg',transparent=True)
-    fid.seek(0);
-    return fid
+
 
