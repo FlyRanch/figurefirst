@@ -27,8 +27,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="197.06163"
-     inkscape:cy="834.28571"
+     inkscape:cx="170.02976"
+     inkscape:cy="791.42857"
      inkscape:document-units="in"
      inkscape:current-layer="g4246"
      showgrid="false"
@@ -36,7 +36,7 @@
      inkscape:window-width="2560"
      inkscape:window-height="1346"
      inkscape:window-x="6"
-     inkscape:window-y="23"
+     inkscape:window-y="46"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -58,29 +58,8 @@
   <g
      id="g4246"
      transform="translate(-3.9682539,-198.41271)">
-    <rect
-       y="228.80975"
-       x="82.936508"
-       height="100"
-       width="100"
-       id="rect4136"
-       style="fill:#b3b3b3;stroke:none;stroke-width:9;stroke-miterlimit:4;stroke-dasharray:none">
-      <figurefirst:axis
-         figurefirst:name="None" />
-    </rect>
-    <text
-       sodipodi:linespacing="125%"
-       id="text4341"
-       y="242.4603"
-       x="106.34921"
-       style="font-style:normal;font-weight:normal;font-size:11.11111069px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="242.4603"
-         x="106.34921"
-         id="tspan4343"
-         sodipodi:role="line">axisName</tspan><figurefirst:mplAxisName /></text>
     <g
-       transform="translate(-1.8908991e-8,-2.2222223)"
+       transform="translate(-8.730159,-4.2063472)"
        id="g4240">
       <figurefirst:mplXscale />
       <text
@@ -93,7 +72,7 @@
            y="351.9841"
            x="115.7143"
            id="tspan4292"
-           sodipodi:role="line">xlabel</tspan><figurefirst:mplXlabel /></text>
+           sodipodi:role="line">xlabel1</tspan><figurefirst:mplXlabel /></text>
       <path
          style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.30744088px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 182.53969,339.84128 -100.000002,0"
@@ -127,7 +106,7 @@
            style="font-size:13.88888931px">0</tspan><figurefirst:mplXmin /></text>
     </g>
     <g
-       transform="translate(1.5873016,0)"
+       transform="translate(-7.1428574,-1.9841272)"
        id="g4300">
       <figurefirst:mplYscale />
       <text
@@ -172,41 +151,34 @@
            x="55.555557"
            y="231.90475">22</tspan><figurefirst:mplYmax /></text>
     </g>
-    <text
-       sodipodi:linespacing="125%"
-       id="text4154"
-       y="270.63495"
-       x="103.57143"
-       style="font-style:normal;font-weight:normal;font-size:11.11111069px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="270.63495"
-         x="103.57143"
-         id="tspan4156"
-         sodipodi:role="line">axisString1</tspan><figurefirst:axisString /></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text4154-3"
-       y="282.43039"
-       x="103.57143"
-       style="font-style:normal;font-weight:normal;font-size:11.11111069px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="282.43039"
-         x="103.57143"
-         id="tspan4156-0"
-         sodipodi:role="line">axisString1</tspan><figurefirst:axisString /></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text4154-2"
-       y="293.93832"
-       x="103.57143"
-       style="font-style:normal;font-weight:normal;font-size:11.11111069px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
-         y="293.93832"
-         x="103.57143"
-         id="tspan4156-1"
-         sodipodi:role="line">axisString1</tspan><figurefirst:axisString /></text>
     <g
-       transform="translate(-25.593755,0.77097118)"
+       id="g4167"
+       transform="translate(-8.730159,-1.9841272)">
+      <rect
+         style="fill:#b3b3b3;stroke:none;stroke-width:9;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect4136"
+         width="100"
+         height="100"
+         x="82.936508"
+         y="228.80975">
+        <figurefirst:axis
+           figurefirst:name="None" />
+      </rect>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11.11111069px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="106.34921"
+         y="242.4603"
+         id="text4341"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4343"
+           x="106.34921"
+           y="242.4603">axisName1</tspan><figurefirst:mplAxisName /></text>
+      <figurefirst:mplAxis />
+    </g>
+    <g
+       transform="translate(-34.323914,-1.2131572)"
        id="g4300-6">
       <figurefirst:mplYscale />
       <text
@@ -252,5 +224,78 @@
            y="231.90475">22</tspan><figurefirst:mplYmax /></text>
     </g>
     <figurefirst:mplPanel />
+    <g
+       transform="translate(98.809534,-1.8256172)"
+       id="g4167-0">
+      <rect
+         style="fill:#b3b3b3;stroke:none;stroke-width:9;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect4136-0"
+         width="100"
+         height="100"
+         x="89.603172"
+         y="228.80975">
+        <figurefirst:axis
+           figurefirst:name="None" />
+      </rect>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11.11111069px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="113.01587"
+         y="242.4603"
+         id="text4341-5"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4343-5"
+           x="113.01587"
+           y="242.4603">axisName2</tspan><figurefirst:mplAxisName /></text>
+      <figurefirst:mplAxis />
+    </g>
+    <g
+       transform="translate(106.33941,-4.6406072)"
+       id="g4240-3">
+      <figurefirst:mplXscale />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4290-4"
+         y="351.9841"
+         x="115.7143"
+         style="font-style:normal;font-weight:normal;font-size:11.11111069px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="351.9841"
+           x="115.7143"
+           id="tspan4292-5"
+           sodipodi:role="line">xlabel2</tspan><figurefirst:mplXlabel /></text>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.30744088px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 182.53969,339.84128 -100.000002,0"
+         id="path4138-2-3"
+         inkscape:connector-curvature="0">
+        <figurefirst:mplSpine />
+      </path>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:44.44444275px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="171.19048"
+         y="352.59543"
+         id="text4155-41"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4157-65"
+           x="171.19048"
+           y="352.59543"
+           style="font-size:13.88888931px">12</tspan><figurefirst:mplXmax /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:44.44444275px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="76.266571"
+         y="354.81766"
+         id="text4155-4-7"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4157-6-2"
+           x="76.266571"
+           y="354.81766"
+           style="font-size:13.88888931px">0</tspan><figurefirst:mplXmin /></text>
+    </g>
   </g>
 </svg>
