@@ -200,7 +200,7 @@ class FigureLayout(object):
     
     def apply_mpl_methods(self,mplfig):
         """ apply valid mpl methods to figure"""
-        for mplax in mplfig['mplaxes'].values():
+        for mplax in self.axes.values():
             ax = mplax['axis']
             for key, value in mplax['data'].items():
                 if key.startswith('figurefirst:'):
