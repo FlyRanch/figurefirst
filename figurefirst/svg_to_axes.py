@@ -150,6 +150,10 @@ class FigureLayout(object):
                         e_y = e_y*transform[3] + transform[5]
                         e_w = e_w*transform[0]
                         e_h = e_h*transform[3]
+                    if 'translate' in transform:
+                    	translate = transform.split('translate')[1].split(',')
+                    	e_x = e_x+np.array(float(translate[0].strip('(')))
+                    	e_y = e_y+np.array(float(translate[1].strip(')')))
             #express things as proportion for mpl
             left = e_x/self.layout_uw 
             width = e_w/self.layout_uw
