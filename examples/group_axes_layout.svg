@@ -17,7 +17,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r"
-   sodipodi:docname="group_axes_example.svg">
+   sodipodi:docname="group_axes_example (copy).svg">
   <defs
      id="defs4">
     <clipPath
@@ -64,6 +64,17 @@
          x="130.30969"
          y="368.47675" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3002-1-9">
+      <rect
+         style="fill:#008000"
+         id="rect3004-13-9"
+         width="461.63971"
+         height="441.43665"
+         x="130.30969"
+         y="368.47675" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -73,15 +84,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.2456042"
-     inkscape:cx="289.14985"
+     inkscape:cx="233.40235"
      inkscape:cy="432.79425"
      inkscape:document-units="in"
-     inkscape:current-layer="svg2"
+     inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1580"
-     inkscape:window-height="1056"
-     inkscape:window-x="143"
-     inkscape:window-y="47"
+     inkscape:window-width="1780"
+     inkscape:window-height="1079"
+     inkscape:window-x="63"
+     inkscape:window-y="38"
      inkscape:window-maximized="0"
      units="in"
      showguides="false"
@@ -106,7 +117,7 @@
     <g
        transform="matrix(0.88667385,0,0,0.84804291,-1.6994772,-9.7210708)"
        id="g3965">
-      <figurefirst:figure
+      <figurefirst:group
          figurefirst:name="threeport" />
       <image
          transform="matrix(0.10141254,0,0,0.10141254,-2.6167396,-2.381494)"
@@ -252,7 +263,7 @@
        style="display:inline"
        transform="matrix(0.88667385,0,0,0.84804291,-1.1136586,117.0766)"
        id="g3965-1">
-      <figurefirst:figure
+      <figurefirst:group
          figurefirst:name="oval" />
       <image
          transform="matrix(0.10141254,0,0,0.10141254,-2.6167396,-2.381494)"
@@ -398,7 +409,7 @@
        style="display:inline"
        transform="matrix(0.88667385,0,0,0.84804291,-2.3751779,239.44355)"
        id="g3965-5">
-      <figurefirst:figure
+      <figurefirst:group
          figurefirst:name="holy" />
       <image
          transform="matrix(0.10141254,0,0,0.10141254,-2.6167396,-2.381494)"

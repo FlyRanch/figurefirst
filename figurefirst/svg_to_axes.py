@@ -91,6 +91,13 @@ class FigureLayout(object):
         # it is probably best to assert that the a.r's are the same
         # for now
         assert self.layout_user_sx == self.layout_user_sy
+    
+    def __getattr__(self,attr):
+        if attr == 'fig':
+            from matplotlib import pyplot
+            return pyplot.gcf()
+        else:
+            raise AttributeError
 
     def from_userx(self,x,dst):
         """transfrom from user coords to dst coords"""
@@ -154,16 +161,22 @@ class FigureLayout(object):
             ax_name = datadict.pop('figurefirst:name')
             datadict['aspect_ratio'] = e_w/e_h
             #add grouping 
-            if 'figurefirst:group' in axis_element.parentNode.parentNode.nodeName:
-                group = axis_element.parentNode.parentNode.getAttribute('figurefirst:name')
-                datadict['group'] = group
-            else:
-                group = 'none'
-            if group not in self.axes_groups.keys():
-                self.axes_groups.setdefault(group, {})
+            #print axis_element.parentNode.parentNode.nodeName
+            #if ('figurefirst:group' in axis_element.parentNode.parentNode.nodeName) or\
+            #   ('figurefirst:figure' in axis_element.parentNode.parentNode.nodeName):
+            #group = axis_element.parentNode.parentNode.getAttribute('figurefirst:name')
+            #    #datadict['group'] = group
+            #else:
+            #    group = 'none'
+            #if group not in self.axes_groups.keys():
+            #    self.axes_groups.setdefault(group, {})
             #update these global dictionaries whenever an axis is added
-            self.axes_groups[group].setdefault(ax_name, {'axis':ax,'data':datadict})
-            self.axes.setdefault(ax_name, {'axis':ax,'data':datadict})
+            #self.axes_groups[group].setdefault(ax_name, {'axis':ax,'data':datadict})
+            if ax_name in self.axes.keys():
+                ax_key = axis_element.parentNode.getAttribute('id')
+            else:
+                ax_key = ax_name
+            self.axes.setdefault(ax_key, {'axis':ax,'data':datadict,'name':ax_name})
             #send this one back
             axes_dict.update({ax_name: {'axis':ax,'data':datadict}})
         return axes_dict
@@ -177,7 +190,6 @@ class FigureLayout(object):
         figure_elements = self.layout.getElementsByTagNameNS(XMLNS,'figure')
         fw_in = tounit(self.layout_width,'in')  
         fh_in = tounit(self.layout_height,'in')
-        axes = {}
         axes_in_figures = set()
         for figure_element in figure_elements:
             fig = plt.figure(figsize=(fw_in, fh_in)) #create figure
@@ -186,15 +198,40 @@ class FigureLayout(object):
             axis_elements = figure_element.parentNode.getElementsByTagNameNS(XMLNS,'axis')
             axes_in_figures.update(set(axis_elements))
             figure_axes = self.add_axes(fig,axis_elements)
-            self.figures[figname] = figure_axes
-        all_axes = set(self.layout.getElementsByTagNameNS(XMLNS,'axis'))    
+            self.axes_groups[figname] = figure_axes
+            self.figures[figname] = fig
+        
+        all_axes = set(self.layout.getElementsByTagNameNS(XMLNS,'axis'))
         axes_not_in_figure = all_axes.difference(axes_in_figures)
+        #are we done?
         if len(axes_not_in_figure) > 0:
-            print 'here'
+            #if not create a new figure
             fig = plt.figure(figsize=(fw_in, fh_in))
-            figname = 'none'
-            figure_axes = self.add_axes(fig,list(axes_not_in_figure))
-            self.figures[figname] = figure_axes
+            self.figures['none'] = fig
+            #next parse the group elements
+            group_elements = self.layout.getElementsByTagNameNS(XMLNS,'group')
+            for group_element in group_elements:
+                groupname = group_element.getAttribute('figurefirst:name')
+                axis_elements = group_element.parentNode.getElementsByTagNameNS(XMLNS,'axis')
+                axes_in_figures.update(set(axis_elements))
+                group_axes = self.add_axes(fig,axis_elements)
+                self.axes_groups[groupname] = group_axes
+            all_axes = set(self.layout.getElementsByTagNameNS(XMLNS,'axis'))
+            axes_not_in_figure = all_axes.difference(axes_in_figures)
+            #finish up
+            if len(axes_not_in_figure) > 0:
+                group_axes = self.add_axes(fig,list(axes_not_in_figure))
+        try:
+            self.fig = self.figures['none']
+        except KeyError:
+            pass
+            
+            #figure_axes = self.add_axes(fig,list(axes_not_in_figure))
+            #group_elements = self.layout.getElementsByTagNameNS(XMLNS,'group')
+            
+
+            #self.axes_groups[figname] = figure_axes
+
 
             ## sort in groups
             #if 'figurefirst:groupname' in axis_element.parentNode.parentNode.attributes.keys():
@@ -212,15 +249,11 @@ class FigureLayout(object):
         #self.fig  = fig
         #return {'mplfig':fig,'mplaxes':axes, 'mplaxesgrouped': axes_groups}
 
-    def insert_mpl_in_layer(self,fflayername):
-        """ takes a reference to the matplotlib figure and saves the 
-        svg data into the target layer specified with the xml tag <figurefirst:targetlayer>
-        this tag must have the attribute figurefirst:name = fflayername"""
-        svg_string = to_svg_buffer(self.fig)
+    def append_figure_to_layer(self,fig,fflayername):
+        svg_string = self.to_svg_buffer(fig)
         mpldoc = minidom.parse(svg_string)
         target_layers = self.output_xml.getElementsByTagNameNS(XMLNS,'targetlayer')
         for tl in target_layers:
-            print tl.getAttribute('figurefirst:name')
             if tl.getAttribute('figurefirst:name') == fflayername:
                 target_layer = tl.parentNode
         mpl_svg = mpldoc.getElementsByTagName('svg')[0]
@@ -231,6 +264,13 @@ class FigureLayout(object):
         [target_layer.appendChild(n.cloneNode(True)) for n in mpl_svg_nodes]
         target_layer.setAttribute('transform','scale(%s,%s)'%(output_scale,output_scale))
         output_svg.setAttribute('xmlns:xlink',mpl_svg.getAttribute('xmlns:xlink'))
+
+    def insert_figures(self,fflayername = 'mpl_layer'):
+        """ takes a reference to the matplotlib figure and saves the 
+        svg data into the target layer specified with the xml tag <figurefirst:targetlayer>
+        this tag must have the attribute figurefirst:name = fflayername"""
+        for fig in self.figures.values():
+            self.append_figure_to_layer(fig,fflayername)
     
     def apply_mpl_methods(self,mplfig):
         """ apply valid mpl methods to figure"""
@@ -241,12 +281,12 @@ class FigureLayout(object):
                     potential_method = key.split('figurefirst:')[1]
                     try:
                         eval("ax."+potential_method+"("+value+")")
-                        print "ax."+potential_method+"("+value+")"
+                        #print "ax."+potential_method+"("+value+")"
                         #getattr(ax, potential_method)(eval(value))
                     except AttributeError:
                         print potential_method, 'is unknown method for mpl axes'
 
-    def to_svg_buffer(fig):
+    def to_svg_buffer(self,fig):
         from StringIO import StringIO
         fid = StringIO()
         fig.savefig(fid, format='svg',transparent=True)
@@ -287,7 +327,6 @@ def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
     doc = minidom.parse(svgfile)
     svgnode = doc.getElementsByTagName('svg')[0]
     if 'in' in svgnode.getAttribute('width'):
-        print 'here'
         width_inches = float(svgnode.getAttribute('width').split('in')[0])
         height_inches = float(svgnode.getAttribute('height').split('in')[0])
         height_svg_pixels = height_inches*px_res
