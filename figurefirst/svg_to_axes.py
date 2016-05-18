@@ -325,7 +325,37 @@ class FigureLayout(object):
         outfile = open(output_filename,'wt')
         indoc.writexml(outfile)
         outfile.close()
-        
+
+    def clear_fflayer(self, fflayername):
+        '''
+        If inserting mpl figure into a mpl target layer that has stuff in it, e.g. old mpl data, used this function to clear the layer of any children except the figurefirst:targetlayer node.        
+        '''
+        target_layers = self.output_xml.getElementsByTagNameNS(XMLNS,'targetlayer')
+        for tl in target_layers:
+            if tl.getAttribute('figurefirst:name') == fflayername:
+                target_layer = tl.parentNode
+        removed_children = 1
+        while removed_children != 0: # this is not the prettiest way to do this, most likely, but it does work.
+            remove = True
+            while remove: # getting a list of children and then removing them one by one does not work!
+                children = target_layer.childNodes
+                if len(children) == 1:
+                    if children[0].nodeName == 'figurefirst:targetlayer':
+                        remove = False
+                    else:
+                        raise ValueError ('Something wrong with target layer!') 
+            
+                removed_children = 0
+                for child in children:
+                    print child
+                    if 1:
+                        if child.nodeName != 'figurefirst:targetlayer':
+                            print 'Removing node: ', child.nodeName
+                            target_layer.removeChild(child)
+                            removed_children += 1
+                        else:
+                            print 'Not removing: ', child.nodeName
+
 def read_svg_to_axes(svgfile, px_res = 72, width_inches = 7.5):
     #72 pixels per inch
     doc = minidom.parse(svgfile)
