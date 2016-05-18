@@ -75,7 +75,11 @@ class FigureLayout(object):
         #layout_filename = layout_filename
         self.layout = minidom.parse(self.layout_filename).getElementsByTagName('svg')[0]
         self.layout_width = upar(self.layout.getAttribute('width'))
+        if self.layout_width[1]=='u':
+            self.layout_width = (self.layout_width[0], 'px')
         self.layout_height = upar(self.layout.getAttribute('height'))
+        if self.layout_height[1]=='u':
+            self.layout_height = (self.layout_height[0], 'px')
         self.layout_viewBox = self.layout.getAttribute('viewBox').split()
         self.layout_uw = float(self.layout_viewBox[2])
         self.layout_uh = float(self.layout_viewBox[3])
