@@ -293,6 +293,16 @@ class FigureLayout(object):
         [target_layer.appendChild(n.cloneNode(True)) for n in mpl_svg_nodes]
         target_layer.setAttribute('transform','scale(%s,%s)'%(output_scale,output_scale))
         output_svg.setAttribute('xmlns:xlink',mpl_svg.getAttribute('xmlns:xlink'))
+        if fig.get_gid() is not None:
+            #pass figure gid to svg
+            for gr in output_svg.getElementsByTagName('g'):
+                if gr.attributes:
+                    if 'id' in gr.attributes.keys():
+                        if gr.getAttribute('id') == "figure_1":
+                            gr.setAttribute('id', fig.get_gid())
+        ax_ids = [ax.get_gid() for ax in fig.get_axes() if ax.get_gid() is not None]
+        if len(ax_ids) > 0:
+            print 'unable to pass axes gid to svg'
 
     def insert_figures(self,fflayername = 'mpl_layer'):
         """ takes a reference to the matplotlib figure and saves the 
