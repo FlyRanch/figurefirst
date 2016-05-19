@@ -39,7 +39,7 @@ def tounit(in_unit,dst_unit):
     # not sure the best way to deal with the other options
     #num,unit = upar(s)
     return in_unit[0]/scale_factors[in_unit[1]][dst_unit]
-
+    
 class FigureLayout(object):
     def __init__(self,layout_filename):
         """construct an object that specifies the figure layout fom the
@@ -293,6 +293,29 @@ class FigureLayout(object):
                         #getattr(ax, potential_method)(eval(value))
                     except AttributeError:
                         print potential_method, 'is unknown method for mpl axes'
+
+    def pass_xml(self,gid,key,value):
+        """pass key, value pair xml pair to group with ID gid
+        gid should contain prefix 'figurefirst:' to ensure uniqueness
+        usage: layout.pass_xml(gid,'jessyink:effectIn', 'name:appear;order:1;length:800')"""
+        
+        if gid[:12] != 'figurefirst:':
+            print """Warning: ID should start with 'figurefirst:'
+                     because non-unique ids will cause silent failure in jessyink"""
+        output_svg = self.output_xml.getElementsByTagName('svg')[0]  
+        elist = list()  
+        for gr in output_svg.getElementsByTagName('g'):
+            if gr.attributes:
+                test_list = gr.attributes.keys()
+                if 'id' in test_list:
+                    if gr.getAttribute('id') == gid:
+                        elist.append(gr)
+        if len(elist)>1:
+            print len(elist), 'groups with mataching ID found'
+        elif len(elist)==0:
+            print 'ID not found'
+        for el in elist:
+            el.setAttribute(key, value)
 
     def to_svg_buffer(self,fig):
         from StringIO import StringIO
