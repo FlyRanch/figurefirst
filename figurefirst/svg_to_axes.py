@@ -40,6 +40,27 @@ def tounit(in_unit,dst_unit):
     #num,unit = upar(s)
     return in_unit[0]/scale_factors[in_unit[1]][dst_unit]
 
+def get_elements_by_attr(xml_node,attribute,value):
+    """helper function for xml trees when using minidom"""
+    import itertools
+    def recur_get_element_by_attr(xml_node,attribute,value):
+        if xml_node.attributes:
+            test_list = xml_node.attributes.keys()
+            if attribute in test_list:
+                if xml_node.getAttribute(attribute) == value:
+                    yield(xml_node)
+            nls = [recur_get_element_by_attr(nd,attribute,value) for nd in xml_node.childNodes]
+            yield list(itertools.chain.from_iterable(nls))
+    def flatten(container):
+        #from hexparrot @ http://stackoverflow.com/questions/10823877/what-is-the-fastest-way-to-flatten-arbitrarily-nested-lists-in-python
+        for i in container:
+            if isinstance(i, (list,tuple)):
+                for j in flatten(i):
+                    yield j
+            else:
+                yield i
+    return list(flatten([el for el in recur_get_element_by_attr(xml_node,attribute,value)]))
+
 class FigureLayout(object):
     def __init__(self,layout_filename):
         """construct an object that specifies the figure layout fom the
