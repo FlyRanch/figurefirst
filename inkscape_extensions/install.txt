@@ -1,0 +1,7 @@
+to install copy .inx and .py files to:
+
+ ~/.config/inkscape/extensions/
+(ubuntu)
+
+C:\Program Files\Inkscape\share\extensions
+(windows)

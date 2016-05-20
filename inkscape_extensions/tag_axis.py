@@ -2,6 +2,7 @@
 import sys
 sys.path.append('/usr/share/inkscape/extensions') # or another path, as necessary
 sys.path.append('/Applications/Inkscape.app/Contents/Resources/extensions')
+sys.path.append('C:\Program Files\Inkscape\share\extensions')
 #import xml.etree.ElementTree as ET
 #ET.register_namespace('figurefirst', 'http://www.figurefirst.com')
 
@@ -17,19 +18,23 @@ class FigureFirstAxisTagEffect(inkex.Effect):
     def __init__(self):
         """
         Constructor.
-        Defines the "--what" option of a script.
+        Defines the "--name" option of a script.
         """
         # Call the base class constructor.
         inkex.Effect.__init__(self)
-
-        # Define string option "--what" with "-w" shortcut and default value "World".
+        #import matplotlib
+        #Define string option "--name" with "-n" shortcut and default value "World".
         self.OptionParser.add_option('-n', '--name', action = 'store',
           type = 'string', dest = 'name', default = 'none',
           help = 'Name axis')
         inkex.NSS[u"figurefirst"] = u"http://flyranch.github.io/figurefirst/"
-        inkex.etree.register_namespace("figurefirst","http://flyranch.github.io/figurefirst/")
-        #ET.register_namespace('figurefirst', "http://flyranch.github.io/figurefirst/")
-
+        try:
+            inkex.etree.register_namespace("figurefirst","http://flyranch.github.io/figurefirst/")
+        except AttributeError:
+            #inkex.etree._NamespaceRegistry.update(inkex.addNS("name", "figurefirst"))
+            #This happens on windows version of inkscape - it might be good to check
+            #and see if the namespace has been correctly added to the document
+            pass
 
     def effect(self):
         """
@@ -42,13 +47,11 @@ class FigureFirstAxisTagEffect(inkex.Effect):
         # Get access to main SVG document element and get its dimensions.
         svg = self.document.getroot()
         # or alternatively
-        # svg = self.document.xpath('//svg:svg',namespaces=inkex.NSS)[0]
-
-        # Again, there are two ways to get the attibutes:
-        width  = self.unittouu(svg.get('width'))
-        height = self.unittouu(svg.attrib['height'])
         # Create text element
-        el = self.selected.items()[0][1]
+        if len(self.selected.values())>1: 
+            raise Exception('too many items')
+        else:
+            el = self.selected.values()[0]
         newElm = inkex.etree.Element(inkex.addNS("axis", "figurefirst"))
         newElm.attrib[inkex.addNS("name", "figurefirst")] = name
         #print inkex.NSS
