@@ -4,7 +4,6 @@ from xml.dom import minidom
 import matplotlib.pyplot as plt
 import numpy as np
 XMLNS = "http://flyranch.github.io/figurefirst/"
-
 scale_factors = {'px':{'in':72.,
                     'cm':72/2.54,
                     'mm':72/25.4,
@@ -179,6 +178,20 @@ class FigureLayout(object):
                     	translate = transform.split('translate')[1].split(',')
                     	e_x = e_x+np.array(float(translate[0].strip('(')))
                     	e_y = e_y+np.array(float(translate[1].strip(')')))
+                    if 'scale' in transform:
+                        scale = transform.split('scale')[1].split(',')
+                        x_scale = float(scale[0].strip('('))
+                        y_scale = float(scale[1].strip(')'))
+                        e_x = e_x*x_scale
+                        e_y = e_y*y_scale
+                        e_w = e_w*x_scale
+                        e_h = e_h*y_scale
+                    if e_w < 0:
+                        e_x += e_w
+                        e_w *= -1
+                    if e_h < 0:
+                        e_y += e_h
+                        e_y *= -1
             #express things as proportion for mpl
             left = e_x/self.layout_uw 
             width = e_w/self.layout_uw
@@ -357,9 +370,15 @@ class FigureLayout(object):
 
     def write_svg(self,output_filename):
         """ writes the current output_xml document to output_filename"""
-        outfile = open(output_filename,'wt')
-        self.output_xml.writexml(outfile)
-        outfile.close()
+	try:
+            outfile = open(output_filename,'w')
+            self.output_xml.writexml(outfile,encoding = 'utf-8')
+        except UnicodeEncodeError:
+            outfile.close()
+            print 'encoding error'
+            outfile = open(output_filename,'w')
+            outfile.write(self.output_xml.toxml().encode('ascii','xmlcharrefreplace'))
+            outfile.close()
         
     def save_svg(self,output_filename):
         ###depreciate this function
