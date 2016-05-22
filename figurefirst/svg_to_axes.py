@@ -187,21 +187,34 @@ class FigureLayout(object):
                         e_y = e_y*y_scale
                         e_w = e_w*x_scale
                         e_h = e_h*y_scale
-                    if e_w < 0:
-                        e_x += e_w
-                        e_w *= -1
-                    if e_h < 0:
-                        e_y += e_h
-                        e_y *= -1
+            if e_w < 0:
+                e_x += e_w
+                e_w *= -1
+            if e_h < 0:
+                e_y += e_h
+                e_y *= -1
             #express things as proportion for mpl
             left = e_x/self.layout_uw
             width = e_w/self.layout_uw
             height = e_h/self.layout_uh
             bottom = (self.layout_uh-e_y-e_h)/self.layout_uh
-            ax = fig.add_axes([left, bottom, width, height])
-            datadict = {}
+            #Requre that each axis has a unique name. This is important so that
+            #the global dict of self.axis is complete. In the case that groups
+            #are used and the axis name is not unique the figurefirst:name of the
+            #axis is merged with the svg_id. These unique ids are sent to figure.add_axis()
+            #as the label. Perhaps it would be better to try and merge the groupname and
+            #axis name before falling back to the svg id.
+
+            ax_name = axis_element.getAttribute('figurefirst:name')
+            if ax_name in self.axes.keys():
+                ax_key = axis_element.parentNode.getAttribute('id') + '_' + ax_name
+            else:
+                ax_key = ax_name
+            #print ax_key
+            ax = fig.add_axes([left, bottom, width, height],label = ax_key)
+            datadict = dict()
             [datadict.update({key:value}) for key, value in axis_element.attributes.items()]
-            ax_name = datadict.pop('figurefirst:name')
+            #ax_name = datadict.pop('figurefirst:name')
             datadict['aspect_ratio'] = e_w/e_h
             #add grouping
             #print axis_element.parentNode.parentNode.nodeName
@@ -215,10 +228,10 @@ class FigureLayout(object):
             #    self.axes_groups.setdefault(group, {})
             #update these global dictionaries whenever an axis is added
             #self.axes_groups[group].setdefault(ax_name, {'axis':ax,'data':datadict})
-            if ax_name in self.axes.keys():
-                ax_key = axis_element.parentNode.getAttribute('id')
-            else:
-                ax_key = ax_name
+            #if ax_name in self.axes.keys():
+            #    ax_key = axis_element.parentNode.getAttribute('id')
+            #else:
+            #    ax_key = ax_name
             self.axes.setdefault(ax_key, {'axis':ax, 'data':datadict, 'name':ax_name})
             #send this one back
             axes_dict.update({ax_name: {'axis':ax, 'data':datadict}})
@@ -258,6 +271,7 @@ class FigureLayout(object):
                 axis_elements = group_element.parentNode.getElementsByTagNameNS(XMLNS, 'axis')
                 axes_in_figures.update(set(axis_elements))
                 group_axes = self.add_axes(fig, axis_elements)
+                #print groupname,id(group_axes)
                 self.axes_groups[groupname] = group_axes
             all_axes = set(self.layout.getElementsByTagNameNS(XMLNS, 'axis'))
             axes_not_in_figure = all_axes.difference(axes_in_figures)
