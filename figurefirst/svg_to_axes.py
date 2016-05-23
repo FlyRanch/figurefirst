@@ -216,6 +216,10 @@ class FigureLayout(object):
             [datadict.update({key:value}) for key, value in axis_element.attributes.items()]
             #ax_name = datadict.pop('figurefirst:name')
             datadict['aspect_ratio'] = e_w/e_h
+	    mpl_methods_elements = axis_element.parentNode.getElementsByTagNameNS(XMLNS,'mplmethods')
+            mpl_methods = dict()
+            for mpl_methods_element in mpl_methods_elements:
+                [mpl_methods.update({key:value}) for key,value in mpl_methods_element.attributes.items()]
             #add grouping
             #print axis_element.parentNode.parentNode.nodeName
             #if ('figurefirst:group' in axis_element.parentNode.parentNode.nodeName) or\
@@ -232,9 +236,9 @@ class FigureLayout(object):
             #    ax_key = axis_element.parentNode.getAttribute('id')
             #else:
             #    ax_key = ax_name
-            self.axes.setdefault(ax_key, {'axis':ax, 'data':datadict, 'name':ax_name})
+            self.axes.setdefault(ax_key, {'axis':ax, 'data':datadict, 'name':ax_name,'mplmethods':mpl_methods})
             #send this one back
-            axes_dict.update({ax_name: {'axis':ax, 'data':datadict}})
+            axes_dict.update({ax_name: {'axis':ax, 'data':datadict,'mplmethods':mpl_methods}})
         return axes_dict
 
     def make_mplfigures(self):
@@ -343,7 +347,7 @@ class FigureLayout(object):
         """ apply valid mpl methods to figure"""
         for mplax in self.axes.values():
             ax = mplax['axis']
-            for key, value in mplax['data'].items():
+            for key, value in mplax['mplmethods'].items():
                 if key.startswith('figurefirst:'):
                     potential_method = key.split('figurefirst:')[1]
                     try:
