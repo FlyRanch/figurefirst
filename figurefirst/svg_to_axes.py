@@ -211,9 +211,10 @@ class FigureLayout(object):
             else:
                 ax_key = ax_name
             #print ax_key
-            ax = fig.add_axes([left, bottom, width, height],label = ax_key)
             datadict = dict()
-            [datadict.update({key:value}) for key, value in axis_element.attributes.items()]
+            [datadict.update({key:value}) for  key, value in axis_element.attributes.items()]
+            projection = datadict.get('figurefirst:projection','rectilinear')
+            ax = fig.add_axes([left, bottom, width, height],label = ax_key,projection = projection)
             #ax_name = datadict.pop('figurefirst:name')
             datadict['aspect_ratio'] = e_w/e_h
 	    mpl_methods_elements = axis_element.parentNode.getElementsByTagNameNS(XMLNS,'mplmethods')
