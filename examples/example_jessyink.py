@@ -12,7 +12,7 @@ ax.fill_between(x_data, .5*x_data**3, 2*x_data**3, color='k', edgecolor='none', 
 ax.plot(x_data, x_data[::-1]**3, color='r', gid='figurefirst:line2')
 ax.axvspan(2, 10, color='b', alpha=.2, gid='figurefirst:span1')
 
-layout.apply_mpl_methods() # this is not working
+layout.apply_mpl_methods()
 layout.insert_figures('figurefirst_target_layer')
 
 layout.pass_xml('figurefirst:span1','jessyink:effectIn', 'name:appear;order:1;length:800')
