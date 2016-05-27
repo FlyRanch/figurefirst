@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>tagmplmethods</_name>
+  <id>org.ekips.filter.tag_mpl_methods</id>
+  <dependency type="executable" location="extensions">tag_mplmethods.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <param name="mplmethod" type="string" _gui-text="Tag an axis with an mpl method:">mpl method name</param>
+  <param name="mplmethodarg" type="string" _gui-text="Arguments to pass to method:">mpl method arg</param>
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+       <submenu _name="FigureFirst"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">tag_mplmethods.py</command>
+  </script>
+</inkscape-extension>
