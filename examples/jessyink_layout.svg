@@ -34,7 +34,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
-     inkscape:cx="484.04474"
+     inkscape:cx="584.4539"
      inkscape:cy="279.44919"
      inkscape:document-units="px"
      inkscape:current-layer="g37649"
@@ -58231,7 +58231,7 @@
          style="stroke-linecap:butt;stroke-linejoin:round"
          x="26.806973"
          y="674.39783"
-         id="tspan16350"></tspan><tspan
+         id="tspan16350" /><tspan
          sodipodi:role="line"
          style="stroke-linecap:butt;stroke-linejoin:round"
          x="26.806973"
@@ -58309,10 +58309,10 @@
        x="164.18585"
        y="232.91255">
       <figurefirst:axis
-         figurefirst:name="ax_name"
-         figurefirst:set_xlim="-3, 60"
-         figurefirst:set_axis_bgcolor="'w'"
-         figurefirst:set_axis_on="True" />
+         figurefirst:name="ax_name" />
+      <figurefirst:mplmethods
+         figurefirst:set_xlim="-3, 40"
+         figurefirst:set_xticks="[0, 20, 40]" />
     </rect>
   </g>
   <script
