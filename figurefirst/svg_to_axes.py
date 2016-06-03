@@ -61,6 +61,8 @@ def get_elements_by_attr(xml_node, attribute, value):
                 yield i
     return list(flatten([el for el in recur_get_element_by_attr(xml_node, attribute, value)]))
 
+
+    
 class FigureLayout(object):
     def __init__(self, layout_filename):
         """construct an object that specifies the figure layout fom the
@@ -241,7 +243,13 @@ class FigureLayout(object):
             #send this one back
             axes_dict.update({ax_name: {'axis':ax, 'data':datadict,'mplmethods':mpl_methods}})
         return axes_dict
-
+    
+    def load_pathspecs(self):
+        self.pathspecs = dict()
+        elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'pathspec')
+        speclist = [PathSpec(el,self) for el in elementlist]
+        [self.pathspecs.update({sp.name:sp}) for sp in speclist]
+        
     def make_mplfigures(self):
         """parse the xml file for elements in the figurefirst namespace of the 'axis'
         type, return a dict with the figure and axes. Attribues of the figurefirst tag
@@ -454,7 +462,39 @@ class FigureLayout(object):
                             removed_children += 1
                         else:
                             print 'Not removing: ', child.nodeName
-
+class PathSpec(dict):
+    def __init__(self,*args,**kwargs):
+        for arg in args:
+            try:
+                if arg.tagName == 'figurefirst:pathspec':
+                    self.load(arg)
+                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
+            except AttributeError:
+                if type(arg) == FigureLayout:
+                    self.layout = arg
+        super(PathSpec, self).__init__(**kwargs)
+        
+    def load(self,ptag):
+        pnode = ptag.parentNode
+        [self.update({k:v}) for k,v in pnode.attributes.items()]
+        self.style = dict()
+        [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in self['style'].split(';')]
+    
+    def mplkwargs(self):
+        mpl_map = {'stroke':'color','stroke-opacity':'alpha','stroke-width':'lw'}
+        mpl_kwargs = {}
+        keylist = list()
+        for k,v in self.style.items():
+            try:
+                mpl_kwargs[mpl_map[k]] = v
+            except KeyError:
+                pass
+        for k,v in mpl_kwargs.items():
+            if k == 'lw':
+                tmp = self.layout.from_userx(v,'in')/13.889e-3 #hard coding pnt scaling
+                mpl_kwargs['lw'] = tmp
+        return mpl_kwargs
+    
 def read_svg_to_axes(svgfile, px_res=72, width_inches=7.5):
     #72 pixels per inch
     doc = minidom.parse(svgfile)
