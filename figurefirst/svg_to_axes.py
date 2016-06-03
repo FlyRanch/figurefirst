@@ -333,9 +333,15 @@ class FigureLayout(object):
         svg_string = self.to_svg_buffer(fig)
         mpldoc = minidom.parse(svg_string)
         target_layers = self.output_xml.getElementsByTagNameNS(XMLNS, 'targetlayer')
+        found_target = False
         for tl in target_layers:
             if tl.getAttribute('figurefirst:name') == fflayername:
                 target_layer = tl.parentNode
+                found_target = True
+        if not(found_target):
+            target_layer = target_layers[0]
+            print 'target layer %s not found inserting into %s'%(fflayername,
+                                                      target_layer.getAttribute('figurefirst:name'))
         mpl_svg = mpldoc.getElementsByTagName('svg')[0]
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
         mpl_viewbox = mpl_svg.getAttribute('viewBox').split()
@@ -519,7 +525,7 @@ class LineSpec(PathSpec):
 class PatchSpec(PathSpec):
     
     def mplkwargs(self):
-        mpl_map = {'stroke':'color','stroke-opacity':'alpha','stroke-width':'lw','fill':'facecolor'}
+        mpl_map = {'stroke':'edgecolor','stroke-width':'lw','fill':'facecolor'}
         mpl_kwargs = {}
         keylist = list()
         for k,v in self.style.items():
@@ -534,8 +540,8 @@ class PatchSpec(PathSpec):
                 tmp = v.split('px')[0]
                 tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
                 mpl_kwargs['lw'] = tmp
-            if k == 'color':
-                mpl_kwargs['color'] = converter.to_rgba(v,float(self.style['stroke-opacity']))
+            if k == 'edgecolor':
+                mpl_kwargs['edgecolor'] = converter.to_rgba(v,float(self.style['stroke-opacity']))
             if k == 'facecolor':
                 mpl_kwargs['facecolor'] = converter.to_rgba(v,float(self.style['fill-opacity']))
         return mpl_kwargs
