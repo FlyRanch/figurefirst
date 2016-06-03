@@ -7,19 +7,20 @@ XMLNS = "http://flyranch.github.io/figurefirst/"
 SCALE_FACTORS = {'px':{'in':72.,
                        'cm':72/2.54,
                        'mm':72/25.4,
-                       'px':1.},
+                       'px':1.,},
                  'in':{'in':1.,
                        'cm':0.3937,
                        'mm':0.0393,
-                       'px':1/72.},
+                       'px':1/72.,},
                  'mm':{'in':25.4,
                        'cm':10.,
                        'mm':1,
-                       'px':25.4/72},
+                       'px':25.4/72,},
                  'cm':{'in':2.54,
                        'cm':1.,
                        'mm':0.1,
-                       'px':2.54/72}}
+                       'px':2.54/72,}
+                      }
 def upar(unit_st):
     """Parse unit_st into num (float), unit (string) pair"""
     unit_st = str(unit_st)
@@ -250,6 +251,15 @@ class FigureLayout(object):
         speclist = [PathSpec(el,self) for el in elementlist]
         [self.pathspecs.update({sp.name:sp}) for sp in speclist]
         
+        elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'linespec')
+        speclist = [LineSpec(el,self) for el in elementlist]
+        [self.pathspecs.update({sp.name:sp}) for sp in speclist]
+        
+        elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'patchspec')
+        speclist = [PatchSpec(el,self) for el in elementlist]
+        [self.pathspecs.update({sp.name:sp}) for sp in speclist]
+
+        
     def make_mplfigures(self):
         """parse the xml file for elements in the figurefirst namespace of the 'axis'
         type, return a dict with the figure and axes. Attribues of the figurefirst tag
@@ -469,6 +479,12 @@ class PathSpec(dict):
                 if arg.tagName == 'figurefirst:pathspec':
                     self.load(arg)
                     self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
+                if arg.tagName == 'figurefirst:linespec':
+                    self.load(arg)
+                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
+                if arg.tagName == 'figurefirst:patchspec':
+                    self.load(arg)
+                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
             except AttributeError:
                 if type(arg) == FigureLayout:
                     self.layout = arg
@@ -479,6 +495,8 @@ class PathSpec(dict):
         [self.update({k:v}) for k,v in pnode.attributes.items()]
         self.style = dict()
         [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in self['style'].split(';')]
+    
+class LineSpec(PathSpec):
     
     def mplkwargs(self):
         mpl_map = {'stroke':'color','stroke-opacity':'alpha','stroke-width':'lw'}
@@ -491,8 +509,35 @@ class PathSpec(dict):
                 pass
         for k,v in mpl_kwargs.items():
             if k == 'lw':
-                tmp = self.layout.from_userx(v,'in')/13.889e-3 #hard coding pnt scaling
+                tmp = v.split('px')[0]
+                tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
                 mpl_kwargs['lw'] = tmp
+            if k == 'alpha':
+                mpl_kwargs['alpha'] = float(v)
+        return mpl_kwargs
+    
+class PatchSpec(PathSpec):
+    
+    def mplkwargs(self):
+        mpl_map = {'stroke':'color','stroke-opacity':'alpha','stroke-width':'lw','fill':'facecolor'}
+        mpl_kwargs = {}
+        keylist = list()
+        for k,v in self.style.items():
+            try:
+                mpl_kwargs[mpl_map[k]] = v
+            except KeyError:
+                pass
+        from matplotlib.colors import ColorConverter
+        converter = ColorConverter()
+        for k,v in mpl_kwargs.items():
+            if k == 'lw':
+                tmp = v.split('px')[0]
+                tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
+                mpl_kwargs['lw'] = tmp
+            if k == 'color':
+                mpl_kwargs['color'] = converter.to_rgba(v,float(self.style['stroke-opacity']))
+            if k == 'facecolor':
+                mpl_kwargs['facecolor'] = converter.to_rgba(v,float(self.style['fill-opacity']))
         return mpl_kwargs
     
 def read_svg_to_axes(svgfile, px_res=72, width_inches=7.5):
