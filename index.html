@@ -41,6 +41,37 @@
 <p>With FigureFirst, the data processing and layout steps are worked on <em>in parallel</em>. Around the time the researcher starts to make panels for a figure in Python, s/he also begins to layout those panels in Inkscape. This way, it is easy to change the data analysis and figure layout independently. Iterative figure creation is a snap, resulting in more beautful and informative figures!</p>
 <img src="images/explanation2.svg">
 <h3>
+Documentation</h3>
+<h5>
+Getting started</h5>
+<p>FigureFirst should work with any operating system. It requires
+<br />&bull; <a href="https://inkscape.org/en/download/">Inkscape</a>
+<br />&bull; Python and <a href="http://matplotlib.org/downloads.html">matplotlib</a>.
+</p>
+<p>
+There are several ways to install FigureFirst. A minimal method is to download this <a href="https://github.com/FlyRanch/figurefirst/edit/master/figurefirst/svg_to_axes.py">file</a> and copy it into your current directory. Then simply include <code>import svg_to_axes</code> in your python scripts. Alternatively, download and unzip FigureFirst from one of the links above or <a href="https://github.com/FlyRanch/figurefirst/zipball/master">here</a>, navigate into the unzipped directory, and run <code>sudo python setup.py install</code></p>
+<p>FigureFirst also includes several useful Inkscape extensions. To install these, navigate to the "inkscape_extensions" directory, and copy the .inx and .py files to  ~/.config/inkscape/extensions/ (on Ubuntu) or C:\Program Files\Inkscape\share\extensions
+(on Windows).
+</p>
+<h5>
+Basic example:</h5>
+<p>
+As a "hello world" example we will first construct a single axis using the FigureFirst workflow:
+</p>
+<p><strong>Step 1:</strong> Download the .svg file that will serve as a template, <a href="">hello_world_layout.svg</a>. You can open this file with Inkscape and explore it using the xml viewer to see what is going on.
+</p>
+<p><strong>Step 2:</strong> Create a text file called "example_hello_world.py" and copy the following text into it.
+<script src="https://gist.github.com/ptweir/d7f77b492710573ed005ca92ba09b568.js"></script>
+Alternatively, just download <a href="">example_hello_world.py</a>.
+</p>
+<p><strong>Step 3:</strong> Run the python file using this command, <code>python example_hello_world.py</code>
+<br />This should create an output svg file called "hello_world_output.svg" which you can open in Inkscape.
+</p>
+<p>
+So, what happened?
+</p>
+
+<h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
 <p>FigureFirst is primarily the work of Theodore Lindsay (<a href="https://github.com/psilentp" class="user-mention">@psilentp</a>), Floris van Breugel (<a href="https://github.com/florisvb" class="user-mention">@florisvb</a>), and Peter Weir (<a href="https://github.com/ptweir" class="user-mention">@ptweir</a>).</p>
