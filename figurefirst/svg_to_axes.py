@@ -193,9 +193,11 @@ class FigureLayout(object):
             if e_w < 0:
                 e_x += e_w
                 e_w *= -1
+                
             if e_h < 0:
                 e_y += e_h
-                e_y *= -1
+                e_h *= -1
+
             #express things as proportion for mpl
             left = e_x/self.layout_uw
             width = e_w/self.layout_uw
@@ -340,8 +342,9 @@ class FigureLayout(object):
                 found_target = True
         if not(found_target):
             target_layer = target_layers[0]
-            print 'target layer %s not found inserting into %s'%(fflayername,
-                                                      target_layer.getAttribute('figurefirst:name'))
+            print('targetlayer %s not found inserting into %s'%(fflayername,
+                                                      target_layer.getAttribute('figurefirst:name')))
+            target_layer = target_layer.parentNode
         mpl_svg = mpldoc.getElementsByTagName('svg')[0]
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
         mpl_viewbox = mpl_svg.getAttribute('viewBox').split()
@@ -541,9 +544,9 @@ class PatchSpec(PathSpec):
                 tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
                 mpl_kwargs['lw'] = tmp
             if k == 'edgecolor':
-                mpl_kwargs['edgecolor'] = converter.to_rgba(v,float(self.style['stroke-opacity']))
+                mpl_kwargs['edgecolor'] = np.array([converter.to_rgba(v,float(self.style['stroke-opacity']))])
             if k == 'facecolor':
-                mpl_kwargs['facecolor'] = converter.to_rgba(v,float(self.style['fill-opacity']))
+                mpl_kwargs['facecolor'] = np.array([converter.to_rgba(v,float(self.style['fill-opacity']))])
         return mpl_kwargs
     
 def read_svg_to_axes(svgfile, px_res=72, width_inches=7.5):
