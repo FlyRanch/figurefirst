@@ -62,7 +62,9 @@ def get_elements_by_attr(xml_node, attribute, value):
                 yield i
     return list(flatten([el for el in recur_get_element_by_attr(xml_node, attribute, value)]))
 
-
+class MPLAxis(dict):
+    def __getattr__(self,attr):
+        return self['axis'].__getattribute__(attr)
     
 class FigureLayout(object):
     def __init__(self, layout_filename):
@@ -222,7 +224,7 @@ class FigureLayout(object):
             ax = fig.add_axes([left, bottom, width, height],label = ax_key,projection = projection)
             #ax_name = datadict.pop('figurefirst:name')
             datadict['aspect_ratio'] = e_w/e_h
-	    mpl_methods_elements = axis_element.parentNode.getElementsByTagNameNS(XMLNS,'mplmethods')
+            mpl_methods_elements = axis_element.parentNode.getElementsByTagNameNS(XMLNS,'mplmethods')
             mpl_methods = dict()
             for mpl_methods_element in mpl_methods_elements:
                 [mpl_methods.update({key:value}) for key,value in mpl_methods_element.attributes.items()]
@@ -242,9 +244,13 @@ class FigureLayout(object):
             #    ax_key = axis_element.parentNode.getAttribute('id')
             #else:
             #    ax_key = ax_name
-            self.axes.setdefault(ax_key, {'axis':ax, 'data':datadict, 'name':ax_name,'mplmethods':mpl_methods})
+            mplaxis = MPLAxis(axis=ax, 
+                              data=datadict, 
+                              name=ax_name,
+                              mplmethods=mpl_methods)
+            self.axes.setdefault(ax_key, mplaxis)
+            axes_dict.update({ax_name:mplaxis})
             #send this one back
-            axes_dict.update({ax_name: {'axis':ax, 'data':datadict,'mplmethods':mpl_methods}})
         return axes_dict
     
     def load_pathspecs(self):
@@ -544,9 +550,9 @@ class PatchSpec(PathSpec):
                 tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
                 mpl_kwargs['lw'] = tmp
             if k == 'edgecolor':
-                mpl_kwargs['edgecolor'] = np.array([converter.to_rgba(v,float(self.style['stroke-opacity']))])
+                mpl_kwargs['edgecolor'] = np.array(converter.to_rgba(v,float(self.style['stroke-opacity'])))
             if k == 'facecolor':
-                mpl_kwargs['facecolor'] = np.array([converter.to_rgba(v,float(self.style['fill-opacity']))])
+                mpl_kwargs['facecolor'] = np.array(converter.to_rgba(v,float(self.style['fill-opacity'])))
         return mpl_kwargs
     
 def read_svg_to_axes(svgfile, px_res=72, width_inches=7.5):
