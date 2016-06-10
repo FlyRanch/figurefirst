@@ -174,22 +174,12 @@ class FigureLayout(object):
         node = svg_e
         transforms = []
         while parent_exists:
-            el = node.getElementsByTagName('figurefirst:figure')
-            if len(el) == 1:
-                elname = el[0].getAttribute('figurefirst:name')
-            else:
-                elname = ''
-                
-            if template_transform is not None and elname == template_transform['templatename']:
-                transform = np.array([ template_transform['width'], 0, 0, template_transform['height'], template_transform['x'], template_transform['y'] ] )
-                transforms.append(transform)
-            else:
-                try:
-                    transform = node.getAttribute("transform") # if no transform, this returns ''
-                    if len(transform) > 0:
-                        transforms.append(transform)
-                except:
-                    break
+            try:
+                transform = node.getAttribute("transform") # if no transform, this returns ''
+                if len(transform) > 0:
+                    transforms.append(transform)
+            except:
+                break
                     
             try:
                 node = node.parentNode
@@ -197,6 +187,17 @@ class FigureLayout(object):
             except:
                 parent_exists = False
         if 1:
+        
+        
+            #el = axis_element.parentNode.getElementsByTagName('figurefirst:figure')
+            #if len(el) == 1:
+            #    elname = el[0].getAttribute('figurefirst:name')
+            #else:
+            #    elname = ''
+            if template_transform is not None:# and elname == template_transform['templatename']:
+                transform = np.array([ template_transform['width'], 0, 0, template_transform['height'], template_transform['x'], template_transform['y'] ] )
+                transforms.append(transform)
+        
             for transform in transforms:
                 x_scale = 1
                 y_scale = 1
