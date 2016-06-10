@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="6in"
+   height="8in"
+   viewBox="0 0 600 800"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="figure_templating_example.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.2456042"
+     inkscape:cx="124.3375"
+     inkscape:cy="556.42903"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1762"
+     inkscape:window-height="1028"
+     inkscape:window-x="75"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     units="in"
+     showguides="false"
+     inkscape:guide-bbox="true" />
+  <defs
+     id="defs4">
+    <clipPath
+       id="clipPath3002-40"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         y="368.47675"
+         x="130.30969"
+         height="441.43665"
+         width="461.63971"
+         id="rect3004-5"
+         style="fill:#008000" />
+    </clipPath>
+    <clipPath
+       id="clipPath3002"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         y="368.47675"
+         x="130.30969"
+         height="441.43665"
+         width="461.63971"
+         id="rect3004"
+         style="fill:#008000" />
+    </clipPath>
+    <clipPath
+       id="clipPath3002-5"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         y="368.47675"
+         x="130.30969"
+         height="441.43665"
+         width="461.63971"
+         id="rect3004-1"
+         style="fill:#008000" />
+    </clipPath>
+    <clipPath
+       id="clipPath3002-1"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         y="368.47675"
+         x="130.30969"
+         height="441.43665"
+         width="461.63971"
+         id="rect3004-13"
+         style="fill:#008000" />
+    </clipPath>
+    <clipPath
+       id="clipPath3002-1-4"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         y="368.47675"
+         x="130.30969"
+         height="441.43665"
+         width="461.63971"
+         id="rect3004-13-3"
+         style="fill:#008000" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:inline"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Design_layer">
+    <g
+       id="g3717">
+      <rect
+         style="opacity:1;fill:#00ffff;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+         id="rect3391"
+         width="75.822197"
+         height="89.202583"
+         x="41.033188"
+         y="34.641846">
+        <figurefirst:axis
+           figurefirst:name="axis1" />
+      </rect>
+      <rect
+         style="display:inline;opacity:1;fill:#00ffff;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+         id="rect3391-4"
+         width="75.822197"
+         height="89.202583"
+         x="130.68179"
+         y="33.749821">
+        <figurefirst:axis
+           figurefirst:name="axis2" />
+      </rect>
+      <rect
+         style="display:inline;opacity:1;fill:#00ffff;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+         id="rect3391-8"
+         width="75.822197"
+         height="89.202583"
+         x="217.2083"
+         y="32.857792">
+        <figurefirst:axis
+           figurefirst:name="axis3" />
+      </rect>
+      <rect
+         style="display:inline;opacity:1;fill:#00ffff;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+         id="rect3391-85"
+         width="75.822197"
+         height="89.202583"
+         x="306.41089"
+         y="32.857796">
+        <figurefirst:axis
+           figurefirst:name="axis4" />
+      </rect>
+      <rect
+         style="display:inline;opacity:1;fill:#00ffff;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+         id="rect3391-9"
+         width="75.822197"
+         height="41.925213"
+         x="390.26129"
+         y="32.857796">
+        <figurefirst:axis
+           figurefirst:name="axis5" />
+      </rect>
+      <rect
+         style="display:inline;opacity:1;fill:#00ffff;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+         id="rect3391-9-5"
+         width="75.822197"
+         height="38.357109"
+         x="389.36926"
+         y="84.595291">
+        <figurefirst:axis
+           figurefirst:name="axis6" />
+      </rect>
+      <figurefirst:figure
+         figurefirst:name="group1" />
+    </g>
+    <rect
+       style="opacity:1;fill:#ff0000;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+       id="rect3401"
+       width="426.38834"
+       height="86.526505"
+       x="41.925209"
+       y="140.79291">
+      <figurefirst:figure
+         figurefirst:name="group2"
+         figurefirst:template="group1" />
+    </rect>
+    <rect
+       style="display:inline;opacity:1;fill:#ff0000;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+       id="rect3401-5"
+       width="546.81183"
+       height="181.08125"
+       x="45.493324"
+       y="248.28204">
+      <figurefirst:figure
+         figurefirst:name="group3"
+         figurefirst:template="group1" />
+    </rect>
+  </g>
+  <g
+     style="display:inline"
+     inkscape:label="Layer 2"
+     id="layer2"
+     inkscape:groupmode="layer">
+    <figurefirst:targetlayer
+       figurefirst:name="mpl_layer_2" />
+  </g>
+  <g
+     inkscape:label="Layer 4"
+     id="layer4"
+     inkscape:groupmode="layer">
+    <figurefirst:targetlayer
+       figurefirst:name="mpl_layer_4" />
+  </g>
+  <g
+     style="display:inline"
+     inkscape:label="Layer 3"
+     id="layer3"
+     inkscape:groupmode="layer">
+    <figurefirst:targetlayer
+       figurefirst:name="mpl_layer_3" />
+  </g>
+</svg>

@@ -145,60 +145,107 @@ class FigureLayout(object):
         #convert from layout units into destination units
         return y_l/SCALE_FACTORS[self.layout_user_sx[1]][dst]
 
-    def add_axes(self, fig, axis_elements):
-        """ add axes to an already constructed mpl figure, fig,
-        from a collection of xml axis_element tags """
-        axes_dict = dict()
+    def get_bounding_box_for_elements(self, axis_elements):
+        left = np.inf
+        right = 0
+        top = np.inf
+        bottom = 0
         for axis_element in axis_elements:
-            svg_e = axis_element.parentNode
-            e_x = float(svg_e.getAttribute("x"))
-            e_y = float(svg_e.getAttribute("y"))
-            e_w = float(svg_e.getAttribute("width"))
-            e_h = float(svg_e.getAttribute("height"))
-            # get and apply transforms
-            parent_exists = True
-            node = svg_e
-            transforms = []
-            while parent_exists:
+            e_x, e_y, e_w, e_h = self.get_xywh_for_axis_element(axis_element)
+            if e_x < left:
+                left = e_x
+            if e_y < top:
+                top = e_y
+            if (e_x + e_w) > right:
+                right = (e_x + e_w)
+            if (e_y + e_h) > bottom:
+                bottom = (e_y + e_h)
+        return left, right, top, bottom
+            
+    def get_xywh_for_axis_element(self, axis_element, template_transform=None):
+        svg_e = axis_element.parentNode
+        e_x = float(svg_e.getAttribute("x"))
+        e_y = float(svg_e.getAttribute("y"))
+        e_w = float(svg_e.getAttribute("width"))
+        e_h = float(svg_e.getAttribute("height"))
+        
+        # get and apply transforms
+        parent_exists = True
+        node = svg_e
+        transforms = []
+        while parent_exists:
+            el = node.getElementsByTagName('figurefirst:figure')
+            if len(el) == 1:
+                elname = el[0].getAttribute('figurefirst:name')
+            else:
+                elname = ''
+                
+            if template_transform is not None and elname == template_transform['templatename']:
+                transform = np.array([ template_transform['width'], 0, 0, template_transform['height'], template_transform['x'], template_transform['y'] ] )
+                transforms.append(transform)
+            else:
                 try:
                     transform = node.getAttribute("transform") # if no transform, this returns ''
                     if len(transform) > 0:
                         transforms.append(transform)
                 except:
                     break
-                try:
-                    node = node.parentNode
-                    parent_exists = True
-                except:
-                    parent_exists = False
-            if 1:
-                for transform in transforms:
+                    
+            try:
+                node = node.parentNode
+                parent_exists = True
+            except:
+                parent_exists = False
+        if 1:
+            for transform in transforms:
+                x_scale = 1
+                y_scale = 1
+                x_translation = 0
+                y_translation = 0
+                
+                if type(transform) is str:
                     if 'matrix' in transform:
                         transform = 'np.array(' + transform.split('matrix')[1] + ')'
                         transform = eval(transform)
-                        e_x = e_x*transform[0] + transform[4]
-                        e_y = e_y*transform[3] + transform[5]
-                        e_w = e_w*transform[0]
-                        e_h = e_h*transform[3]
-                    if 'translate' in transform:
+                        x_scale = transform[0]
+                        y_scale = transform[3]
+                        x_translation = transform[4]
+                        y_translation = transform[5]
+                    elif 'translate' in transform:
                         translate = transform.split('translate')[1].split(',')
-                        e_x = e_x+np.array(float(translate[0].strip('(')))
-                        e_y = e_y+np.array(float(translate[1].strip(')')))
-                    if 'scale' in transform:
+                        x_translation = np.array(float(translate[0].strip('(')))
+                        y_translation = np.array(float(translate[1].strip(')')))
+                    elif 'scale' in transform:
                         scale = transform.split('scale')[1].split(',')
                         x_scale = float(scale[0].strip('('))
                         y_scale = float(scale[1].strip(')'))
-                        e_x = e_x*x_scale
-                        e_y = e_y*y_scale
-                        e_w = e_w*x_scale
-                        e_h = e_h*y_scale
-            if e_w < 0:
-                e_x += e_w
-                e_w *= -1
+                else:
+                    x_scale = transform[0]
+                    y_scale = transform[3]
+                    x_translation = transform[4]
+                    y_translation = transform[5]
+                    
+                e_x = e_x*x_scale + x_translation
+                e_y = e_y*y_scale + y_translation
+                e_w = e_w*x_scale
+                e_h = e_h*y_scale
                 
-            if e_h < 0:
-                e_y += e_h
-                e_h *= -1
+        if e_w < 0:
+            e_x += e_w
+            e_w *= -1
+            
+        if e_h < 0:
+            e_y += e_h
+            e_h *= -1
+        
+        return e_x, e_y, e_w, e_h
+        
+    def add_axes(self, fig, axis_elements, template_transform=None):
+        """ add axes to an already constructed mpl figure, fig,
+        from a collection of xml axis_element tags """
+        axes_dict = dict()
+        for axis_element in axis_elements:
+            e_x, e_y, e_w, e_h = self.get_xywh_for_axis_element(axis_element, template_transform)
 
             #express things as proportion for mpl
             left = e_x/self.layout_uw
@@ -278,6 +325,14 @@ class FigureLayout(object):
                 repl_str = re.sub(r'display:(none|inline)','display:%s'%(value),style_str)
                 l.setAttribute('style',repl_str)
             
+    def get_figure_element_by_name(self, name):
+        figure_elements = self.layout.getElementsByTagNameNS(XMLNS, 'figure')
+        figure_elements_by_name_dict = {}
+        for figure_element in figure_elements:
+            figname = figure_element.getAttribute('figurefirst:name')
+            figure_elements_by_name_dict[figname] = figure_element
+        return figure_elements_by_name_dict[name]
+        
     def make_mplfigures(self):
         """parse the xml file for elements in the figurefirst namespace of the 'axis'
         type, return a dict with the figure and axes. Attribues of the figurefirst tag
@@ -291,10 +346,29 @@ class FigureLayout(object):
         for figure_element in figure_elements:
             fig = plt.figure(figsize=(fw_in, fh_in)) #create figure
             figname = figure_element.getAttribute('figurefirst:name')
+            
+            # if the figure references a template, find the template figure 
+            templatename = figure_element.getAttribute('figurefirst:template')
+            if len(templatename) > 0:
+                template_rect = figure_element.parentNode
+                figure_element = self.get_figure_element_by_name(templatename)
+                axis_elements = figure_element.parentNode.getElementsByTagNameNS(XMLNS, 'axis')
+                left, right, top, bottom = self.get_bounding_box_for_elements(axis_elements)
+                width = right-left
+                height = bottom-top
+                template_transform = {  'templatename': templatename,
+                                        'x': float(template_rect.getAttribute('x'))-left*(float(template_rect.getAttribute('width')) / width),
+                                        'y': float(template_rect.getAttribute('y'))-top*(float(template_rect.getAttribute('height')) / height),
+                                        'width': float(template_rect.getAttribute('width')) / width,
+                                        'height': float(template_rect.getAttribute('height')) / height,
+                                        }
+            else:
+                template_transform = None
+            
             # get the elements within this figure grouping
             axis_elements = figure_element.parentNode.getElementsByTagNameNS(XMLNS, 'axis')
             axes_in_figures.update(set(axis_elements))
-            figure_axes = self.add_axes(fig, axis_elements)
+            figure_axes = self.add_axes(fig, axis_elements, template_transform=template_transform)
             self.axes_groups[figname] = figure_axes
             self.figures[figname] = fig
 
