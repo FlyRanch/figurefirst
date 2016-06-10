@@ -24,11 +24,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.2456042"
-     inkscape:cx="124.3375"
-     inkscape:cy="556.42903"
+     inkscape:zoom="0.88077518"
+     inkscape:cx="-150.86969"
+     inkscape:cy="596.03136"
      inkscape:document-units="in"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer5"
      showgrid="false"
      inkscape:window-width="1762"
      inkscape:window-height="1028"
@@ -113,8 +113,38 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Design_layer">
+    <rect
+       style="opacity:1;fill:#ff0000;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+       id="rect3401"
+       width="426.38834"
+       height="86.526505"
+       x="41.925209"
+       y="201.34563">
+      <figurefirst:figure
+         figurefirst:name="group2"
+         figurefirst:template="mytemplate" />
+    </rect>
+    <rect
+       style="display:inline;opacity:1;fill:#ff0000;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
+       id="rect3401-5"
+       width="546.81183"
+       height="181.08125"
+       x="41.708778"
+       y="305.05023">
+      <figurefirst:figure
+         figurefirst:name="group3"
+         figurefirst:template="mytemplate" />
+    </rect>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Template_layer"
+     style="display:inline">
     <g
-       id="g3717">
+       style="display:inline"
+       id="g3717"
+       transform="matrix(1.0563905,0,0,1.1663781,-2.3138807,-5.4668158)">
       <rect
          style="opacity:1;fill:#00ffff;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
          id="rect3391"
@@ -176,30 +206,8 @@
            figurefirst:name="axis6" />
       </rect>
       <figurefirst:figure
-         figurefirst:name="group1" />
+         figurefirst:name="mytemplate" />
     </g>
-    <rect
-       style="opacity:1;fill:#ff0000;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
-       id="rect3401"
-       width="426.38834"
-       height="86.526505"
-       x="41.925209"
-       y="140.79291">
-      <figurefirst:figure
-         figurefirst:name="group2"
-         figurefirst:template="group1" />
-    </rect>
-    <rect
-       style="display:inline;opacity:1;fill:#ff0000;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.98630138"
-       id="rect3401-5"
-       width="546.81183"
-       height="181.08125"
-       x="45.493324"
-       y="248.28204">
-      <figurefirst:figure
-         figurefirst:name="group3"
-         figurefirst:template="group1" />
-    </rect>
   </g>
   <g
      style="display:inline"
