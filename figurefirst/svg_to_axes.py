@@ -267,7 +267,17 @@ class FigureLayout(object):
         speclist = [PatchSpec(el,self) for el in elementlist]
         [self.pathspecs.update({sp.name:sp}) for sp in speclist]
 
-        
+    def set_layer_visability(self,inkscape_label = 'Layer 1',vis = True,gid = None,):
+        import re
+        value = {False:'none',True:'inline'}[vis]
+        output_svg = self.output_xml.getElementsByTagName('svg')[0]
+        layers = get_elements_by_attr(output_svg,"inkscape:groupmode",'layer')
+        for l in layers:
+            if l.attributes['inkscape:label'].value == inkscape_label:
+                style_str = l.attributes['style'].value
+                repl_str = re.sub(r'display:(none|inline)','display:%s'%(value),style_str)
+                l.setAttribute('style',repl_str)
+            
     def make_mplfigures(self):
         """parse the xml file for elements in the figurefirst namespace of the 'axis'
         type, return a dict with the figure and axes. Attribues of the figurefirst tag
