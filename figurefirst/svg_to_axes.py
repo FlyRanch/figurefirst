@@ -203,7 +203,7 @@ class FigureLayout(object):
                 x_translation = 0
                 y_translation = 0
                 
-                if type(transform) is str:
+                if type(transform) is unicode or type(transform) is str:
                     if 'matrix' in transform:
                         transform = 'np.array(' + transform.split('matrix')[1] + ')'
                         transform = eval(transform)
