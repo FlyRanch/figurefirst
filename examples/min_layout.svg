@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="7.5in"
+   height="4in"
+   viewBox="0 0 675.0000 360.0000"
+   id="svg2"
+   version="1.1">
+  <rect
+     id="rect4703"
+     width="615.0"
+     height="300.0"
+     x="30.0"
+     y="30.0"
+     style="fill:#cccccc;stroke:none;">
+     <figurefirst:axis
+       figurefirst:name="axis1"/>
+  </rect>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+     <figurefirst:targetlayer
+         figurefirst:name='mpl_layer'/>
+  </g>
+</svg>
