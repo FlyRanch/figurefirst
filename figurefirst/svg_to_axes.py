@@ -67,8 +67,11 @@ class MPLAxis(dict):
         return self['axis'].__getattribute__(attr)
     
 class FigureLayout(object):
-    def __init__(self, layout_filename, autogenlayers=False):
-        """construct an object that specifies the figure layout fom the
+    def __init__(self, layout_filename, autogenlayers=True):
+        """
+        autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure, default: True
+        
+        construct an object that specifies the figure layout fom the
         svg file layout_filename. Currently there are a number of restrictions
         on the format of this file.
         1) the top level svg node must contain the xmlns declaration. Also, the aspect ratio
