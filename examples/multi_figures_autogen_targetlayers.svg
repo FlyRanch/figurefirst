@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="6in"
+   height="8in"
+   viewBox="0 0 600 800"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="multi_figures_autogen_targetlayers.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.2456042"
+     inkscape:cx="34.618364"
+     inkscape:cy="556.42903"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1762"
+     inkscape:window-height="1028"
+     inkscape:window-x="75"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     units="in"
+     showguides="false"
+     inkscape:guide-bbox="true" />
+  <defs
+     id="defs4">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3002-40">
+      <rect
+         style="fill:#008000"
+         id="rect3004-5"
+         width="461.63971"
+         height="441.43665"
+         x="130.30969"
+         y="368.47675" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3002">
+      <rect
+         style="fill:#008000"
+         id="rect3004"
+         width="461.63971"
+         height="441.43665"
+         x="130.30969"
+         y="368.47675" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3002-5">
+      <rect
+         style="fill:#008000"
+         id="rect3004-1"
+         width="461.63971"
+         height="441.43665"
+         x="130.30969"
+         y="368.47675" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3002-1">
+      <rect
+         style="fill:#008000"
+         id="rect3004-13"
+         width="461.63971"
+         height="441.43665"
+         x="130.30969"
+         y="368.47675" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3002-1-4">
+      <rect
+         style="fill:#008000"
+         id="rect3004-13-3"
+         width="461.63971"
+         height="441.43665"
+         x="130.30969"
+         y="368.47675" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Design_layer"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <g
+       id="g4481">
+      <rect
+         y="29.289688"
+         x="29.436853"
+         height="122.20755"
+         width="140.94008"
+         id="rect4191"
+         style="opacity:1;fill:#917c6f;stroke:none;stroke-width:0.44999999;stroke-miterlimit:4;stroke-dasharray:0.45, 0.45;stroke-dashoffset:0;stroke-opacity:0.98630138">
+        <figurefirst:axis
+           figurefirst:name="axis1" />
+      </rect>
+      <rect
+         y="28.843672"
+         x="185.54138"
+         height="122.20755"
+         width="140.94008"
+         id="rect4191-4"
+         style="display:inline;opacity:1;fill:#917c6f;stroke:none;stroke-width:0.44999999;stroke-miterlimit:4;stroke-dasharray:0.45, 0.45;stroke-dashoffset:0;stroke-opacity:0.98630138">
+        <figurefirst:axis
+           figurefirst:name="axis2" />
+      </rect>
+      <rect
+         y="28.843672"
+         x="338.07779"
+         height="122.20755"
+         width="140.94008"
+         id="rect4191-2"
+         style="display:inline;opacity:1;fill:#917c6f;stroke:none;stroke-width:0.44999999;stroke-miterlimit:4;stroke-dasharray:0.45, 0.45;stroke-dashoffset:0;stroke-opacity:0.98630138">
+        <figurefirst:axis
+           figurefirst:name="axis3" />
+      </rect>
+      <figurefirst:figure
+         figurefirst:name="figure1" />
+    </g>
+    <g
+       id="g4486">
+      <rect
+         y="208.14087"
+         x="28.544832"
+         height="122.20755"
+         width="140.94008"
+         id="rect4191-8"
+         style="display:inline;opacity:1;fill:#ff0000;stroke:none;stroke-width:0.44999999;stroke-miterlimit:4;stroke-dasharray:0.45, 0.45000000000000001;stroke-dashoffset:0;stroke-opacity:0.98630138">
+        <figurefirst:axis
+           figurefirst:name="axis1" />
+      </rect>
+      <rect
+         y="209.03288"
+         x="182.8653"
+         height="122.20755"
+         width="140.94008"
+         id="rect4191-3"
+         style="display:inline;opacity:1;fill:#ff0000;stroke:none;stroke-width:0.44999999;stroke-miterlimit:4;stroke-dasharray:0.45, 0.45000000000000001;stroke-dashoffset:0;stroke-opacity:0.98630138">
+        <figurefirst:axis
+           figurefirst:name="axis2" />
+      </rect>
+      <rect
+         y="208.14087"
+         x="335.40173"
+         height="122.20755"
+         width="140.94008"
+         id="rect4191-3-4"
+         style="display:inline;opacity:1;fill:#ff0000;stroke:none;stroke-width:0.44999999;stroke-miterlimit:4;stroke-dasharray:0.45, 0.45000000000000001;stroke-dashoffset:0;stroke-opacity:0.98630138">
+        <figurefirst:axis
+           figurefirst:name="axis3" />
+      </rect>
+      <figurefirst:figure
+         figurefirst:name="figure2" />
+    </g>
+  </g>
+</svg>
