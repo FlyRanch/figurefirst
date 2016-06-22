@@ -67,7 +67,7 @@ class MPLAxis(dict):
         return self['axis'].__getattribute__(attr)
     
 class FigureLayout(object):
-    def __init__(self, layout_filename):
+    def __init__(self, layout_filename, autogenlayers=False):
         """construct an object that specifies the figure layout fom the
         svg file layout_filename. Currently there are a number of restrictions
         on the format of this file.
@@ -96,6 +96,7 @@ class FigureLayout(object):
                y="47.592991">
               <figurefirst:axis
                  figurefirst:name="frequency.22H05.start" /> """
+        self.autogenlayers = autogenlayers
         self.layout_filename = layout_filename
         #from xml.dom import minidom
         #layout_filename = layout_filename
@@ -325,7 +326,33 @@ class FigureLayout(object):
                 style_str = l.attributes['style'].value
                 repl_str = re.sub(r'display:(none|inline)','display:%s'%(value),style_str)
                 l.setAttribute('style',repl_str)
-            
+                
+    def create_new_targetlayer(self, layer_name):
+        new_layer = self.output_xml.createElement('g')
+        new_targetlayer = self.output_xml.createElementNS(XMLNS, 'figurefirst:targetlayer')
+        
+        # check to make sure there is not already a layer with that name / id
+        output_svg = self.output_xml.getElementsByTagName('svg')[0]
+        layers = get_elements_by_attr(output_svg,"inkscape:groupmode",'layer')
+        for layer in layers:
+            if layer_name == layer.getAttribute('id') or layer_name == layer.getAttribute('inkscape:label'):
+                raise ValueError( 'Layer with that name already exists!' )
+        
+        # set default attributes
+        attributes = {u'style': u'display:inline;stroke-linecap:butt;stroke-linejoin:round', 
+                      u'inkscape:label': layer_name, 
+                      u'id': layer_name, 
+                      u'inkscape:groupmode': 'layer',
+                      }
+        for attribute, value in attributes.items():
+            new_layer.setAttribute(attribute, value)
+        
+        ff_targetlayer_name = layer_name
+        new_targetlayer.setAttributeNS(XMLNS, 'figurefirst:name', ff_targetlayer_name)
+        
+        new_layer.appendChild(new_targetlayer)
+        output_svg.appendChild(new_layer)
+        
     def get_figure_element_by_name(self, name):
         figure_elements = self.layout.getElementsByTagNameNS(XMLNS, 'figure')
         figure_elements_by_name_dict = {}
@@ -422,20 +449,38 @@ class FigureLayout(object):
         #self.fig  = fig
         #return {'mplfig':fig,'mplaxes':axes, 'mplaxesgrouped': axes_groups}
 
-    def append_figure_to_layer(self, fig, fflayername):
+    def append_figure_to_layer(self, fig, fflayername, cleartarget=False):
         svg_string = self.to_svg_buffer(fig)
         mpldoc = minidom.parse(svg_string)
-        target_layers = self.output_xml.getElementsByTagNameNS(XMLNS, 'targetlayer')
-        found_target = False
-        for tl in target_layers:
-            if tl.getAttribute('figurefirst:name') == fflayername:
-                target_layer = tl.parentNode
-                found_target = True
+        
+        def get_target_layer(fflayername):
+            target_layers = self.output_xml.getElementsByTagNameNS(XMLNS, 'targetlayer')
+            found_target = False
+            for tl in target_layers:
+                if tl.getAttribute('figurefirst:name') == fflayername:
+                    target_layer = tl.parentNode
+                    found_target = True
+                    return target_layer, found_target
+            return None, found_target
+        
+        target_layer, found_target = get_target_layer(fflayername)
         if not(found_target):
-            target_layer = target_layers[0]
-            print('targetlayer %s not found inserting into %s'%(fflayername,
+            if self.autogenlayers:
+                self.create_new_targetlayer(fflayername)
+                print('Created new layer: %s'%(fflayername)) 
+                target_layer, found_target = get_target_layer(fflayername)
+            else:
+                target_layer = target_layers[0]
+                print('targetlayer %s not found inserting into %s'%(fflayername,
                                                       target_layer.getAttribute('figurefirst:name')))
-            target_layer = target_layer.parentNode
+                target_layer = target_layer.parentNode
+        
+        if cleartarget:
+            try:
+                self.clear_fflayer(fflayername)
+            except:
+                print('could not clear target, probably because desired target not found, try specifying fflayername, or use autogenlayers=True')
+                
         mpl_svg = mpldoc.getElementsByTagName('svg')[0]
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
         mpl_viewbox = mpl_svg.getAttribute('viewBox').split()
