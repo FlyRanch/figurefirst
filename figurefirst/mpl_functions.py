@@ -71,3 +71,17 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
     for line in ax.get_xticklines() + ax.get_yticklines():
         #line.set_markersize(6)
         line.set_markeredgewidth(linewidth)
+
+        
+def kill_spines(ax):
+    return adjust_spines(ax,'none', 
+                  spine_locations={}, 
+                  smart_bounds=True, 
+                  xticks=None, 
+                  yticks=None, 
+                  linewidth=1)
+
+def kill_labels(ax):
+    #ax = ax['axis']
+    for tl in ax.get_xticklabels() + ax.get_yticklabels():
+            tl.set_visible(False)

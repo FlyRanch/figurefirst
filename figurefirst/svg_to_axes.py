@@ -67,9 +67,10 @@ class MPLAxis(dict):
         return self['axis'].__getattribute__(attr)
     
 class FigureLayout(object):
-    def __init__(self, layout_filename, autogenlayers=True):
+    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False):
         """
         autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure, default: True
+        make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init
         
         construct an object that specifies the figure layout fom the
         svg file layout_filename. Currently there are a number of restrictions
@@ -125,6 +126,8 @@ class FigureLayout(object):
         # it is probably best to assert that the a.r's are the same
         # for now
         assert self.layout_user_sx == self.layout_user_sy
+        if make_mplfigures:
+            self.make_mplfigures()
 
     def __getattr__(self, attr):
         if attr == 'fig':
@@ -318,6 +321,15 @@ class FigureLayout(object):
         elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'patchspec')
         speclist = [PatchSpec(el,self) for el in elementlist]
         [self.pathspecs.update({sp.name:sp}) for sp in speclist]
+        
+    def get_outputfile_layers(self):
+        output_svg = self.output_xml.getElementsByTagName('svg')[0]
+        layers = get_elements_by_attr(output_svg,"inkscape:groupmode",'layer')
+        layerdict = {}
+        for l in layers:
+            label = attributes['inkscape:label'].value
+            layerdict[label] = l
+        return layerdict
 
     def set_layer_visability(self,inkscape_label = 'Layer 1',vis = True,gid = None,):
         import re
@@ -565,6 +577,12 @@ class FigureLayout(object):
             outfile = open(output_filename, 'w')
             outfile.write(self.output_xml.toxml().encode('ascii', 'xmlcharrefreplace'))
             outfile.close()
+            
+    def save(self,filename,hidelayers = []):
+        self.insert_figures()
+        for l in hidelayers:
+            self.set_layer_visability(l,False)
+        self.write_svg(filename)
 
     def save_svg(self, output_filename):
         ###deprecate this function
