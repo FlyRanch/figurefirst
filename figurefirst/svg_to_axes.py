@@ -482,12 +482,11 @@ class FigureLayout(object):
         if not(found_target):
             if self.autogenlayers:
                 self.create_new_targetlayer(fflayername)
-                print('Created new layer: %s'%(fflayername)) 
+                #print('Created new layer: %s'%(fflayername)) 
                 target_layer, found_target = get_target_layer(fflayername)
             else:
                 target_layer = target_layers[0]
-                print('targetlayer %s not found inserting into %s'%(fflayername,
-                                                      target_layer.getAttribute('figurefirst:name')))
+                #print('targetlayer %s not found inserting into %s'%(fflayername,target_layer.getAttribute('figurefirst:name')))
                 target_layer = target_layer.parentNode
         
         if cleartarget:
@@ -578,8 +577,11 @@ class FigureLayout(object):
             outfile.write(self.output_xml.toxml().encode('ascii', 'xmlcharrefreplace'))
             outfile.close()
             
-    def save(self,filename,hidelayers = []):
-        self.insert_figures()
+    def save(self,filename,hidelayers = [],targetlayer = None):
+        if targetlayer:
+            self.insert_figures(fflayername=targetlayer)
+        else:
+            self.insert_figures()
         for l in hidelayers:
             self.set_layer_visability(l,False)
         self.write_svg(filename)
