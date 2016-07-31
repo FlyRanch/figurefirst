@@ -240,7 +240,16 @@ class FigureLayout(object):
             e_h *= -1
         
         return e_x, e_y, e_w, e_h
+    
+    def make_group_tree(self):
+        grouptree = dict()
         
+        def traverse(node,grouptree):
+            for child in node.childNodes:
+                for key, value in node.attributes.items():
+                    if key in ['figurefirst:group','figurefirst:figure']:
+                        pass
+            
     def add_axes(self, fig, axis_elements, template_transform=None):
         """ add axes to an already constructed mpl figure, fig,
         from a collection of xml axis_element tags """
