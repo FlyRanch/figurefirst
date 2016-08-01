@@ -2,6 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -9,14 +10,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
    width="7.5in"
    height="4in"
-   viewBox="0 0 675.0000 360.0000"
+   viewBox="0 0 750 400"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="nested_groups._layoutsvg.svg">
+   sodipodi:docname="nested_group_layout.svg">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,18 +24,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.59270073"
-     inkscape:cx="326.59191"
-     inkscape:cy="144.40205"
+     inkscape:zoom="0.66459988"
+     inkscape:cx="54.869049"
+     inkscape:cy="235.51874"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
-     inkscape:window-width="1055"
-     inkscape:window-height="923"
-     inkscape:window-x="194"
-     inkscape:window-y="94"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="2028"
+     inkscape:window-height="907"
+     inkscape:window-x="-329"
+     inkscape:window-y="240"
+     inkscape:window-maximized="0"
+     showguides="false" />
   <defs
      id="defs4" />
   <metadata
@@ -54,10 +55,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-692.36217)">
+     transform="translate(0,-692.36219)">
     <g
        id="g3497"
-       transform="translate(28,8.672627)">
+       transform="matrix(1.2122554,0,0,1.2122554,-5.7915087,-155.16566)">
       <g
          id="g3464">
         <rect
@@ -153,7 +154,7 @@
          figurefirst:name="cohort1" />
     </g>
     <g
-       transform="translate(336.90764,8.672627)"
+       transform="matrix(1.2122554,0,0,1.2122554,368.68347,-155.16566)"
        id="g3497-3">
       <g
          id="g3464-1">
