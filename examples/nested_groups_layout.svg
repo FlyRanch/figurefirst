@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="2in"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="nested_groups_layout.svg"
+   version="1.1"
+   viewBox="0 0 400 200"
+   width="4in">
+  <sodipodi:namedview
+     bordercolor="#666666"
+     borderopacity="1.0"
+     id="base"
+     inkscape:current-layer="layer1"
+     inkscape:cx="-8.0335531"
+     inkscape:cy="56.333213"
+     inkscape:document-units="in"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:window-height="935"
+     inkscape:window-maximized="0"
+     inkscape:window-width="1643"
+     inkscape:window-x="2625"
+     inkscape:window-y="106"
+     inkscape:zoom="0.81957358"
+     pagecolor="#ffffff"
+     showgrid="false"
+     units="in" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="matrix(0.8406931,0,0,0.8406931,4.5639902,50.146677)"
+       style="stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       id="g4177">
+      <rect
+         y="-170.31978"
+         x="5.1444445"
+         width="80.946053"
+         transform="scale(1,-1)"
+         style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4136"
+         height="148.94075">
+        <figurefirst:axis
+           figurefirst:name="ax1" />
+      </rect>
+      <rect
+         y="-170.31978"
+         x="121.26728"
+         width="80.946053"
+         transform="scale(1,-1)"
+         style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4136-9"
+         height="148.94075">
+        <figurefirst:axis
+           figurefirst:name="ax2" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="group1" />
+    </g>
+    <g
+       id="g4183"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <g
+         id="g4177-2"
+         style="stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         transform="matrix(1,0,0,0.42654867,182.22213,1.1487208)">
+        <rect
+           height="148.94075"
+           id="rect4136-0"
+           style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           transform="scale(1,-1)"
+           width="80.946053"
+           x="32.378422"
+           y="-170.31978">
+          <figurefirst:axis
+             figurefirst:name="ax1" />
+        </rect>
+        <rect
+           height="148.94075"
+           id="rect4136-9-8"
+           style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           transform="scale(1,-1)"
+           width="80.946053"
+           x="121.26728"
+           y="-170.31978">
+          <figurefirst:axis
+             figurefirst:name="ax2" />
+        </rect>
+        <figurefirst:group
+           figurefirst:name="group1" />
+      </g>
+      <g
+         id="g4177-2-0"
+         style="display:inline;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         transform="matrix(1,0,0,0.42654867,182.22213,81.136112)">
+        <rect
+           height="148.94075"
+           id="rect4136-0-4"
+           style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           transform="scale(1,-1)"
+           width="80.946053"
+           x="32.378422"
+           y="-170.31978">
+          <figurefirst:axis
+             figurefirst:name="ax1" />
+        </rect>
+        <rect
+           height="148.94075"
+           id="rect4136-9-8-88"
+           style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           transform="scale(1,-1)"
+           width="80.946053"
+           x="121.26728"
+           y="-170.31978">
+          <figurefirst:axis
+             figurefirst:name="ax2" />
+        </rect>
+        <figurefirst:group
+           figurefirst:name="group2" />
+      </g>
+      <figurefirst:group
+         figurefirst:name="top_group" />
+    </g>
+    <rect
+       y="6.6214609"
+       x="140.12822"
+       height="37.960121"
+       width="61.007336"
+       id="rect4191"
+       style="opacity:1;fill:#999999;fill-opacity:0.31372549;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-opacity:1">
+      <figurefirst:axis
+         figurefirst:name="ungrouped" />
+    </rect>
+  </g>
+  <g
+     style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+     inkscape:label="Layer 2"
+     inkscape:groupmode="layer"
+     id="layer2">
+    <figurefirst:figure
+       figurefirst:name="fig2" />
+    <g
+       transform="matrix(0.68302037,0,0,0.28379919,-14.643938,0.20104745)"
+       style="display:inline;stroke:none"
+       id="g4177-2-7">
+      <rect
+         y="-170.31978"
+         x="32.378422"
+         width="80.946053"
+         transform="scale(1,-1)"
+         style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4136-0-0"
+         height="148.94075">
+        <figurefirst:axis
+           figurefirst:name="ax1" />
+      </rect>
+      <rect
+         y="-170.31978"
+         x="121.26728"
+         width="80.946053"
+         transform="scale(1,-1)"
+         style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4136-9-8-8"
+         height="148.94075">
+        <figurefirst:axis
+           figurefirst:name="ax2" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="group3" />
+    </g>
+  </g>
+  <g
+     style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+     transform="scale(1.3888889,1.3888889)"
+     inkscape:label="mpl_layer"
+     inkscape:groupmode="layer"
+     id="layer3">
+    <figurefirst:targetlayer
+       figurefirst:name="mpl_layer" />
+    <defs
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       id="defs18">
+      <style
+         id="style20"
+         type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;}
+  </style>
+    </defs>
+    <defs
+       id="defs1261">
+      <clipPath
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="p687c02ee13">
+        <rect
+           style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+           id="rect1264"
+           y="52.246315"
+           x="71.889038"
+           width="48.996567"
+           height="90.153694" />
+      </clipPath>
+      <clipPath
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="p476b5ab340">
+        <rect
+           style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+           id="rect1267"
+           y="52.246315"
+           x="1.6"
+           width="48.996567"
+           height="90.153694" />
+      </clipPath>
+      <clipPath
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="p04b215d785">
+        <rect
+           style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+           id="rect1270"
+           y="15.392901"
+           x="218.51237"
+           width="58.281158"
+           height="107.23734" />
+      </clipPath>
+      <clipPath
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="p4af7da4f63">
+        <rect
+           style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+           id="rect1273"
+           y="15.392901"
+           x="154.51239"
+           width="58.281158"
+           height="107.23734" />
+      </clipPath>
+    </defs>
+    <defs
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       id="defs1275">
+      <style
+         id="style1277"
+         type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;}
+  </style>
+    </defs>
+    <defs
+       id="defs2055">
+      <clipPath
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="pec8e25d5e1">
+        <rect
+           style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+           id="rect2058"
+           y="4.513247"
+           x="49.092541"
+           width="39.807217"
+           height="30.43387" />
+      </clipPath>
+      <clipPath
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         id="p96b3af1071">
+        <rect
+           style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+           id="rect2061"
+           y="4.513247"
+           x="5.3792524"
+           width="39.807217"
+           height="30.43387" />
+      </clipPath>
+    </defs>
+  </g>
+</svg>
