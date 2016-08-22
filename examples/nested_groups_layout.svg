@@ -10,29 +10,29 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="2in"
+   height="4in"
    id="svg2"
    inkscape:version="0.91 r13725"
    sodipodi:docname="nested_groups_layout.svg"
    version="1.1"
-   viewBox="0 0 400 200"
+   viewBox="0 0 400 400"
    width="4in">
   <sodipodi:namedview
      bordercolor="#666666"
      borderopacity="1.0"
      id="base"
-     inkscape:current-layer="layer1"
-     inkscape:cx="-8.0335531"
-     inkscape:cy="56.333213"
+     inkscape:current-layer="svg2"
+     inkscape:cx="138.5145"
+     inkscape:cy="223.43941"
      inkscape:document-units="in"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:window-height="935"
      inkscape:window-maximized="0"
      inkscape:window-width="1643"
-     inkscape:window-x="2625"
-     inkscape:window-y="106"
-     inkscape:zoom="0.81957358"
+     inkscape:window-x="20"
+     inkscape:window-y="0"
+     inkscape:zoom="1.7046215"
      pagecolor="#ffffff"
      showgrid="false"
      units="in" />
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,7 +54,8 @@
      style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(0,200.00001)">
     <g
        transform="matrix(0.8406931,0,0,0.8406931,4.5639902,50.146677)"
        style="stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
@@ -158,12 +159,24 @@
       <figurefirst:axis
          figurefirst:name="ungrouped" />
     </rect>
+    <rect
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.727;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.0905, 2.181;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4167"
+       width="377.02298"
+       height="156.70882"
+       x="9.2181664"
+       y="-185.31935">
+      <figurefirst:figure
+         figurefirst:name="templatetarget"
+         figurefirst:template="fig2" />
+    </rect>
   </g>
   <g
      style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
      inkscape:label="Layer 2"
      inkscape:groupmode="layer"
-     id="layer2">
+     id="layer2"
+     transform="translate(0,200.00001)">
     <figurefirst:figure
        figurefirst:name="fig2" />
     <g
@@ -198,7 +211,7 @@
   </g>
   <g
      style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
-     transform="scale(1.3888889,1.3888889)"
+     transform="matrix(1.3888889,0,0,1.3888889,0,200.00001)"
      inkscape:label="mpl_layer"
      inkscape:groupmode="layer"
      id="layer3">
