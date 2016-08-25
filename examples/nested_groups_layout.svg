@@ -21,8 +21,8 @@
      bordercolor="#666666"
      borderopacity="1.0"
      id="base"
-     inkscape:current-layer="svg2"
-     inkscape:cx="138.5145"
+     inkscape:current-layer="layer1"
+     inkscape:cx="27.673512"
      inkscape:cy="223.43941"
      inkscape:document-units="in"
      inkscape:pageopacity="0.0"
@@ -30,9 +30,9 @@
      inkscape:window-height="935"
      inkscape:window-maximized="0"
      inkscape:window-width="1643"
-     inkscape:window-x="20"
-     inkscape:window-y="0"
-     inkscape:zoom="1.7046215"
+     inkscape:window-x="24"
+     inkscape:window-y="24"
+     inkscape:zoom="0.92176032"
      pagecolor="#ffffff"
      showgrid="false"
      units="in" />
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -57,7 +57,7 @@
      id="layer1"
      transform="translate(0,200.00001)">
     <g
-       transform="matrix(0.8406931,0,0,0.8406931,4.5639902,50.146677)"
+       transform="matrix(0.8406931,0,0,0.8406931,6.7862125,25.702235)"
        style="stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
        id="g4177">
       <rect
@@ -87,7 +87,8 @@
     </g>
     <g
        id="g4183"
-       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="translate(8.8888892,-24.444443)">
       <g
          id="g4177-2"
          style="stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
@@ -150,8 +151,8 @@
          figurefirst:name="top_group" />
     </g>
     <rect
-       y="6.6214609"
-       x="140.12822"
+       y="-17.822985"
+       x="142.35045"
        height="37.960121"
        width="61.007336"
        id="rect4191"
@@ -162,14 +163,43 @@
     <rect
        style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.727;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.0905, 2.181;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4167"
-       width="377.02298"
-       height="156.70882"
+       width="269.7674"
+       height="154.29797"
        x="9.2181664"
-       y="-185.31935">
+       y="-182.90851">
       <figurefirst:figure
          figurefirst:name="templatetarget"
          figurefirst:template="fig2" />
     </rect>
+    <g
+       id="g4206"
+       transform="matrix(1,0,0,0.92805755,0,-7.0749157)"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <rect
+         style="opacity:1;fill:#b3b3b3;fill-opacity:0.84821424;stroke:none;stroke-width:0.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect4174"
+         width="62.681999"
+         height="79.557915"
+         x="286.89066"
+         y="-189.9912">
+        <figurefirst:axis
+           figurefirst:name="test_ingroup_tag" />
+      </rect>
+      <rect
+         style="display:inline;opacity:1;fill:#b3b3b3;fill-opacity:0.84821424;stroke:none;stroke-width:0.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect4174-9"
+         width="62.681999"
+         height="79.557915"
+         x="286.89066"
+         y="-103.32437" />
+      <rect
+         style="display:inline;opacity:1;fill:#b3b3b3;fill-opacity:0.84821424;stroke:none;stroke-width:0.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect4174-0"
+         width="37.368114"
+         height="167.5538"
+         x="355.59976"
+         y="-191.008" />
+    </g>
   </g>
   <g
      style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
@@ -180,15 +210,15 @@
     <figurefirst:figure
        figurefirst:name="fig2" />
     <g
-       transform="matrix(0.68302037,0,0,0.28379919,-14.643938,0.20104745)"
-       style="display:inline;stroke:none"
+       transform="matrix(0.68302037,0,0,0.28379919,-12.421716,-24.243396)"
+       style="display:inline;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
        id="g4177-2-7">
       <rect
          y="-170.31978"
          x="32.378422"
          width="80.946053"
          transform="scale(1,-1)"
-         style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="rect4136-0-0"
          height="148.94075">
         <figurefirst:axis
@@ -199,7 +229,7 @@
          x="121.26728"
          width="80.946053"
          transform="scale(1,-1)"
-         style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:#000000;fill-opacity:0.29523812;stroke:none;stroke-width:1.39999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
          id="rect4136-9-8-8"
          height="148.94075">
         <figurefirst:axis
