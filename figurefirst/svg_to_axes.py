@@ -427,7 +427,6 @@ class FigureLayout(object):
                         ax = FFAxis(child)
                         grouptree[ax.name] = ax
                         mpl_methods_elements = node.getElementsByTagName('figurefirst:mplmethods')
-                        print mpl_methods_elements
                         mpl_methods = dict()
                         grouptree[ax.name].mplmethods = mpl_methods
                         for mpl_methods_element in mpl_methods_elements:
@@ -514,24 +513,24 @@ class FigureLayout(object):
 
     def make_mplfigures(self):
         for figname,figgroup in self.figures.items():
-            leafs = flatten_dict(figgroup)
-            fw_in = tounit(self.layout_width, 'in')
-            fh_in = tounit(self.layout_height, 'in')
-            fig = plt.figure(figsize=(fw_in, fh_in))
-            for leafkey,leaf in leafs.items():
-                left = leaf.x/self.layout_uw
-                width = leaf.w/self.layout_uw
-                height = leaf.h/self.layout_uh
-                bottom = leaf.y/self.layout_uh
-                if type(leaf) == FFAxis:
-                    leaf['axis'] = fig.add_axes([left, bottom, width, height])
-                    leaf['figname'] = figname
-                    leaf.ismplaxis = True
-                    figgroup['figure'] = fig
-                    print type(figgroup)
-                    figgroup.ismplfigure = True
-                else:
-                    print type(leaf)
+            if len(figgroup.keys()):
+                leafs = flatten_dict(figgroup)
+                fw_in = tounit(self.layout_width, 'in')
+                fh_in = tounit(self.layout_height, 'in')
+                fig = plt.figure(figsize=(fw_in, fh_in))
+                for leafkey,leaf in leafs.items():
+                    left = leaf.x/self.layout_uw
+                    width = leaf.w/self.layout_uw
+                    height = leaf.h/self.layout_uh
+                    bottom = leaf.y/self.layout_uh
+                    if type(leaf) == FFAxis:
+                        leaf['axis'] = fig.add_axes([left, bottom, width, height])
+                        leaf['figname'] = figname
+                        leaf.ismplaxis = True
+                        figgroup['figure'] = fig
+                        figgroup.ismplfigure = True
+                    else:
+                        print type(leaf)
 
 ###########################################################
 ###########################################################
@@ -691,7 +690,6 @@ class FigureLayout(object):
 
                 removed_children = 0
                 for child in children:
-                    print child
                     if 1:
                         if child.nodeName != 'figurefirst:targetlayer':
                             print 'Removing node: ', child.nodeName

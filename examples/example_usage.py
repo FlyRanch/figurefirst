@@ -80,12 +80,13 @@ close('all')
 
 # In[19]:
 
+print 'running multi figure example'
 #Groups and figures example
 layout = FigureLayout('multi_figures_layout.svg')
 mplfig = layout.make_mplfigures()
-layout.append_figure_to_layer(layout.figures.values()[0],'mpl_layer_2')
-layout.append_figure_to_layer(layout.figures.values()[1],'mpl_layer_3')
-layout.append_figure_to_layer(layout.figures.values()[2],'mpl_layer_4')
+layout.append_figure_to_layer(layout.figures['threeport'],'mpl_layer_2')
+layout.append_figure_to_layer(layout.figures['oval'],'mpl_layer_3')
+layout.append_figure_to_layer(layout.figures['holy'],'mpl_layer_4')
 layout.write_svg('multi_fig_test_output.svg')
 close('all')
 
