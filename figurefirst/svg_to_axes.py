@@ -427,6 +427,7 @@ class FigureLayout(object):
                         ax = FFAxis(child)
                         grouptree[ax.name] = ax
                         mpl_methods_elements = node.getElementsByTagName('figurefirst:mplmethods')
+                        print mpl_methods_elements
                         mpl_methods = dict()
                         grouptree[ax.name].mplmethods = mpl_methods
                         for mpl_methods_element in mpl_methods_elements:
@@ -614,15 +615,16 @@ class FigureLayout(object):
         """ apply valid mpl methods to figure"""
         for mplax in self.axes.values():
             ax = mplax['axis']
-            for key, value in mplax['mplmethods'].items():
-                if key.startswith('figurefirst:'):
-                    potential_method = key.split('figurefirst:')[1]
-                    try:
-                        eval("ax."+potential_method+"("+value+")")
-                        #print "ax."+potential_method+"("+value+")"
-                        #getattr(ax, potential_method)(eval(value))
-                    except AttributeError:
-                        print potential_method, 'is unknown method for mpl axes'
+            if 'mplmethods' in mplax.keys():
+                for key, value in mplax['mplmethods'].items():
+                    if key.startswith('figurefirst:'):
+                        potential_method = key.split('figurefirst:')[1]
+                        try:
+                            eval("ax."+potential_method+"("+value+")")
+                            #print "ax."+potential_method+"("+value+")"
+                            #getattr(ax, potential_method)(eval(value))
+                        except AttributeError:
+                            print potential_method, 'is unknown method for mpl axes'
 
     def pass_xml(self, gid, key, value):
         """pass key, value pair xml pair to group with ID gid

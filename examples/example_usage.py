@@ -40,7 +40,7 @@ for mplax in layout.axes.values():
                   yticks=None, 
                   linewidth=1)
     ax.patch.set_facecolor('None')
-layout.apply_mpl_methods(layout.fig)
+layout.apply_mpl_methods()
 layout.insert_figures('mpl_panel_a')
 layout.write_svg('axis_methods_test_output.svg')
 close('all')
