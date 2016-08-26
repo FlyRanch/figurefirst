@@ -62,10 +62,272 @@ def get_elements_by_attr(xml_node, attribute, value):
                 yield i
     return list(flatten([el for el in recur_get_element_by_attr(xml_node, attribute, value)]))
 
-class MPLAxis(dict):
+#class MPLAxis(dict):
+#    def __getattr__(self,attr):
+#        return self['axis'].__getattribute__(attr)
+ 
+
+ #################################################################
+ #################################################################
+ #################################################################
+
+def flatten_list(container):
+    for i in container:
+        if isinstance(i, (list)):
+            for j in flatten_list(i):
+                yield j
+        else:
+            yield i
+    #from hexparrot @ http://stackoverflow.com/questions/10823877/
+    #what-is-the-fastest-way-to-flatten-arbitrarily-nested-lists-in-python 
+
+def flatten_dict(d):
+    import copy
+    keylist = [] 
+    def traverse(kl,d):
+        if len(d) == 0:
+            yield {tuple(kl):d}
+        else:
+            for key,value in d.items():
+                new_keylist = copy.copy(kl)
+                new_keylist.append(key)
+                yield [l for l in traverse(new_keylist,value)]
+    flat_dict = {}
+    fd_list = [fd for fd in flatten_list(list(traverse(keylist,d)))]
+    [flat_dict.update(fd) for fd in flatten_list(list(traverse(keylist,d)))]
+    return flat_dict
+
+class FFItem(dict,object):
+    def __init__(self,tagnode,**kwargs):
+        self.tagnode = tagnode
+        self.node = tagnode.parentNode
+        self.id = self.node.getAttribute('id')
+        self.name = tagnode.getAttribute('figurefirst:name')
+        self.ismplaxis = False
+        if self.node.hasAttribute('transform'):
+            self.transform_str = self.node.getAttribute('transform')
+        else:
+            self.transform_str = None
+        super(FFItem, self).__init__(**kwargs)
+        
+        
+class FFGroup(FFItem,object):
+    def __init__(self,tagnode,**kwargs):
+        super(FFGroup,self).__init__(tagnode,**kwargs)
+        
     def __getattr__(self,attr):
-        return self['axis'].__getattribute__(attr)
+        pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
+                          for i in self.values()])
+        x = np.min(pnts[:,0])
+        y = np.min(pnts[:,1])
+        w = np.max(pnts[:,0])-x
+        h = np.max(pnts[:,1])-y
+        try:
+            return {'x':x,'y':y,'w':w,'h':h}[attr]
+        except KeyError:
+            return self.__getattribute__(attr)
+
+class FFFigure(FFGroup,object):
+    def __init__(self,tagnode,**kwargs):
+        if not(tagnode == None):
+            super(FFFigure,self).__init__(tagnode,**kwargs)
+        self.ismplfigure = False
     
+    def __getattr__(self,attr):
+        try:
+            val = super(FFFigure,self).__getattr__(attr)
+            return val
+        except AttributeError:
+            if self.ismplfigure == True:
+                return self['figure'].__getattribute__(attr)
+            else:
+                return self.__getattribute__(attr)
+
+
+        
+class FFTemplateTarget(FFFigure,object):
+    def __init__(self,tagnode,**kwargs):
+        self.template_source = tagnode.getAttribute('figurefirst:template')
+        super(FFTemplateTarget,self).__init__(tagnode,**kwargs)
+        x = float(self.node.getAttribute('x'))
+        y = float(self.node.getAttribute('y'))
+        h = float(self.node.getAttribute('height'))
+        w = float(self.node.getAttribute('width'))
+        self.p1 = np.array([x,y,1])
+        self.p2 = np.array([x+w,h+y,1])
+
+        
+    def __getattr__(self,attr):
+        if attr == 'x':
+            return self.p1[0]
+        if attr == 'y':
+            return self.p1[1]
+        if attr == 'w':
+            return (self.p2-self.p1)[0]
+        if attr == 'h':
+            return (self.p2-self.p1)[1]
+        else:
+            try:
+                val = super(FFTemplateTarget,self).__getattr__(attr)
+                return val
+            except AttributeError:
+                if self.ismplfigure == True:
+                    return self['figure'].__getattribute__(attr)
+                else:
+                    return self.__getattribute__(attr)
+    
+class FFAxis(FFItem):
+    def __init__(self,tagnode,**kwargs):
+        super(FFAxis, self).__init__(tagnode,**kwargs)
+        x = float(self.node.getAttribute('x'))
+        y = float(self.node.getAttribute('y'))
+        h = float(self.node.getAttribute('height'))
+        w = float(self.node.getAttribute('width'))
+        self.p1 = np.array([x,y,1])
+        self.p2 = np.array([x+w,h+y,1])
+
+    def __getattr__(self,attr):
+        if attr == 'x':
+            return self.p1[0]
+        if attr == 'y':
+            return self.p1[1]
+        if attr == 'w':
+            return (self.p2-self.p1)[0]
+        if attr == 'h':
+            return (self.p2-self.p1)[1]
+        else:
+            if self.ismplaxis:
+                return self['axis'].__getattribute__(attr)
+            else:
+                return self.__getattribute__(attr)
+                
+class PathSpec(dict):
+    def __init__(self,*args,**kwargs):
+        for arg in args:
+            try:
+                if arg.tagName == 'figurefirst:pathspec':
+                    self.load(arg)
+                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
+                if arg.tagName == 'figurefirst:linespec':
+                    self.load(arg)
+                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
+                if arg.tagName == 'figurefirst:patchspec':
+                    self.load(arg)
+                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
+            except AttributeError:
+                if type(arg) == FigureLayout:
+                    self.layout = arg
+        super(PathSpec, self).__init__(**kwargs)
+        
+    def load(self,ptag):
+        pnode = ptag.parentNode
+        [self.update({k:v}) for k,v in pnode.attributes.items()]
+        self.style = dict()
+        [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in self['style'].split(';')]
+    
+class LineSpec(PathSpec):
+    
+    def mplkwargs(self):
+        mpl_map = {'stroke':'color','stroke-opacity':'alpha','stroke-width':'lw'}
+        mpl_kwargs = {}
+        keylist = list()
+        for k,v in self.style.items():
+            try:
+                mpl_kwargs[mpl_map[k]] = v
+            except KeyError:
+                pass
+        for k,v in mpl_kwargs.items():
+            if k == 'lw':
+                tmp = v.split('px')[0]
+                tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
+                mpl_kwargs['lw'] = tmp
+            if k == 'alpha':
+                mpl_kwargs['alpha'] = float(v)
+        return mpl_kwargs
+    
+class PatchSpec(PathSpec):
+    
+    def mplkwargs(self):
+        mpl_map = {'stroke':'edgecolor','stroke-width':'lw','fill':'facecolor'}
+        mpl_kwargs = {}
+        keylist = list()
+        for k,v in self.style.items():
+            try:
+                mpl_kwargs[mpl_map[k]] = v
+            except KeyError:
+                pass
+        from matplotlib.colors import ColorConverter
+        converter = ColorConverter()
+        for k,v in mpl_kwargs.items():
+            if k == 'lw':
+                tmp = v.split('px')[0]
+                tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
+                mpl_kwargs['lw'] = tmp
+            if k == 'edgecolor':
+                mpl_kwargs['edgecolor'] = np.array(converter.to_rgba(v,float(self.style['stroke-opacity'])))
+            if k == 'facecolor':
+                mpl_kwargs['facecolor'] = np.array(converter.to_rgba(v,float(self.style['fill-opacity'])))
+        return mpl_kwargs
+
+            
+def parse_transform(transform_str):
+    """convert transforms into transformation matrix"""
+    #print transform_str
+    import re
+    # regex for extracting numbers from transform string
+    scanfloat =  r"[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?" 
+    tr = None;tr_pos = None
+    mt = None;mt_pos = None
+    sc = None;sc_pos = None
+    ##################
+    if 'translate' in transform_str:
+        translate_str = re.findall(r'translate\(.*?\)',transform_str)[0]
+        tx,ty = re.findall(scanfloat,translate_str)
+        tr = np.array([[1.,0,float(tx)],
+                       [0,1.,float(ty)],
+                       [0,0,1.        ]])        
+        tr_pos = transform_str.find('translate')
+    ##################    
+    if 'scale' in transform_str:
+        translate_str = re.findall(r'scale\(.*?\)',transform_str)[0]
+        sx,sy = re.findall(scanfloat,translate_str)
+        sc = np.array([[float(sx),0,         0],
+                       [0,        float(sy), 0],
+                       [0,        0,        1.]])
+        sc_pos = transform_str.find('scale')
+    ##################
+    if 'matrix' in transform_str:
+        matrix_str = re.findall(r'matrix\(.*?\)',transform_str)[0]
+        a,b,c,d,e,f = re.findall(scanfloat,matrix_str)
+        a,b,c,d,e,f = [float(s) for s in [a,b,c,d,e,f]]
+        mt = np.array([[a,c,e],
+                       [b,d,f],
+                       [0,0,1.]])
+        mt_pos = transform_str.find('matrix')
+    ##################
+    trnsfrms = [mtrx for (pos,mtrx) in sorted(zip([tr_pos,mt_pos,sc_pos],
+                                              [tr,mt,sc]))]
+    trnsfrms = [m for m in trnsfrms if not(m is None)]
+    from numpy import dot
+    from functools import reduce
+    if len(trnsfrms) > 1:
+        mtrx = reduce(lambda x,y:dot(x,y.T),trnsfrms)
+    return mtrx 
+
+def get_transforms(node,tlist = []):
+    if node.hasAttribute('transform'):
+        #print node.toxml()
+        tlist.extend([parse_transform(node.getAttribute('transform'))])
+    if not(node.nodeName == 'svg'):
+        return get_transforms(node.parentNode,tlist)
+    else:
+        return([t for t in tlist if not(t is None)])
+
+
+############################################################################### 
+###############################################################################
+############################################################################### 
+
 class FigureLayout(object):
     def __init__(self, layout_filename):
         """construct an object that specifies the figure layout fom the
@@ -112,9 +374,12 @@ class FigureLayout(object):
         self.layout_user_sx = self.layout_uw/self.layout_width[0], self.layout_width[1]
         self.layout_user_sy = self.layout_uh/self.layout_height[0], self.layout_height[1]
         self.output_xml = minidom.parse(self.layout_filename).cloneNode(True)
-        self.axes = {}
-        self.figures = {}
-        self.axes_groups = {}
+        
+        figuretree,grouptree,leafs = self.make_group_tree()
+        self.axes = leafs
+        self.figures = figuretree
+        self.axes_groups = grouptree
+
         # dont allow sx and sy to differ
         # inkscape seems to ignore inconsistent aspect ratios by
         # only using the horizontal element of the viewbox, but
@@ -145,171 +410,132 @@ class FigureLayout(object):
         #convert from layout units into destination units
         return y_l/SCALE_FACTORS[self.layout_user_sx[1]][dst]
 
-    def get_bounding_box_for_elements(self, axis_elements):
-        left = np.inf
-        right = 0
-        top = np.inf
-        bottom = 0
-        for axis_element in axis_elements:
-            e_x, e_y, e_w, e_h = self.get_xywh_for_axis_element(axis_element)
-            if e_x < left:
-                left = e_x
-            if e_y < top:
-                top = e_y
-            if (e_x + e_w) > right:
-                right = (e_x + e_w)
-            if (e_y + e_h) > bottom:
-                bottom = (e_y + e_h)
-        return left, right, top, bottom
-            
-    def get_xywh_for_axis_element(self, axis_element, template_transform=None):
-        svg_e = axis_element.parentNode
-        e_x = float(svg_e.getAttribute("x"))
-        e_y = float(svg_e.getAttribute("y"))
-        e_w = float(svg_e.getAttribute("width"))
-        e_h = float(svg_e.getAttribute("height"))
-        
-        # get and apply transforms
-        parent_exists = True
-        node = svg_e
-        transforms = []
-        while parent_exists:
-            try:
-                transform = node.getAttribute("transform") # if no transform, this returns ''
-                if len(transform) > 0:
-                    transforms.append(transform)
-            except:
-                break
-                    
-            try:
-                node = node.parentNode
-                parent_exists = True
-            except:
-                parent_exists = False
-        if 1:
-        
-        
-            #el = axis_element.parentNode.getElementsByTagName('figurefirst:figure')
-            #if len(el) == 1:
-            #    elname = el[0].getAttribute('figurefirst:name')
-            #else:
-            #    elname = ''
-            if template_transform is not None:# and elname == template_transform['templatename']:
-                transform = np.array([ template_transform['width'], 0, 0, template_transform['height'], template_transform['x'], template_transform['y'] ] )
-                transforms.append(transform)
-        
-            for transform in transforms:
-                x_scale = 1
-                y_scale = 1
-                x_translation = 0
-                y_translation = 0
-                
-                if type(transform) is unicode or type(transform) is str:
-                    if 'matrix' in transform:
-                        transform = 'np.array(' + transform.split('matrix')[1] + ')'
-                        transform = eval(transform)
-                        x_scale = transform[0]
-                        y_scale = transform[3]
-                        x_translation = transform[4]
-                        y_translation = transform[5]
-                    elif 'translate' in transform:
-                        translate = transform.split('translate')[1].split(',')
-                        x_translation = np.array(float(translate[0].strip('(')))
-                        y_translation = np.array(float(translate[1].strip(')')))
-                    elif 'scale' in transform:
-                        scale = transform.split('scale')[1].split(',')
-                        x_scale = float(scale[0].strip('('))
-                        y_scale = float(scale[1].strip(')'))
-                else:
-                    x_scale = transform[0]
-                    y_scale = transform[3]
-                    x_translation = transform[4]
-                    y_translation = transform[5]
-                    
-                e_x = e_x*x_scale + x_translation
-                e_y = e_y*y_scale + y_translation
-                e_w = e_w*x_scale
-                e_h = e_h*y_scale
-                
-        if e_w < 0:
-            e_x += e_w
-            e_w *= -1
-            
-        if e_h < 0:
-            e_y += e_h
-            e_h *= -1
-        
-        return e_x, e_y, e_w, e_h
-    
+#################################################################
+#################################################################
     def make_group_tree(self):
-        grouptree = dict()
-        
         def traverse(node,grouptree):
+            gname = None
+            axname = None
+            tree_loc = grouptree
             for child in node.childNodes:
-                for key, value in node.attributes.items():
-                    if key in ['figurefirst:group','figurefirst:figure']:
-                        pass
-            
-    def add_axes(self, fig, axis_elements, template_transform=None):
-        """ add axes to an already constructed mpl figure, fig,
-        from a collection of xml axis_element tags """
-        axes_dict = dict()
-        for axis_element in axis_elements:
-            e_x, e_y, e_w, e_h = self.get_xywh_for_axis_element(axis_element, template_transform)
+                if child.nodeType == 1:
+                    if child.tagName in ['figurefirst:group']:
+                        grp = FFGroup(child)
+                        grouptree[grp.name] = grp
+                        tree_loc = grouptree[grp.name]
+                    if child.tagName in ['figurefirst:axis']:
+                        ax = FFAxis(child)
+                        grouptree[ax.name] = ax
+                        mpl_methods_elements = node.getElementsByTagName('figurefirst:mplmethods')
+                        mpl_methods = dict()
+                        grouptree[ax.name].mplmethods = mpl_methods
+                        for mpl_methods_element in mpl_methods_elements:
+                            [grouptree[ax.name].mplmethods.update({key:value}) for key,value in mpl_methods_element.attributes.items()]
+                        projection = node.getElementsByTagName('figurefirst:projection')
+                        if len(projection) == 0:
+                            grouptree[ax.name].projection = 'rectilinear'
+                        else:
+                            grouptree[ax.name].projection = projection
+                    if child.tagName in ['figurefirst:figure']:
+                        if child.hasAttribute('figurefirst:template'):
+                            fig = FFTemplateTarget(child)
+                            grouptree[fig.name] = fig
+                        else:
+                            fig = FFFigure(child)
+                            grouptree[fig.name] = fig
+                            tree_loc = grouptree[fig.name]
+                        
+            for child in node.childNodes:
+                if child.hasChildNodes():
+                    traverse(child,tree_loc)
+                    
+        ### Create the group tree
+        grouptree = dict()
+        traverse(self.layout,grouptree)
+        leafs = flatten_dict(grouptree)
 
-            #express things as proportion for mpl
-            left = e_x/self.layout_uw
-            width = e_w/self.layout_uw
-            height = e_h/self.layout_uh
-            bottom = (self.layout_uh-e_y-e_h)/self.layout_uh
-            #Requre that each axis has a unique name. This is important so that
-            #the global dict of self.axis is complete. In the case that groups
-            #are used and the axis name is not unique the figurefirst:name of the
-            #axis is merged with the svg_id. These unique ids are sent to figure.add_axis()
-            #as the label. Perhaps it would be better to try and merge the groupname and
-            #axis name before falling back to the svg id.
-
-            ax_name = axis_element.getAttribute('figurefirst:name')
-            if ax_name in self.axes.keys():
-                ax_key = axis_element.parentNode.getAttribute('id') + '_' + ax_name
+        ### Create the figure tree
+        figuretree = dict()
+        figuretree['none'] = FFFigure(None)
+        for val in grouptree.values():
+            if isinstance(val,FFFigure):
+                figuretree[val.name] = val
             else:
-                ax_key = ax_name
-            #print ax_key
-            datadict = dict()
-            [datadict.update({key:value}) for  key, value in axis_element.attributes.items()]
-            projection = datadict.get('figurefirst:projection','rectilinear')
-            ax = fig.add_axes([left, bottom, width, height],label = ax_key,projection = projection)
-            #ax_name = datadict.pop('figurefirst:name')
-            datadict['aspect_ratio'] = e_w/e_h
-            mpl_methods_elements = axis_element.parentNode.getElementsByTagNameNS(XMLNS,'mplmethods')
-            mpl_methods = dict()
-            for mpl_methods_element in mpl_methods_elements:
-                [mpl_methods.update({key:value}) for key,value in mpl_methods_element.attributes.items()]
-            #add grouping
-            #print axis_element.parentNode.parentNode.nodeName
-            #if ('figurefirst:group' in axis_element.parentNode.parentNode.nodeName) or\
-            #   ('figurefirst:figure' in axis_element.parentNode.parentNode.nodeName):
-            #group = axis_element.parentNode.parentNode.getAttribute('figurefirst:name')
-            #    #datadict['group'] = group
-            #else:
-            #    group = 'none'
-            #if group not in self.axes_groups.keys():
-            #    self.axes_groups.setdefault(group, {})
-            #update these global dictionaries whenever an axis is added
-            #self.axes_groups[group].setdefault(ax_name, {'axis':ax,'data':datadict})
-            #if ax_name in self.axes.keys():
-            #    ax_key = axis_element.parentNode.getAttribute('id')
-            #else:
-            #    ax_key = ax_name
-            mplaxis = MPLAxis(axis=ax, 
-                              data=datadict, 
-                              name=ax_name,
-                              mplmethods=mpl_methods)
-            self.axes.setdefault(ax_key, mplaxis)
-            axes_dict.update({ax_name:mplaxis})
-            #send this one back
-        return axes_dict
-    
+                figuretree['none'][val.name] = val
+        
+        ### Compose the transforms 
+        from numpy import dot
+        from functools import reduce
+        for leafname,leaf in leafs.items():
+            tlist = get_transforms(leaf.node,[])
+            tlist.reverse()
+            leaf.tlist = tlist
+            if len(tlist) > 0:
+                mtrx = reduce(lambda x,y:dot(x,y),tlist)
+                leaf.mtrx = mtrx
+            else:
+                leaf.mtrx = np.diag(np.ones(3))
+            leaf.p1 = np.dot(leaf.mtrx,leaf.p1)
+            leaf.p2 = np.dot(leaf.mtrx,leaf.p2)
+            #svg origin is at top left
+            leaf.p1[1] = self.layout_uh-leaf.p1[1]
+            leaf.p2[1] = self.layout_uh-leaf.p2[1]
+            #Deal with any vector flippage
+            sp = np.vstack([leaf.p1,leaf.p2])
+            tp1 = np.min(sp,axis = 0);tp2 = np.max(sp,axis = 0)
+            leaf.p1 = tp1;leaf.p2 = tp2
+            ### need to add error condition for points that are outside the figure bounds
+        
+        ### Populate the template targets        
+        for key,l in leafs.items():
+            if type(l) == FFTemplateTarget:
+                import copy
+                for k,v in figuretree[l.template_source].items():
+                    newv = copy.deepcopy(v)
+                    vleafs = flatten_dict(newv)
+                    origin = np.array([newv.x,newv.y,1])
+                    sx = l.w/newv.w; sy = l.h/newv.h
+                    for vleaf in vleafs.values():
+                        t1 = (vleaf.p1-origin)*np.array([sx,sy,0]) + l.p1
+                        t2 = t1 + np.array([vleaf.w*sx,vleaf.h*sy,0])
+                        vleaf.p1 = t1; vleaf.p2 = t2
+                    l[k] = newv
+                    
+        ### Re-folliate
+        leafs = flatten_dict(grouptree)
+        new_leafs = dict()
+        for key,value in leafs.items():
+            if len(key) ==1:
+                new_leafs[key[0]] = value
+            else:
+                new_leafs[key] = value
+        return figuretree,grouptree,new_leafs
+
+    def make_mplfigures(self):
+        for figname,figgroup in self.figures.items():
+            leafs = flatten_dict(figgroup)
+            fw_in = tounit(self.layout_width, 'in')
+            fh_in = tounit(self.layout_height, 'in')
+            fig = plt.figure(figsize=(fw_in, fh_in))
+            for leafkey,leaf in leafs.items():
+                left = leaf.x/self.layout_uw
+                width = leaf.w/self.layout_uw
+                height = leaf.h/self.layout_uh
+                bottom = leaf.y/self.layout_uh
+                if type(leaf) == FFAxis:
+                    leaf['axis'] = fig.add_axes([left, bottom, width, height])
+                    leaf['figname'] = figname
+                    leaf.ismplaxis = True
+                    figgroup['figure'] = fig
+                    print type(figgroup)
+                    figgroup.ismplfigure = True
+                else:
+                    print type(leaf)
+
+###########################################################
+###########################################################
+###########################################################
+
     def load_pathspecs(self):
         self.pathspecs = dict()
         elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'pathspec')
@@ -343,94 +569,7 @@ class FigureLayout(object):
             figure_elements_by_name_dict[figname] = figure_element
         return figure_elements_by_name_dict[name]
         
-    def make_mplfigures(self):
-        """parse the xml file for elements in the figurefirst namespace of the 'axis'
-        type, return a dict with the figure and axes. Attribues of the figurefirst tag
-        are returned as a 'data' item for each axis, the aspect_ratio of the
-        axis is also calculated and inserted into this item"""
-
-        figure_elements = self.layout.getElementsByTagNameNS(XMLNS, 'figure')
-        fw_in = tounit(self.layout_width, 'in')
-        fh_in = tounit(self.layout_height, 'in')
-        axes_in_figures = set()
-        for figure_element in figure_elements:
-            fig = plt.figure(figsize=(fw_in, fh_in)) #create figure
-            figname = figure_element.getAttribute('figurefirst:name')
-            
-            # if the figure references a template, find the template figure 
-            templatename = figure_element.getAttribute('figurefirst:template')
-            if len(templatename) > 0:
-                template_rect = figure_element.parentNode
-                figure_element = self.get_figure_element_by_name(templatename)
-                axis_elements = figure_element.parentNode.getElementsByTagNameNS(XMLNS, 'axis')
-                left, right, top, bottom = self.get_bounding_box_for_elements(axis_elements)
-                width = right-left
-                height = bottom-top
-                template_transform = {  'templatename': templatename,
-                                        'x': float(template_rect.getAttribute('x'))-left*(float(template_rect.getAttribute('width')) / width),
-                                        'y': float(template_rect.getAttribute('y'))-top*(float(template_rect.getAttribute('height')) / height),
-                                        'width': float(template_rect.getAttribute('width')) / width,
-                                        'height': float(template_rect.getAttribute('height')) / height,
-                                        }
-            else:
-                template_transform = None
-            
-            # get the elements within this figure grouping
-            axis_elements = figure_element.parentNode.getElementsByTagNameNS(XMLNS, 'axis')
-            axes_in_figures.update(set(axis_elements))
-            figure_axes = self.add_axes(fig, axis_elements, template_transform=template_transform)
-            self.axes_groups[figname] = figure_axes
-            self.figures[figname] = fig
-
-        all_axes = set(self.layout.getElementsByTagNameNS(XMLNS, 'axis'))
-        axes_not_in_figure = all_axes.difference(axes_in_figures)
-        #are we done?
-        if len(axes_not_in_figure) > 0:
-            #if not create a new figure
-            fig = plt.figure(figsize=(fw_in, fh_in))
-            self.figures['none'] = fig
-            #next parse the group elements
-            group_elements = self.layout.getElementsByTagNameNS(XMLNS, 'group')
-            for group_element in group_elements:
-                groupname = group_element.getAttribute('figurefirst:name')
-                axis_elements = group_element.parentNode.getElementsByTagNameNS(XMLNS, 'axis')
-                axes_in_figures.update(set(axis_elements))
-                group_axes = self.add_axes(fig, axis_elements)
-                #print groupname,id(group_axes)
-                self.axes_groups[groupname] = group_axes
-            all_axes = set(self.layout.getElementsByTagNameNS(XMLNS, 'axis'))
-            axes_not_in_figure = all_axes.difference(axes_in_figures)
-            #finish up
-            if len(axes_not_in_figure) > 0:
-                group_axes = self.add_axes(fig, list(axes_not_in_figure))
-        try:
-            self.fig = self.figures['none']
-        except KeyError:
-            pass
-
-            #figure_axes = self.add_axes(fig,list(axes_not_in_figure))
-            #group_elements = self.layout.getElementsByTagNameNS(XMLNS,'group')
-
-
-            #self.axes_groups[figname] = figure_axes
-
-
-            ## sort in groups
-            #if 'figurefirst:groupname' in axis_element.parentNode.parentNode.attributes.keys():
-            #    group = axis_element.parentNode.parentNode.getAttribute('figurefirst:groupname')
-            #    datadict['group'] = group
-            #else:
-            #    group = 'none'
-
-
-        #    if group not in axes_groups.keys():
-        #        axes_groups.setdefault(group, {})
-        #    axes_groups[group].setdefault(name, {'axis':ax,'data':datadict})
-
-        #self.axes_groups = axes_groups
-        #self.fig  = fig
-        #return {'mplfig':fig,'mplaxes':axes, 'mplaxesgrouped': axes_groups}
-
+  
     def append_figure_to_layer(self, fig, fflayername):
         svg_string = self.to_svg_buffer(fig)
         mpldoc = minidom.parse(svg_string)
@@ -527,29 +666,6 @@ class FigureLayout(object):
             outfile.write(self.output_xml.toxml().encode('ascii', 'xmlcharrefreplace'))
             outfile.close()
 
-    def save_svg(self, output_filename):
-        ###deprecate this function
-        from xml.dom import minidom
-        self.fig, self.axes, self.layout
-        indoc = self.layout.cloneNode(True)
-        svg_string = self.to_svg_buffer(self.fig)
-        mpldoc = minidom.parse(svg_string)
-        # get the layers from the input dom
-        layers = indoc.getElementsByTagName('g')
-        target_layer = layers[0]
-        # pull out the svg parts of the xml file
-        mplsvg = mpldoc.getElementsByTagName('svg')[0]
-        insvg = indoc.getElementsByTagName('svg')[0]
-        #need to add this namespace to the output document for some reason
-        insvg.setAttribute('xmlns:xlink', mplsvg.getAttribute('xmlns:xlink'))
-        #clone the child nodes in the mpl svg file into the target layer of the output dom
-        mpl_svg_nodes = mplsvg.childNodes
-        [target_layer.appendChild(n.cloneNode(True)) for n in mpl_svg_nodes]
-        #write the modified output file
-        outfile = open(output_filename, 'wt')
-        indoc.writexml(outfile)
-        outfile.close()
-
     def clear_fflayer(self, fflayername):
         '''
         If inserting mpl figure into a mpl target layer that has stuff in it,
@@ -581,120 +697,4 @@ class FigureLayout(object):
                             removed_children += 1
                         else:
                             print 'Not removing: ', child.nodeName
-class PathSpec(dict):
-    def __init__(self,*args,**kwargs):
-        for arg in args:
-            try:
-                if arg.tagName == 'figurefirst:pathspec':
-                    self.load(arg)
-                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
-                if arg.tagName == 'figurefirst:linespec':
-                    self.load(arg)
-                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
-                if arg.tagName == 'figurefirst:patchspec':
-                    self.load(arg)
-                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
-            except AttributeError:
-                if type(arg) == FigureLayout:
-                    self.layout = arg
-        super(PathSpec, self).__init__(**kwargs)
-        
-    def load(self,ptag):
-        pnode = ptag.parentNode
-        [self.update({k:v}) for k,v in pnode.attributes.items()]
-        self.style = dict()
-        [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in self['style'].split(';')]
-    
-class LineSpec(PathSpec):
-    
-    def mplkwargs(self):
-        mpl_map = {'stroke':'color','stroke-opacity':'alpha','stroke-width':'lw'}
-        mpl_kwargs = {}
-        keylist = list()
-        for k,v in self.style.items():
-            try:
-                mpl_kwargs[mpl_map[k]] = v
-            except KeyError:
-                pass
-        for k,v in mpl_kwargs.items():
-            if k == 'lw':
-                tmp = v.split('px')[0]
-                tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
-                mpl_kwargs['lw'] = tmp
-            if k == 'alpha':
-                mpl_kwargs['alpha'] = float(v)
-        return mpl_kwargs
-    
-class PatchSpec(PathSpec):
-    
-    def mplkwargs(self):
-        mpl_map = {'stroke':'edgecolor','stroke-width':'lw','fill':'facecolor'}
-        mpl_kwargs = {}
-        keylist = list()
-        for k,v in self.style.items():
-            try:
-                mpl_kwargs[mpl_map[k]] = v
-            except KeyError:
-                pass
-        from matplotlib.colors import ColorConverter
-        converter = ColorConverter()
-        for k,v in mpl_kwargs.items():
-            if k == 'lw':
-                tmp = v.split('px')[0]
-                tmp = self.layout.from_userx(tmp,'in')/13.889e-3 #hard coding pnt scaling
-                mpl_kwargs['lw'] = tmp
-            if k == 'edgecolor':
-                mpl_kwargs['edgecolor'] = np.array(converter.to_rgba(v,float(self.style['stroke-opacity'])))
-            if k == 'facecolor':
-                mpl_kwargs['facecolor'] = np.array(converter.to_rgba(v,float(self.style['fill-opacity'])))
-        return mpl_kwargs
-    
-def read_svg_to_axes(svgfile, px_res=72, width_inches=7.5):
-    #72 pixels per inch
-    doc = minidom.parse(svgfile)
-    svgnode = doc.getElementsByTagName('svg')[0]
-    if 'in' in svgnode.getAttribute('width'):
-        width_inches = float(svgnode.getAttribute('width').split('in')[0])
-        height_inches = float(svgnode.getAttribute('height').split('in')[0])
-        height_svg_pixels = height_inches*px_res
-        width_svg_pixels = width_inches*px_res
-    else:
-        width_svg_pixels = float(svgnode.getAttribute('width'))
-        height_svg_pixels = float(svgnode.getAttribute('height'))
-        aspect_ratio = height_svg_pixels / float(width_svg_pixels)
-        height_inches = width_inches*aspect_ratio
 
-    fig = plt.figure(figsize=(width_inches, height_inches))
-
-    #rects = doc.getElementsByTagName('rect')
-
-    axis_elements = doc.getElementsByTagNameNS(XMLNS, 'axis')
-
-    axes = {}
-    for axis_element in axis_elements:
-        svg_element = axis_element.parentNode
-
-        x_px = float(svg_element.getAttribute("x"))
-        y_px = float(svg_element.getAttribute("y"))
-        width_px = float(svg_element.getAttribute("width"))
-        height_px = float(svg_element.getAttribute("height"))
-        """ writes the current output_xml document to output_filename"""
-
-        left = x_px/width_svg_pixels
-        width = width_px/width_svg_pixels
-        height = height_px/height_svg_pixels
-        bottom = (height_svg_pixels-y_px-height_px)/height_svg_pixels
-        axis_aspect_ratio = height_px / float(width_px)
-        # a little verbose but may be a way to pass user data from the svg document to python
-        datadict = {}
-        [datadict.update({key:value}) for key, value in axis_element.attributes.items()]
-        name = datadict.pop('figurefirst:name')
-        datadict['aspect_ratio'] = axis_aspect_ratio
-
-        if 'figurefirst:groupname' in axis_element.parentNode.parentNode.attributes.keys():
-            datadict['group'] = axis_element.parentNode.parentNode.getAttribute('figurefirst:groupname')
-
-        ax = fig.add_axes([left, bottom, width, height])
-        axes.setdefault(name, {'axis':ax, 'data':datadict})
-
-    return fig, axes, doc
