@@ -125,7 +125,8 @@ class FigureLayout(object):
         # only using the horizontal element of the viewbox, but
         # it is probably best to assert that the a.r's are the same
         # for now
-        assert self.layout_user_sx == self.layout_user_sy
+        #assert self.layout_user_sx == self.layout_user_sy
+        assert (np.abs(self.layout_user_sx[0] - self.layout_user_sy[0]) < 0.00001) #  rounding errors are a bitch
         if make_mplfigures:
             self.make_mplfigures()
 
