@@ -1,7 +1,10 @@
 import figurefirst
 
 '''
-To create a templated figure, draw a rectangle, and add a figurefirst:figure tag as if you were creating another figure. Then in addition to the figurefirst:name attribute, add a figurefirst:template attribute, whose value should correspond to the name of the figurefirst figure you want to use as the template. The template figure will be scaled to fill the box. 
+To create a templated figure, draw a rectangle, and add a figurefirst:figure tag as if you were creating another figure. 
+Then in addition to the figurefirst:name attribute, add a figurefirst:template attribute, 
+whose value should correspond to the name of the figurefirst figure you want to use as the template. 
+The template figure will be scaled to fill the box. 
 '''
 
 layout = figurefirst.FigureLayout('figure_templating_example.svg' )
