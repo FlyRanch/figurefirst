@@ -67,10 +67,11 @@ class MPLAxis(dict):
         return self['axis'].__getattribute__(attr)
     
 class FigureLayout(object):
-    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False):
+    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300):
         """
         autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure, default: True
         make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init
+        dpi - default 300, which is desired for print figures
         
         construct an object that specifies the figure layout fom the
         svg file layout_filename. Currently there are a number of restrictions
@@ -100,6 +101,7 @@ class FigureLayout(object):
                y="47.592991">
               <figurefirst:axis
                  figurefirst:name="frequency.22H05.start" /> """
+        self.dpi = dpi # should be 300 for print figures
         self.autogenlayers = autogenlayers
         self.layout_filename = layout_filename
         #from xml.dom import minidom
@@ -125,7 +127,8 @@ class FigureLayout(object):
         # only using the horizontal element of the viewbox, but
         # it is probably best to assert that the a.r's are the same
         # for now
-        assert self.layout_user_sx == self.layout_user_sy
+        #assert self.layout_user_sx == self.layout_user_sy
+        assert (np.abs(self.layout_user_sx[0] - self.layout_user_sy[0]) < 0.00001) #  rounding errors are a bitch
         if make_mplfigures:
             self.make_mplfigures()
 
@@ -561,7 +564,7 @@ class FigureLayout(object):
     def to_svg_buffer(self, fig):
         from StringIO import StringIO
         fid = StringIO()
-        fig.savefig(fid, format='svg', transparent=True)
+        fig.savefig(fid, format='svg', transparent=True, dpi=self.dpi)
         fid.seek(0)
         return fid
 
