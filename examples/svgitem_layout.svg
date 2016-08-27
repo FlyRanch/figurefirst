@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="6in"
+   height="4in"
+   viewBox="0 0 540.00001 359.99999"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="svgitem_layout.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.5655308"
+     inkscape:cx="146.63854"
+     inkscape:cy="235.1501"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="in"
+     inkscape:window-width="1680"
+     inkscape:window-height="965"
+     inkscape:window-x="10"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-692.36221)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <rect
+       y="731.34271"
+       x="26.421358"
+       height="60.769127"
+       width="107.0065"
+       id="rect4155"
+       style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1">
+      <figurefirst:axis
+         figurefirst:name="test_ax" />
+    </rect>
+    <rect
+       style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4167-3"
+       width="15.852816"
+       height="15.852816"
+       x="197.3313"
+       y="732.66376">
+      <figurefirst:svgitem
+         figurefirst:name="r1" />
+    </rect>
+    <rect
+       style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4167-0"
+       width="15.852816"
+       height="15.852816"
+       x="168.68225"
+       y="732.66376"
+       figurefirst:name="r2">
+      <figurefirst:svgitem
+         figurefirst:name="r2" />
+    </rect>
+    <rect
+       style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4167-11"
+       width="15.852816"
+       height="15.852816"
+       x="140.0332"
+       y="732.66376"
+       figurefirst:name="r3">
+      <figurefirst:svgitem
+         figurefirst:name="r3" />
+    </rect>
+  </g>
+</svg>

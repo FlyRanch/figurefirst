@@ -310,6 +310,30 @@ class PatchSpec(PathSpec):
                 mpl_kwargs['facecolor'] = np.array(converter.to_rgba(v,float(self.style['fill-opacity'])))
         return mpl_kwargs
   
+class SVGItem(dict,object):
+    def __init__(self,*args,**kwargs):
+        for arg in args:
+            try:
+                if arg.tagName == 'figurefirst:svgitem':
+                    self.load(arg)
+                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
+            except AttributeError:
+                if type(arg) == FigureLayout:
+                    self.layout = arg
+        super(SVGItem, self).__init__(**kwargs)
+        
+    def load(self,ptag):
+        pnode = ptag.parentNode
+        self.loaded_attr = dict()
+        self.node = pnode
+        [self.loaded_attr.update({k:v}) for k,v in pnode.attributes.items()]
+        self.style = dict()
+        [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in self.loaded_attr['style'].split(';')]
+
+    def frmtstyle(self):
+        return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
+
+
 class FigureLayout(object):
 
     def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300):
@@ -369,6 +393,9 @@ class FigureLayout(object):
         self.axes = leafs
         self.figures = figuretree
         self.axes_groups = grouptree
+
+        self.load_pathspecs()
+        self.load_svgitems()
 
         # dont allow sx and sy to differ
         # inkscape seems to ignore inconsistent aspect ratios by
@@ -502,6 +529,12 @@ class FigureLayout(object):
                 new_leafs[key] = value
         return figuretree,grouptree,new_leafs
 
+    def load_svgitems(self):
+        self.svgitems = dict()
+        elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'svgitem')
+        itemlist = [SVGItem(el,self) for el in elementlist]
+        [self.svgitems.update({sp.name:sp}) for sp in itemlist]
+
     def load_pathspecs(self):
         self.pathspecs = dict()
         elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'pathspec')
@@ -525,7 +558,7 @@ class FigureLayout(object):
             layerdict[label] = l
         return layerdict
 
-    def set_layer_visability(self,inkscape_label = 'Layer 1',vis = True,gid = None,):
+    def set_layer_visibility(self,inkscape_label = 'Layer 1',vis = True,gid = None,):
         import re
         value = {False:'none',True:'inline'}[vis]
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
@@ -664,6 +697,15 @@ class FigureLayout(object):
                         except AttributeError:
                             print potential_method, 'is unknown method for mpl axes'
 
+    def apply_svg_attrs(self):
+        leafs = flatten_dict(self.svgitems)
+        output_svg = self.output_xml.getElementsByTagName('svg')[0]
+        for svgitem in leafs.values():
+            nd = svgitem.node
+            ndid = nd.getAttribute('id')
+            outnd = get_elements_by_attr(output_svg,'id',ndid)[0]
+            outnd.setAttribute('style',svgitem.frmtstyle())
+
     def pass_xml(self, gid, key, value):
         """pass key, value pair xml pair to group with ID gid
         gid should contain prefix 'figurefirst:' to ensure uniqueness
@@ -690,7 +732,6 @@ class FigureLayout(object):
     def to_svg_buffer(self, fig):
         from StringIO import StringIO
         fid = StringIO()
-
         fig.savefig(fid, format='svg', transparent=True, dpi=self.dpi)
         fid.seek(0)
         return fid
@@ -702,7 +743,7 @@ class FigureLayout(object):
             self.output_xml.writexml(outfile, encoding='utf-8')
         except UnicodeEncodeError:
             outfile.close()
-            print 'encoding error'
+            warn('encoding error')
             outfile = open(output_filename, 'w')
             outfile.write(self.output_xml.toxml().encode('ascii', 'xmlcharrefreplace'))
             outfile.close()
@@ -713,7 +754,7 @@ class FigureLayout(object):
         else:
             self.insert_figures()
         for l in hidelayers:
-            self.set_layer_visability(l,False)
+            self.set_layer_visibility(l,False)
         self.write_svg(filename)
 
     def clear_fflayer(self, fflayername):
