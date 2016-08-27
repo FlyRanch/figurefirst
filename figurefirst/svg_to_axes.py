@@ -337,7 +337,7 @@ class FigureLayout(object):
             of the width and height attributes must match the aspect ratio of the viewBox.
             <svg xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
                  width="6in"
-                 height="8in"
+                 height="8n"
                  viewBox="0 0 600 800"
                  ... >
         2) the layer containing the axis labels cannot have a transform attached.
@@ -358,6 +358,8 @@ class FigureLayout(object):
                y="47.592991">
               <figurefirst:axis
                  figurefirst:name="frequency.22H05.start" /> """
+
+        self.dpi = dpi 
         self.layout_filename = layout_filename
         #from xml.dom import minidom
         #layout_filename = layout_filename
@@ -651,7 +653,7 @@ class FigureLayout(object):
     def to_svg_buffer(self, fig):
         from StringIO import StringIO
         fid = StringIO()
-        fig.savefig(fid, format='svg', transparent=True)
+        ig.savefig(fid, format='svg', transparent=True, dpi=self.dpi)
         fid.seek(0)
         return fid
 
