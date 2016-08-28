@@ -24,8 +24,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.5655308"
-     inkscape:cx="146.63854"
+     inkscape:zoom="1.9617291"
+     inkscape:cx="116.62675"
      inkscape:cy="235.1501"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
@@ -34,7 +34,7 @@
      inkscape:window-width="1680"
      inkscape:window-height="965"
      inkscape:window-x="10"
-     inkscape:window-y="0"
+     inkscape:window-y="23"
      inkscape:window-maximized="0" />
   <defs
      id="defs4" />
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -65,37 +65,42 @@
       <figurefirst:axis
          figurefirst:name="test_ax" />
     </rect>
-    <rect
-       style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4167-3"
-       width="15.852816"
-       height="15.852816"
-       x="197.3313"
-       y="732.66376">
-      <figurefirst:svgitem
-         figurefirst:name="r1" />
-    </rect>
-    <rect
-       style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4167-0"
-       width="15.852816"
-       height="15.852816"
-       x="168.68225"
-       y="732.66376"
-       figurefirst:name="r2">
-      <figurefirst:svgitem
-         figurefirst:name="r2" />
-    </rect>
-    <rect
-       style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4167-11"
-       width="15.852816"
-       height="15.852816"
-       x="140.0332"
-       y="732.66376"
-       figurefirst:name="r3">
-      <figurefirst:svgitem
-         figurefirst:name="r3" />
-    </rect>
+    <g
+       id="g4137">
+      <rect
+         y="732.66376"
+         x="197.3313"
+         height="15.852816"
+         width="15.852816"
+         id="rect4167-3"
+         style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="r1" />
+      </rect>
+      <rect
+         figurefirst:name="r2"
+         y="732.66376"
+         x="168.68225"
+         height="15.852816"
+         width="15.852816"
+         id="rect4167-0"
+         style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="r2" />
+      </rect>
+      <rect
+         figurefirst:name="r3"
+         y="732.66376"
+         x="140.0332"
+         height="15.852816"
+         width="15.852816"
+         id="rect4167-11"
+         style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="r3" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="svggroup" />
+    </g>
   </g>
 </svg>

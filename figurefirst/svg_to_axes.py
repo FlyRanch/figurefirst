@@ -88,6 +88,17 @@ def flatten_dict(d):
     [flat_dict.update(fd) for fd in flatten_list(list(traverse(keylist,d)))]
     return flat_dict
 
+def filterTreeByType(node, searchType):
+    temp = dict()
+    for key, value in node.items():
+        if isinstance(value,searchType):
+            temp.update({key:value})
+        elif isinstance(value,dict): 
+            rval = filterTreeByType(value,searchType)
+            if len(rval.keys()) > 0:
+                temp.update({key:rval})
+    return temp
+
 def parse_transform(transform_str):
     """convert transforms into transformation matrix"""
     #print transform_str
@@ -152,8 +163,39 @@ class FFItem(dict,object):
             self.transform_str = self.node.getAttribute('transform')
         else:
             self.transform_str = None
-        super(FFItem, self).__init__(**kwargs)
         
+class FFSVGItem(FFItem,object):
+    def __init__(self,tagnode):
+        super(FFSVGItem,self).__init__(tagnode)
+        x = float(self.node.getAttribute('x'))
+        y = float(self.node.getAttribute('y'))
+        h = float(self.node.getAttribute('height'))
+        w = float(self.node.getAttribute('width'))
+        self.p1 = np.array([x,y,1])
+        self.p2 = np.array([x+w,h+y,1])
+        self.load_style()
+    
+    def __getattr__(self,attr):
+        if attr == 'x':
+            return self.p1[0]
+        if attr == 'y':
+            return self.p1[1]
+        if attr == 'w':
+            return (self.p2-self.p1)[0]
+        if attr == 'h':
+            return (self.p2-self.p1)[1]
+
+    def load_style(self):
+        self.loaded_attr = dict()
+        [self.loaded_attr.update({k:v}) for k,v in self.node.attributes.items()]
+        self.style = dict()
+        style_list =  self.loaded_attr['style'].split(';')
+        style_list = [x for x in style_list if len(x)>0]
+        [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in style_list]
+
+    def frmtstyle(self):
+        return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
+     
 class FFGroup(FFItem,object):
     def __init__(self,tagnode,**kwargs):
         super(FFGroup,self).__init__(tagnode,**kwargs)
@@ -309,30 +351,7 @@ class PatchSpec(PathSpec):
             if k == 'facecolor':
                 mpl_kwargs['facecolor'] = np.array(converter.to_rgba(v,float(self.style['fill-opacity'])))
         return mpl_kwargs
-  
-class SVGItem(dict,object):
-    def __init__(self,*args,**kwargs):
-        for arg in args:
-            try:
-                if arg.tagName == 'figurefirst:svgitem':
-                    self.load(arg)
-                    self.name = arg.getAttributeNS("http://flyranch.github.io/figurefirst/",'name')
-            except AttributeError:
-                if type(arg) == FigureLayout:
-                    self.layout = arg
-        super(SVGItem, self).__init__(**kwargs)
         
-    def load(self,ptag):
-        pnode = ptag.parentNode
-        self.loaded_attr = dict()
-        self.node = pnode
-        [self.loaded_attr.update({k:v}) for k,v in pnode.attributes.items()]
-        self.style = dict()
-        [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in self.loaded_attr['style'].split(';')]
-
-    def frmtstyle(self):
-        return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
-
 
 class FigureLayout(object):
 
@@ -389,13 +408,13 @@ class FigureLayout(object):
         self.layout_user_sy = self.layout_uh/self.layout_height[0], self.layout_height[1]
         self.output_xml = minidom.parse(self.layout_filename).cloneNode(True)
         
-        figuretree,grouptree,leafs = self.make_group_tree()
+        figuretree,grouptree,leafs,svgitemtree = self.make_group_tree()
         self.axes = leafs
         self.figures = figuretree
         self.axes_groups = grouptree
-
+        self.svgitems = svgitemtree
         self.load_pathspecs()
-        self.load_svgitems()
+        #self.load_svgitems()
 
         # dont allow sx and sy to differ
         # inkscape seems to ignore inconsistent aspect ratios by
@@ -462,6 +481,9 @@ class FigureLayout(object):
                             fig = FFFigure(child)
                             grouptree[fig.name] = fig
                             tree_loc = grouptree[fig.name]
+                    if child.tagName in ['figurefirst:svgitem']:
+                        item = FFSVGItem(child)
+                        grouptree[item.name] = item
                         
             for child in node.childNodes:
                 if child.hasChildNodes():
@@ -472,10 +494,14 @@ class FigureLayout(object):
         traverse(self.layout,grouptree)
         leafs = flatten_dict(grouptree)
 
+        #extract the axes from the rest of the svgitems
+        axtree = filterTreeByType(grouptree,FFAxis)
+        svgitemtree = filterTreeByType(grouptree,FFSVGItem)
+
         ### Create the figure tree
         figuretree = dict()
         figuretree['none'] = FFFigure(None)
-        for val in grouptree.values():
+        for val in axtree.values():
             if isinstance(val,FFFigure):
                 figuretree[val.name] = val
             else:
@@ -520,14 +546,14 @@ class FigureLayout(object):
                     l[k] = newv
                     
         ### Re-folliate
-        leafs = flatten_dict(grouptree)
+        leafs = flatten_dict(axtree)
         new_leafs = dict()
         for key,value in leafs.items():
             if len(key) ==1:
                 new_leafs[key[0]] = value
             else:
                 new_leafs[key] = value
-        return figuretree,grouptree,new_leafs
+        return figuretree,axtree,new_leafs,svgitemtree
 
     def load_svgitems(self):
         self.svgitems = dict()
