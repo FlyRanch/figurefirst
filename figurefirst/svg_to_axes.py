@@ -501,7 +501,7 @@ class FigureLayout(object):
         ### Create the figure tree
         figuretree = dict()
         figuretree['none'] = FFFigure(None)
-        for val in axtree.values():
+        for val in grouptree.values():
             if isinstance(val,FFFigure):
                 figuretree[val.name] = val
             else:
@@ -544,7 +544,7 @@ class FigureLayout(object):
                         t2 = t1 + np.array([vleaf.w*sx,vleaf.h*sy,0])
                         vleaf.p1 = t1; vleaf.p2 = t2
                     l[k] = newv
-                    
+
         ### Re-folliate
         leafs = flatten_dict(axtree)
         new_leafs = dict()
@@ -648,7 +648,8 @@ class FigureLayout(object):
                         figgroup['figure'] = fig
                         figgroup.ismplfigure = True
                     else:
-                        print type(leaf)
+                        pass
+                        #print type(leaf)
 
     def append_figure_to_layer(self, fig, fflayername, cleartarget=False):
 

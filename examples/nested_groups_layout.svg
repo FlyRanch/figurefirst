@@ -22,17 +22,17 @@
      borderopacity="1.0"
      id="base"
      inkscape:current-layer="layer1"
-     inkscape:cx="27.673512"
-     inkscape:cy="223.43941"
+     inkscape:cx="14.901834"
+     inkscape:cy="161.9985"
      inkscape:document-units="in"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:window-height="935"
      inkscape:window-maximized="0"
      inkscape:window-width="1643"
-     inkscape:window-x="24"
-     inkscape:window-y="24"
-     inkscape:zoom="0.92176032"
+     inkscape:window-x="1557"
+     inkscape:window-y="85"
+     inkscape:zoom="0.9968689"
      pagecolor="#ffffff"
      showgrid="false"
      units="in" />
@@ -161,7 +161,7 @@
          figurefirst:name="ungrouped" />
     </rect>
     <rect
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.727;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.0905, 2.181;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.727;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.0905, 2.18100000000000005;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4167"
        width="269.7674"
        height="154.29797"
@@ -199,6 +199,45 @@
          height="167.5538"
          x="355.59976"
          y="-191.008" />
+    </g>
+    <g
+       transform="matrix(1.1111111,0,0,1.1111111,59.011802,-673.035)"
+       id="g4137"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <rect
+         y="732.66376"
+         x="197.3313"
+         height="15.852816"
+         width="15.852816"
+         id="rect4167-3"
+         style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="r1" />
+      </rect>
+      <rect
+         figurefirst:name="r2"
+         y="732.66376"
+         x="168.68225"
+         height="15.852816"
+         width="15.852816"
+         id="rect4167-0"
+         style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="r2" />
+      </rect>
+      <rect
+         figurefirst:name="r3"
+         y="732.66376"
+         x="140.0332"
+         height="15.852816"
+         width="15.852816"
+         id="rect4167-11"
+         style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="r3" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="svggroup" />
     </g>
   </g>
   <g
