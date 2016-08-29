@@ -239,6 +239,43 @@ class FFSVGPath(FFSVGItem,object):
     def frmtstyle(self):
         return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
 
+class FFSVGText(FFSVGItem,object):
+    def __init__(self,tagnode):
+        super(FFSVGItem,self).__init__(tagnode)
+        x = float(self.node.getAttribute('x'))
+        y = float(self.node.getAttribute('y'))
+        self.p1 = np.array([0,0,1])
+        self.p2 = np.array([0,0,1])
+        ## need to implement h and width
+        #h = float(self.node.getAttribute('height'))
+        #w = float(self.node.getAttribute('width'))
+        #self.p1 = np.array([x,y,1])
+        #self.p2 = np.array([x+w,h+y,1])
+        self.load_style()
+        self.node.getElementsByTagName('tspan')[0].childNodes[0]
+
+    def load_style(self):
+        self.loaded_attr = dict()
+        [self.loaded_attr.update({k:v}) for k,v in self.node.attributes.items()]
+        self.style = dict()
+        style_list =  self.loaded_attr['style'].split(';')
+        style_list = [x for x in style_list if len(x)>0]
+        [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in style_list]
+    
+    def load_text(self):
+        self.text = self.node.getElementsByTagName('tspan')[0].childNodes[0].data
+
+    def __getattr__(self,attr):
+        if attr == 'x':
+            return self.p1[0]
+        if attr == 'y':
+            return self.p1[1]
+        if attr == 'w':
+            warn('not implemented')
+            return (self.p2-self.p1)[0]
+        if attr == 'h':
+            warn('not implemented')
+            return (self.p2-self.p1)[1]
 
 
 class FFGroup(FFItem,object):
@@ -529,6 +566,8 @@ class FigureLayout(object):
                     if child.tagName in ['figurefirst:svgitem']:
                         if node.tagName == 'path':
                             item = FFSVGPath(child)
+                        elif node.tagName == 'text':
+                            item = FFSVGText(child)
                         else:
                             item = FFSVGItem(child)
                         grouptree[item.name] = item
@@ -781,6 +820,8 @@ class FigureLayout(object):
             ndid = nd.getAttribute('id')
             outnd = get_elements_by_attr(output_svg,'id',ndid)[0]
             outnd.setAttribute('style',svgitem.frmtstyle())
+            if isinstance(svgitem,FFSVGText):
+                outnd.getElementsByTagName('tspan')[0].childNodes[0].data = svgitem.text
 
     def pass_xml(self, gid, key, value):
         """pass key, value pair xml pair to group with ID gid

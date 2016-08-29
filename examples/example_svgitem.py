@@ -17,5 +17,8 @@ for key,patch in layout.svgitems['pathgroup'].items():
     hexi = matplotlib.colors.rgb2hex(plt.cm.viridis(clev))
     patch.style['fill'] = str(hexi)
     
+layout.svgitems['l1'].style['fill'] = str(hexi)
+layout.svgitems['l1'].text = str(clev)
+
 layout.apply_svg_attrs()
 layout.save('example_svgitem_output.svg')

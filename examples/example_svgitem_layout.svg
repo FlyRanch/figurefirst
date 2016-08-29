@@ -16,7 +16,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="svgitem_layout.svg">
+   sodipodi:docname="example_svgitem_layout.svg">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,17 +24,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.6825402"
-     inkscape:cx="80.847027"
-     inkscape:cy="195.31085"
+     inkscape:zoom="1.7421854"
+     inkscape:cx="194.15345"
+     inkscape:cy="202.14359"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
-     inkscape:window-width="1680"
-     inkscape:window-height="965"
-     inkscape:window-x="6"
-     inkscape:window-y="88"
+     inkscape:window-width="1833"
+     inkscape:window-height="955"
+     inkscape:window-x="938"
+     inkscape:window-y="101"
      inkscape:window-maximized="0" />
   <defs
      id="defs4" />
@@ -135,5 +135,17 @@
       <figurefirst:group
          figurefirst:name="pathgroup" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff7f2a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="320.78781"
+       y="782.27643"
+       id="text4142-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4144-9"
+         x="320.78781"
+         y="782.27643">l1</tspan><figurefirst:svgitem
+         figurefirst:name="l1" /></text>
   </g>
 </svg>
