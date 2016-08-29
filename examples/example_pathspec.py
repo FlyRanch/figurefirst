@@ -51,7 +51,7 @@ def kill_spines(ax):
                   linewidth=1)
 
 ## create a layout
-layout = fifi.FigureLayout('pathspec_layout.svg')
+layout = fifi.FigureLayout('example_pathspec_layout.svg')
 ## make the mpl figure objects
 mplfig = layout.make_mplfigures()
 ## load the line and path specs to get plotting colors and effects
@@ -88,6 +88,7 @@ for group_name,group in layout.axes_groups.items():
 
 ## insert the figures into the layout and save
 layout.insert_figures()
-layout.write_svg('pathspec_test_output.svg')
+layout.set_layer_visibility('Layer 1',False)
+layout.write_svg('example_pathspec_output.svg')
 plb.close('all')
 #display(SVG('pathspec_test_output.svg'))

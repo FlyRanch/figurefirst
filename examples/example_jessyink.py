@@ -1,7 +1,7 @@
 import numpy as np
 from figurefirst import FigureLayout
 
-layout = FigureLayout('jessyink_layout.svg')
+layout = FigureLayout('example_jessyink_layout.svg')
 layout.make_mplfigures()
 
 x_data = np.arange(30)
@@ -20,5 +20,5 @@ layout.pass_xml('figurefirst:line1','jessyink:effectIn', 'name:appear;order:2;le
 layout.pass_xml('figurefirst:fill1','jessyink:effectIn', 'name:appear;order:2;length:800')
 layout.pass_xml('figurefirst:line2','jessyink:effectIn', 'name:appear;order:3;length:800')
 
-layout.write_svg('jessyink_test_output.svg')
+layout.write_svg('example_jessyink_output.svg')
 

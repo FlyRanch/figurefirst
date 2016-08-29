@@ -24,17 +24,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9617291"
-     inkscape:cx="116.62675"
-     inkscape:cy="235.1501"
+     inkscape:zoom="2.6825402"
+     inkscape:cx="80.847027"
+     inkscape:cy="195.31085"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
      inkscape:window-width="1680"
      inkscape:window-height="965"
-     inkscape:window-x="10"
-     inkscape:window-y="23"
+     inkscape:window-x="6"
+     inkscape:window-y="88"
      inkscape:window-maximized="0" />
   <defs
      id="defs4" />
@@ -56,17 +56,18 @@
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
     <rect
-       y="731.34271"
-       x="26.421358"
-       height="60.769127"
-       width="107.0065"
+       y="789.03369"
+       x="62.230171"
+       height="152.90111"
+       width="234.57027"
        id="rect4155"
        style="opacity:1;fill:#916f6f;fill-opacity:1;stroke:none;stroke-width:0.36000001;stroke-miterlimit:10;stroke-dasharray:0.53999999, 1.07999999;stroke-dashoffset:0;stroke-opacity:1">
       <figurefirst:axis
          figurefirst:name="test_ax" />
     </rect>
     <g
-       id="g4137">
+       id="g4137"
+       transform="matrix(2.5160983,0,0,2.5160983,-38.917192,-1051.0966)">
       <rect
          y="732.66376"
          x="197.3313"
@@ -101,6 +102,38 @@
       </rect>
       <figurefirst:group
          figurefirst:name="svggroup" />
+    </g>
+    <g
+       id="g4155"
+       transform="matrix(2.5160983,0,0,2.5160983,-38.917192,-1051.0966)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4138"
+         d="m 150.84612,785.55314 c -6.83521,-6.83522 -10.92999,-18.93131 -10.92999,-18.93131 8.0847,-4.66771 24.99174,-6.69652 24.99174,-6.69652 2.72517,4.72014 -14.06175,25.62783 -14.06175,25.62783 z"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="path1" />
+      </path>
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path4138-2"
+         d="m 188.67618,758.96023 c -9.63568,0.77065 -20.59686,7.32314 -20.59686,7.32314 3.12738,8.79599 22.94821,20.16412 22.94821,20.16412 -11.39729,-16.64829 -2.35135,-27.48726 -2.35135,-27.48726 z"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="path2" />
+      </path>
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path4138-2-1"
+         d="m 219.84566,771.79461 c -6.52583,-7.13119 -18.42872,-11.75761 -18.42872,-11.75761 -5.02115,7.87008 -0.39491,23.65314 -0.39491,23.65314 9.55986,5.86501 18.82363,-11.89553 18.82363,-11.89553 z"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1">
+        <figurefirst:svgitem
+           figurefirst:name="path3" />
+      </path>
+      <figurefirst:group
+         figurefirst:name="pathgroup" />
     </g>
   </g>
 </svg>

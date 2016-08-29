@@ -21,18 +21,18 @@
      bordercolor="#666666"
      borderopacity="1.0"
      id="base"
-     inkscape:current-layer="layer1"
-     inkscape:cx="221.39849"
-     inkscape:cy="52.556319"
+     inkscape:current-layer="layer2"
+     inkscape:cx="264.74946"
+     inkscape:cy="207.1428"
      inkscape:document-units="in"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:window-height="935"
      inkscape:window-maximized="0"
      inkscape:window-width="1643"
-     inkscape:window-x="1519"
-     inkscape:window-y="94"
-     inkscape:zoom="1.9905287"
+     inkscape:window-x="-28"
+     inkscape:window-y="0"
+     inkscape:zoom="1.0350193"
      pagecolor="#ffffff"
      showgrid="false"
      units="in" />
@@ -247,12 +247,12 @@
      inkscape:groupmode="layer"
      id="layer2"
      transform="translate(0,200.00001)">
-    <figurefirst:figure
-       figurefirst:name="fig2" />
     <g
        transform="matrix(0.68302037,0,0,0.28379919,-12.421716,-24.243396)"
        style="display:inline;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
        id="g4177-2-7">
+      <figurefirst:figure
+         figurefirst:name="fig2" />
       <rect
          y="-170.31978"
          x="32.378422"
@@ -275,8 +275,6 @@
         <figurefirst:axis
            figurefirst:name="ax2" />
       </rect>
-      <figurefirst:group
-         figurefirst:name="group3" />
     </g>
   </g>
   <g

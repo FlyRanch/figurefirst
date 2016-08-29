@@ -3,6 +3,8 @@
 from xml.dom import minidom
 import matplotlib.pyplot as plt
 import numpy as np
+from warnings import warn
+
 XMLNS = "http://flyranch.github.io/figurefirst/"
 SCALE_FACTORS = {'px':{'in':72.,
                        'cm':72/2.54,
@@ -88,16 +90,23 @@ def flatten_dict(d):
     [flat_dict.update(fd) for fd in flatten_list(list(traverse(keylist,d)))]
     return flat_dict
 
-def filterTreeByType(node, searchType):
+def extractTreeByType(node, searchType):
     temp = dict()
     for key, value in node.items():
         if isinstance(value,searchType):
             temp.update({key:value})
         elif isinstance(value,dict): 
-            rval = filterTreeByType(value,searchType)
+            rval = extractTreeByType(value,searchType)
             if len(rval.keys()) > 0:
                 temp.update({key:rval})
     return temp
+
+def filterTreeByType(node, searchType):
+    for key, value in node.items():
+        if isinstance(value,searchType):
+            node.pop(key)
+        else:
+            filterTreeByType(value,searchType)
 
 def parse_transform(transform_str):
     """convert transforms into transformation matrix"""
@@ -195,7 +204,43 @@ class FFSVGItem(FFItem,object):
 
     def frmtstyle(self):
         return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
-     
+
+class FFSVGPath(FFSVGItem,object):
+    def __init__(self,tagnode):
+        super(FFSVGItem,self).__init__(tagnode)
+        self.d_str = self.node.getAttribute('d')
+        self.load_style()
+        #x = float(self.node.getAttribute('x'))
+        #y = float(self.node.getAttribute('y'))
+        #h = float(self.node.getAttribute('height'))
+        #w = float(self.node.getAttribute('width'))
+        self.p1 = np.array([0,0,1])
+        self.p2 = np.array([0,0,1])
+        #self.load_style()
+    
+    def __getattr__(self,attr):
+        if attr == 'x':
+            return self.p1[0]
+        if attr == 'y':
+            return self.p1[1]
+        if attr == 'w':
+            return (self.p2-self.p1)[0]
+        if attr == 'h':
+            return (self.p2-self.p1)[1]
+
+    def load_style(self):
+        self.loaded_attr = dict()
+        [self.loaded_attr.update({k:v}) for k,v in self.node.attributes.items()]
+        self.style = dict()
+        style_list =  self.loaded_attr['style'].split(';')
+        style_list = [x for x in style_list if len(x)>0]
+        [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in style_list]
+
+    def frmtstyle(self):
+        return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
+
+
+
 class FFGroup(FFItem,object):
     def __init__(self,tagnode,**kwargs):
         super(FFGroup,self).__init__(tagnode,**kwargs)
@@ -482,7 +527,10 @@ class FigureLayout(object):
                             grouptree[fig.name] = fig
                             tree_loc = grouptree[fig.name]
                     if child.tagName in ['figurefirst:svgitem']:
-                        item = FFSVGItem(child)
+                        if node.tagName == 'path':
+                            item = FFSVGPath(child)
+                        else:
+                            item = FFSVGItem(child)
                         grouptree[item.name] = item
                         
             for child in node.childNodes:
@@ -492,11 +540,12 @@ class FigureLayout(object):
         ### Create the group tree
         grouptree = dict()
         traverse(self.layout,grouptree)
+        #filterTreeByType(grouptree,FFSVGPath)
         leafs = flatten_dict(grouptree)
 
         #extract the axes from the rest of the svgitems
-        axtree = filterTreeByType(grouptree,FFAxis)
-        svgitemtree = filterTreeByType(grouptree,FFSVGItem)
+        axtree = extractTreeByType(grouptree,FFAxis)
+        svgitemtree = extractTreeByType(grouptree,FFSVGItem)
 
         ### Create the figure tree
         figuretree = dict()
@@ -534,16 +583,16 @@ class FigureLayout(object):
         for key,l in leafs.items():
             if type(l) == FFTemplateTarget:
                 import copy
-                for k,v in figuretree[l.template_source].items():
-                    newv = copy.deepcopy(v)
-                    vleafs = flatten_dict(newv)
-                    origin = np.array([newv.x,newv.y,1])
-                    sx = l.w/newv.w; sy = l.h/newv.h
-                    for vleaf in vleafs.values():
-                        t1 = (vleaf.p1-origin)*np.array([sx,sy,0]) + l.p1
-                        t2 = t1 + np.array([vleaf.w*sx,vleaf.h*sy,0])
-                        vleaf.p1 = t1; vleaf.p2 = t2
-                    l[k] = newv
+                #for k,v in figuretree[l.template_source].items():
+                newv = copy.deepcopy(figuretree[l.template_source])
+                vleafs = flatten_dict(newv)
+                origin = np.array([newv.x,newv.y,1])
+                sx = l.w/newv.w; sy = l.h/newv.h
+                for vleaf in vleafs.values():
+                    t1 = (vleaf.p1-origin)*np.array([sx,sy,0]) + l.p1
+                    t2 = t1 + np.array([vleaf.w*sx,vleaf.h*sy,0])
+                    vleaf.p1 = t1; vleaf.p2 = t2
+                    l[vleaf.name] = vleaf
 
         ### Re-folliate
         leafs = flatten_dict(axtree)
@@ -770,7 +819,6 @@ class FigureLayout(object):
             self.output_xml.writexml(outfile, encoding='utf-8')
         except UnicodeEncodeError:
             outfile.close()
-            warn('encoding error')
             outfile = open(output_filename, 'w')
             outfile.write(self.output_xml.toxml().encode('ascii', 'xmlcharrefreplace'))
             outfile.close()

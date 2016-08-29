@@ -28,7 +28,7 @@ layout.create_new_targetlayer('figure2')
 layout.append_figure_to_layer(layout.figures['figure1'], 'figure1')
 layout.append_figure_to_layer(layout.figures['figure2'], 'figure2')
 
-layout.set_layer_visability('Design_layer', False)
+layout.set_layer_visibility('Design_layer', False)
 
 layout.write_svg('multi_figures_autogen_targetlayers_manual.svg')
 
@@ -53,7 +53,7 @@ for figure_name, group in layout.axes_groups.items():
 layout.append_figure_to_layer(layout.figures['figure1'], 'figure1')
 layout.append_figure_to_layer(layout.figures['figure2'], 'figure2')
 
-layout.set_layer_visability('Design_layer', False)
+layout.set_layer_visibility('Design_layer', False)
 
 layout.write_svg('multi_figures_autogen_targetlayers_auto.svg')
 

@@ -7,9 +7,9 @@ whose value should correspond to the name of the figurefirst figure you want to 
 The template figure will be scaled to fill the box. 
 '''
 
-layout = figurefirst.FigureLayout('figure_templating_example.svg' )
+layout = figurefirst.FigureLayout('example_figure_templating_layout.svg' )
 layout.make_mplfigures()
 layout.append_figure_to_layer(layout.figures['group2'], 'mpl_layer_2')
 layout.append_figure_to_layer(layout.figures['group3'], 'mpl_layer_3')
-layout.write_svg('figure_templating_example_output.svg')
+layout.write_svg('example_figure_templating_output.svg')
 
