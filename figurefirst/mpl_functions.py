@@ -91,3 +91,14 @@ def kill_all_spines(layout):
 
 def kill_all_labels(layout):
     [kill_labels(ax) for ax in layout.axes.values()]
+    
+def set_fontsize(fig,fontsize):
+    """
+    For each text object of a figure fig, set the font size to fontsize
+    """
+    def match(artist):
+        return artist.__module__ == "matplotlib.text"
+
+    for textobj in fig.findobj(match=match):
+        textobj.set_fontsize(fontsize)
+
