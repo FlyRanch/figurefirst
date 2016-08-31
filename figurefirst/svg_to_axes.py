@@ -822,6 +822,7 @@ class FigureLayout(object):
             outnd.setAttribute('style',svgitem.frmtstyle())
             if isinstance(svgitem,FFSVGText):
                 outnd.getElementsByTagName('tspan')[0].childNodes[0].data = svgitem.text
+                outnd.getElementsByTagName('tspan')[0].setAttribute('style',svgitem.frmtstyle())
 
     def pass_xml(self, gid, key, value):
         """pass key, value pair xml pair to group with ID gid
