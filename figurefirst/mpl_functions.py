@@ -85,3 +85,9 @@ def kill_labels(ax):
     #ax = ax['axis']
     for tl in ax.get_xticklabels() + ax.get_yticklabels():
             tl.set_visible(False)
+
+def kill_all_spines(layout):
+    [kill_spines(ax) for ax in layout.axes.values()]
+
+def kill_all_labels(layout):
+    [kill_labels(ax) for ax in layout.axes.values()]

@@ -12,12 +12,12 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="6in"
-   height="8in"
-   viewBox="0 0 600 800"
+   height="4in"
+   viewBox="0 0 600 400"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r"
-   sodipodi:docname="group_axes_example (copy).svg">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="example_group_axes_layout.svg">
   <defs
      id="defs4">
     <clipPath
@@ -83,16 +83,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.2456042"
-     inkscape:cx="233.40235"
+     inkscape:zoom="0.70874878"
+     inkscape:cx="174.66375"
      inkscape:cy="432.79425"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1780"
-     inkscape:window-height="1079"
+     inkscape:window-width="1680"
+     inkscape:window-height="1006"
      inkscape:window-x="63"
-     inkscape:window-y="38"
+     inkscape:window-y="61"
      inkscape:window-maximized="0"
      units="in"
      showguides="false"
@@ -105,7 +105,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -113,9 +113,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-400.00001)">
     <g
-       transform="matrix(0.88667385,0,0,0.84804291,-1.6994772,-9.7210708)"
+       transform="matrix(0.88667385,0,0,0.84804291,-1.6994772,397.88301)"
        id="g3965">
       <figurefirst:group
          figurefirst:name="threeport" />
@@ -261,7 +262,7 @@
     </g>
     <g
        style="display:inline"
-       transform="matrix(0.88667385,0,0,0.84804291,-1.1136586,117.0766)"
+       transform="matrix(0.88667385,0,0,0.84804291,-1.1136586,524.68069)"
        id="g3965-1">
       <figurefirst:group
          figurefirst:name="oval" />
@@ -407,7 +408,7 @@
     </g>
     <g
        style="display:inline"
-       transform="matrix(0.88667385,0,0,0.84804291,-2.3751779,239.44355)"
+       transform="matrix(0.88667385,0,0,0.84804291,-2.3751779,647.04764)"
        id="g3965-5">
       <figurefirst:group
          figurefirst:name="holy" />
@@ -556,14 +557,16 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 2"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-400.00001)">
     <figurefirst:targetlayer
        figurefirst:name="mpl_panel_a" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Layer 3">
+     inkscape:label="Layer 3"
+     transform="translate(0,-400.00001)">
     <figurefirst:targetlayer
        figurefirst:name="mpl_layer2" />
   </g>
@@ -571,7 +574,8 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="mpl_layer"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-400.00001)">
     <figurefirst:targetlayer
        figurefirst:name="mpl_layer" />
   </g>
