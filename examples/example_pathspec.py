@@ -58,9 +58,11 @@ mplfig = layout.make_mplfigures()
 layout.load_pathspecs()
 ## iterate through what you want to plot and find the needed data,
 ## not the other way around..
-for group_name,group in layout.axes_groups.items():
+for group_name,group in layout.axes_groups['none'].items():
     if not(group_name == 'summary'):
+        #print group_name
         for cond_name,cond_ax in group.items():
+            #print group_name
             group_letter = group_name.split('group')[1]
             kwargs = layout.pathspecs['trial_%s'%group_letter].mplkwargs()
             cond_ax['axis'].plot(np.array(data[group_letter][cond_name]).T,**kwargs)

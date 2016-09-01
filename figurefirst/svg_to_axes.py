@@ -306,7 +306,8 @@ class FFFigure(FFGroup,object):
             return val
         except AttributeError:
             if self.ismplfigure == True:
-                return self['figure'].__getattribute__(attr)
+                return self.figure.__getattribute__(attr)
+                #return self['figure'].__getattribute__(attr)
             else:
                 return self.__getattribute__(attr)
         
@@ -634,13 +635,22 @@ class FigureLayout(object):
                     l[vleaf.name] = vleaf
 
         ### Re-folliate
-        leafs = flatten_dict(axtree)
+        leafs = flatten_dict(figuretree)
+        #print leafs
         new_leafs = dict()
         for key,value in leafs.items():
-            if len(key) ==1:
-                new_leafs[key[0]] = value
-            else:
-                new_leafs[key] = value
+            if isinstance(value,FFAxis):
+                #if len(key) ==1:
+                if key[0] == 'none':
+                    if len(key) == 1:
+                        pass
+                    elif len(key) == 2:
+                        new_leafs[key[1]] = value
+                    else:
+                        new_leafs[tuple(key[1:])] = value
+                else:
+                    new_leafs[key] = value
+        axtree = figuretree
         return figuretree,axtree,new_leafs,svgitemtree
 
     def load_svgitems(self):
@@ -733,7 +743,8 @@ class FigureLayout(object):
                         leaf['axis'] = fig.add_axes([left, bottom, width, height],projection = leaf.projection)
                         leaf['figname'] = figname
                         leaf.ismplaxis = True
-                        figgroup['figure'] = fig
+                        figgroup.figure = fig
+                        #figgroup['figure'] = fig
                         figgroup.ismplfigure = True
                     else:
                         pass

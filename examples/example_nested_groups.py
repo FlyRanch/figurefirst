@@ -4,8 +4,12 @@ import matplotlib
 
 layout = fifi.FigureLayout('example_nested_groups_layout.svg')
 layout.make_mplfigures()
+#print layout.axes
 #layout.axes_groups['fig2']['group3']['ax2'].plot([2,3,4])
-[l.plot([1,3,2,4]) for l in layout.axes.values()]
+for key,ax in layout.axes.items():
+	#print key
+	#print type(ax)
+	ax.plot([1,3,2,4])
 
 cdict = {'r1':0.3,'r2':0.1,'r3':0.9}
 for key,value in cdict.items():
