@@ -740,7 +740,7 @@ class FigureLayout(object):
                     height = leaf.h/self.layout_uh
                     bottom = leaf.y/self.layout_uh
                     if type(leaf) == FFAxis:
-                        leaf['axis'] = fig.add_axes([left, bottom, width, height],projection = leaf.projection)
+                        leaf['axis'] = fig.add_axes([left, bottom, width, height],projection = leaf.projection,label = str(leafkey))
                         leaf['figname'] = figname
                         leaf.ismplaxis = True
                         figgroup.figure = fig
@@ -812,16 +812,16 @@ class FigureLayout(object):
         """ apply valid mpl methods to figure"""
         for mplax in self.axes.values():
             ax = mplax['axis']
-            if 'mplmethods' in mplax.keys():
-                for key, value in mplax['mplmethods'].items():
-                    if key.startswith('figurefirst:'):
-                        potential_method = key.split('figurefirst:')[1]
-                        try:
-                            eval("ax."+potential_method+"("+value+")")
+            #if 'mplmethods' in mplax.keys():
+            for key, value in mplax.mplmethods.items():
+                if key.startswith('figurefirst:'):
+                    potential_method = key.split('figurefirst:')[1]
+                    try:
+                        eval("ax."+potential_method+"("+value+")")
                             #print "ax."+potential_method+"("+value+")"
                             #getattr(ax, potential_method)(eval(value))
-                        except AttributeError:
-                            print potential_method, 'is unknown method for mpl axes'
+                    except AttributeError:
+                        print potential_method, 'is unknown method for mpl axes'
 
     def apply_svg_attrs(self):
         leafs = flatten_dict(self.svgitems)
