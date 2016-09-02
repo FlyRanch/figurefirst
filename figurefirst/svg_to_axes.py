@@ -740,7 +740,8 @@ class FigureLayout(object):
                     height = leaf.h/self.layout_uh
                     bottom = leaf.y/self.layout_uh
                     if type(leaf) == FFAxis:
-                        leaf['axis'] = fig.add_axes([left, bottom, width, height],projection = leaf.projection,label = str(leafkey))
+                        print str(leafkey)
+                        leaf['axis'] = fig.add_axes([left, bottom, width, height],projection = leaf.projection,label = '-'.join(leafkey))
                         leaf['figname'] = figname
                         leaf.ismplaxis = True
                         figgroup.figure = fig
