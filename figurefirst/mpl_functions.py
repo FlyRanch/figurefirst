@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import matplotlib
-
+import tempfile
+import shutil
+import os
 
 ###################################################################################################
 # Adjust Spines (Dickinson style, thanks to Andrew Straw)
@@ -102,3 +104,18 @@ def set_fontsize(fig,fontsize):
     for textobj in fig.findobj(match=match):
         textobj.set_fontsize(fontsize)
 
+
+
+def fix_mpl_svg(file_path, pattern='miterlimit:100000;', subst='miterlimit:1;'):
+
+    fh, abs_path = tempfile.mkstemp()
+    with open(abs_path,'w') as new_file:
+        with open(file_path) as old_file:
+            for line in old_file:
+                new_file.write(line.replace(pattern, subst))
+    os.close(fh)
+
+    os.remove(file_path)
+
+    shutil.move(abs_path, file_path)
+    return
