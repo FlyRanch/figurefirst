@@ -19,6 +19,7 @@ for key,patch in layout.svgitems['pathgroup'].items():
     
 layout.svgitems['l1'].style['fill'] = str(hexi)
 layout.svgitems['l1'].text = str(clev)
+layout.svgitems['l1'].style['font-size'] = 12
 
 layout.apply_svg_attrs()
 layout.save('example_svgitem_output.svg')
