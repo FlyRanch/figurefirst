@@ -283,8 +283,12 @@ class FFGroup(FFItem,object):
         super(FFGroup,self).__init__(tagnode,**kwargs)
         
     def __getattr__(self,attr):
-        pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
-                          for i in self.values()])
+        try:
+            pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
+                              for i in self.values()])
+        except ValueError:
+            raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
+        
         x = np.min(pnts[:,0])
         y = np.min(pnts[:,1])
         w = np.max(pnts[:,0])-x
