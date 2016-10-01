@@ -277,17 +277,36 @@ class FFSVGText(FFSVGItem,object):
             warn('not implemented')
             return (self.p2-self.p1)[1]
 
+class FFSVGGroup(FFItem,object):
+    def __init__(self,tagnode,**kwargs):
+        super(FFSVGGroup,self).__init__(tagnode,**kwargs)
+        
+    def __getattr__(self,attr):
+        #try:
+        pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
+                              for i in self.values()])
+        #except ValueError:
+        #    raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
+        
+        x = np.min(pnts[:,0])
+        y = np.min(pnts[:,1])
+        w = np.max(pnts[:,0])-x
+        h = np.max(pnts[:,1])-y
+        try:
+            return {'x':x,'y':y,'w':w,'h':h}[attr]
+        except KeyError:
+            return self.__getattribute__(attr)
 
 class FFGroup(FFItem,object):
     def __init__(self,tagnode,**kwargs):
         super(FFGroup,self).__init__(tagnode,**kwargs)
         
     def __getattr__(self,attr):
-        try:
-            pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
+        #try:
+        pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
                               for i in self.values()])
-        except ValueError:
-            raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
+        #except ValueError:
+        #    raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
         
         x = np.min(pnts[:,0])
         y = np.min(pnts[:,1])
@@ -537,7 +556,7 @@ class FigureLayout(object):
         return y_l/SCALE_FACTORS[self.layout_user_sx[1]][dst]
 
     def make_group_tree(self):
-        def traverse(node,grouptree):
+        def traverse_axes(node,grouptree):
             gname = None
             axname = None
             tree_loc = grouptree
@@ -568,6 +587,29 @@ class FigureLayout(object):
                             fig = FFFigure(child)
                             grouptree[fig.name] = fig
                             tree_loc = grouptree[fig.name]
+                    #if child.tagName in ['figurefirst:svgitem']:
+                    #    if node.tagName == 'path':
+                    #        item = FFSVGPath(child)
+                    #    elif node.tagName == 'text':
+                    #        item = FFSVGText(child)
+                    #    else:
+                    #        item = FFSVGItem(child)
+                    #    grouptree[item.name] = item
+            for child in node.childNodes:
+                if child.hasChildNodes():
+                    traverse_axes(child,tree_loc)
+
+        
+        def traverse_svgitems(node,svgtree):
+            gname = None
+            axname = None
+            tree_loc = svgtree
+            for child in node.childNodes:
+                if child.nodeType == 1:
+                    if child.tagName in ['figurefirst:svggroup']:
+                        grp = FFSVGGroup(child)
+                        svgtree[grp.name] = grp
+                        tree_loc = svgtree[grp.name]
                     if child.tagName in ['figurefirst:svgitem']:
                         if node.tagName == 'path':
                             item = FFSVGPath(child)
@@ -575,21 +617,23 @@ class FigureLayout(object):
                             item = FFSVGText(child)
                         else:
                             item = FFSVGItem(child)
-                        grouptree[item.name] = item
-                        
+                        svgtree[item.name] = item
             for child in node.childNodes:
                 if child.hasChildNodes():
-                    traverse(child,tree_loc)
+                    traverse_svgitems(child,tree_loc)
                     
         ### Create the group tree
         grouptree = dict()
-        traverse(self.layout,grouptree)
+        traverse_axes(self.layout,grouptree)
+
+        svgitemtree = dict()
+        traverse_svgitems(self.layout,svgitemtree)
         #filterTreeByType(grouptree,FFSVGPath)
         leafs = flatten_dict(grouptree)
 
         #extract the axes from the rest of the svgitems
         axtree = extractTreeByType(grouptree,FFAxis)
-        svgitemtree = extractTreeByType(grouptree,FFSVGItem)
+        #svgitemtree = extractTreeByType(grouptree,FFSVGItem)
 
         ### Create the figure tree
         figuretree = dict()

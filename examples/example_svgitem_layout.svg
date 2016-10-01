@@ -24,8 +24,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.7421854"
-     inkscape:cx="194.15345"
+     inkscape:zoom="0.99278098"
+     inkscape:cx="65.519287"
      inkscape:cy="202.14359"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
@@ -33,8 +33,8 @@
      units="in"
      inkscape:window-width="1833"
      inkscape:window-height="955"
-     inkscape:window-x="938"
-     inkscape:window-y="101"
+     inkscape:window-x="1286"
+     inkscape:window-y="44"
      inkscape:window-maximized="0" />
   <defs
      id="defs4" />
@@ -100,7 +100,7 @@
         <figurefirst:svgitem
            figurefirst:name="r3" />
       </rect>
-      <figurefirst:group
+      <figurefirst:svggroup
          figurefirst:name="svggroup" />
     </g>
     <g
@@ -132,7 +132,7 @@
         <figurefirst:svgitem
            figurefirst:name="path3" />
       </path>
-      <figurefirst:group
+      <figurefirst:svggroup
          figurefirst:name="pathgroup" />
     </g>
     <text
