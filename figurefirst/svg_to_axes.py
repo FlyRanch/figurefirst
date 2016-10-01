@@ -282,11 +282,11 @@ class FFSVGGroup(FFItem,object):
         super(FFSVGGroup,self).__init__(tagnode,**kwargs)
         
     def __getattr__(self,attr):
-        #try:
-        pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
+        try:
+            pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
                               for i in self.values()])
-        #except ValueError:
-        #    raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
+        except ValueError:
+            raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
         
         x = np.min(pnts[:,0])
         y = np.min(pnts[:,1])
