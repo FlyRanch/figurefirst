@@ -104,10 +104,9 @@ def set_fontsize(fig,fontsize):
     for textobj in fig.findobj(match=match):
         textobj.set_fontsize(fontsize)
 
-
-
 def fix_mpl_svg(file_path, pattern='miterlimit:100000;', subst='miterlimit:1;'):
-
+    """used to fix problematic outputs from the matplotlib svg
+    generator, for example matplotlib creates exceptionaly large meterlimis"""
     fh, abs_path = tempfile.mkstemp()
     with open(abs_path,'w') as new_file:
         with open(file_path) as old_file:
