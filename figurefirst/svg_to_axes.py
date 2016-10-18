@@ -75,6 +75,10 @@ def flatten_list(container):
     #what-is-the-fastest-way-to-flatten-arbitrarily-nested-lists-in-python 
 
 def flatten_dict(d):
+    """unrap a nested dict, d, returns a new dictionary with that have tuples
+    as keys that specify the path through the original dictionary tree to the
+    leaf. e.g. {'l1key': {'l2key1':item1,'l2key2':item2}} will become 
+    {('l1key','l2key1'):item1,('l1key','l2key2'):item2}"""
     import copy
     keylist = [] 
     def traverse(kl,d):
@@ -91,6 +95,8 @@ def flatten_dict(d):
     return flat_dict
 
 def extractTreeByType(node, searchType):
+    """walk a nested dictionary and pop the items of a 
+    certain type from the dictionary"""
     temp = dict()
     for key, value in node.items():
         if isinstance(value,searchType):
@@ -153,6 +159,8 @@ def parse_transform(transform_str):
     return mtrx 
 
 def get_transforms(node,tlist = []):
+    """get the list of transforms applied to a given node, walking up the svg 
+    tree to fill tlist. Pass an empyt list to call"""
     if node.hasAttribute('transform'):
         #print node.toxml()
         tlist.extend([parse_transform(node.getAttribute('transform'))])
@@ -162,6 +170,8 @@ def get_transforms(node,tlist = []):
         return([t for t in tlist if not(t is None)])
 
 class FFItem(dict,object):
+    """ base class for figurefirst objects that will be converted to matplotlib
+    objects eg. axes"""
     def __init__(self,tagnode,**kwargs):
         self.tagnode = tagnode
         self.node = tagnode.parentNode
@@ -174,6 +184,9 @@ class FFItem(dict,object):
             self.transform_str = None
         
 class FFSVGItem(FFItem,object):
+    """base class for svg objects that figurefirst will manipulate in 
+    the native svg form eg. text and paths. These objects can be used
+    to change the style of tagged graphics in the document"""
     def __init__(self,tagnode):
         super(FFSVGItem,self).__init__(tagnode)
         x = float(self.node.getAttribute('x'))
@@ -206,17 +219,14 @@ class FFSVGItem(FFItem,object):
         return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
 
 class FFSVGPath(FFSVGItem,object):
+    """ represents a svg path, currently figurefirst is unable to change the dimensions of the 
+    path, and the x, y, w, h attributes are meaningless placeholders"""
     def __init__(self,tagnode):
         super(FFSVGItem,self).__init__(tagnode)
         self.d_str = self.node.getAttribute('d')
         self.load_style()
-        #x = float(self.node.getAttribute('x'))
-        #y = float(self.node.getAttribute('y'))
-        #h = float(self.node.getAttribute('height'))
-        #w = float(self.node.getAttribute('width'))
         self.p1 = np.array([0,0,1])
         self.p2 = np.array([0,0,1])
-        #self.load_style()
     
     def __getattr__(self,attr):
         if attr == 'x':
@@ -240,11 +250,16 @@ class FFSVGPath(FFSVGItem,object):
         return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
 
 class FFSVGText(FFSVGItem,object):
+    """ represents a svg text object, you can change the text, font as well
+    as styling x,y contain the orign of the text box, height and with are
+    currently not implemented since that would require parsing the font info"""
+
     def __init__(self,tagnode):
         super(FFSVGItem,self).__init__(tagnode)
         x = float(self.node.getAttribute('x'))
         y = float(self.node.getAttribute('y'))
-        self.p1 = np.array([0,0,1])
+        self.p1 = np.array([x,y,1])
+        #self.p1 = np.array([0,0,1])
         self.p2 = np.array([0,0,1])
         ## need to implement h and width
         #h = float(self.node.getAttribute('height'))
@@ -271,13 +286,14 @@ class FFSVGText(FFSVGItem,object):
         if attr == 'y':
             return self.p1[1]
         if attr == 'w':
-            warn('not implemented')
+            warn('FFSVGtext object width attribute not implemented')
             return (self.p2-self.p1)[0]
         if attr == 'h':
-            warn('not implemented')
+            warn('FFSVGtext object height attribute not implemented')
             return (self.p2-self.p1)[1]
 
 class FFSVGGroup(FFItem,object):
+    """ used to collect groups of svg items"""
     def __init__(self,tagnode,**kwargs):
         super(FFSVGGroup,self).__init__(tagnode,**kwargs)
         
@@ -298,6 +314,9 @@ class FFSVGGroup(FFItem,object):
             return self.__getattribute__(attr)
 
 class FFGroup(FFItem,object):
+    """ uesed to collect groups objects that will be translated into matplotlib objects
+    eg. axes and figures, x,y w and h is the collective x,y width and height of all the
+    enclosed objects"""
     def __init__(self,tagnode,**kwargs):
         super(FFGroup,self).__init__(tagnode,**kwargs)
         
@@ -318,6 +337,7 @@ class FFGroup(FFItem,object):
             return self.__getattribute__(attr)
 
 class FFFigure(FFGroup,object):
+    """ Represents a matplotlib figure """
     def __init__(self,tagnode,**kwargs):
         if not(tagnode == None):
             super(FFFigure,self).__init__(tagnode,**kwargs)
@@ -335,6 +355,8 @@ class FFFigure(FFGroup,object):
                 return self.__getattribute__(attr)
         
 class FFTemplateTarget(FFFigure,object):
+    """represtents the target of a template. The all the axes within the template
+     figure will be scaled to fit within the template target box"""
     def __init__(self,tagnode,**kwargs):
         self.template_source = tagnode.getAttribute('figurefirst:template')
         super(FFTemplateTarget,self).__init__(tagnode,**kwargs)
@@ -366,6 +388,8 @@ class FFTemplateTarget(FFFigure,object):
                     return self.__getattribute__(attr)
     
 class FFAxis(FFItem):
+    """ Stores the data requred for the creation of a matplotlib axes
+    as specified by the layout """
     def __init__(self,tagnode,**kwargs):
         super(FFAxis, self).__init__(tagnode,**kwargs)
         x = float(self.node.getAttribute('x'))
