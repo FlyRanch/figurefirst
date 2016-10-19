@@ -580,6 +580,9 @@ class FigureLayout(object):
         return y_l/SCALE_FACTORS[self.layout_user_sx[1]][dst]
 
     def make_group_tree(self):
+        """ does the work of traversing the svg document and building the representation
+        of figures, groups and axes, this needs to be done before self.makemplfigures
+        can generate the matplotlib figurs"""
         def traverse_axes(node,grouptree):
             gname = None
             axname = None
@@ -726,12 +729,14 @@ class FigureLayout(object):
         return figuretree,axtree,new_leafs,svgitemtree
 
     def load_svgitems(self):
+        """loads the svgitems from the layout document"""
         self.svgitems = dict()
         elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'svgitem')
         itemlist = [SVGItem(el,self) for el in elementlist]
         [self.svgitems.update({sp.name:sp}) for sp in itemlist]
 
     def load_pathspecs(self):
+        """parses pathspec objects from the layout document"""
         self.pathspecs = dict()
         elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'pathspec')
         speclist = [PathSpec(el,self) for el in elementlist]
@@ -746,6 +751,7 @@ class FigureLayout(object):
         [self.pathspecs.update({sp.name:sp}) for sp in speclist]
         
     def get_outputfile_layers(self):
+        """returns dictionary of layers in teh output file"""
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
         layers = get_elements_by_attr(output_svg,"inkscape:groupmode",'layer')
         layerdict = {}
@@ -755,6 +761,8 @@ class FigureLayout(object):
         return layerdict
 
     def set_layer_visibility(self,inkscape_label = 'Layer 1',vis = True,gid = None,):
+        """appled to the output svg usefull to hide the design layers on the 
+        newly created figures"""
         import re
         value = {False:'none',True:'inline'}[vis]
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
@@ -792,6 +800,7 @@ class FigureLayout(object):
         output_svg.appendChild(new_layer)
         
     def get_figure_element_by_name(self, name):
+        """finds the xmlnode with a given figurefirst:name tag"""
         figure_elements = self.layout.getElementsByTagNameNS(XMLNS, 'figure')
         figure_elements_by_name_dict = {}
         for figure_element in figure_elements:
@@ -800,6 +809,8 @@ class FigureLayout(object):
         return figure_elements_by_name_dict[name]
         
     def make_mplfigures(self):
+        """generates  matplotlib figures from the tree of parsed FFFigure and FFGroup,
+        FFTemplatetargets"""
         for figname,figgroup in self.figures.items():
             if len(figgroup.keys()):
                 leafs = flatten_dict(figgroup)
@@ -823,7 +834,10 @@ class FigureLayout(object):
                         #print type(leaf)
 
     def append_figure_to_layer(self, fig, fflayername, cleartarget=False):
-
+        """inserts a figure object, fig, into an inkscape SVG layer, the layer fflayername should be
+        taged with a figurefirst:targetlayer tag. if fflayername is not found then a targetlayer is generated so
+        long as self.autogenlayers is set to True, the default. If cleartarget is set to True then the contents of the
+        target layer will be removed, usefull for itterative figure design."""
         svg_string = self.to_svg_buffer(fig)
         mpldoc = minidom.parse(svg_string)
         
@@ -896,6 +910,8 @@ class FigureLayout(object):
                         print potential_method, 'is unknown method for mpl axes'
 
     def apply_svg_attrs(self):
+        """applies attributes to svgitems eg. lw stroke ect... need to call
+        this function before saving in order to propegate changes to svgitems"""
         leafs = flatten_dict(self.svgitems)
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
         for svgitem in leafs.values():
@@ -931,6 +947,7 @@ class FigureLayout(object):
             el.setAttribute(key, value)
 
     def to_svg_buffer(self, fig):
+        """writes a matplotlib figure into a stringbuffer and returns the buffer"""
         from StringIO import StringIO
         fid = StringIO()
         fig.savefig(fid, format='svg', transparent=True, dpi=self.dpi)
