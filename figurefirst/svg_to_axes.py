@@ -699,7 +699,15 @@ class FigureLayout(object):
             if type(l) == FFTemplateTarget:
                 import copy
                 #for k,v in figuretree[l.template_source].items():
+                #try:
+                figuretree[l.template_source].node = None
+                figuretree[l.template_source].tagnode = 'None'
+                for value,item in figuretree[l.template_source].items():
+                    item.node = None
+                    item.tagnode = 'None'
                 newv = copy.deepcopy(figuretree[l.template_source])
+                #except RuntimeError:
+                
                 vleafs = flatten_dict(newv)
                 origin = np.array([newv.x,newv.y,1])
                 sx = l.w/newv.w; sy = l.h/newv.h
@@ -892,7 +900,10 @@ class FigureLayout(object):
         svg data into the target layer specified with the xml tag <figurefirst:targetlayer>
         this tag must have the attribute figurefirst:name = fflayername"""
         for fig in self.figures.values():
-            self.append_figure_to_layer(fig, fflayername)
+            if fig.ismplfigure:
+                self.append_figure_to_layer(fig, fflayername)
+            else:
+                print fig.__dict__
 
     def apply_mpl_methods(self):
         """ apply valid mpl methods to figure"""
@@ -950,7 +961,8 @@ class FigureLayout(object):
         """writes a matplotlib figure into a stringbuffer and returns the buffer"""
         from StringIO import StringIO
         fid = StringIO()
-        fig.savefig(fid, format='svg', transparent=True, dpi=self.dpi)
+        #if fig.ismplfigure:
+        fig.figure.savefig(fid, format='svg', transparent=True, dpi=self.dpi)
         fid.seek(0)
         return fid
 
