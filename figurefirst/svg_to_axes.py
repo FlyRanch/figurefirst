@@ -189,10 +189,16 @@ class FFSVGItem(FFItem,object):
     to change the style of tagged graphics in the document"""
     def __init__(self,tagnode):
         super(FFSVGItem,self).__init__(tagnode)
-        x = float(self.node.getAttribute('x'))
-        y = float(self.node.getAttribute('y'))
-        h = float(self.node.getAttribute('height'))
-        w = float(self.node.getAttribute('width'))
+        if self.node.tagName != 'circle':
+            x = float(self.node.getAttribute('x'))
+            y = float(self.node.getAttribute('y'))
+            h = float(self.node.getAttribute('height'))
+            w = float(self.node.getAttribute('width'))
+        else:
+            x = float(self.node.getAttribute('cx'))
+            y = float(self.node.getAttribute('cy'))
+            h = float(self.node.getAttribute('r'))*2
+            w = float(self.node.getAttribute('r'))*2
         self.p1 = np.array([x,y,1])
         self.p2 = np.array([x+w,h+y,1])
         self.load_style()
@@ -206,6 +212,8 @@ class FFSVGItem(FFItem,object):
             return (self.p2-self.p1)[0]
         if attr == 'h':
             return (self.p2-self.p1)[1]
+        if attr == 'r':
+            return (self.p2-self.p1)[0]/2.
 
     def load_style(self):
         self.loaded_attr = dict()
