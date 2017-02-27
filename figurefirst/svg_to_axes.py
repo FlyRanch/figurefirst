@@ -928,12 +928,18 @@ class FigureLayout(object):
                     except AttributeError:
                         print potential_method, 'is unknown method for mpl axes'
 
-    def apply_svg_attrs(self):
+    def apply_svg_attrs(self, svg_items_to_update='all'):
         """applies attributes to svgitems eg. lw stroke ect... need to call
-        this function before saving in order to propegate changes to svgitems"""
+        this function before saving in order to propegate changes to svgitems
+        
+        svg_items_to_update - (optional) - provide a list of the svgitem tags that you wish to have updated. Default is 'all', which updates all the svgitems, which could reset svgitems whose attributes were not set since the last call to 'None'. 
+        """
         leafs = flatten_dict(self.svgitems)
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
-        for svgitem in leafs.values():
+        for svgkey, svgitem in leafs.items():
+            if svg_items_to_update != 'all':
+                if svgkey[0] not in svg_items_to_update: # for some reason the svgkey is a tuple
+                    continue
             nd = svgitem.node
             ndid = nd.getAttribute('id')
             outnd = get_elements_by_attr(output_svg,'id',ndid)[0]
