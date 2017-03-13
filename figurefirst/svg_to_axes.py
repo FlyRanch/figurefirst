@@ -4,6 +4,8 @@ from xml.dom import minidom
 import matplotlib.pyplot as plt
 import numpy as np
 from warnings import warn
+import traceback
+import time
 
 XMLNS = "http://flyranch.github.io/figurefirst/"
 SCALE_FACTORS = {'px':{'in':72.,
@@ -849,11 +851,21 @@ class FigureLayout(object):
                         pass
                         #print type(leaf)
 
-    def append_figure_to_layer(self, fig, fflayername, cleartarget=False):
+    def append_figure_to_layer(self, fig, fflayername, cleartarget=False, save_traceback=True, notes=''):
         """inserts a figure object, fig, into an inkscape SVG layer, the layer fflayername should be
         taged with a figurefirst:targetlayer tag. if fflayername is not found then a targetlayer is generated so
         long as self.autogenlayers is set to True, the default. If cleartarget is set to True then the contents of the
-        target layer will be removed, usefull for itterative figure design."""
+        target layer will be removed, usefull for itterative figure design.
+
+        save_traceback - save the traceback stack to the figure's xml. This makes it easy to find out what function was 
+                         used to generate the figure. Also saves date modified
+
+        notes - string, which is added as an attribute to the xml of the layer. Helpful if you want to embed info into the 
+                layers for future reference.
+
+        """
+        
+
         svg_string = self.to_svg_buffer(fig)
         mpldoc = minidom.parse(svg_string)
         
@@ -902,6 +914,26 @@ class FigureLayout(object):
         ax_ids = [ax.get_gid() for ax in fig.get_axes() if ax.get_gid() is not None]
         if len(ax_ids) > 0:
             print 'unable to pass axes gid to svg'
+
+        if save_traceback:
+            tb = traceback.extract_stack()
+            tb_formatted = traceback.format_list(tb)
+            self.add_attribute_to_layer(fflayername, 'figurefirst:traceback', tb_formatted)
+            time_str = time.strftime("%b %d %Y %H:%M:%S", time.localtime(time.time())) + ' ' + time.strftime("%Z", time.gmtime())
+            self.add_attribute_to_layer(fflayername, 'figurefirst:date-modified', time_str)
+
+        self.add_attribute_to_layer(fflayername, 'figurefirst:notes', notes)
+
+    def add_attribute_to_layer(self, layer_name, attribute, value):
+        output_svg = self.output_xml.getElementsByTagName('svg')[0]
+        layers = get_elements_by_attr(output_svg,"inkscape:groupmode",'layer')
+        for layer in layers:
+            if layer_name == layer.getAttribute('id') or layer_name == layer.getAttribute('inkscape:label'):
+                svg_layer = layer
+                svg_layer.setAttribute( unicode(attribute), unicode(value))
+                return
+        s = 'Failed to find layer: ' + layer_name
+        raise ValueError(s)
 
     def insert_figures(self, fflayername='mpl_layer'):
         """ takes a reference to the matplotlib figure and saves the
