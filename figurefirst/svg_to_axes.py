@@ -851,7 +851,7 @@ class FigureLayout(object):
                         pass
                         #print type(leaf)
 
-    def append_figure_to_layer(self, fig, fflayername, cleartarget=False, save_traceback=True, notes=''):
+    def append_figure_to_layer(self, fig, fflayername, cleartarget=False, save_traceback=False, notes=None):
         """inserts a figure object, fig, into an inkscape SVG layer, the layer fflayername should be
         taged with a figurefirst:targetlayer tag. if fflayername is not found then a targetlayer is generated so
         long as self.autogenlayers is set to True, the default. If cleartarget is set to True then the contents of the
@@ -921,8 +921,8 @@ class FigureLayout(object):
             self.add_attribute_to_layer(fflayername, 'figurefirst:traceback', tb_formatted)
             time_str = time.strftime("%b %d %Y %H:%M:%S", time.localtime(time.time())) + ' ' + time.strftime("%Z", time.gmtime())
             self.add_attribute_to_layer(fflayername, 'figurefirst:date-modified', time_str)
-
-        self.add_attribute_to_layer(fflayername, 'figurefirst:notes', notes)
+        if notes:
+        	self.add_attribute_to_layer(fflayername, 'figurefirst:notes', notes)
 
     def add_attribute_to_layer(self, layer_name, attribute, value):
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
