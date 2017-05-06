@@ -1,11 +1,27 @@
-#import set_params
-#set_params.pdf()
 from xml.dom import minidom
 import matplotlib.pyplot as plt
 import numpy as np
 from warnings import warn
 import traceback
 import time
+
+# Load some user parameters / defaults
+# By default figurefirst will load the figurefirst_user_parameters.py file from the figurefirst/figurefirst directory.
+# If you would like to set custom parameters, copy that defaults file to another location.
+# Then make the changes you like and set the environment variable 'figurefirst_user_parameters' to point to the new file. 
+# It will be loaded instead.
+import os
+try:
+    figurefirst_user_parameters = os.environ['figurefirst_user_parameters']
+    print 'Using FigureFirst parameters loaded from: ', figurefirst_user_parameters
+except:
+    figurefirst_user_parameters = 'default'
+
+if figurefirst_user_parameters == 'default':
+    import figurefirst_user_parameters
+else:
+    import imp
+    figurefirst_user_parameters = imp.load_source('figurefirst_user_parameters', figurefirst_user_parameters)
 
 XMLNS = "http://flyranch.github.io/figurefirst/"
 SCALE_FACTORS = {'px':{'in':72.,
@@ -128,7 +144,12 @@ def parse_transform(transform_str):
     ##################
     if 'translate' in transform_str:
         translate_str = re.findall(r'translate\(.*?\)',transform_str)[0]
-        tx,ty = re.findall(scanfloat,translate_str)
+        txy = re.findall(scanfloat,translate_str)
+        if type(txy) is list and len(txy) == 2:
+            tx,ty = txy
+        else: # deal with rare situation of exact resizing
+            tx = txy[0]
+            ty = txy[0]
         tr = np.array([[1.,0,float(tx)],
                        [0,1.,float(ty)],
                        [0,0,1.        ]])        
@@ -851,7 +872,10 @@ class FigureLayout(object):
                         pass
                         #print type(leaf)
 
-    def append_figure_to_layer(self, fig, fflayername, cleartarget=False, save_traceback=False, notes=None):
+    def append_figure_to_layer(self, fig, fflayername, 
+                               cleartarget=figurefirst_user_parameters.cleartarget, 
+                               save_traceback=figurefirst_user_parameters.save_traceback, 
+                               notes=None):
         """inserts a figure object, fig, into an inkscape SVG layer, the layer fflayername should be
         taged with a figurefirst:targetlayer tag. if fflayername is not found then a targetlayer is generated so
         long as self.autogenlayers is set to True, the default. If cleartarget is set to True then the contents of the
