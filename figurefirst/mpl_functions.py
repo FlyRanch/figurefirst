@@ -4,6 +4,23 @@ import tempfile
 import shutil
 import os
 
+# Load some user parameters / defaults
+# By default figurefirst will load the figurefirst_user_parameters.py file from the figurefirst/figurefirst directory.
+# If you would like to set custom parameters, copy that defaults file to another location.
+# Then make the changes you like and set the environment variable 'figurefirst_user_parameters' to point to the new file. 
+# It will be loaded instead.
+try:
+    figurefirst_user_parameters = os.environ['figurefirst_user_parameters']
+    print 'Using FigureFirst parameters loaded from: ', figurefirst_user_parameters
+except:
+    figurefirst_user_parameters = 'default'
+
+if figurefirst_user_parameters == 'default':
+    import figurefirst_user_parameters
+else:
+    import imp
+    figurefirst_user_parameters = imp.load_source('figurefirst_user_parameters', figurefirst_user_parameters)
+
 ###################################################################################################
 # Adjust Spines (Dickinson style, thanks to Andrew Straw)
 ###################################################################################################
@@ -20,7 +37,7 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
     if yticks is None:
         yticks = ax.get_yticks()
         
-    spine_locations_dict = {'top': 10, 'right': 10, 'left': 10, 'bottom': 10}
+    spine_locations_dict = figurefirst_user_parameters.spine_locations
     for key in spine_locations.keys():
         spine_locations_dict[key] = spine_locations[key]
         
