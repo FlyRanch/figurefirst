@@ -810,10 +810,11 @@ class FigureLayout(object):
             if l.attributes['inkscape:label'].value == inkscape_label:
                 try:
                     style_str = l.attributes['style'].value
-                    repl_str = re.sub(r'display:(none|inline)','display:%s'%(value),style_str)
-                    l.setAttribute('style',repl_str)
                 except:
                     l.setAttribute('style', "display:none")
+                    style_str = l.attributes['style'].value
+                repl_str = re.sub(r'display:(none|inline)','display:%s'%(value),style_str)
+                l.setAttribute('style',repl_str)
                     
     def create_new_targetlayer(self, layer_name):
         new_layer = self.output_xml.createElement('g')
