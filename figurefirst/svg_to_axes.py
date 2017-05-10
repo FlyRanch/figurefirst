@@ -1094,5 +1094,6 @@ class FigureLayout(object):
                             target_layer.removeChild(child)
                             removed_children += 1
                         else:
-                            print 'Not removing: ', child.nodeName
+                            pass
+                            # print 'Not removing: ', child.nodeName
 
