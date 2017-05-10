@@ -787,10 +787,13 @@ class FigureLayout(object):
         layers = get_elements_by_attr(output_svg,"inkscape:groupmode",'layer')
         for l in layers:
             if l.attributes['inkscape:label'].value == inkscape_label:
-                style_str = l.attributes['style'].value
-                repl_str = re.sub(r'display:(none|inline)','display:%s'%(value),style_str)
-                l.setAttribute('style',repl_str)
-                
+                try:
+                    style_str = l.attributes['style'].value
+                    repl_str = re.sub(r'display:(none|inline)','display:%s'%(value),style_str)
+                    l.setAttribute('style',repl_str)
+                except:
+                    l.setAttribute('style', "display:none")
+                    
     def create_new_targetlayer(self, layer_name):
         new_layer = self.output_xml.createElement('g')
         new_targetlayer = self.output_xml.createElementNS(XMLNS, 'figurefirst:targetlayer')
@@ -851,7 +854,7 @@ class FigureLayout(object):
                         pass
                         #print type(leaf)
 
-    def append_figure_to_layer(self, fig, fflayername, cleartarget=False, save_traceback=False, notes=None):
+    def append_figure_to_layer(self, fig, fflayername, cleartarget=False, save_traceback=True, notes=None):
         """inserts a figure object, fig, into an inkscape SVG layer, the layer fflayername should be
         taged with a figurefirst:targetlayer tag. if fflayername is not found then a targetlayer is generated so
         long as self.autogenlayers is set to True, the default. If cleartarget is set to True then the contents of the
