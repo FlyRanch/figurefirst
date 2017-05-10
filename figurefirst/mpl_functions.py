@@ -27,7 +27,7 @@ else:
 
 # NOTE: smart_bounds is disabled (commented out) in this function. It only works in matplotlib v >1.
 # to fix this issue, try manually setting your tick marks (see example below) 
-def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None, yticks=None, linewidth=1):
+def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None, yticks=None, linewidth=1, spine_location_offset=None):
     if type(spines) is not list:
         spines = [spines]
         
@@ -40,6 +40,8 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
     spine_locations_dict = figurefirst_user_parameters.spine_locations
     for key in spine_locations.keys():
         spine_locations_dict[key] = spine_locations[key]
+        if spine_location_offset is not None:
+            spine_locations_dict[key] = spine_location_offset
         
     if 'none' in spines:
         for loc, spine in ax.spines.iteritems():
