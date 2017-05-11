@@ -992,7 +992,8 @@ class FigureLayout(object):
         """applies attributes to svgitems eg. lw stroke ect... need to call
         this function before saving in order to propegate changes to svgitems
         
-        svg_items_to_update - (optional) - provide a list of the svgitem tags that you wish to have updated. Default is 'all', which updates all the svgitems, which could reset svgitems whose attributes were not set since the last call to 'None'. 
+        svg_items_to_update - (optional) - provide a list of the svgitem tags that you wish to have updated. Default is 'all', which updates all the svgitems, 
+                                           which could reset svgitems whose attributes were not set since the last call to 'None'. 
         """
         leafs = flatten_dict(self.svgitems)
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
