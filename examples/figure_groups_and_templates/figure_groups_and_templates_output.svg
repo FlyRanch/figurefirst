@@ -13,21 +13,21 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    height="2.5in"
    id="svg3495"
+   inkscape:export-filename="/home/caveman/Documents/src/python/figurefirst/examples/figure_groups_and_templates/figure_groups_and_templates_output.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
    inkscape:version="0.91 r13725"
    sodipodi:docname="figure_groups_and_templates_output.svg"
    version="1.1"
    viewBox="0 0 675.00001 225.00001"
-   width="7.5in"
-   inkscape:export-filename="/home/caveman/Documents/src/python/figurefirst/examples/figure_groups_and_templates/figure_groups_and_templates_output.png"
-   inkscape:export-xdpi="600"
-   inkscape:export-ydpi="600">
+   width="7.5in">
   <sodipodi:namedview
      bordercolor="#666666"
      borderopacity="1.0"
      id="base"
      inkscape:current-layer="layer3"
-     inkscape:cx="82.335538"
-     inkscape:cy="-371.99908"
+     inkscape:cx="323.30014"
+     inkscape:cy="199.54986"
      inkscape:document-units="px"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
@@ -36,7 +36,7 @@
      inkscape:window-width="1615"
      inkscape:window-x="65"
      inkscape:window-y="24"
-     inkscape:zoom="0.70710678"
+     inkscape:zoom="1"
      pagecolor="#ffffff"
      showgrid="false"
      units="in" />
@@ -198,9 +198,9 @@
          y="27.769299">Group 3</tspan></text>
   </g>
   <g
-     figurefirst:date-modified="May 10 2017 17:28:59 PST"
+     figurefirst:date-modified="May 11 2017 09:33:25 PST"
      figurefirst:notes="random data about green fish"
-     figurefirst:traceback="['  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 174, in _run_module_as_main\n    &quot;__main__&quot;, fname, loader, pkg_name)\n', '  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 72, in _run_code\n    exec code in run_globals\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;\n    app.launch_new_instance()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/traitlets/config/application.py&quot;, line 658, in launch_instance\n    app.start()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelapp.py&quot;, line 477, in start\n    ioloop.IOLoop.instance().start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/ioloop.py&quot;, line 162, in start\n    super(ZMQIOLoop, self).start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/ioloop.py&quot;, line 866, in start\n    handler_func(fd_obj, events)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 440, in _handle_events\n    self._handle_recv()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 472, in _handle_recv\n    self._run_callback(callback, msg)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 414, in _run_callback\n    callback(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 283, in dispatcher\n    return self.dispatch_shell(stream, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 235, in dispatch_shell\n    handler(stream, idents, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 399, in execute_request\n    user_expressions, allow_stdin)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/ipkernel.py&quot;, line 196, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/zmqshell.py&quot;, line 533, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2717, in run_cell\n    interactivity=interactivity, compiler=compiler, result=result)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2821, in run_ast_nodes\n    if self.run_code(code, result):\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2881, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)\n', u'  File &quot;&lt;ipython-input-17-9cfa2635d4db&gt;&quot;, line 3, in &lt;module&gt;\n    make_plot(template_filename, output_filename)\n', u'  File &quot;&lt;ipython-input-16-2ac50ed5c375&gt;&quot;, line 55, in make_plot\n    notes=notes[group])  # save notes about the data into the svg\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/figurefirst/svg_to_axes.py&quot;, line 947, in append_figure_to_layer\n    tb = traceback.extract_stack()\n']"
+     figurefirst:traceback="['  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 174, in _run_module_as_main\n    &quot;__main__&quot;, fname, loader, pkg_name)\n', '  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 72, in _run_code\n    exec code in run_globals\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;\n    app.launch_new_instance()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/traitlets/config/application.py&quot;, line 658, in launch_instance\n    app.start()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelapp.py&quot;, line 477, in start\n    ioloop.IOLoop.instance().start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/ioloop.py&quot;, line 162, in start\n    super(ZMQIOLoop, self).start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/ioloop.py&quot;, line 866, in start\n    handler_func(fd_obj, events)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 440, in _handle_events\n    self._handle_recv()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 472, in _handle_recv\n    self._run_callback(callback, msg)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 414, in _run_callback\n    callback(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 283, in dispatcher\n    return self.dispatch_shell(stream, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 235, in dispatch_shell\n    handler(stream, idents, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 399, in execute_request\n    user_expressions, allow_stdin)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/ipkernel.py&quot;, line 196, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/zmqshell.py&quot;, line 533, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2717, in run_cell\n    interactivity=interactivity, compiler=compiler, result=result)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2821, in run_ast_nodes\n    if self.run_code(code, result):\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2881, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)\n', u'  File &quot;&lt;ipython-input-5-9cfa2635d4db&gt;&quot;, line 3, in &lt;module&gt;\n    make_plot(template_filename, output_filename)\n', u'  File &quot;&lt;ipython-input-4-ab68aa0cb806&gt;&quot;, line 50, in make_plot\n    notes=notes[group])  # save notes about the data into the svg\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/figurefirst/svg_to_axes.py&quot;, line 947, in append_figure_to_layer\n    tb = traceback.extract_stack()\n']"
      id="group1"
      inkscape:groupmode="layer"
      inkscape:label="group1"
@@ -237,7 +237,7 @@
         <g
            id="line2d_1">
           <path
-             clip-path="url(#paede511f07)"
+             clip-path="url(#p72cd6d9a61)"
              d="M 53.226275 105.390891  L 53.678149 105.510943  L 54.130023 105.869901  L 54.581897 106.464178  L 55.033771 107.287836  L 55.485645 108.332645  L 55.937519 109.588166  L 56.389393 111.041855  L 56.841267 112.679185  L 57.293141 114.483799  L 57.745015 116.437664  L 58.196889 118.521258  L 58.648763 120.713763  L 59.100637 122.993272  L 59.552511 125.337009  L 60.004385 127.721556  L 60.456259 130.123087  L 60.908133 132.517607  L 61.360008 134.881191  L 61.811882 137.190223  L 62.263756 139.421631  L 62.71563 141.55312  L 63.167504 143.563393  L 63.619378 145.432364  L 64.071252 147.141359  L 64.523126 148.673302  L 64.975 150.012887  L 65.426874 151.146728  L 65.878748 152.063497  L 66.330622 152.754034  L 66.782496 153.211439  L 67.23437 153.431141  L 67.686244 153.410947  L 68.138118 153.151056  L 68.589992 152.654067  L 69.041866 151.924945  L 69.49374 150.970975  L 69.945614 149.801689  L 70.397488 148.42877  L 70.849362 146.865936  L 71.301236 145.128801  L 71.75311 143.234724  L 72.204984 141.202628  L 72.656858 139.052819  L 73.108732 136.806775  L 73.560606 134.486939  L 74.01248 132.116491  L 74.464355 129.719113  L 74.916229 127.318762  L 75.368103 124.939419  L 75.819977 122.604859  L 76.271851 120.338407  L 76.723725 118.16271  L 77.175599 116.099506  L 77.627473 114.16941  L 78.079347 112.391707  L 78.531221 110.784159  L 78.983095 109.362828  L 79.434969 108.141916  L 79.886843 107.133622  L 80.338717 106.348019  L 80.790591 105.792959  L 81.242465 105.473986  L 81.694339 105.394288  L 82.146213 105.554661  L 82.598087 105.953502  L 83.049961 106.586827  L 83.501835 107.448308  L 83.953709 108.529337  L 84.405583 109.819112  L 84.857457 111.304747  L 85.309331 112.971397  L 85.761205 114.802411  L 86.213079 116.779493  L 86.664953 118.882889  L 87.116827 121.091582  L 87.568702 123.383504  L 88.020576 125.735754  L 88.47245 128.124831  L 88.924324 130.526862  L 89.376198 132.917848  L 89.828072 135.273899  L 90.279946 137.571474  L 90.73182 139.787616  L 91.183694 141.900182  L 91.635568 143.888064  L 92.087442 145.731401  L 92.539316 147.411773  L 92.99119 148.912392  L 93.443064 150.218263  L 93.894938 151.316338  L 94.346812 152.195647  L 94.798686 152.847403  L 95.25056 153.265095  L 95.702434 153.444548  L 96.154308 153.383969  L 96.606182 153.083965  L 97.058056 152.547533  L 97.50993 151.780031  L 97.961804 150.78913  "
              style="fill:none;stroke:#008000;stroke-linecap:square;"
              id="path3374" />
@@ -280,7 +280,7 @@
                  id="defs3391">
                 <path
                    d="M 0 0  L 0 -4  "
-                   id="m0af3f7d0d4"
+                   id="mc9754bff7f"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -288,7 +288,7 @@
                 <use
                    style="stroke:#000000;"
                    x="53.2262749153"
-                   xlink:href="#m0af3f7d0d4"
+                   xlink:href="#mc9754bff7f"
                    y="168.258027366"
                    id="use3396" />
               </g>
@@ -320,7 +320,7 @@
                 <use
                    style="stroke:#000000;"
                    x="75.8199766333"
-                   xlink:href="#m0af3f7d0d4"
+                   xlink:href="#mc9754bff7f"
                    y="168.258027366"
                    id="use3410" />
               </g>
@@ -352,7 +352,7 @@
                 <use
                    style="stroke:#000000;"
                    x="98.4136783514"
-                   xlink:href="#m0af3f7d0d4"
+                   xlink:href="#mc9754bff7f"
                    y="168.258027366"
                    id="use3424" />
               </g>
@@ -390,7 +390,7 @@
                  id="defs3439">
                 <path
                    d="M 0 0  L 4 0  "
-                   id="m7fdea8f3f6"
+                   id="m973eb9c12e"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -398,7 +398,7 @@
                 <use
                    style="stroke:#000000;"
                    x="38.7075345717"
-                   xlink:href="#m7fdea8f3f6"
+                   xlink:href="#m973eb9c12e"
                    y="153.451924047"
                    id="use3444" />
               </g>
@@ -434,7 +434,7 @@
                 <use
                    style="stroke:#000000;"
                    x="38.7075345717"
-                   xlink:href="#m7fdea8f3f6"
+                   xlink:href="#m973eb9c12e"
                    y="129.421407448"
                    id="use3460" />
               </g>
@@ -460,7 +460,7 @@
                 <use
                    style="stroke:#000000;"
                    x="38.7075345717"
-                   xlink:href="#m7fdea8f3f6"
+                   xlink:href="#m973eb9c12e"
                    y="105.390890849"
                    id="use3471" />
               </g>
@@ -491,7 +491,7 @@
         <g
            id="line2d_8">
           <path
-             clip-path="url(#p5b72b1ef84)"
+             clip-path="url(#p8b8beb8a06)"
              d="M 58.103841 71.897597  L 59.043472 70.033052  L 59.983103 68.187136  L 60.922733 66.378295  L 61.862364 64.6246  L 62.801995 62.943574  L 63.741625 61.352015  L 64.681256 59.865823  L 65.620887 58.499849  L 66.560517 57.26774  L 67.500148 56.181809  L 68.439779 55.252904  L 69.379409 54.490308  L 70.31904 53.901639  L 71.258671 53.49278  L 72.198301 53.267816  L 73.137932 53.228995  L 74.077562 53.376704  L 75.017193 53.709467  L 75.956824 54.223961  L 76.896454 54.915044  L 77.836085 55.77581  L 78.775716 56.797661  L 79.715346 57.970384  L 80.654977 59.282264  L 81.594608 60.720193  L 82.534238 62.269802  L 83.473869 63.915609  L 84.4135 65.641169  L 85.35313 67.429241  L 86.292761 69.26196  L 87.232392 71.121013  L 88.172022 72.987826  L 89.111653 74.843745  L 90.051284 76.670228  L 90.990914 78.449023  L 91.930545 80.16236  L 92.870176 81.793117  L 93.809806 83.325002  L 94.749437 84.742707  L 95.689068 86.032069  L 96.628698 87.180204  L 97.568329 88.17564  L 98.50796 89.008431  L 99.44759 89.670256  L 100.387221 90.154503  L 101.326852 90.456333  L 102.266482 90.57273  L 103.206113 90.502531  L 104.145744 90.246438  L 105.085374 89.80701  L 106.025005 89.188636  L 106.964636 88.397497  L 107.904266 87.441495  L 108.843897 86.330184  L 109.783528 85.074668  L 110.723158 83.68749  L 111.662789 82.182512  L 112.60242 80.574771  L 113.54205 78.880329  L 114.481681 77.116119  L 115.421312 75.299767  L 116.360942 73.449422  L 117.300573 71.583571  L 118.240204 69.720858  L 119.179834 67.879895  L 120.119465 66.079074  L 121.059096 64.336391  L 121.998726 62.669257  L 122.938357 61.094329  L 123.877988 59.627344  L 124.817618 58.282959  L 125.757249 57.074607  L 126.69688 56.014361  L 127.63651 55.112816  L 128.576141 54.378979  L 129.515772 53.820181  L 130.455402 53.442008  L 131.395033 53.248236  L 132.334664 53.240803  L 133.274294 53.419782  L 134.213925 53.783386  L 135.153556 54.327981  L 136.093186 55.048125  L 137.032817 55.936624  L 137.972448 56.9846  L 138.912078 58.181581  L 139.851709 59.515609  L 140.79134 60.973353  L 141.73097 62.540248  L 142.670601 64.200639  L 143.610232 65.937936  L 144.549862 67.734779  L 145.489493 69.573216  L 146.429124 71.434877  L 147.368754 73.301162  L 148.308385 75.153423  L 149.248016 76.973153  L 150.187646 78.742169  L 151.127277 80.442797  "
              style="fill:none;stroke:#008000;stroke-linecap:square;"
              id="path3483" />
@@ -534,7 +534,7 @@
                  id="defs3500">
                 <path
                    d="M 0 0  L 0 4  "
-                   id="m6646e0437d"
+                   id="mefc5a1d39c"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -542,7 +542,7 @@
                 <use
                    style="stroke:#000000;"
                    x="58.10384121"
-                   xlink:href="#m6646e0437d"
+                   xlink:href="#mefc5a1d39c"
                    y="39.4857178006"
                    id="use3505" />
               </g>
@@ -568,7 +568,7 @@
                 <use
                    style="stroke:#000000;"
                    x="105.085374402"
-                   xlink:href="#m6646e0437d"
+                   xlink:href="#mefc5a1d39c"
                    y="39.4857178006"
                    id="use3516" />
               </g>
@@ -594,7 +594,7 @@
                 <use
                    style="stroke:#000000;"
                    x="152.066907593"
-                   xlink:href="#m6646e0437d"
+                   xlink:href="#mefc5a1d39c"
                    y="39.4857178006"
                    id="use3527" />
               </g>
@@ -627,7 +627,7 @@
                 <use
                    style="stroke:#000000;"
                    x="38.7075345717"
-                   xlink:href="#m7fdea8f3f6"
+                   xlink:href="#m973eb9c12e"
                    y="90.5741633745"
                    id="use3541" />
               </g>
@@ -657,7 +657,7 @@
                 <use
                    style="stroke:#000000;"
                    x="38.7075345717"
-                   xlink:href="#m7fdea8f3f6"
+                   xlink:href="#m973eb9c12e"
                    y="71.8975972046"
                    id="use3554" />
               </g>
@@ -683,7 +683,7 @@
                 <use
                    style="stroke:#000000;"
                    x="38.7075345717"
-                   xlink:href="#m7fdea8f3f6"
+                   xlink:href="#m973eb9c12e"
                    y="53.2210310346"
                    id="use3565" />
               </g>
@@ -714,7 +714,7 @@
         <g
            id="line2d_15">
           <path
-             clip-path="url(#pf388c89bcc)"
+             clip-path="url(#p707e14f707)"
              d="M 111.757069 129.421407  L 112.208943 127.010313  L 112.660817 124.550181  L 113.112691 121.987898  L 113.564565 119.261468  L 114.016439 116.293476  L 114.468313 112.981247  L 114.920187 109.180783  L 115.372061 104.678661  L 115.823935 99.139154  L 116.275809 91.996095  L 116.727683 82.207218  L 117.179557 67.611275  L 117.631431 42.861025  L 118.007047 -1  M 118.616273 -1  L 118.68708 181  M 120.831313 181  L 121.246423 170.509903  L 121.698298 162.435085  L 122.150172 156.316689  L 122.602046 151.433704  L 123.05392 147.372739  L 123.505794 143.878085  L 123.957668 140.781297  L 124.409542 137.964973  L 124.861416 135.342656  L 125.31329 132.846875  L 125.765164 130.421477  L 126.217038 128.016251  L 126.668912 125.582635  L 127.120786 123.069736  L 127.57266 120.419921  L 128.024534 117.563147  L 128.476408 114.408749  L 128.928282 110.832455  L 129.380156 106.654304  L 129.83203 101.598364  L 130.283904 95.213331  L 130.735778 86.700441  L 131.187652 74.491302  L 131.639526 55.015147  L 132.0914 17.983923  L 132.175935 -1  M 133.364534 -1  L 133.401694 181  M 135.045524 181  L 135.254519 174.734356  L 135.706393 165.497783  L 136.158267 158.679542  L 136.610141 153.345807  L 137.062015 148.980885  L 137.513889 145.275074  L 137.965763 142.029408  L 138.417637 139.108371  L 138.869511 136.414437  L 139.321385 133.873355  L 139.773259 131.425017  L 140.225133 129.017304  L 140.677007 126.601452  L 141.128881 124.128033  L 141.580755 121.54281  L 142.032629 118.781718  L 142.484503 115.763904  L 142.936377 112.3811  L 143.388251 108.480062  L 143.840125 103.831475  L 144.291999 98.070692  L 144.743873 90.574601  L 145.195747 80.17605  L 145.647621 64.394496  L 146.099495 36.849473  L 146.37423 -1  M 147.150185 -1  L 147.235272 181  M 149.226191 181  L 149.262614 179.67829  L 149.714488 168.968686  L 150.166362 161.294627  L 150.618236 155.423206  L 151.07011 150.701798  L 151.521984 146.750939  L 151.973858 143.33324  L 152.425732 140.290786  L 152.877606 137.512495  L 153.32948 134.915786  L 153.781354 132.435545  L 154.233228 130.016957  L 154.685102 127.610366  L 155.136976 125.167102  L 155.58885 122.63547  L 156.040724 119.956194  L 156.492598 117.056435  "
              style="fill:none;stroke:#008000;stroke-linecap:square;"
              id="path3577" />
@@ -758,7 +758,7 @@
                 <use
                    style="stroke:#000000;"
                    x="111.757068762"
-                   xlink:href="#m0af3f7d0d4"
+                   xlink:href="#mc9754bff7f"
                    y="168.258027366"
                    id="use3596" />
               </g>
@@ -784,7 +784,7 @@
                 <use
                    style="stroke:#000000;"
                    x="134.35077048"
-                   xlink:href="#m0af3f7d0d4"
+                   xlink:href="#mc9754bff7f"
                    y="168.258027366"
                    id="use3607" />
               </g>
@@ -810,7 +810,7 @@
                 <use
                    style="stroke:#000000;"
                    x="156.944472198"
-                   xlink:href="#m0af3f7d0d4"
+                   xlink:href="#mc9754bff7f"
                    y="168.258027366"
                    id="use3618" />
               </g>
@@ -842,7 +842,7 @@
                  id="defs3630">
                 <path
                    d="M 0 0  L -4 0  "
-                   id="m687c8b0813"
+                   id="mdcc72aa74d"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -850,7 +850,7 @@
                 <use
                    style="stroke:#000000;"
                    x="171.463212542"
-                   xlink:href="#m687c8b0813"
+                   xlink:href="#mdcc72aa74d"
                    y="153.451924047"
                    id="use3635" />
               </g>
@@ -880,7 +880,7 @@
                 <use
                    style="stroke:#000000;"
                    x="171.463212542"
-                   xlink:href="#m687c8b0813"
+                   xlink:href="#mdcc72aa74d"
                    y="129.421407448"
                    id="use3648" />
               </g>
@@ -906,7 +906,7 @@
                 <use
                    style="stroke:#000000;"
                    x="171.463212542"
-                   xlink:href="#m687c8b0813"
+                   xlink:href="#mdcc72aa74d"
                    y="105.390890849"
                    id="use3659" />
               </g>
@@ -929,7 +929,7 @@
     <defs
        id="defs3666">
       <clipPath
-         id="paede511f07">
+         id="p72cd6d9a61">
         <rect
            height="57.6732398367"
            width="54.2248841233"
@@ -938,7 +938,7 @@
            id="rect3669" />
       </clipPath>
       <clipPath
-         id="pf388c89bcc">
+         id="p707e14f707">
         <rect
            height="57.6732398367"
            width="54.2248841233"
@@ -947,7 +947,7 @@
            id="rect3672" />
       </clipPath>
       <clipPath
-         id="p5b72b1ef84">
+         id="p8b8beb8a06">
         <rect
            height="44.8237588078"
            width="112.75567966"
@@ -958,9 +958,9 @@
     </defs>
   </g>
   <g
-     figurefirst:date-modified="May 10 2017 17:29:00 PST"
+     figurefirst:date-modified="May 11 2017 09:33:25 PST"
      figurefirst:notes="random data about blue squirrels"
-     figurefirst:traceback="['  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 174, in _run_module_as_main\n    &quot;__main__&quot;, fname, loader, pkg_name)\n', '  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 72, in _run_code\n    exec code in run_globals\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;\n    app.launch_new_instance()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/traitlets/config/application.py&quot;, line 658, in launch_instance\n    app.start()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelapp.py&quot;, line 477, in start\n    ioloop.IOLoop.instance().start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/ioloop.py&quot;, line 162, in start\n    super(ZMQIOLoop, self).start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/ioloop.py&quot;, line 866, in start\n    handler_func(fd_obj, events)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 440, in _handle_events\n    self._handle_recv()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 472, in _handle_recv\n    self._run_callback(callback, msg)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 414, in _run_callback\n    callback(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 283, in dispatcher\n    return self.dispatch_shell(stream, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 235, in dispatch_shell\n    handler(stream, idents, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 399, in execute_request\n    user_expressions, allow_stdin)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/ipkernel.py&quot;, line 196, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/zmqshell.py&quot;, line 533, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2717, in run_cell\n    interactivity=interactivity, compiler=compiler, result=result)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2821, in run_ast_nodes\n    if self.run_code(code, result):\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2881, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)\n', u'  File &quot;&lt;ipython-input-17-9cfa2635d4db&gt;&quot;, line 3, in &lt;module&gt;\n    make_plot(template_filename, output_filename)\n', u'  File &quot;&lt;ipython-input-16-2ac50ed5c375&gt;&quot;, line 55, in make_plot\n    notes=notes[group])  # save notes about the data into the svg\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/figurefirst/svg_to_axes.py&quot;, line 947, in append_figure_to_layer\n    tb = traceback.extract_stack()\n']"
+     figurefirst:traceback="['  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 174, in _run_module_as_main\n    &quot;__main__&quot;, fname, loader, pkg_name)\n', '  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 72, in _run_code\n    exec code in run_globals\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;\n    app.launch_new_instance()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/traitlets/config/application.py&quot;, line 658, in launch_instance\n    app.start()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelapp.py&quot;, line 477, in start\n    ioloop.IOLoop.instance().start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/ioloop.py&quot;, line 162, in start\n    super(ZMQIOLoop, self).start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/ioloop.py&quot;, line 866, in start\n    handler_func(fd_obj, events)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 440, in _handle_events\n    self._handle_recv()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 472, in _handle_recv\n    self._run_callback(callback, msg)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 414, in _run_callback\n    callback(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 283, in dispatcher\n    return self.dispatch_shell(stream, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 235, in dispatch_shell\n    handler(stream, idents, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 399, in execute_request\n    user_expressions, allow_stdin)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/ipkernel.py&quot;, line 196, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/zmqshell.py&quot;, line 533, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2717, in run_cell\n    interactivity=interactivity, compiler=compiler, result=result)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2821, in run_ast_nodes\n    if self.run_code(code, result):\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2881, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)\n', u'  File &quot;&lt;ipython-input-5-9cfa2635d4db&gt;&quot;, line 3, in &lt;module&gt;\n    make_plot(template_filename, output_filename)\n', u'  File &quot;&lt;ipython-input-4-ab68aa0cb806&gt;&quot;, line 50, in make_plot\n    notes=notes[group])  # save notes about the data into the svg\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/figurefirst/svg_to_axes.py&quot;, line 947, in append_figure_to_layer\n    tb = traceback.extract_stack()\n']"
      id="group2"
      inkscape:groupmode="layer"
      inkscape:label="group2"
@@ -997,8 +997,8 @@
         <g
            id="g3694">
           <path
-             clip-path="url(#pbe63044a00)"
-             d="M 225.802224 105.361924  L 226.255874 107.257608  L 226.709525 112.645373  L 227.163176 120.674609  L 227.616826 130.077677  L 228.070477 139.370039  L 228.524128 147.084636  L 228.977778 152.003501  L 229.431429 153.350055  L 229.88508 150.911706  L 230.33873 145.073416  L 230.792381 136.756922  L 231.246032 127.275216  L 231.699683 118.125252  L 232.153333 110.751606  L 232.606984 106.318416  L 233.060635 105.525585  L 233.514285 108.498283  L 233.967936 114.767187  L 234.421587 123.342575  L 234.875237 132.870581  L 235.328888 141.846943  L 235.782539 148.85449  L 236.236189 152.786886  L 236.68984 153.023291  L 237.143491 149.526382  L 237.597141 142.848244  L 238.050792 134.043208  L 238.504443 124.501396  L 238.958094 115.72925  L 239.411744 109.111699  L 239.865395 105.693509  L 240.319046 106.014337  L 240.772696 110.023531  L 241.226347 117.088128  L 241.679998 126.092783  L 242.133648 135.615859  L 242.587299 144.153871  L 243.04095 150.358857  L 243.4946 153.251183  L 243.948251 152.374217  L 244.401902 147.866411  L 244.855553 140.439449  L 245.309203 131.265885  L 245.762854 121.794023  L 246.216505 113.519262  L 246.670155 107.748004  L 247.123806 105.391405  L 247.577457 106.821519  L 248.031107 111.812563  L 248.484758 119.576561  L 248.938409 128.887748  L 249.392059 138.276093  L 249.84571 146.259382  L 250.299361 151.577229  L 250.753011 153.390064  L 251.206662 151.41168  L 251.660313 145.954419  L 252.113964 137.879864  L 252.567614 128.462809  L 253.021265 119.19  L 253.474916 111.52541  L 253.928566 106.679109  L 254.382217 105.416221  L 254.835868 107.936129  L 255.289518 113.840994  L 255.743169 122.198568  L 256.19682 131.689375  L 256.65047 140.815023  L 257.104121 148.134775  L 257.557772 152.493002  L 258.011422 153.201636  L 258.465073 150.148799  L 258.918724 143.816467  L 259.372375 135.204376  L 259.826025 125.672187  L 260.279676 116.724821  L 260.733327 109.774871  L 261.186977 105.919582  L 261.640628 105.767619  L 262.094279 109.342974  L 262.547929 116.081176  L 263.00158 124.918412  L 263.455231 134.459476  L 263.908881 143.198045  L 264.362532 149.75449  L 264.816183 153.093692  L 265.269833 152.688466  L 265.723484 148.602788  L 266.177135 141.481696  L 266.630786 132.449454  L 267.084436 122.932054  L 267.538087 114.432085  L 267.991738 108.291505  L 268.445388 105.479777  L 268.899039 106.44081  L 269.35269 111.022878  L 269.80634 118.502574  L 270.259991 127.699019  L 270.713642 137.160295  "
+             clip-path="url(#p18be5af45a)"
+             d="M 225.802224 105.361924  L 226.255874 105.481896  L 226.709525 105.840616  L 227.163176 106.434497  L 227.616826 107.257608  L 228.070477 108.301722  L 228.524128 109.556409  L 228.977778 111.009131  L 229.431429 112.645373  L 229.88508 114.448787  L 230.33873 116.401353  L 230.792381 118.483562  L 231.246032 120.674609  L 231.699683 122.952603  L 232.153333 125.294781  L 232.606984 127.677743  L 233.060635 130.077677  L 233.514285 132.470606  L 233.967936 134.832618  L 234.421587 137.140115  L 234.875237 139.370039  L 235.328888 141.500112  L 235.782539 143.509048  L 236.236189 145.376777  L 236.68984 147.084636  L 237.143491 148.61556  L 237.597141 149.954254  L 238.050792 151.087341  L 238.504443 152.003501  L 238.958094 152.693579  L 239.411744 153.150679  L 239.865395 153.370236  L 240.319046 153.350055  L 240.772696 153.090337  L 241.226347 152.593679  L 241.679998 151.865041  L 242.133648 150.911706  L 242.587299 149.743197  L 243.04095 148.371191  L 243.4946 146.809395  L 243.948251 145.073416  L 244.401902 143.180597  L 244.855553 141.149853  L 245.309203 139.001472  L 245.762854 136.756922  L 246.216505 134.438629  L 246.670155 132.069756  L 247.123806 129.673972  L 247.577457 127.275216  L 248.031107 124.897455  L 248.484758 122.564447  L 248.938409 120.299502  L 249.392059 118.125252  L 249.84571 116.063419  L 250.299361 114.134607  L 250.753011 112.358085  L 251.206662 110.751606  L 251.660313 109.33122  L 252.113964 108.11112  L 252.567614 107.103496  L 253.021265 106.318416  L 253.474916 105.763725  L 253.928566 105.444964  L 254.382217 105.365319  L 254.835868 105.525585  L 255.289518 105.924161  L 255.743169 106.557065  L 256.19682 107.417973  L 256.65047 108.498283  L 257.104121 109.787201  L 257.557772 111.271848  L 258.011422 112.937391  L 258.465073 114.767187  L 258.918724 116.742954  L 259.372375 118.844952  L 259.826025 121.052176  L 260.279676 123.342575  L 260.733327 125.693261  L 261.186977 128.08075  L 261.640628 130.481184  L 262.094279 132.870581  L 262.547929 135.225065  L 263.00158 137.521112  L 263.455231 139.735781  L 263.908881 141.846943  L 264.362532 143.833504  L 264.816183 145.675614  L 265.269833 147.35487  L 265.723484 148.85449  L 266.177135 150.159493  L 266.630786 151.256839  L 267.084436 152.135563  L 267.538087 152.786886  L 267.991738 153.2043  L 268.445388 153.383633  L 268.899039 153.323095  L 269.35269 153.023291  L 269.80634 152.487215  L 270.259991 151.720224  L 270.713642 150.729981  "
              style="fill:none;stroke:#0000ff;stroke-linecap:square;"
              id="path3696" />
         </g>
@@ -1040,7 +1040,7 @@
                  id="defs3720">
                 <path
                    d="M 0 0  L 0 -4  "
-                   id="md4db78db64"
+                   id="ma268564787"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -1048,7 +1048,7 @@
                 <use
                    style="stroke:#000000;"
                    x="225.802223604"
-                   xlink:href="#md4db78db64"
+                   xlink:href="#ma268564787"
                    y="168.193912969"
                    id="use3725" />
               </g>
@@ -1080,7 +1080,7 @@
                 <use
                    style="stroke:#000000;"
                    x="248.484758012"
-                   xlink:href="#md4db78db64"
+                   xlink:href="#ma268564787"
                    y="168.193912969"
                    id="use3743" />
               </g>
@@ -1112,7 +1112,7 @@
                 <use
                    style="stroke:#000000;"
                    x="271.167292421"
-                   xlink:href="#md4db78db64"
+                   xlink:href="#ma268564787"
                    y="168.193912969"
                    id="use3761" />
               </g>
@@ -1150,7 +1150,7 @@
                  id="defs3781">
                 <path
                    d="M 0 0  L 4 0  "
-                   id="m191e34b789"
+                   id="mc00f7a027c"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -1158,7 +1158,7 @@
                 <use
                    style="stroke:#000000;"
                    x="211.265716722"
-                   xlink:href="#m191e34b789"
+                   xlink:href="#mc00f7a027c"
                    y="153.39100486"
                    id="use3786" />
               </g>
@@ -1194,7 +1194,7 @@
                 <use
                    style="stroke:#000000;"
                    x="211.265716722"
-                   xlink:href="#m191e34b789"
+                   xlink:href="#mc00f7a027c"
                    y="129.376464316"
                    id="use3806" />
               </g>
@@ -1220,7 +1220,7 @@
                 <use
                    style="stroke:#000000;"
                    x="211.265716722"
-                   xlink:href="#m191e34b789"
+                   xlink:href="#mc00f7a027c"
                    y="105.361923771"
                    id="use3820" />
               </g>
@@ -1251,8 +1251,8 @@
         <g
            id="g3834">
           <path
-             clip-path="url(#pbcdd13cb18)"
-             d="M 230.698967 71.890897  L 231.642292 64.622735  L 232.585617 58.502056  L 233.528942 54.49518  L 234.472267 53.234706  L 235.415593 54.919634  L 236.358918 59.283951  L 237.302243 65.638628  L 238.245568 72.980401  L 239.188893 80.150165  L 240.132218 86.015972  L 241.075543 89.651741  L 242.018868 90.483462  L 242.962193 88.379827  L 243.905518 83.672952  L 244.848843 77.10595  L 245.792168 69.715605  L 246.735493 62.668692  L 247.678818 57.077762  L 248.622143 53.8255  L 249.565468 53.425367  L 250.508793 55.940535  L 251.452118 60.973915  L 252.395443 67.730847  L 253.338769 75.144558  L 254.282094 82.044589  L 255.225419 87.341574  L 256.168744 90.199238  L 257.112069 90.166417  L 258.055394 87.248293  L 258.998719 81.905574  L 259.942044 74.981758  L 260.885369 67.569963  L 261.828694 60.840349  L 262.772019 55.855373  L 263.715344 53.402053  L 264.658669 53.867716  L 265.601994 57.178843  L 266.545319 62.812679  L 267.488644 69.879767  L 268.431969 77.264368  L 269.375294 83.800616  L 270.318619 88.456581  L 271.261945 90.497189  L 272.20527 89.600273  L 273.148595 85.907436  L 274.09192 80.001695  L 275.035245 72.815438  L 275.97857 65.483216  L 276.921895 59.162626  L 277.86522 54.851551  L 278.808545 53.230613  L 279.75187 54.555724  L 280.695195 58.617678  L 281.63852 64.775181  L 282.581845 72.056099  L 283.52517 79.310936  L 284.468495 85.394312  L 285.41182 89.345795  L 286.355145 90.541534  L 287.29847 88.792747  L 288.241795 84.37553  L 289.185121 77.987264  L 290.128446 70.636516  L 291.071771 63.483807  L 292.015096 57.658392  L 292.958421 54.079978  L 293.901746 53.313515  L 294.845071 55.480013  L 295.788396 60.237429  L 296.731721 66.834671  L 297.675046 74.23018  L 298.618371 81.256368  L 299.561696 86.803954  L 300.505021 89.997096  L 301.448346 90.331667  L 302.391671 87.754847  L 303.334996 82.673457  L 304.278321 75.889739  L 305.221646 68.474691  L 306.164971 61.598987  L 307.108297 56.34815  L 308.051622 53.55117  L 308.994947 53.64963  L 309.938272 56.627986  L 310.881597 62.016019  L 311.824922 68.963078  L 312.768247 76.372376  L 313.711572 83.074147  L 314.654897 88.010328  L 315.598222 90.401606  L 316.541547 89.87045  L 317.484872 86.500718  L 318.428197 80.824416  L 319.371522 73.737708  L 320.314847 66.35943  L 321.258172 59.854448  L 322.201497 55.249757  L 323.144822 53.272336  L 324.088147 54.234377  "
+             clip-path="url(#p87c7cdf2e3)"
+             d="M 230.698967 71.890897  L 231.642292 70.027591  L 232.585617 68.182903  L 233.528942 66.375264  L 234.472267 64.622735  L 235.415593 62.942827  L 236.358918 61.352326  L 237.302243 59.867122  L 238.245568 58.502056  L 239.188893 57.270767  L 240.132218 56.185557  L 241.075543 55.25727  L 242.018868 54.49518  L 242.962193 53.906903  L 243.905518 53.498316  L 244.848843 53.273502  L 245.792168 53.234706  L 246.735493 53.382317  L 247.678818 53.714859  L 248.622143 54.229011  L 249.565468 54.919634  L 250.508793 55.779829  L 251.452118 56.800999  L 252.395443 57.972944  L 253.338769 59.283951  L 254.282094 60.720924  L 255.225419 62.269503  L 256.168744 63.914215  L 257.112069 65.638628  L 258.055394 67.425512  L 258.998719 69.257012  L 259.942044 71.11483  L 260.885369 72.980401  L 261.828694 74.835086  L 262.772019 76.660355  L 263.715344 78.437968  L 264.658669 80.150165  L 265.601994 81.779838  L 266.545319 83.310704  L 267.488644 84.727468  L 268.431969 86.015972  L 269.375294 87.163344  L 270.318619 88.158118  L 271.261945 88.990355  L 272.20527 89.651741  L 273.148595 90.135666  L 274.09192 90.437295  L 275.035245 90.553614  L 275.97857 90.483462  L 276.921895 90.22754  L 277.86522 89.788403  L 278.808545 89.170441  L 279.75187 88.379827  L 280.695195 87.424461  L 281.63852 86.313889  L 282.581845 85.059207  L 283.52517 83.672952  L 284.468495 82.168975  L 285.41182 80.562302  L 286.355145 78.868987  L 287.29847 77.10595  L 288.241795 75.290805  L 289.185121 73.44169  L 290.128446 71.57708  L 291.071771 69.715605  L 292.015096 67.875866  L 292.958421 66.076243  L 293.901746 64.334718  L 294.845071 62.668692  L 295.788396 61.094811  L 296.731721 59.628801  L 297.675046 58.28531  L 298.618371 57.077762  L 299.561696 56.018221  L 300.505021 55.117275  L 301.448346 54.383925  L 302.391671 53.8255  L 303.334996 53.447578  L 304.278321 53.253935  L 305.221646 53.246507  L 306.164971 53.425367  L 307.108297 53.788729  L 308.051622 54.332961  L 308.994947 55.052627  L 309.938272 55.940535  L 310.881597 56.987814  L 311.824922 58.184  L 312.768247 59.51714  L 313.711572 60.973915  L 314.654897 62.539769  L 315.598222 64.199056  L 316.541547 65.935198  L 317.484872 67.730847  L 318.428197 69.568061  L 319.371522 71.428485  L 320.314847 73.293529  L 321.258172 75.144558  L 322.201497 76.963078  L 323.144822 78.730919  L 324.088147 80.430416  "
              style="fill:none;stroke:#0000ff;stroke-linecap:square;"
              id="path3836" />
         </g>
@@ -1294,7 +1294,7 @@
                  id="defs3860">
                 <path
                    d="M 0 0  L 0 4  "
-                   id="meaf05bbf97"
+                   id="m87b233e14d"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -1302,7 +1302,7 @@
                 <use
                    style="stroke:#000000;"
                    x="230.698967249"
-                   xlink:href="#meaf05bbf97"
+                   xlink:href="#m87b233e14d"
                    y="39.4939178003"
                    id="use3865" />
               </g>
@@ -1328,7 +1328,7 @@
                 <use
                    style="stroke:#000000;"
                    x="277.865219883"
-                   xlink:href="#meaf05bbf97"
+                   xlink:href="#m87b233e14d"
                    y="39.4939178003"
                    id="use3879" />
               </g>
@@ -1354,7 +1354,7 @@
                 <use
                    style="stroke:#000000;"
                    x="325.031472518"
-                   xlink:href="#meaf05bbf97"
+                   xlink:href="#m87b233e14d"
                    y="39.4939178003"
                    id="use3893" />
               </g>
@@ -1387,7 +1387,7 @@
                 <use
                    style="stroke:#000000;"
                    x="211.265716722"
-                   xlink:href="#m191e34b789"
+                   xlink:href="#mc00f7a027c"
                    y="90.5550468064"
                    id="use3911" />
               </g>
@@ -1417,7 +1417,7 @@
                 <use
                    style="stroke:#000000;"
                    x="211.265716722"
-                   xlink:href="#m191e34b789"
+                   xlink:href="#mc00f7a027c"
                    y="71.8908972582"
                    id="use3927" />
               </g>
@@ -1443,7 +1443,7 @@
                 <use
                    style="stroke:#000000;"
                    x="211.265716722"
-                   xlink:href="#m191e34b789"
+                   xlink:href="#mc00f7a027c"
                    y="53.2267477099"
                    id="use3941" />
               </g>
@@ -1474,8 +1474,8 @@
         <g
            id="g3955">
           <path
-             clip-path="url(#pd122497e9d)"
-             d="M 284.563146 129.376464  L 285.016796 119.223279  L 285.470447 104.650167  L 285.924098 67.607425  L 285.982298 181  M 286.84404 181  L 287.28505 151.374127  L 287.7387 137.91435  L 288.192351 127.972242  L 288.646002 117.526088  L 289.099653 101.571918  L 289.553303 55.019671  L 289.717644 181  M 290.447995 181  L 290.460605 174.659288  L 290.914255 148.922938  L 291.367906 136.364844  L 291.821557 126.558383  L 292.275207 115.728041  L 292.728858 98.046592  L 293.182509 36.866074  L 293.438122 181  M 294.045451 181  L 294.08981 168.897451  L 294.543461 146.694475  L 294.997111 134.86719  L 295.450762 125.124988  L 295.904413 113.806377  L 296.358064 93.938977  L 296.811714 8.156147  L 297.142488 181  M 297.624701 181  L 297.719016 164.147204  L 298.172666 144.646348  L 298.626317 133.409053  L 299.079968 123.661604  L 299.533618 111.733262  L 299.987269 89.055543  L 300.292935 -1  M 300.516059 -1  L 300.829718 181  M 301.186425 181  L 301.348221 160.138526  L 301.801872 142.745065  L 302.255522 131.979273  L 302.709173 122.156919  L 303.162824 109.47403  L 303.616475 83.108817  L 303.76436 -1  M 304.279693 -1  L 304.49902 181  M 304.731543 181  L 304.977427 156.688531  L 305.431077 140.96366  L 305.884728 130.567502  L 306.338379 120.598385  L 306.792029 106.984675  L 307.24568 75.652072  L 307.276561 -1  M 308.083263 -1  L 308.149849 181  M 308.261202 181  L 308.606632 153.668792  L 309.060283 139.280017  L 309.513933 129.163896  L 309.967584 118.971772  L 310.421235 104.208215  L 310.874886 65.950793  L 310.950072 181  M 311.781909 181  L 311.782187 180.645028  L 312.235838 150.98634  L 312.689488 137.675664  L 313.143139 127.758836  L 313.59679 117.260597  L 314.05044 101.069239  L 314.504091 52.705743  L 314.683253 181  M 315.395162 181  L 315.411392 173.706799  L 315.865043 148.57207  L 316.318694 136.134867  L 316.772345 126.342663  L 317.225995 115.445389  L 317.679646 97.465514  L 318.133297 33.380133  L 318.401364 181  M 318.989825 181  L 319.040598 168.120488  L 319.494249 146.373409  L 319.947899 134.643961  L 320.40155 124.905413  L 320.855201 113.502708  L 321.308851 93.254581  L 321.762502 2.264032  L 322.103193 181  M 322.566369 181  L 322.669803 163.497331  L 323.123454 144.349505  L 323.577105 133.190815  L 324.030756 123.436523  L 324.484406 111.403814  L 324.938057 88.231473  L 325.217269 -1  M 325.484573 -1  L 325.787751 181  M 326.125512 181  L 326.299009 159.583448  L 326.75266 142.467987  L 327.20631 131.764414  L 327.659961 121.92452  L 328.113612 109.112808  L 328.567262 82.089819  L 328.694749 -1  M 329.254391 -1  L 329.454283 181  "
+             clip-path="url(#pfe46183ddc)"
+             d="M 284.563146 129.376464  L 285.016796 126.966973  L 285.470447 124.508476  L 285.924098 121.947896  L 286.377748 119.223279  L 286.831399 116.257261  L 287.28505 112.947233  L 287.7387 109.149296  L 288.192351 104.650167  L 288.646002 99.114344  L 289.099653 91.976033  L 289.553303 82.193664  L 290.006954 67.607425  L 290.460605 42.873629  L 290.838057 -1  M 291.449303 -1  L 291.520435 181  M 293.669918 181  L 294.08981 170.437643  L 294.543461 162.368194  L 294.997111 156.253866  L 295.450762 151.374127  L 295.904413 147.315862  L 296.358064 143.823531  L 296.811714 140.728801  L 297.265365 137.91435  L 297.719016 135.293777  L 298.172666 132.799654  L 298.626317 130.375869  L 299.079968 127.972242  L 299.533618 125.540244  L 299.987269 123.029015  L 300.44092 120.380962  L 300.89457 117.526088  L 301.348221 114.373787  L 301.801872 110.79987  L 302.255522 106.624497  L 302.709173 101.571918  L 303.162824 95.19113  L 303.616475 86.6839  L 304.070125 74.482878  L 304.523776 55.019671  L 304.977427 18.013066  L 305.062481 -1  M 306.255557 -1  L 306.292888 181  M 307.94051 181  L 308.152981 174.659288  L 308.606632 165.428855  L 309.060283 158.615148  L 309.513933 153.284958  L 309.967584 148.922938  L 310.421235 145.219591  L 310.874886 141.976083  L 311.328536 139.056987  L 311.782187 136.364844  L 312.235838 133.825452  L 312.689488 131.378742  L 313.143139 128.972629  L 313.59679 126.558383  L 314.05044 124.086609  L 314.504091 121.503105  L 314.957742 118.743848  L 315.411392 115.728041  L 315.865043 112.347486  L 316.318694 108.449041  L 316.772345 103.803545  L 317.225995 98.046592  L 317.679646 90.555484  L 318.133297 80.163847  L 318.586947 64.392785  L 319.040598 36.866074  L 319.316717 -1  M 320.095399 -1  L 320.180878 181  M 322.177394 181  L 322.216153 179.599934  L 322.669803 168.897451  L 323.123454 161.228494  L 323.577105 155.360976  L 324.030756 150.642707  L 324.484406 146.694475  L 324.938057 143.279048  L 325.391708 140.238617  L 325.845358 137.462173  L 326.299009 134.86719  L 326.75266 132.388598  L 327.20631 129.971617  L 327.659961 127.566627  L 328.113612 125.124988  L 328.567262 122.595038  L 329.020913 119.917544  L 329.474564 117.019713  "
              style="fill:none;stroke:#0000ff;stroke-linecap:square;"
              id="path3957" />
         </g>
@@ -1518,7 +1518,7 @@
                 <use
                    style="stroke:#000000;"
                    x="284.56314565"
-                   xlink:href="#md4db78db64"
+                   xlink:href="#ma268564787"
                    y="168.193912969"
                    id="use3983" />
               </g>
@@ -1544,7 +1544,7 @@
                 <use
                    style="stroke:#000000;"
                    x="307.245680059"
-                   xlink:href="#md4db78db64"
+                   xlink:href="#ma268564787"
                    y="168.193912969"
                    id="use3997" />
               </g>
@@ -1570,7 +1570,7 @@
                 <use
                    style="stroke:#000000;"
                    x="329.928214467"
-                   xlink:href="#md4db78db64"
+                   xlink:href="#ma268564787"
                    y="168.193912969"
                    id="use4011" />
               </g>
@@ -1602,7 +1602,7 @@
                  id="defs4027">
                 <path
                    d="M 0 0  L -4 0  "
-                   id="m1d6370a49e"
+                   id="ma8068dd4a3"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -1610,7 +1610,7 @@
                 <use
                    style="stroke:#000000;"
                    x="344.464721349"
-                   xlink:href="#m1d6370a49e"
+                   xlink:href="#ma8068dd4a3"
                    y="153.39100486"
                    id="use4032" />
               </g>
@@ -1640,7 +1640,7 @@
                 <use
                    style="stroke:#000000;"
                    x="344.464721349"
-                   xlink:href="#m1d6370a49e"
+                   xlink:href="#ma8068dd4a3"
                    y="129.376464316"
                    id="use4048" />
               </g>
@@ -1666,7 +1666,7 @@
                 <use
                    style="stroke:#000000;"
                    x="344.464721349"
-                   xlink:href="#m1d6370a49e"
+                   xlink:href="#ma8068dd4a3"
                    y="105.361923771"
                    id="use4062" />
               </g>
@@ -1689,7 +1689,7 @@
     <defs
        id="defs4070">
       <clipPath
-         id="pbe63044a00">
+         id="p18be5af45a">
         <rect
            height="57.6348973067"
            width="54.4380825804"
@@ -1698,7 +1698,7 @@
            id="rect4073" />
       </clipPath>
       <clipPath
-         id="pd122497e9d">
+         id="pfe46183ddc">
         <rect
            height="57.6348973067"
            width="54.4380825804"
@@ -1707,7 +1707,7 @@
            id="rect4076" />
       </clipPath>
       <clipPath
-         id="pbcdd13cb18">
+         id="p87c7cdf2e3">
         <rect
            height="44.7939589158"
            width="113.199006323"
@@ -1718,9 +1718,9 @@
     </defs>
   </g>
   <g
-     figurefirst:date-modified="May 10 2017 17:29:00 PST"
+     figurefirst:date-modified="May 11 2017 09:33:25 PST"
      figurefirst:notes="random data about orange bats"
-     figurefirst:traceback="['  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 174, in _run_module_as_main\n    &quot;__main__&quot;, fname, loader, pkg_name)\n', '  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 72, in _run_code\n    exec code in run_globals\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;\n    app.launch_new_instance()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/traitlets/config/application.py&quot;, line 658, in launch_instance\n    app.start()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelapp.py&quot;, line 477, in start\n    ioloop.IOLoop.instance().start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/ioloop.py&quot;, line 162, in start\n    super(ZMQIOLoop, self).start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/ioloop.py&quot;, line 866, in start\n    handler_func(fd_obj, events)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 440, in _handle_events\n    self._handle_recv()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 472, in _handle_recv\n    self._run_callback(callback, msg)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 414, in _run_callback\n    callback(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 283, in dispatcher\n    return self.dispatch_shell(stream, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 235, in dispatch_shell\n    handler(stream, idents, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 399, in execute_request\n    user_expressions, allow_stdin)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/ipkernel.py&quot;, line 196, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/zmqshell.py&quot;, line 533, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2717, in run_cell\n    interactivity=interactivity, compiler=compiler, result=result)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2821, in run_ast_nodes\n    if self.run_code(code, result):\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2881, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)\n', u'  File &quot;&lt;ipython-input-17-9cfa2635d4db&gt;&quot;, line 3, in &lt;module&gt;\n    make_plot(template_filename, output_filename)\n', u'  File &quot;&lt;ipython-input-16-2ac50ed5c375&gt;&quot;, line 55, in make_plot\n    notes=notes[group])  # save notes about the data into the svg\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/figurefirst/svg_to_axes.py&quot;, line 947, in append_figure_to_layer\n    tb = traceback.extract_stack()\n']"
+     figurefirst:traceback="['  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 174, in _run_module_as_main\n    &quot;__main__&quot;, fname, loader, pkg_name)\n', '  File &quot;/usr/lib/python2.7/runpy.py&quot;, line 72, in _run_code\n    exec code in run_globals\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;\n    app.launch_new_instance()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/traitlets/config/application.py&quot;, line 658, in launch_instance\n    app.start()\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelapp.py&quot;, line 477, in start\n    ioloop.IOLoop.instance().start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/ioloop.py&quot;, line 162, in start\n    super(ZMQIOLoop, self).start()\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/ioloop.py&quot;, line 866, in start\n    handler_func(fd_obj, events)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 440, in _handle_events\n    self._handle_recv()\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 472, in _handle_recv\n    self._run_callback(callback, msg)\n', '  File &quot;/usr/lib/python2.7/dist-packages/zmq/eventloop/zmqstream.py&quot;, line 414, in _run_callback\n    callback(*args, **kwargs)\n', '  File &quot;/usr/lib/python2.7/dist-packages/tornado/stack_context.py&quot;, line 275, in null_wrapper\n    return fn(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 283, in dispatcher\n    return self.dispatch_shell(stream, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 235, in dispatch_shell\n    handler(stream, idents, msg)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/kernelbase.py&quot;, line 399, in execute_request\n    user_expressions, allow_stdin)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/ipkernel.py&quot;, line 196, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/ipykernel/zmqshell.py&quot;, line 533, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2717, in run_cell\n    interactivity=interactivity, compiler=compiler, result=result)\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2821, in run_ast_nodes\n    if self.run_code(code, result):\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2881, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)\n', u'  File &quot;&lt;ipython-input-5-9cfa2635d4db&gt;&quot;, line 3, in &lt;module&gt;\n    make_plot(template_filename, output_filename)\n', u'  File &quot;&lt;ipython-input-4-ab68aa0cb806&gt;&quot;, line 50, in make_plot\n    notes=notes[group])  # save notes about the data into the svg\n', '  File &quot;/usr/local/lib/python2.7/dist-packages/figurefirst/svg_to_axes.py&quot;, line 947, in append_figure_to_layer\n    tb = traceback.extract_stack()\n']"
      id="group3"
      inkscape:groupmode="layer"
      inkscape:label="group3"
@@ -1757,8 +1757,8 @@
         <g
            id="g4098">
           <path
-             clip-path="url(#pc8c375e2eb)"
-             d="M 402.137477 105.361924  L 402.591128 116.401353  L 403.044778 139.370039  L 403.498429 153.150679  L 403.95208 145.073416  L 404.40573 122.564447  L 404.859381 106.318416  L 405.313032 111.271848  L 405.766682 132.870581  L 406.220333 151.256839  L 406.673984 149.526382  L 407.127635 129.270183  L 407.581285 109.111699  L 408.034936 107.584547  L 408.488587 126.092783  L 408.942237 147.620021  L 409.395888 152.374217  L 409.849539 135.984385  L 410.303189 113.519262  L 410.75684 105.633177  L 411.210491 119.576561  L 411.664141 142.529931  L 412.117792 153.390064  L 412.571443 142.172204  L 413.025094 119.19  L 413.478744 105.573184  L 413.932395 113.840994  L 414.386046 136.392044  L 414.839696 152.493002  L 415.293347 147.340722  L 415.746998 125.672187  L 416.200648 107.409347  L 416.654299 109.342974  L 417.10795 129.695299  L 417.5616 149.75449  L 418.015251 151.078217  L 418.468902 132.449454  L 418.922552 110.995398  L 419.376203 106.44081  L 419.829854 122.973157  L 420.283505 145.392675  L 420.737155 153.086963  L 421.190806 138.981928  L 421.644457 116.045673  L 422.098107 105.365687  L 422.551758 116.761098  L 423.005409 139.755019  L 423.459059 153.206945  L 423.91271 144.749237  L 424.366361 122.157872  L 424.820011 106.203249  L 425.273662 111.553972  L 425.727313 133.290613  L 426.180963 151.428604  L 426.634614 149.291959  L 427.088265 128.8451  L 427.541916 108.886775  L 427.995566 107.766576  L 428.449217 126.514408  L 428.902868 147.893602  L 429.356518 152.248224  L 429.810169 135.574657  L 430.26382 113.202499  L 430.71747 105.700611  L 431.171121 119.966193  L 431.624772 142.883535  L 432.078422 153.382539  L 432.532073 141.810468  L 432.985724 118.806632  L 433.439374 105.520651  L 433.893025 114.167595  L 434.346676 136.797503  L 434.800327 152.604543  L 435.253977 147.055794  L 435.707628 125.252751  L 436.161279 107.241031  L 436.614929 109.580526  L 437.06858 130.120315  L 437.522231 149.976211  L 437.975881 150.892795  L 438.429532 132.027363  L 438.883183 110.724707  L 439.336833 106.570391  L 439.790484 123.383873  L 440.244135 145.706916  L 440.697785 153.015817  L 441.151436 138.590806  L 441.605087 115.694172  L 442.058738 105.376974  L 442.512388 117.124797  L 442.966039 140.136746  L 443.41969 153.255742  L 443.87334 144.42024  L 444.326991 121.75356  L 444.780642 106.095343  L 445.234292 111.841682  L 445.687943 133.709419  L 446.141594 151.593457  L 446.595244 149.051295  L 447.048895 128.420184  "
+             clip-path="url(#pa9e9e809e1)"
+             d="M 402.137477 105.361924  L 402.591128 105.481896  L 403.044778 105.840616  L 403.498429 106.434497  L 403.95208 107.257608  L 404.40573 108.301722  L 404.859381 109.556409  L 405.313032 111.009131  L 405.766682 112.645373  L 406.220333 114.448787  L 406.673984 116.401353  L 407.127635 118.483562  L 407.581285 120.674609  L 408.034936 122.952603  L 408.488587 125.294781  L 408.942237 127.677743  L 409.395888 130.077677  L 409.849539 132.470606  L 410.303189 134.832618  L 410.75684 137.140115  L 411.210491 139.370039  L 411.664141 141.500112  L 412.117792 143.509048  L 412.571443 145.376777  L 413.025094 147.084636  L 413.478744 148.61556  L 413.932395 149.954254  L 414.386046 151.087341  L 414.839696 152.003501  L 415.293347 152.693579  L 415.746998 153.150679  L 416.200648 153.370236  L 416.654299 153.350055  L 417.10795 153.090337  L 417.5616 152.593679  L 418.015251 151.865041  L 418.468902 150.911706  L 418.922552 149.743197  L 419.376203 148.371191  L 419.829854 146.809395  L 420.283505 145.073416  L 420.737155 143.180597  L 421.190806 141.149853  L 421.644457 139.001472  L 422.098107 136.756922  L 422.551758 134.438629  L 423.005409 132.069756  L 423.459059 129.673972  L 423.91271 127.275216  L 424.366361 124.897455  L 424.820011 122.564447  L 425.273662 120.299502  L 425.727313 118.125252  L 426.180963 116.063419  L 426.634614 114.134607  L 427.088265 112.358085  L 427.541916 110.751606  L 427.995566 109.33122  L 428.449217 108.11112  L 428.902868 107.103496  L 429.356518 106.318416  L 429.810169 105.763725  L 430.26382 105.444964  L 430.71747 105.365319  L 431.171121 105.525585  L 431.624772 105.924161  L 432.078422 106.557065  L 432.532073 107.417973  L 432.985724 108.498283  L 433.439374 109.787201  L 433.893025 111.271848  L 434.346676 112.937391  L 434.800327 114.767187  L 435.253977 116.742954  L 435.707628 118.844952  L 436.161279 121.052176  L 436.614929 123.342575  L 437.06858 125.693261  L 437.522231 128.08075  L 437.975881 130.481184  L 438.429532 132.870581  L 438.883183 135.225065  L 439.336833 137.521112  L 439.790484 139.735781  L 440.244135 141.846943  L 440.697785 143.833504  L 441.151436 145.675614  L 441.605087 147.35487  L 442.058738 148.85449  L 442.512388 150.159493  L 442.966039 151.256839  L 443.41969 152.135563  L 443.87334 152.786886  L 444.326991 153.2043  L 444.780642 153.383633  L 445.234292 153.323095  L 445.687943 153.023291  L 446.141594 152.487215  L 446.595244 151.720224  L 447.048895 150.729981  "
              style="fill:none;stroke:#ffa500;stroke-linecap:square;"
              id="path4100" />
         </g>
@@ -1800,7 +1800,7 @@
                  id="defs4124">
                 <path
                    d="M 0 0  L 0 -4  "
-                   id="m1012ddd77c"
+                   id="me2eeb24760"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -1808,7 +1808,7 @@
                 <use
                    style="stroke:#000000;"
                    x="402.137476991"
-                   xlink:href="#m1012ddd77c"
+                   xlink:href="#me2eeb24760"
                    y="168.193912969"
                    id="use4129" />
               </g>
@@ -1840,7 +1840,7 @@
                 <use
                    style="stroke:#000000;"
                    x="424.8200114"
-                   xlink:href="#m1012ddd77c"
+                   xlink:href="#me2eeb24760"
                    y="168.193912969"
                    id="use4147" />
               </g>
@@ -1872,7 +1872,7 @@
                 <use
                    style="stroke:#000000;"
                    x="447.502545808"
-                   xlink:href="#m1012ddd77c"
+                   xlink:href="#me2eeb24760"
                    y="168.193912969"
                    id="use4165" />
               </g>
@@ -1910,7 +1910,7 @@
                  id="defs4185">
                 <path
                    d="M 0 0  L 4 0  "
-                   id="m5e227929b4"
+                   id="m8e72fd9e6c"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -1918,7 +1918,7 @@
                 <use
                    style="stroke:#000000;"
                    x="387.60097011"
-                   xlink:href="#m5e227929b4"
+                   xlink:href="#m8e72fd9e6c"
                    y="153.39100486"
                    id="use4190" />
               </g>
@@ -1954,7 +1954,7 @@
                 <use
                    style="stroke:#000000;"
                    x="387.60097011"
-                   xlink:href="#m5e227929b4"
+                   xlink:href="#m8e72fd9e6c"
                    y="129.376464316"
                    id="use4210" />
               </g>
@@ -1980,7 +1980,7 @@
                 <use
                    style="stroke:#000000;"
                    x="387.60097011"
-                   xlink:href="#m5e227929b4"
+                   xlink:href="#m8e72fd9e6c"
                    y="105.361923771"
                    id="use4224" />
               </g>
@@ -2011,8 +2011,8 @@
         <g
            id="g4238">
           <path
-             clip-path="url(#p9d80e139e4)"
-             d="M 407.034221 71.890897  L 407.977546 56.185557  L 408.920871 54.919634  L 409.864196 69.257012  L 410.807521 86.015972  L 411.750846 89.788403  L 412.694171 77.10595  L 413.637496 59.628801  L 414.580821 53.425367  L 415.524146 64.199056  L 416.467471 82.044589  L 417.410796 90.554864  L 418.354121 81.905574  L 419.297446 64.048837  L 420.240771 53.402053  L 421.184096 59.753828  L 422.127421 77.264368  L 423.070747 89.834564  L 424.014072 85.907436  L 424.957397 69.093567  L 425.900722 54.851551  L 426.844047 56.275431  L 427.787372 72.056099  L 428.730697 87.684881  L 429.674022 88.792747  L 430.617347 74.36113  L 431.560672 57.658392  L 432.503997 54.040954  L 433.447322 66.834671  L 434.390647 84.277059  L 435.333972 90.331667  L 436.277297 79.431916  L 437.220622 61.598987  L 438.163947 53.228393  L 439.107272 62.016019  L 440.050597 79.882563  L 440.993923 90.401606  L 441.937248 83.901989  L 442.880573 66.35943  L 443.823898 53.902476  L 444.767223 57.983994  L 445.710548 74.851454  L 446.653873 88.996992  L 447.597198 87.415265  L 448.540523 71.560506  L 449.483848 56.009507  L 450.427173 55.059785  L 451.370498 69.58451  L 452.313823 86.229717  L 453.257148 89.691879  L 454.200473 76.787901  L 455.143798 59.38164  L 456.087123 53.476332  L 457.030448 64.501291  L 457.973773 82.32022  L 458.917099 90.550477  L 459.860424 81.625203  L 460.803749 63.750253  L 461.747074 53.359774  L 462.690399 60.006724  L 463.633724 77.579928  L 464.577049 89.922664  L 465.520374 85.687076  L 466.463699 68.767345  L 467.407024 54.719394  L 468.350349 56.458843  L 469.293674 72.386452  L 470.236999 87.85845  L 471.180324 88.649954  L 472.123649 74.033258  L 473.066974 57.446886  L 474.010299 54.140271  L 474.953624 67.1535  L 475.896949 84.52227  L 476.840275 90.277814  L 477.7836 79.128512  L 478.726925 61.32498  L 479.67025 53.235704  L 480.613575 62.297926  L 481.5569 80.179883  L 482.500225 90.440984  L 483.44355 83.647221  L 484.386875 66.044748  L 485.3302 53.817198  L 486.273525 58.206523  L 487.21685 75.177199  L 488.160175 89.126464  L 489.1035 87.229428  L 490.046825 71.230218  L 490.99015 55.838433  L 491.933475 55.20521  L 492.8768 69.91273  L 493.820125 86.438969  L 494.763451 89.589777  L 495.706776 76.468317  L 496.650101 59.138398  L 497.593426 53.533068  L 498.536751 64.805842  L 499.480076 82.592582  L 500.423401 90.540243  "
+             clip-path="url(#pefb4fa6efa)"
+             d="M 407.034221 71.890897  L 407.977546 70.027591  L 408.920871 68.182903  L 409.864196 66.375264  L 410.807521 64.622735  L 411.750846 62.942827  L 412.694171 61.352326  L 413.637496 59.867122  L 414.580821 58.502056  L 415.524146 57.270767  L 416.467471 56.185557  L 417.410796 55.25727  L 418.354121 54.49518  L 419.297446 53.906903  L 420.240771 53.498316  L 421.184096 53.273502  L 422.127421 53.234706  L 423.070747 53.382317  L 424.014072 53.714859  L 424.957397 54.229011  L 425.900722 54.919634  L 426.844047 55.779829  L 427.787372 56.800999  L 428.730697 57.972944  L 429.674022 59.283951  L 430.617347 60.720924  L 431.560672 62.269503  L 432.503997 63.914215  L 433.447322 65.638628  L 434.390647 67.425512  L 435.333972 69.257012  L 436.277297 71.11483  L 437.220622 72.980401  L 438.163947 74.835086  L 439.107272 76.660355  L 440.050597 78.437968  L 440.993923 80.150165  L 441.937248 81.779838  L 442.880573 83.310704  L 443.823898 84.727468  L 444.767223 86.015972  L 445.710548 87.163344  L 446.653873 88.158118  L 447.597198 88.990355  L 448.540523 89.651741  L 449.483848 90.135666  L 450.427173 90.437295  L 451.370498 90.553614  L 452.313823 90.483462  L 453.257148 90.22754  L 454.200473 89.788403  L 455.143798 89.170441  L 456.087123 88.379827  L 457.030448 87.424461  L 457.973773 86.313889  L 458.917099 85.059207  L 459.860424 83.672952  L 460.803749 82.168975  L 461.747074 80.562302  L 462.690399 78.868987  L 463.633724 77.10595  L 464.577049 75.290805  L 465.520374 73.44169  L 466.463699 71.57708  L 467.407024 69.715605  L 468.350349 67.875866  L 469.293674 66.076243  L 470.236999 64.334718  L 471.180324 62.668692  L 472.123649 61.094811  L 473.066974 59.628801  L 474.010299 58.28531  L 474.953624 57.077762  L 475.896949 56.018221  L 476.840275 55.117275  L 477.7836 54.383925  L 478.726925 53.8255  L 479.67025 53.447578  L 480.613575 53.253935  L 481.5569 53.246507  L 482.500225 53.425367  L 483.44355 53.788729  L 484.386875 54.332961  L 485.3302 55.052627  L 486.273525 55.940535  L 487.21685 56.987814  L 488.160175 58.184  L 489.1035 59.51714  L 490.046825 60.973915  L 490.99015 62.539769  L 491.933475 64.199056  L 492.8768 65.935198  L 493.820125 67.730847  L 494.763451 69.568061  L 495.706776 71.428485  L 496.650101 73.293529  L 497.593426 75.144558  L 498.536751 76.963078  L 499.480076 78.730919  L 500.423401 80.430416  "
              style="fill:none;stroke:#ffa500;stroke-linecap:square;"
              id="path4240" />
         </g>
@@ -2054,7 +2054,7 @@
                  id="defs4264">
                 <path
                    d="M 0 0  L 0 4  "
-                   id="mb34bef4cd9"
+                   id="m85107b352a"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -2062,7 +2062,7 @@
                 <use
                    style="stroke:#000000;"
                    x="407.034220637"
-                   xlink:href="#mb34bef4cd9"
+                   xlink:href="#m85107b352a"
                    y="39.4939178003"
                    id="use4269" />
               </g>
@@ -2088,7 +2088,7 @@
                 <use
                    style="stroke:#000000;"
                    x="454.200473271"
-                   xlink:href="#mb34bef4cd9"
+                   xlink:href="#m85107b352a"
                    y="39.4939178003"
                    id="use4283" />
               </g>
@@ -2114,7 +2114,7 @@
                 <use
                    style="stroke:#000000;"
                    x="501.366725906"
-                   xlink:href="#mb34bef4cd9"
+                   xlink:href="#m85107b352a"
                    y="39.4939178003"
                    id="use4297" />
               </g>
@@ -2147,7 +2147,7 @@
                 <use
                    style="stroke:#000000;"
                    x="387.60097011"
-                   xlink:href="#m5e227929b4"
+                   xlink:href="#m8e72fd9e6c"
                    y="90.5550468064"
                    id="use4315" />
               </g>
@@ -2177,7 +2177,7 @@
                 <use
                    style="stroke:#000000;"
                    x="387.60097011"
-                   xlink:href="#m5e227929b4"
+                   xlink:href="#m8e72fd9e6c"
                    y="71.8908972582"
                    id="use4331" />
               </g>
@@ -2203,7 +2203,7 @@
                 <use
                    style="stroke:#000000;"
                    x="387.60097011"
-                   xlink:href="#m5e227929b4"
+                   xlink:href="#m8e72fd9e6c"
                    y="53.2267477099"
                    id="use4345" />
               </g>
@@ -2234,8 +2234,8 @@
         <g
            id="g4359">
           <path
-             clip-path="url(#pd714d310fb)"
-             d="M 460.898399 129.376464  L 461.35205 91.976033  L 461.801414 181  M 461.813554 181  L 462.259351 132.799654  L 462.713002 101.571918  L 463.043618 181  M 463.347383 181  L 463.620303 136.364844  L 464.073954 108.449041  L 464.252615 181  M 464.859944 181  L 464.981255 140.238617  L 465.434906 113.806377  L 465.440508 181  M 466.339159 181  L 466.342207 144.646348  L 466.795858 118.257225  L 467.128059 -1  M 467.351183 -1  L 467.703159 149.932753  L 468.15681 122.156919  L 468.610461 45.471685  L 469.064111 156.688531  L 469.517762 125.736113  L 469.971413 75.652072  L 470.425063 166.05864  L 470.878714 129.163896  L 471.332365 91.237698  L 471.786016 180.645028  L 472.239666 132.58304  L 472.693317 101.069239  L 473.032443 181  M 473.317378 181  L 473.600618 136.134867  L 474.054269 108.072137  L 474.243184 181  M 474.831645 181  L 474.96157 139.98358  L 475.415221 113.502708  L 475.432004 181  M 476.313253 181  L 476.322522 144.349505  L 476.776173 117.998022  L 477.0851 -1  M 477.352403 -1  L 477.683474 149.5672  L 478.137125 121.92452  L 478.590776 42.574601  L 479.044427 156.205868  L 479.498077 125.518368  L 479.951728 74.349834  L 480.405379 165.359548  L 480.859029 128.951294  L 481.31268 90.478307  L 481.766331 179.48553  L 482.219981 132.366937  L 482.673632 100.55596  L 483.021135 181  M 483.287292 181  L 483.580933 135.906033  L 484.034584 107.689265  L 484.233667 181  M 484.803217 181  L 484.941886 139.73053  L 485.395536 113.195464  L 485.423468 181  M 486.28718 181  L 486.302838 144.055921  L 486.756488 117.736635  L 487.042362 -1  M 487.353904 -1  L 487.66379 149.207048  L 488.11744 121.690841  L 488.571091 39.486006  L 489.024742 155.732657  L 489.478392 125.300002  L 489.932043 72.993678  L 490.385694 164.678758  L 490.839344 128.738626  L 491.292995 89.696824  L 491.746646 178.368087  L 492.200297 132.15131  L 492.653947 100.031658  L 493.00969 181  M 493.257129 181  L 493.561249 135.678297  L 494.014899 107.300224  L 494.22406 181  M 494.774664 181  L 494.922201 139.479404  L 495.375851 112.884534  L 495.414897 181  M 496.260942 181  L 496.283153 143.765497  L 496.736803 117.472996  L 496.999855 -1  M 497.355678 -1  L 497.644105 148.852123  L 498.097755 121.455835  L 498.551406 36.185727  L 499.005057 155.268553  L 499.458708 125.080979  L 499.912358 71.579956  L 500.366009 164.015457  L 500.81966 128.525857  L 501.27331 88.892143  L 501.726961 177.290286  L 502.180612 131.936123  L 502.634262 99.495891  L 502.998107 181  M 503.226893 181  L 503.541564 135.451617  L 503.995214 106.904799  L 504.214361 181  M 504.745988 181  L 504.902516 139.230142  L 505.356166 112.5698  L 505.406286 181  "
+             clip-path="url(#p0840246918)"
+             d="M 460.898399 129.376464  L 461.35205 126.966973  L 461.8057 124.508476  L 462.259351 121.947896  L 462.713002 119.223279  L 463.166652 116.257261  L 463.620303 112.947233  L 464.073954 109.149296  L 464.527605 104.650167  L 464.981255 99.114344  L 465.434906 91.976033  L 465.888557 82.193664  L 466.342207 67.607425  L 466.795858 42.873629  L 467.17331 -1  M 467.784556 -1  L 467.855688 181  M 470.005171 181  L 470.425063 170.437643  L 470.878714 162.368194  L 471.332365 156.253866  L 471.786016 151.374127  L 472.239666 147.315862  L 472.693317 143.823531  L 473.146968 140.728801  L 473.600618 137.91435  L 474.054269 135.293777  L 474.50792 132.799654  L 474.96157 130.375869  L 475.415221 127.972242  L 475.868872 125.540244  L 476.322522 123.029015  L 476.776173 120.380962  L 477.229824 117.526088  L 477.683474 114.373787  L 478.137125 110.79987  L 478.590776 106.624497  L 479.044427 101.571918  L 479.498077 95.19113  L 479.951728 86.6839  L 480.405379 74.482878  L 480.859029 55.019671  L 481.31268 18.013066  L 481.397734 -1  M 482.590811 -1  L 482.628142 181  M 484.275763 181  L 484.488235 174.659288  L 484.941886 165.428855  L 485.395536 158.615148  L 485.849187 153.284958  L 486.302838 148.922938  L 486.756488 145.219591  L 487.210139 141.976083  L 487.66379 139.056987  L 488.11744 136.364844  L 488.571091 133.825452  L 489.024742 131.378742  L 489.478392 128.972629  L 489.932043 126.558383  L 490.385694 124.086609  L 490.839344 121.503105  L 491.292995 118.743848  L 491.746646 115.728041  L 492.200297 112.347486  L 492.653947 108.449041  L 493.107598 103.803545  L 493.561249 98.046592  L 494.014899 90.555484  L 494.46855 80.163847  L 494.922201 64.392785  L 495.375851 36.866074  L 495.65197 -1  M 496.430653 -1  L 496.516131 181  M 498.512647 181  L 498.551406 179.599934  L 499.005057 168.897451  L 499.458708 161.228494  L 499.912358 155.360976  L 500.366009 150.642707  L 500.81966 146.694475  L 501.27331 143.279048  L 501.726961 140.238617  L 502.180612 137.462173  L 502.634262 134.86719  L 503.087913 132.388598  L 503.541564 129.971617  L 503.995214 127.566627  L 504.448865 125.124988  L 504.902516 122.595038  L 505.356166 119.917544  L 505.809817 117.019713  "
              style="fill:none;stroke:#ffa500;stroke-linecap:square;"
              id="path4361" />
         </g>
@@ -2278,7 +2278,7 @@
                 <use
                    style="stroke:#000000;"
                    x="460.898399038"
-                   xlink:href="#m1012ddd77c"
+                   xlink:href="#me2eeb24760"
                    y="168.193912969"
                    id="use4387" />
               </g>
@@ -2304,7 +2304,7 @@
                 <use
                    style="stroke:#000000;"
                    x="483.580933446"
-                   xlink:href="#m1012ddd77c"
+                   xlink:href="#me2eeb24760"
                    y="168.193912969"
                    id="use4401" />
               </g>
@@ -2330,7 +2330,7 @@
                 <use
                    style="stroke:#000000;"
                    x="506.263467855"
-                   xlink:href="#m1012ddd77c"
+                   xlink:href="#me2eeb24760"
                    y="168.193912969"
                    id="use4415" />
               </g>
@@ -2362,7 +2362,7 @@
                  id="defs4431">
                 <path
                    d="M 0 0  L -4 0  "
-                   id="m8a35e17b5b"
+                   id="mc9f747fd91"
                    style="stroke:#000000;" />
               </defs>
               <g
@@ -2370,7 +2370,7 @@
                 <use
                    style="stroke:#000000;"
                    x="520.799974736"
-                   xlink:href="#m8a35e17b5b"
+                   xlink:href="#mc9f747fd91"
                    y="153.39100486"
                    id="use4436" />
               </g>
@@ -2400,7 +2400,7 @@
                 <use
                    style="stroke:#000000;"
                    x="520.799974736"
-                   xlink:href="#m8a35e17b5b"
+                   xlink:href="#mc9f747fd91"
                    y="129.376464316"
                    id="use4452" />
               </g>
@@ -2426,7 +2426,7 @@
                 <use
                    style="stroke:#000000;"
                    x="520.799974736"
-                   xlink:href="#m8a35e17b5b"
+                   xlink:href="#mc9f747fd91"
                    y="105.361923771"
                    id="use4466" />
               </g>
@@ -2449,7 +2449,7 @@
     <defs
        id="defs4474">
       <clipPath
-         id="pd714d310fb">
+         id="p0840246918">
         <rect
            height="57.6348973067"
            width="54.4380825804"
@@ -2458,7 +2458,7 @@
            id="rect4477" />
       </clipPath>
       <clipPath
-         id="p9d80e139e4">
+         id="pefb4fa6efa">
         <rect
            height="44.7939589158"
            width="113.199006323"
@@ -2467,7 +2467,7 @@
            id="rect4480" />
       </clipPath>
       <clipPath
-         id="pc8c375e2eb">
+         id="pa9e9e809e1">
         <rect
            height="57.6348973067"
            width="54.4380825804"

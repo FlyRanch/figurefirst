@@ -16,7 +16,10 @@
    id="svg3384"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="example_templates.svg">
+   sodipodi:docname="example_templates.svg"
+   inkscape:export-filename="/home/caveman/Documents/src/python/figurefirst/examples/figure_groups_and_templates/example_templates.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600">
   <defs
      id="defs3386">
     <clipPath
@@ -38,9 +41,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="191.94975"
-     inkscape:cy="410.45912"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="335.31478"
+     inkscape:cy="260.05491"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
