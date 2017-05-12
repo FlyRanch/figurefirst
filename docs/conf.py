@@ -155,7 +155,4 @@ texinfo_documents = [
     (master_doc, 'FigureFirst', u'FigureFirst Documentation',
      author, 'FigureFirst', 'One line description of project.',
      'Miscellaneous'),
-]
-
-.. include:: ../README.md
 
