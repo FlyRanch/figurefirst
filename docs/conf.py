@@ -154,5 +154,5 @@ man_pages = [
 texinfo_documents = [
     (master_doc, 'FigureFirst', u'FigureFirst Documentation',
      author, 'FigureFirst', 'One line description of project.',
-     'Miscellaneous'),
+     'Miscellaneous'),]
 
