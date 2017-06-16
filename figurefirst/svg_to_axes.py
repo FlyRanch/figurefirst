@@ -633,10 +633,12 @@ class FigureLayout(object):
                         for mpl_methods_element in mpl_methods_elements:
                             [grouptree[ax.name].mplmethods.update({key:value}) for key,value in mpl_methods_element.attributes.items()]
                         projection = node.getElementsByTagName('figurefirst:projection')
-                        if child.hasAttribute('figurefirst:projection'):#len(projection) == 0:
+                        if child.hasAttribute('figurefirst:projection'):
                             grouptree[ax.name].projection = child.getAttribute('figurefirst:projection')
                         else:
                             grouptree[ax.name].projection = 'rectilinear'
+                        if child.hasAttribute('figurefirst:spinespec'):
+                            grouptree[ax.name].spinespec = child.getAttribute('figurefirst:spinespec')
                     if child.tagName in ['figurefirst:figure']:
                         if child.hasAttribute('figurefirst:template'):
                             fig = FFTemplateTarget(child)

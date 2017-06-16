@@ -112,7 +112,12 @@ def kill_all_spines(layout):
 
 def kill_all_labels(layout):
     [kill_labels(ax) for ax in layout.axes.values()]
-    
+
+def set_spines(layout):
+    for ax in layout.axes.values():
+        if 'spinespec' in ax.__dict__:
+            adjust_spines(ax,ax.spinespec.split(','))
+
 def set_fontsize(fig,fontsize):
     """
     For each text object of a figure fig, set the font size to fontsize
@@ -122,6 +127,8 @@ def set_fontsize(fig,fontsize):
 
     for textobj in fig.findobj(match=match):
         textobj.set_fontsize(fontsize)
+
+
 
 def fix_mpl_svg(file_path, pattern='miterlimit:100000;', subst='miterlimit:1;'):
     """used to fix problematic outputs from the matplotlib svg
