@@ -8,7 +8,7 @@ import time
 # Load some user parameters / defaults
 # By default figurefirst will load the figurefirst_user_parameters.py file from the figurefirst/figurefirst directory.
 # If you would like to set custom parameters, copy that defaults file to another location.
-# Then make the changes you like and set the environment variable 'figurefirst_user_parameters' to point to the new file. 
+# Then make the changes you like and set the environment variable 'figurefirst_user_parameters' to point to the new file.
 # It will be loaded instead.
 import os
 try:
@@ -18,7 +18,7 @@ except:
     figurefirst_user_parameters = 'default'
 
 if figurefirst_user_parameters == 'default':
-    import figurefirst_user_parameters
+    from . import figurefirst_user_parameters
 else:
     import imp
     figurefirst_user_parameters = imp.load_source('figurefirst_user_parameters', figurefirst_user_parameters)
@@ -45,7 +45,9 @@ def upar(unit_st):
     """Parse unit_st into num (float), unit (string) pair"""
     unit_st = str(unit_st)
     try:
-        ind = map(str.isalpha, unit_st).index(True)
+        #Python 3 mod
+        ind = list(map(str.isalpha, unit_st)).index(True)
+
         num, unit = float(unit_st[:ind]), unit_st[ind:]
     except ValueError:
         num = float(unit_st)
@@ -90,15 +92,15 @@ def flatten_list(container):
         else:
             yield i
     #from hexparrot @ http://stackoverflow.com/questions/10823877/
-    #what-is-the-fastest-way-to-flatten-arbitrarily-nested-lists-in-python 
+    #what-is-the-fastest-way-to-flatten-arbitrarily-nested-lists-in-python
 
 def flatten_dict(d):
     """unrap a nested dict, d, returns a new dictionary with that have tuples
     as keys that specify the path through the original dictionary tree to the
-    leaf. e.g. {'l1key': {'l2key1':item1,'l2key2':item2}} will become 
+    leaf. e.g. {'l1key': {'l2key1':item1,'l2key2':item2}} will become
     {('l1key','l2key1'):item1,('l1key','l2key2'):item2}"""
     import copy
-    keylist = [] 
+    keylist = []
     def traverse(kl,d):
         if len(d) == 0:
             yield {tuple(kl):d}
@@ -113,13 +115,13 @@ def flatten_dict(d):
     return flat_dict
 
 def extractTreeByType(node, searchType):
-    """walk a nested dictionary and pop the items of a 
+    """walk a nested dictionary and pop the items of a
     certain type from the dictionary"""
     temp = dict()
     for key, value in node.items():
         if isinstance(value,searchType):
             temp.update({key:value})
-        elif isinstance(value,dict): 
+        elif isinstance(value,dict):
             rval = extractTreeByType(value,searchType)
             if len(rval.keys()) > 0:
                 temp.update({key:rval})
@@ -137,7 +139,7 @@ def parse_transform(transform_str):
     #print transform_str
     import re
     # regex for extracting numbers from transform string
-    scanfloat =  r"[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?" 
+    scanfloat =  r"[+\-]?(?:0|[1-9]\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?"
     tr = None;tr_pos = None
     mt = None;mt_pos = None
     sc = None;sc_pos = None
@@ -152,9 +154,9 @@ def parse_transform(transform_str):
             ty = txy[0]
         tr = np.array([[1.,0,float(tx)],
                        [0,1.,float(ty)],
-                       [0,0,1.        ]])        
+                       [0,0,1.        ]])
         tr_pos = transform_str.find('translate')
-    ##################    
+    ##################
     if 'scale' in transform_str:
         translate_str = re.findall(r'scale\(.*?\)',transform_str)[0]
         sx,sy = re.findall(scanfloat,translate_str)
@@ -179,10 +181,10 @@ def parse_transform(transform_str):
     from functools import reduce
     if len(trnsfrms) > 1:
         mtrx = reduce(lambda x,y:dot(x,y.T),trnsfrms)
-    return mtrx 
+    return mtrx
 
 def get_transforms(node,tlist = []):
-    """get the list of transforms applied to a given node, walking up the svg 
+    """get the list of transforms applied to a given node, walking up the svg
     tree to fill tlist. Pass an empyt list to call"""
     if node.hasAttribute('transform'):
         #print node.toxml()
@@ -205,9 +207,9 @@ class FFItem(dict,object):
             self.transform_str = self.node.getAttribute('transform')
         else:
             self.transform_str = None
-        
+
 class FFSVGItem(FFItem,object):
-    """base class for svg objects that figurefirst will manipulate in 
+    """base class for svg objects that figurefirst will manipulate in
     the native svg form eg. text and paths. These objects can be used
     to change the style of tagged graphics in the document"""
     def __init__(self,tagnode):
@@ -225,7 +227,7 @@ class FFSVGItem(FFItem,object):
         self.p1 = np.array([x,y,1])
         self.p2 = np.array([x+w,h+y,1])
         self.load_style()
-    
+
     def __getattr__(self,attr):
         if attr == 'x':
             return self.p1[0]
@@ -250,7 +252,7 @@ class FFSVGItem(FFItem,object):
         return ';'.join(['%s:%s'%(k,v) for k,v in self.style.items()])
 
 class FFSVGPath(FFSVGItem,object):
-    """ represents a svg path, currently figurefirst is unable to change the dimensions of the 
+    """ represents a svg path, currently figurefirst is unable to change the dimensions of the
     path, and the x, y, w, h attributes are meaningless placeholders"""
     def __init__(self,tagnode):
         super(FFSVGItem,self).__init__(tagnode)
@@ -258,7 +260,7 @@ class FFSVGPath(FFSVGItem,object):
         self.load_style()
         self.p1 = np.array([0,0,1])
         self.p2 = np.array([0,0,1])
-    
+
     def __getattr__(self,attr):
         if attr == 'x':
             return self.p1[0]
@@ -307,7 +309,7 @@ class FFSVGText(FFSVGItem,object):
         style_list =  self.loaded_attr['style'].split(';')
         style_list = [x for x in style_list if len(x)>0]
         [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in style_list]
-    
+
     def load_text(self):
         self.text = self.node.getElementsByTagName('tspan')[0].childNodes[0].data
 
@@ -327,14 +329,14 @@ class FFSVGGroup(FFItem,object):
     """ used to collect groups of svg items"""
     def __init__(self,tagnode,**kwargs):
         super(FFSVGGroup,self).__init__(tagnode,**kwargs)
-        
+
     def __getattr__(self,attr):
         try:
             pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
                               for i in self.values()])
         except ValueError:
             raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
-        
+
         x = np.min(pnts[:,0])
         y = np.min(pnts[:,1])
         w = np.max(pnts[:,0])-x
@@ -350,14 +352,14 @@ class FFGroup(FFItem,object):
     enclosed objects"""
     def __init__(self,tagnode,**kwargs):
         super(FFGroup,self).__init__(tagnode,**kwargs)
-        
+
     def __getattr__(self,attr):
         #try:
         pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
                               for i in self.values()])
         #except ValueError:
         #    raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
-        
+
         x = np.min(pnts[:,0])
         y = np.min(pnts[:,1])
         w = np.max(pnts[:,0])-x
@@ -373,7 +375,7 @@ class FFFigure(FFGroup,object):
         if not(tagnode == None):
             super(FFFigure,self).__init__(tagnode,**kwargs)
         self.ismplfigure = False
-    
+
     def __getattr__(self,attr):
         try:
             val = super(FFFigure,self).__getattr__(attr)
@@ -384,7 +386,7 @@ class FFFigure(FFGroup,object):
                 #return self['figure'].__getattribute__(attr)
             else:
                 return self.__getattribute__(attr)
-        
+
 class FFTemplateTarget(FFFigure,object):
     """represtents the target of a template. The all the axes within the template
      figure will be scaled to fit within the template target box"""
@@ -398,7 +400,7 @@ class FFTemplateTarget(FFFigure,object):
         self.p1 = np.array([x,y,1])
         self.p2 = np.array([x+w,h+y,1])
 
-        
+
     def __getattr__(self,attr):
         if attr == 'x':
             return self.p1[0]
@@ -417,7 +419,7 @@ class FFTemplateTarget(FFFigure,object):
                     return self['figure'].__getattribute__(attr)
                 else:
                     return self.__getattribute__(attr)
-    
+
 class FFAxis(FFItem):
     """ Stores the data requred for the creation of a matplotlib axes
     as specified by the layout """
@@ -444,7 +446,7 @@ class FFAxis(FFItem):
                 return self['axis'].__getattribute__(attr)
             else:
                 return self.__getattribute__(attr)
-                
+
 class PathSpec(dict):
     def __init__(self,*args,**kwargs):
         for arg in args:
@@ -462,15 +464,15 @@ class PathSpec(dict):
                 if type(arg) == FigureLayout:
                     self.layout = arg
         super(PathSpec, self).__init__(**kwargs)
-        
+
     def load(self,ptag):
         pnode = ptag.parentNode
         [self.update({k:v}) for k,v in pnode.attributes.items()]
         self.style = dict()
         [self.style.update({x.split(':')[0]:x.split(':')[1]}) for x in self['style'].split(';')]
-    
+
 class LineSpec(PathSpec):
-    
+
     def mplkwargs(self):
         mpl_map = {'stroke':'color','stroke-opacity':'alpha','stroke-width':'lw'}
         mpl_kwargs = {}
@@ -488,9 +490,9 @@ class LineSpec(PathSpec):
             if k == 'alpha':
                 mpl_kwargs['alpha'] = float(v)
         return mpl_kwargs
-    
+
 class PatchSpec(PathSpec):
-    
+
     def mplkwargs(self):
         mpl_map = {'stroke':'edgecolor','stroke-width':'lw','fill':'facecolor'}
         mpl_kwargs = {}
@@ -512,7 +514,7 @@ class PatchSpec(PathSpec):
             if k == 'facecolor':
                 mpl_kwargs['facecolor'] = np.array(converter.to_rgba(v,float(self.style['fill-opacity'])))
         return mpl_kwargs
-        
+
 
 class FigureLayout(object):
 
@@ -521,7 +523,7 @@ class FigureLayout(object):
         autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure, default: True
         make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init
         dpi - default 300, which is desired for print figures
-        
+
         construct an object that specifies the figure layout fom the
         svg file layout_filename. Currently there are a number of restrictions
         on the format of this file.
@@ -568,7 +570,7 @@ class FigureLayout(object):
         self.layout_user_sx = self.layout_uw/self.layout_width[0], self.layout_width[1]
         self.layout_user_sy = self.layout_uh/self.layout_height[0], self.layout_height[1]
         self.output_xml = minidom.parse(self.layout_filename).cloneNode(True)
-        
+
         figuretree,grouptree,leafs,svgitemtree = self.make_group_tree()
         self.axes = leafs
         self.figures = figuretree
@@ -659,7 +661,7 @@ class FigureLayout(object):
                 if child.hasChildNodes():
                     traverse_axes(child,tree_loc)
 
-        
+
         def traverse_svgitems(node,svgtree):
             gname = None
             axname = None
@@ -681,7 +683,7 @@ class FigureLayout(object):
             for child in node.childNodes:
                 if child.hasChildNodes():
                     traverse_svgitems(child,tree_loc)
-                    
+
         ### Create the group tree
         grouptree = dict()
         traverse_axes(self.layout,grouptree)
@@ -703,8 +705,8 @@ class FigureLayout(object):
                 figuretree[val.name] = val
             else:
                 figuretree['none'][val.name] = val
-        
-        ### Compose the transforms 
+
+        ### Compose the transforms
         from numpy import dot
         from functools import reduce
         for leafname,leaf in leafs.items():
@@ -726,8 +728,8 @@ class FigureLayout(object):
             tp1 = np.min(sp,axis = 0);tp2 = np.max(sp,axis = 0)
             leaf.p1 = tp1;leaf.p2 = tp2
             ### need to add error condition for points that are outside the figure bounds
-        
-        ### Populate the template targets        
+
+        ### Populate the template targets
         for key,l in leafs.items():
             if type(l) == FFTemplateTarget:
                 import copy
@@ -740,7 +742,7 @@ class FigureLayout(object):
                     item.tagnode = 'None'
                 newv = copy.deepcopy(figuretree[l.template_source])
                 #except RuntimeError:
-                
+
                 vleafs = flatten_dict(newv)
                 origin = np.array([newv.x,newv.y,1])
                 sx = l.w/newv.w; sy = l.h/newv.h
@@ -782,15 +784,15 @@ class FigureLayout(object):
         elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'pathspec')
         speclist = [PathSpec(el,self) for el in elementlist]
         [self.pathspecs.update({sp.name:sp}) for sp in speclist]
-        
+
         elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'linespec')
         speclist = [LineSpec(el,self) for el in elementlist]
         [self.pathspecs.update({sp.name:sp}) for sp in speclist]
-        
+
         elementlist = self.layout.getElementsByTagNameNS(XMLNS, 'patchspec')
         speclist = [PatchSpec(el,self) for el in elementlist]
         [self.pathspecs.update({sp.name:sp}) for sp in speclist]
-        
+
     def get_outputfile_layers(self):
         """returns dictionary of layers in teh output file"""
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
@@ -802,7 +804,7 @@ class FigureLayout(object):
         return layerdict
 
     def set_layer_visibility(self,inkscape_label = 'Layer 1',vis = True,gid = None,):
-        """appled to the output svg usefull to hide the design layers on the 
+        """appled to the output svg usefull to hide the design layers on the
         newly created figures"""
         import re
         value = {False:'none',True:'inline'}[vis]
@@ -817,33 +819,33 @@ class FigureLayout(object):
                     style_str = l.attributes['style'].value
                 repl_str = re.sub(r'display:(none|inline)','display:%s'%(value),style_str)
                 l.setAttribute('style',repl_str)
-                    
+
     def create_new_targetlayer(self, layer_name):
         new_layer = self.output_xml.createElement('g')
         new_targetlayer = self.output_xml.createElementNS(XMLNS, 'figurefirst:targetlayer')
-        
+
         # check to make sure there is not already a layer with that name / id
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
         layers = get_elements_by_attr(output_svg,"inkscape:groupmode",'layer')
         for layer in layers:
             if layer_name == layer.getAttribute('id') or layer_name == layer.getAttribute('inkscape:label'):
                 raise ValueError( 'Layer with that name already exists!' )
-        
+
         # set default attributes
-        attributes = {u'style': u'display:inline;stroke-linecap:butt;stroke-linejoin:round', 
-                      u'inkscape:label': layer_name, 
-                      u'id': layer_name, 
+        attributes = {u'style': u'display:inline;stroke-linecap:butt;stroke-linejoin:round',
+                      u'inkscape:label': layer_name,
+                      u'id': layer_name,
                       u'inkscape:groupmode': 'layer',
                       }
         for attribute, value in attributes.items():
             new_layer.setAttribute(attribute, value)
-        
+
         ff_targetlayer_name = layer_name
         new_targetlayer.setAttributeNS(XMLNS, 'figurefirst:name', ff_targetlayer_name)
-        
+
         new_layer.appendChild(new_targetlayer)
         output_svg.appendChild(new_layer)
-        
+
     def get_figure_element_by_name(self, name):
         """finds the xmlnode with a given figurefirst:name tag"""
         figure_elements = self.layout.getElementsByTagNameNS(XMLNS, 'figure')
@@ -852,7 +854,7 @@ class FigureLayout(object):
             figname = figure_element.getAttribute('figurefirst:name')
             figure_elements_by_name_dict[figname] = figure_element
         return figure_elements_by_name_dict[name]
-        
+
     def make_mplfigures(self):
         """generates  matplotlib figures from the tree of parsed FFFigure and FFGroup,
         FFTemplatetargets"""
@@ -878,27 +880,27 @@ class FigureLayout(object):
                         pass
                         #print type(leaf)
 
-    def append_figure_to_layer(self, fig, fflayername, 
-                               cleartarget=figurefirst_user_parameters.cleartarget, 
-                               save_traceback=figurefirst_user_parameters.save_traceback, 
+    def append_figure_to_layer(self, fig, fflayername,
+                               cleartarget=figurefirst_user_parameters.cleartarget,
+                               save_traceback=figurefirst_user_parameters.save_traceback,
                                notes=None):
         """inserts a figure object, fig, into an inkscape SVG layer, the layer fflayername should be
         taged with a figurefirst:targetlayer tag. if fflayername is not found then a targetlayer is generated so
         long as self.autogenlayers is set to True, the default. If cleartarget is set to True then the contents of the
         target layer will be removed, usefull for itterative figure design.
 
-        save_traceback - save the traceback stack to the figure's xml. This makes it easy to find out what function was 
+        save_traceback - save the traceback stack to the figure's xml. This makes it easy to find out what function was
                          used to generate the figure. Also saves date modified
 
-        notes - string, which is added as an attribute to the xml of the layer. Helpful if you want to embed info into the 
+        notes - string, which is added as an attribute to the xml of the layer. Helpful if you want to embed info into the
                 layers for future reference.
 
         """
-        
+
 
         svg_string = self.to_svg_buffer(fig)
         mpldoc = minidom.parse(svg_string)
-        
+
         def get_target_layer(fflayername):
             target_layers = self.output_xml.getElementsByTagNameNS(XMLNS, 'targetlayer')
             found_target = False
@@ -908,24 +910,24 @@ class FigureLayout(object):
                     found_target = True
                     return target_layer, found_target
             return None, found_target
-        
+
         target_layer, found_target = get_target_layer(fflayername)
         if not(found_target):
             if self.autogenlayers:
                 self.create_new_targetlayer(fflayername)
-                #print('Created new layer: %s'%(fflayername)) 
+                #print('Created new layer: %s'%(fflayername))
                 target_layer, found_target = get_target_layer(fflayername)
             else:
                 target_layer = target_layers[0]
                 #print('targetlayer %s not found inserting into %s'%(fflayername,target_layer.getAttribute('figurefirst:name')))
                 target_layer = target_layer.parentNode
-        
+
         if cleartarget:
             try:
                 self.clear_fflayer(fflayername)
             except:
                 print('could not clear target, probably because desired target not found, try specifying fflayername, or use autogenlayers=True')
-                
+
         mpl_svg = mpldoc.getElementsByTagName('svg')[0]
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
         mpl_viewbox = mpl_svg.getAttribute('viewBox').split()
@@ -993,9 +995,9 @@ class FigureLayout(object):
     def apply_svg_attrs(self, svg_items_to_update='all'):
         """applies attributes to svgitems eg. lw stroke ect... need to call
         this function before saving in order to propegate changes to svgitems
-        
-        svg_items_to_update - (optional) - provide a list of the svgitem tags that you wish to have updated. Default is 'all', which updates all the svgitems, 
-                                           which could reset svgitems whose attributes were not set since the last call to 'None'. 
+
+        svg_items_to_update - (optional) - provide a list of the svgitem tags that you wish to have updated. Default is 'all', which updates all the svgitems,
+                                           which could reset svgitems whose attributes were not set since the last call to 'None'.
         """
         leafs = flatten_dict(self.svgitems)
         output_svg = self.output_xml.getElementsByTagName('svg')[0]
@@ -1053,7 +1055,7 @@ class FigureLayout(object):
             outfile = open(output_filename, 'w')
             outfile.write(self.output_xml.toxml().encode('ascii', 'xmlcharrefreplace'))
             outfile.close()
-            
+
     def save(self,filename,hidelayers = [],targetlayer = None,fix_meterlimt= True):
         """convenience function, inserts layers and then calls
         wirte_svg to save"""
