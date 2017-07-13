@@ -13,7 +13,7 @@ import time
 import os
 try:
     figurefirst_user_parameters = os.environ['figurefirst_user_parameters']
-    print 'Using FigureFirst parameters loaded from: ', figurefirst_user_parameters
+    print('Using FigureFirst parameters loaded from: '+ figurefirst_user_parameters)
 except:
     figurefirst_user_parameters = 'default'
 
@@ -943,7 +943,7 @@ class FigureLayout(object):
                             gr.setAttribute('id', fig.get_gid())
         ax_ids = [ax.get_gid() for ax in fig.get_axes() if ax.get_gid() is not None]
         if len(ax_ids) > 0:
-            print 'unable to pass axes gid to svg'
+            print('unable to pass axes gid to svg')
 
         if save_traceback:
             tb = traceback.extract_stack()
@@ -973,7 +973,7 @@ class FigureLayout(object):
             if fig.ismplfigure:
                 self.append_figure_to_layer(fig, fflayername)
             else:
-                print fig.__dict__
+                print(fig.__dict__)
 
     def apply_mpl_methods(self):
         """ apply valid mpl methods to figure"""
@@ -988,7 +988,7 @@ class FigureLayout(object):
                             #print "ax."+potential_method+"("+value+")"
                             #getattr(ax, potential_method)(eval(value))
                     except AttributeError:
-                        print potential_method, 'is unknown method for mpl axes'
+                        print(potential_method, 'is unknown method for mpl axes')
 
     def apply_svg_attrs(self, svg_items_to_update='all'):
         """applies attributes to svgitems eg. lw stroke ect... need to call
@@ -1028,9 +1028,9 @@ class FigureLayout(object):
                     if gr.getAttribute('id') == gid:
                         elist.append(gr)
         if len(elist) > 1:
-            print len(elist), 'groups with mataching ID found'
+            print(len(elist), 'groups with mataching ID found')
         elif len(elist) == 0:
-            print 'ID not found'
+            print('ID not found')
         for el in elist:
             el.setAttribute(key, value)
 
@@ -1093,7 +1093,7 @@ class FigureLayout(object):
                 for child in children:
                     if 1:
                         if child.nodeName != 'figurefirst:targetlayer':
-                            print 'Removing node: ', child.nodeName
+                            print('Removing node: '+ child.nodeName)
                             target_layer.removeChild(child)
                             removed_children += 1
                         else:

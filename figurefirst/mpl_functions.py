@@ -11,7 +11,7 @@ import os
 # It will be loaded instead.
 try:
     figurefirst_user_parameters = os.environ['figurefirst_user_parameters']
-    print 'Using FigureFirst parameters loaded from: ', figurefirst_user_parameters
+    print('Using FigureFirst parameters loaded from: '+ figurefirst_user_parameters)
 except:
     figurefirst_user_parameters = 'default'
 
