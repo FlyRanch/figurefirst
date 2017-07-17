@@ -54,6 +54,12 @@ def upar(unit_st):
         unit = 'u'
     return num, unit
 
+def repar(val, unit):
+    """reparse a value and unit into a string for writing into an svg"""
+    if unit not in SCALE_FACTORS.keys():
+        raise ValueError("Unit not recognized, use px, in, mm, or cm")
+    return str(val) + unit
+
 def tounit(in_unit, dst_unit):
     """returns a float with the value of string s
     in the units of dst"""
@@ -571,12 +577,17 @@ class FigureLayout(object):
         self.layout_user_sy = self.layout_uh/self.layout_height[0], self.layout_height[1]
         self.output_xml = minidom.parse(self.layout_filename).cloneNode(True)
 
-        figuretree,grouptree,leafs,svgitemtree = self.make_group_tree()
-        self.axes = leafs
-        self.figures = figuretree
-        self.axes_groups = grouptree
-        self.svgitems = svgitemtree
-        self.load_pathspecs()
+        try:
+            figuretree,grouptree,leafs,svgitemtree = self.make_group_tree()
+            self.axes = leafs
+            self.figures = figuretree
+            self.axes_groups = grouptree
+            self.svgitems = svgitemtree
+            self.load_pathspecs()
+        except AttributeError:
+            pass #print('Warning: No rectangles in Document!')
+        except KeyError:
+            print('Warning: key error - probably loading a layout with missing links, like missing figurefirst:template targets.')
         #self.load_svgitems()
 
         # dont allow sx and sy to differ
