@@ -1,5 +1,5 @@
 from xml.dom import minidom
-from svg_to_axes import FigureLayout, repar, tounit, XMLNS, get_elements_by_attr
+from . svg_to_axes import FigureLayout, repar, tounit, XMLNS, get_elements_by_attr
 import copy
 
 import matplotlib.pyplot as plt
@@ -102,7 +102,7 @@ def mpl_fig_to_figurefirst_svg(mpl_fig, output_filename, design_layer_name='mpl_
 
 
     for i, ax in enumerate(mpl_fig.axes):
-	   create_rect_for_ax(layout, group, ax, 'ax'+str(i))
+        create_rect_for_ax(layout, group, ax, 'ax'+str(i))
 
     layout.write_svg(output_filename)
 
