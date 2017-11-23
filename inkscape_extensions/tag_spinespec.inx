@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>tagspinespec</_name>
+  <id>org.ekips.filter.tagspinespec</id>
+  <dependency type="executable" location="extensions">tag_spinespec.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <param name="spinespec" type="string" _gui-text="Add a comma separated list of spine locations: top,bottom,right or left">axis_name</param>
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+       <submenu _name="FigureFirst"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">tag_spinespec.py</command>
+  </script>
+</inkscape-extension>
