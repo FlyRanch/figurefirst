@@ -588,6 +588,12 @@ class FigureLayout(object):
             pass #print('Warning: No rectangles in Document!')
         except KeyError:
             print('Warning: key error - probably loading a layout with missing links, like missing figurefirst:template targets.')
+        #add the spinespecs
+        for ax in self.axes.values():
+            for node in ax.node.childNodes:
+                if node.nodeType == 1:
+                    if node.tagName == 'figurefirst:spinespec':
+                        ax.spinespec = node.getAttribute('figurefirst:spinelist')
         #self.load_svgitems()
 
         # dont allow sx and sy to differ
@@ -890,6 +896,7 @@ class FigureLayout(object):
                     else:
                         pass
                         #print type(leaf)
+        
 
     def append_figure_to_layer(self, fig, fflayername,
                                cleartarget=figurefirst_user_parameters.cleartarget,
