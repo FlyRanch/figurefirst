@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="8.2677164in"
+   height="5in"
+   viewBox="0 0 744.09449 450.00001"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="spine_spec_layout.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.79974187"
+     inkscape:cx="311.77659"
+     inkscape:cy="343.34996"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="943"
+     inkscape:window-x="-3"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     units="in" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-602.36217)">
+    <g
+       id="g4164"
+       transform="matrix(1.7918891,0,0,0.46582231,-19.488108,585.03941)">
+      <rect
+         y="130.96411"
+         x="51.392723"
+         height="304.68542"
+         width="139.49454"
+         id="rect4136"
+         style="opacity:1;fill:#cccccc;fill-opacity:0.26666667;stroke:none;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:axis
+           figurefirst:name="ax1" />
+        <figurefirst:spinespec
+           figurefirst:spinelist="top, right" />
+      </rect>
+      <rect
+         y="520.08044"
+         x="57.816818"
+         height="187.21635"
+         width="126.64635"
+         id="rect4138"
+         style="opacity:1;fill:#cccccc;fill-opacity:0.26666667;stroke:none;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:axis
+           figurefirst:name="ax2" />
+        <figurefirst:spinespec
+           figurefirst:spinelist="left, bottom" />
+      </rect>
+      <figurefirst:figure
+         figurefirst:name="g1" />
+    </g>
+    <g
+       id="g4225"
+       transform="matrix(1.7918891,0,0,0.46582231,-16.458218,582.00952)">
+      <rect
+         y="130.96411"
+         x="244.77362"
+         height="304.68542"
+         width="139.49454"
+         id="rect4136-4"
+         style="opacity:1;fill:#cccccc;fill-opacity:0.26666667;stroke:none;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:axis
+           figurefirst:name="ax1" />
+        <figurefirst:spinespec
+           figurefirst:spinelist="left,bottom" />
+        <figurefirst:mplmethods
+           figurefirst:set_ybound="0,6.28" />
+      </rect>
+      <rect
+         y="520.08044"
+         x="251.19771"
+         height="187.21635"
+         width="126.64635"
+         id="rect4138-5"
+         style="opacity:1;fill:#cccccc;fill-opacity:0.26666667;stroke:none;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:axis
+           figurefirst:name="ax2" />
+        <figurefirst:spinespec
+           figurefirst:spinelist="left" />
+      </rect>
+      <rect
+         y="760.52496"
+         x="251.19771"
+         height="187.21635"
+         width="126.64635"
+         id="rect4138-5-0"
+         style="opacity:1;fill:#cccccc;fill-opacity:0.26666667;stroke:none;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">
+        <figurefirst:axis
+           figurefirst:name="ax3" />
+        <figurefirst:spinespec
+           figurefirst:spinelist="left , bottom" />
+      </rect>
+      <figurefirst:figure
+         figurefirst:name="g3" />
+    </g>
+  </g>
+</svg>

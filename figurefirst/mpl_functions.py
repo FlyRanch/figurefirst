@@ -116,7 +116,7 @@ def kill_all_labels(layout):
 def set_spines(layout):
     for ax in layout.axes.values():
         if 'spinespec' in ax.__dict__:
-            adjust_spines(ax,ax.spinespec.split(','))
+            adjust_spines(ax,[sp.strip() for sp in ax.spinespec.split(',')])
 
 def set_fontsize(fig,fontsize):
     """
