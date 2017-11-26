@@ -1,7 +1,7 @@
 from pylab import *
 from figurefirst import FigureLayout,mpl_functions
 
-print 'running multi figure example'
+print('running multi figure example')
 #Groups and figures example
 layout = FigureLayout('example_multi_fig_layout.svg')
 mplfig = layout.make_mplfigures()

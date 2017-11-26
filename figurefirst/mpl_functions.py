@@ -3,6 +3,9 @@ import matplotlib
 import tempfile
 import shutil
 import os
+import sys
+
+
 
 # Load some user parameters / defaults
 # By default figurefirst will load the figurefirst_user_parameters.py file from the figurefirst/figurefirst directory.
@@ -44,13 +47,14 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
             spine_locations_dict[key] = spine_location_offset
 
     if 'none' in spines:
-        for loc, spine in ax.spines.iteritems():
+        #for loc, spine in ax.spines.iteritems():
+        for loc, spine in ax.spines.items():
             spine.set_color('none') # don't draw spine
         ax.yaxis.set_ticks([])
         ax.xaxis.set_ticks([])
         return
 
-    for loc, spine in ax.spines.iteritems():
+    for loc, spine in ax.spines.items():
         if loc in spines:
             spine.set_position(('outward',spine_locations_dict[loc])) # outward by x points
             spine.set_linewidth(linewidth)

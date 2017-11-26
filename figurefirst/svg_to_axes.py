@@ -4,6 +4,11 @@ import numpy as np
 from warnings import warn
 import traceback
 import time
+import sys
+if (sys.version_info > (3, 0)):
+    PY3 = True
+else:
+    PY3 = False
 
 # Load some user parameters / defaults
 # By default figurefirst will load the figurefirst_user_parameters.py file from the figurefirst/figurefirst directory.
@@ -180,12 +185,17 @@ def parse_transform(transform_str):
                        [0,0,1.]])
         mt_pos = transform_str.find('matrix')
     ##################
-    trnsfrms = [mtrx for (pos,mtrx) in sorted(zip([tr_pos,mt_pos,sc_pos],
-                                              [tr,mt,sc]))]
+    tr_pos = {False:tr_pos,True:0}[tr_pos is None]
+    mt_pos = {False:mt_pos,True:0}[mt_pos is None]
+    sc_pos = {False:sc_pos,True:0}[sc_pos is None]
+    s = [tr_pos,mt_pos,sc_pos]
+    def take0(x):
+        return x[0]
+    trnsfrms = [mtrx for pos,mtrx in sorted(zip(s,[tr,mt,sc]),key =take0)]
     trnsfrms = [m for m in trnsfrms if not(m is None)]
     from numpy import dot
     from functools import reduce
-    if len(trnsfrms) > 1:
+    if len(trnsfrms) >= 1:
         mtrx = reduce(lambda x,y:dot(x,y.T),trnsfrms)
     return mtrx
 
@@ -209,6 +219,7 @@ class FFItem(dict,object):
         self.id = self.node.getAttribute('id')
         self.name = tagnode.getAttribute('figurefirst:name')
         self.ismplaxis = False
+        self.ismplfigure = False
         if self.node.hasAttribute('transform'):
             self.transform_str = self.node.getAttribute('transform')
         else:
@@ -361,19 +372,28 @@ class FFGroup(FFItem,object):
 
     def __getattr__(self,attr):
         #try:
-        pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
+        vals = [np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
+                              for i in self.values()]
+        #print(attr)
+        if len(vals)>0:
+            pnts = np.vstack([np.array([np.array([i.x,i.y]),np.array([i.x+i.w,i.y+i.h])])
                               for i in self.values()])
+            x = np.min(pnts[:,0])
+            y = np.min(pnts[:,1])
+            w = np.max(pnts[:,0])-x
+            h = np.max(pnts[:,1])-y
+            try:
+                return {'x':x,'y':y,'w':w,'h':h}[attr]
+            except KeyError:
+                #return self.__dict__[attr]
+                return super(FFGroup, self).__getattribute__(attr)
+                #return self.__getattribute__(attr)
+        else:
+            pnts = None
+            return self.__getattribute__(attr)
         #except ValueError:
         #    raise NameError('Could not find an axis for this figure. You probably have a figurefirst:figure tag with no axes associated with it.')
 
-        x = np.min(pnts[:,0])
-        y = np.min(pnts[:,1])
-        w = np.max(pnts[:,0])-x
-        h = np.max(pnts[:,1])-y
-        try:
-            return {'x':x,'y':y,'w':w,'h':h}[attr]
-        except KeyError:
-            return self.__getattribute__(attr)
 
 class FFFigure(FFGroup,object):
     """ Represents a matplotlib figure """
@@ -384,6 +404,8 @@ class FFFigure(FFGroup,object):
 
     def __getattr__(self,attr):
         try:
+            if attr is 'ismplfigure':
+                return False
             val = super(FFFigure,self).__getattr__(attr)
             return val
         except AttributeError:
@@ -448,6 +470,8 @@ class FFAxis(FFItem):
         if attr == 'h':
             return (self.p2-self.p1)[1]
         else:
+            if attr is 'ismplaxis':
+                return self.__getattribute__(attr)
             if self.ismplaxis:
                 return self['axis'].__getattribute__(attr)
             else:
@@ -1057,7 +1081,10 @@ class FigureLayout(object):
 
     def to_svg_buffer(self, fig):
         """writes a matplotlib figure into a stringbuffer and returns the buffer"""
-        from StringIO import StringIO
+        if PY3:
+            from io import StringIO
+        else:
+            from StringIO import StringIO
         fid = StringIO()
         #if fig.ismplfigure:
         fig.figure.savefig(fid, format='svg', transparent=True, dpi=self.dpi)
@@ -1085,7 +1112,7 @@ class FigureLayout(object):
         for l in hidelayers:
             self.set_layer_visibility(l,False)
         self.write_svg(filename)
-        import mpl_functions
+        from . import mpl_functions
         if fix_meterlimt:
             mpl_functions.fix_mpl_svg(filename)
 
