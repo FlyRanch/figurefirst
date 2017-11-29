@@ -628,7 +628,9 @@ class FigureLayout(object):
         # for now
         #assert self.layout_user_sx == self.layout_user_sy
         if np.abs(self.layout_user_sx[0] - self.layout_user_sy[0]) > figurefirst_user_parameters.rounding_tolerance:
-            warnings.warn('The scaling defined by the scaling of the user units in x and y are different. Results may be unexpected')
+            warnings.warn("""The the scaling of the user units in x and y are different and may result in unexpected 
+                            behavior. Make sure that the aspect ratio defined by the viewbox attribute of the root 
+                            SVG node is the same as that given by the document hight and width.""")
         if make_mplfigures:
             self.make_mplfigures()
 
