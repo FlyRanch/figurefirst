@@ -627,7 +627,8 @@ class FigureLayout(object):
         # it is probably best to assert that the a.r's are the same
         # for now
         #assert self.layout_user_sx == self.layout_user_sy
-        assert (np.abs(self.layout_user_sx[0] - self.layout_user_sy[0]) < figurefirst_user_parameters.rounding_tolerance) #  rounding errors are a bitch
+        if np.abs(self.layout_user_sx[0] - self.layout_user_sy[0]) > figurefirst_user_parameters.rounding_tolerance:
+            warnings.warn('The scaling defined by the scaling of the user units in x and y are different. Results may be unexpected')
         if make_mplfigures:
             self.make_mplfigures()
 
