@@ -306,6 +306,7 @@ class FFSVGText(FFSVGItem,object):
 
     def __init__(self,tagnode):
         super(FFSVGItem,self).__init__(tagnode)
+        #print 'here'
         x = float(self.node.getAttribute('x'))
         y = float(self.node.getAttribute('y'))
         self.p1 = np.array([x,y,1])
@@ -317,7 +318,7 @@ class FFSVGText(FFSVGItem,object):
         #self.p1 = np.array([x,y,1])
         #self.p2 = np.array([x+w,h+y,1])
         self.load_style()
-        #self.load_text()
+        self.load_text()
         self.node.getElementsByTagName('tspan')[0].childNodes[0]
 
     def load_style(self):
