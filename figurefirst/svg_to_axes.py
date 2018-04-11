@@ -1010,13 +1010,14 @@ class FigureLayout(object):
         s = 'Failed to find layer: ' + layer_name
         raise ValueError(s)
 
-    def insert_figures(self, fflayername='mpl_layer'):
+    def insert_figures(self, fflayername='mpl_layer',
+                       cleartarget=figurefirst_user_parameters.cleartarget):
         """ takes a reference to the matplotlib figure and saves the
         svg data into the target layer specified with the xml tag <figurefirst:targetlayer>
         this tag must have the attribute figurefirst:name = fflayername"""
         for fig in self.figures.values():
             if fig.ismplfigure:
-                self.append_figure_to_layer(fig, fflayername)
+                self.append_figure_to_layer(fig, fflayername, cleartarget=cleartarget)
             else:
                 print(fig.__dict__)
 
