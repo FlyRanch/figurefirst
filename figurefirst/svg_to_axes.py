@@ -902,7 +902,7 @@ class FigureLayout(object):
             figure_elements_by_name_dict[figname] = figure_element
         return figure_elements_by_name_dict[name]
 
-    def make_mplfigures(self):
+    def make_mplfigures(self, hide=False):
         """generates  matplotlib figures from the tree of parsed FFFigure and FFGroup,
         FFTemplatetargets"""
         for figname,figgroup in self.figures.items():
@@ -926,6 +926,8 @@ class FigureLayout(object):
                     else:
                         pass
                         #print type(leaf)
+            if hide:
+                plt.close()
         
 
     def append_figure_to_layer(self, fig, fflayername,
