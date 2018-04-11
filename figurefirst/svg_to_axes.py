@@ -1147,7 +1147,7 @@ class FigureLayout(object):
                 for child in children:
                     if 1:
                         if child.nodeName != 'figurefirst:targetlayer':
-                            print('Removing node: '+ child.nodeName)
+                            # print('Removing node: '+ child.nodeName)
                             target_layer.removeChild(child)
                             removed_children += 1
                         else:
