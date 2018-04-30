@@ -39,12 +39,12 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
         xticks = ax.get_xticks()
     if yticks is None:
         yticks = ax.get_yticks()
-
-    spine_locations_dict = figurefirst_user_parameters.spine_locations
-    for key in spine_locations.keys():
-        spine_locations_dict[key] = spine_locations[key]
-        if spine_location_offset is not None:
-            spine_locations_dict[key] = spine_location_offset
+    if spine_locations is not None:
+        spine_locations_dict = figurefirst_user_parameters.spine_locations
+        for key in spine_locations.keys():
+            spine_locations_dict[key] = spine_locations[key]
+            if spine_location_offset is not None:
+                spine_locations_dict[key] = spine_location_offset
 
     if 'none' in spines:
         #for loc, spine in ax.spines.iteritems():
@@ -119,8 +119,21 @@ def kill_all_labels(layout):
 
 def set_spines(layout):
     for ax in layout.axes.values():
+        import numpy as np
         if 'spinespec' in ax.__dict__:
-            adjust_spines(ax,[sp.strip() for sp in ax.spinespec.split(',')])
+            spines = [sp.strip() for sp in ax.spinespec.split(',')]
+            kwargs = {}
+            for key,value in ax.spinespec_kwargs.items():
+                if key in ['linewidth','spine_location_offset']:
+                    try:
+                        value = np.float(value)
+                        kwargs[key] = value
+                        print kwargs
+                    except ValueError:
+                        pass
+                else:
+                    kwargs[key] = value
+            adjust_spines(ax,spines,**kwargs)
 
 def set_fontsize(fig,fontsize):
     """

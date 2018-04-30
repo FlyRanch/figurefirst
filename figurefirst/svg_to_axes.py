@@ -621,6 +621,13 @@ class FigureLayout(object):
                     if node.nodeType == 1:
                         if node.tagName == 'figurefirst:spinespec':
                             ax.spinespec = node.getAttribute('figurefirst:spinelist')
+                            ax.spinespec_kwargs = {}
+                            ax.spinespec_kwargs['linewidth'] = node.getAttribute('figurefirst:linewidth')
+                            ax.spinespec_kwargs['xticks'] = node.getAttribute('figurefirst:xticks')
+                            ax.spinespec_kwargs['yticks'] = node.getAttribute('figurefirst:yticks')
+                            ax.spinespec_kwargs['spine_locations'] = node.getAttribute('figurefirst:spine_locations')
+                            ax.spinespec_kwargs['spine_location_offset'] = node.getAttribute('figurefirst:spine_location_offset')
+
             #self.load_svgitems()
 
         # dont allow sx and sy to differ
