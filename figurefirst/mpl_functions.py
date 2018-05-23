@@ -30,15 +30,20 @@ else:
 
 # NOTE: smart_bounds is disabled (commented out) in this function. It only works in matplotlib v >1.
 # to fix this issue, try manually setting your tick marks (see example below)
-def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None, yticks=None, linewidth=1, spine_location_offset=None):
+def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None, yticks=None, linewidth=1, spine_location_offset=None, default_ticks=False):
+    '''
+    For loglog plots, use default_ticks
+
+    '''
     if type(spines) is not list:
         spines = [spines]
 
     # get ticks
-    if xticks is None:
-        xticks = ax.get_xticks()
-    if yticks is None:
-        yticks = ax.get_yticks()
+    if not default_ticks:
+        if xticks is None:
+            xticks = ax.get_xticks()
+        if yticks is None:
+            yticks = ax.get_yticks()
 
     spine_locations_dict = figurefirst_user_parameters.spine_locations
     for key in spine_locations.keys():
@@ -63,13 +68,14 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
             spine.set_color('none') # don't draw spine
 
     # smart bounds, if possible
-    if int(matplotlib.__version__[0]) > 0 and smart_bounds:
-        for loc, spine in ax.spines.items():
-            if loc in ['left', 'right']:
-                ticks = yticks
-            if loc in ['top', 'bottom']:
-                ticks = xticks
-            spine.set_bounds(ticks[0], ticks[-1])
+    if not default_ticks:
+        if int(matplotlib.__version__[0]) > 0 and smart_bounds:
+            for loc, spine in ax.spines.items():
+                if loc in ['left', 'right']:
+                    ticks = yticks
+                if loc in ['top', 'bottom']:
+                    ticks = xticks
+                spine.set_bounds(ticks[0], ticks[-1])
 
     # turn off ticks where there is no spine
     if 'left' in spines:
@@ -82,16 +88,17 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
 
     if 'bottom' in spines:
         ax.xaxis.set_ticks_position('bottom')
-    if 'top' in spines:
+    elif 'top' in spines:
         ax.xaxis.set_ticks_position('top')
     else:
         # no xaxis ticks
         ax.xaxis.set_ticks([])
 
-    if 'left' in spines or 'right' in spines:
-        ax.set_yticks(yticks)
-    if 'top' in spines or 'bottom' in spines:
-        ax.set_xticks(xticks)
+    if not default_ticks:
+        if 'left' in spines or 'right' in spines:
+            ax.set_yticks(yticks)
+        if 'top' in spines or 'bottom' in spines:
+            ax.set_xticks(xticks)
 
     for line in ax.get_xticklines() + ax.get_yticklines():
         #line.set_markersize(6)
