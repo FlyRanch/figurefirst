@@ -108,6 +108,11 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
         if 'top' in spines or 'bottom' in spines:
             ax.set_xticks(xticks)
 
+    if default_ticks and len(yticks) == 0:
+        ax.set_yticks([])
+    if default_ticks and len(xticks) == 0:
+        ax.set_xticks([])
+
     for line in ax.get_xticklines() + ax.get_yticklines():
         #line.set_markersize(6)
         line.set_markeredgewidth(linewidth)
