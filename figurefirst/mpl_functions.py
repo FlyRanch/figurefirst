@@ -32,7 +32,15 @@ else:
 # to fix this issue, try manually setting your tick marks (see example below)
 def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None, yticks=None, linewidth=1, spine_location_offset=None, default_ticks=False):
     '''
-    For loglog plots, use default_ticks
+    ax - matplotlib axis object
+    spines - list of spines to include, e.g. ['left', 'bottom']
+    spine_locations - dict of spine locations, e.g. {'left': 5, 'bottom': 5}. Defaults to user_parameters.
+    smart_bounds - if True, stop spine at first and last ticks
+    xticks - list of locations for the xticks, e.g. [0, 5, 10]
+    yticks - same as xticks, for y axis
+    linewidth - width of spine and tick marks
+    spine_location_offset - where to place spines. Overrides spine_locations if not None.
+    default_ticks - if True, skip smart bounds and tick placement. NEcessary for loglog plots to work properly. 
 
     '''
     if type(spines) is not list:
