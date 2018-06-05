@@ -108,9 +108,9 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
         if 'top' in spines or 'bottom' in spines:
             ax.set_xticks(xticks)
 
-    if default_ticks and len(yticks) == 0:
+    if default_ticks and 'left' not in spines and 'right' not in spines:
         ax.set_yticks([])
-    if default_ticks and len(xticks) == 0:
+    if default_ticks and 'top' not in spines and 'bottom' not in spines:
         ax.set_xticks([])
 
     for line in ax.get_xticklines() + ax.get_yticklines():
