@@ -30,7 +30,11 @@ else:
 
 # NOTE: smart_bounds is disabled (commented out) in this function. It only works in matplotlib v >1.
 # to fix this issue, try manually setting your tick marks (see example below)
-def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None, yticks=None, linewidth=1, spine_location_offset=None, default_ticks=False):
+def adjust_spines(ax, spines, spine_locations={}, 
+                  smart_bounds=True, xticks=None, yticks=None, 
+                  linewidth=1, spine_location_offset=None, default_ticks=False,
+                  tick_length=5,
+                  color='black'):
     '''
     ax - matplotlib axis object
     spines - list of spines to include, e.g. ['left', 'bottom']
@@ -117,6 +121,9 @@ def adjust_spines(ax,spines, spine_locations={}, smart_bounds=True, xticks=None,
         #line.set_markersize(6)
         line.set_markeredgewidth(linewidth)
 
+    ax.tick_params(length=tick_length, color=color)
+    for spine in spines:
+        ax.spines[spine].set_color(color)
 
 def kill_spines(ax):
     return adjust_spines(ax,'none',
@@ -145,14 +152,16 @@ def set_spines(layout):
 def set_fontsize(fig,fontsize):
     """
     For each text object of a figure fig, set the font size to fontsize
+    fig can also be an axis object
     """
+    if type(fig) != matplotlib.figure.Figure:
+        fig = fig.figure() # it's probably an axis, so grab the figure
+
     def match(artist):
         return artist.__module__ == "matplotlib.text"
 
     for textobj in fig.findobj(match=match):
         textobj.set_fontsize(fontsize)
-
-
 
 def fix_mpl_svg(file_path, pattern='miterlimit:100000;', subst='miterlimit:1;'):
     """used to fix problematic outputs from the matplotlib svg
