@@ -23,7 +23,10 @@ except:
     figurefirst_user_parameters = 'default'
 
 if figurefirst_user_parameters == 'default':
-    from . import figurefirst_user_parameters
+    try:
+        from . import figurefirst_user_parameters
+    except:
+        import figurefirst_user_parameters
 else:
     import imp
     figurefirst_user_parameters = imp.load_source('figurefirst_user_parameters', figurefirst_user_parameters)
@@ -1131,9 +1134,12 @@ class FigureLayout(object):
         except the figurefirst:targetlayer node.
         '''
         target_layers = self.output_xml.getElementsByTagNameNS(XMLNS, 'targetlayer')
+        target_layer = None
         for tl in target_layers:
             if tl.getAttribute('figurefirst:name') == fflayername:
                 target_layer = tl.parentNode
+        if target_layer is None:
+            return # no target found
         removed_children = 1
         while removed_children != 0: # this is not the prettiest way to do this, but it mostly works
             remove = True
