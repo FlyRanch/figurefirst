@@ -155,7 +155,7 @@ def set_fontsize(fig,fontsize):
     fig can also be an axis object
     """
     if type(fig) != matplotlib.figure.Figure:
-        fig = fig.figure() # it's probably an axis, so grab the figure
+        fig = fig.figure # it's probably an axis, so grab the figure
 
     def match(artist):
         return artist.__module__ == "matplotlib.text"
