@@ -260,6 +260,8 @@ def __write_action__(file, action):
     if len(action['args_description']) == 0:
         return
     else:
+        __write_label__(file, action['title'], 3)
+        __write_break__(file, int(len(action['title'])*1.25))
         for i, arg_title in enumerate(action['args_description']):
             __write_label__(file, arg_title, 4)
             __write_data__(file, action['args'][i])
