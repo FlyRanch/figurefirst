@@ -5,6 +5,8 @@ from warnings import warn
 import traceback
 import time
 import sys
+import copy
+
 if (sys.version_info > (3, 0)):
     PY3 = True
 else:
@@ -30,6 +32,13 @@ if figurefirst_user_parameters == 'default':
 else:
     import imp
     figurefirst_user_parameters = imp.load_source('figurefirst_user_parameters', figurefirst_user_parameters)
+
+try:
+    from . import regenerate
+    from . import mpl_functions
+except:
+    import regenerate
+    import mpl_functions
 
 XMLNS = "http://flyranch.github.io/figurefirst/"
 SCALE_FACTORS = {'px':{'in':72.,
@@ -464,6 +473,7 @@ class FFAxis(FFItem):
         w = float(self.node.getAttribute('width'))
         self.p1 = np.array([x,y,1])
         self.p2 = np.array([x+w,h+y,1])
+        self.record = False # if this is true, it will save all matplotlib calls to the datafile
 
     def __getattr__(self,attr):
         if attr == 'x':
@@ -478,7 +488,131 @@ class FFAxis(FFItem):
             if attr is 'ismplaxis':
                 return self.__getattribute__(attr)
             if self.ismplaxis:
-                return self['axis'].__getattribute__(attr)
+                data_filename = self.breadcrumb['data_filename']
+                layout_filename = self.breadcrumb['layout_filename']
+                layout_key = self.breadcrumb['layout_key']
+
+                # wrap custom functions as if they are matplotlib functions and save data to a pickle file
+                # pickles the function and saves it in the data file
+                # ONLY APPROPRIATE FOR SMALL SELF CONTAINED FUNCTIONS
+                # the custom function must follow syntax of (ax, *args, **kwargs), where ax is a matplotlib axis
+                # syntax: (1) _custom
+                #         (2) first argument is a list
+                #             - if not empty: first element is a unique title,  
+                #                             additional elements should describe the arguments (in order)  
+                #                             argument descriptions are not required
+                #             - if empty: title is set to function name. duplicate titles are deleted in the data file
+                #                         thus, for non-unique function calls, it is necessary to specify a title 
+                #         (3) second argument is either a function (which will be pickled) or a string of a full package.module.function path
+                # example: self._plot(['Unique Title', 'Time', 'Response'], 
+                #                     user_defined_function, *args, **kwargs)
+                if attr == '_custom':
+                    def custom_wrapper(*args, **kwargs):
+                        info = args[0]
+                        title = attr[1:]
+                        args_description = []
+                        if len(info) > 0:
+                            title = info[0]
+                            if len(info) > 1:
+                                args_description = info[1:]
+                        function = args[1]
+                        package = 'custom'
+                        regenerate.__save_fifidata__(data_filename, layout_key,
+                                                     package, function, 
+                                                     title, args_description, 
+                                                     *args[2:], **kwargs)
+                        f = regenerate.__load_custom_function__(package, function)
+                        f(self['axis'], *args[2:], **kwargs)
+                    return custom_wrapper
+
+                
+                # wrap matplotlib methods and figurefirst.mpl_functions and save data to a pickle file
+                # syntax: (1) call: prepend '_' to function call (eg. '_plot', '_set_xlim', '_adjust_spines')
+                #         (2) first argument is a list
+                #             - if not empty: first element is a unique title,  
+                #                             additional elements should describe the arguments (in order)  
+                #                             argument descriptions are not required
+                #             - if empty: title is set to function name. duplicate titles are deleted in the data file
+                #                         thus, for non-unique function calls, it is necessary to specify a title 
+                # example: self._plot(['Unique Title', 'Time', 'Response'], *args, **kwargs)
+                #
+                # notes: add_artist does not work, other functions like linecollections etc. might not work either?
+                elif attr[0] == '_':
+                    function = attr[1:]
+                    if function in mpl_functions.__dict__.keys():
+                        def figurefirst_wrapper(*args, **kwargs):
+                            info = args[0]
+                            title = attr[1:]
+                            args_description = []
+                            if len(info) > 0:
+                                title = info[0]
+                                if len(info) > 1:
+                                    args_description = info[1:]
+                            package = 'figurefirst'
+                            function = attr[1:]
+                            regenerate.__save_fifidata__(data_filename, layout_key,
+                                                         package, function, 
+                                                         title, args_description, 
+                                                         *args[1:], **kwargs)
+                            f = regenerate.__load_custom_function__(package, function)
+                            f(self['axis'], *args[1:], **kwargs)
+                        return figurefirst_wrapper
+                    else:
+                        def mpl_wrapper(*args, **kwargs):
+                            info = args[0]
+                            title = attr[1:]
+                            args_description = []
+                            if len(info) > 0:
+                                title = info[0]
+                                if len(info) > 1:
+                                    args_description = info[1:]
+                            package = 'matplotlib'
+                            function = attr[1:]
+                            if not regenerate.__is_mpl_call_saveable__(function):
+                                s = 'Function name: ' + function + ' cannot be saved. Try finding a replacement in figurefirst.mpl_functions, or define your own custom wrapper'
+                                raise ValueError(s)
+                            regenerate.__save_fifidata__(data_filename, layout_key,
+                                                         package, function, 
+                                                         title, args_description, 
+                                                         *args[1:], **kwargs)
+                            self['axis'].__getattribute__(attr[1:])(*args[1:], **kwargs) # This calls a matplotlib method
+                        return mpl_wrapper
+
+                
+
+                # regular matplotlib or figurefirst.mpl_functions call, will only be recorded if self.record = True
+                else:
+                    if not self.record:
+                        return self['axis'].__getattribute__(attr)
+                    else:
+                        if attr in mpl_functions.__dict__.keys():
+                            def wrapper(*args, **kwargs):
+                                title = attr
+                                args_description = []
+                                package = 'figurefirst'
+                                function = attr
+                                regenerate.__save_fifidata__(data_filename, layout_key,
+                                                             package, function, 
+                                                             title, args_description, 
+                                                             *args, **kwargs)
+                                f = regenerate.__load_custom_function__(package, function)
+                                f(self['axis'], *args, **kwargs)
+                        else:
+                            def wrapper(*args, **kwargs):
+                                title = attr
+                                package = 'matplotlib'
+                                function = attr
+                                args_description = []
+                                if not regenerate.__is_mpl_call_saveable__(function):
+                                    s = 'Function name: ' + function + ' cannot be saved. Try finding a replacement in figurefirst.mpl_functions, or define your own custom wrapper, or turn off record.'
+                                    raise ValueError(s)
+                                regenerate.__save_fifidata__(data_filename, layout_key,
+                                                             package, function, 
+                                                             title, args_description, 
+                                                             *args, **kwargs)
+                                self['axis'].__getattribute__(attr)(*args, **kwargs) # This calls a matplotlib method
+                        return wrapper
+
             else:
                 return self.__getattribute__(attr)
 
@@ -553,12 +687,12 @@ class PatchSpec(PathSpec):
 
 class FigureLayout(object):
 
-    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300):
+    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300, hide_layers=[]):
         """
         autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure, default: True
         make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init
         dpi - default 300, which is desired for print figures
-
+        hide_layers - list of inkscape layer names you want to set to invisible (e.g. your template layers)
         construct an object that specifies the figure layout fom the
         svg file layout_filename. Currently there are a number of restrictions
         on the format of this file.
@@ -638,6 +772,9 @@ class FigureLayout(object):
                             SVG node is the same as that given by the document hight and width.""")
         if make_mplfigures:
             self.make_mplfigures()
+
+        for layer in hide_layers:
+            self.set_layer_visibility(layer, False)
 
     def __getattr__(self, attr):
         if attr == 'fig':
@@ -932,6 +1069,7 @@ class FigureLayout(object):
             if hide:
                 plt.close()
         
+        self.make_breadcrumbs_for_axes()
 
     def append_figure_to_layer(self, fig, fflayername,
                                cleartarget=figurefirst_user_parameters.cleartarget,
@@ -1162,3 +1300,16 @@ class FigureLayout(object):
                             pass
                             # print 'Not removing: ', child.nodeName
 
+    def make_breadcrumbs_for_axes(self):
+        '''
+        Save layout.svg, data.svg, figure, axis information into each mpl axis
+        '''
+        self.data_filename = self.layout_filename.split('.svg')[0]+'_data.dillpickle'
+        breadcrumb = {'layout_key': None,
+                      'layout_filename': self.layout_filename,
+                      'data_filename': self.data_filename}
+        for key, axis in self.axes.items():
+            breadcrumb_copy = copy.deepcopy(breadcrumb)
+            key_copy = (k for k in key)
+            breadcrumb_copy['layout_key'] = tuple(key_copy)
+            axis.breadcrumb = breadcrumb_copy 
