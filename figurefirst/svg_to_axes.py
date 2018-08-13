@@ -492,10 +492,11 @@ class FFAxis(FFItem):
                 layout_filename = self.breadcrumb['layout_filename']
                 layout_key = self.breadcrumb['layout_key']
 
-                # wrap custom functions as if they are matplotlib functions and save data to a pickle file
-                # pickles the function and saves it in the data file
-                # ONLY APPROPRIATE FOR SMALL SELF CONTAINED FUNCTIONS
-                # the custom function must follow syntax of (ax, *args, **kwargs), where ax is a matplotlib axis
+                # wrap custom functions as if they are matplotlib functions 
+                # functions must have form: func(ax, *args, *kwargs)
+                # Two options:
+                #     (1) Self contained function, which will be pickled into the data file
+                #     (2) String pointing to a package.module.function (package.module.submodule.function okay too)
                 # syntax: (1) _custom
                 #         (2) first argument is a list
                 #             - if not empty: first element is a unique title,  
@@ -509,7 +510,7 @@ class FFAxis(FFItem):
                 if attr == '_custom':
                     def custom_wrapper(*args, **kwargs):
                         info = args[0]
-                        title = attr[1:]
+                        title = args[1]
                         args_description = []
                         if len(info) > 0:
                             title = info[0]
