@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import matplotlib
+from matplotlib import patches
 import tempfile
 import shutil
 import os
@@ -19,7 +20,10 @@ except:
     figurefirst_user_parameters = 'default'
 
 if figurefirst_user_parameters == 'default':
-    from . import figurefirst_user_parameters
+    try:
+        from . import figurefirst_user_parameters
+    except:
+        import figurefirst_user_parameters
 else:
     import imp
     figurefirst_user_parameters = imp.load_source('figurefirst_user_parameters', figurefirst_user_parameters)
@@ -83,11 +87,13 @@ def adjust_spines(ax, spines, spine_locations={},
     if not default_ticks:
         if int(matplotlib.__version__[0]) > 0 and smart_bounds:
             for loc, spine in ax.spines.items():
+                ticks = None
                 if loc in ['left', 'right']:
                     ticks = yticks
                 if loc in ['top', 'bottom']:
                     ticks = xticks
-                spine.set_bounds(ticks[0], ticks[-1])
+                if ticks is not None and len(ticks) > 0:
+                    spine.set_bounds(ticks[0], ticks[-1])
 
     # turn off ticks where there is no spine
     if 'left' in spines:
@@ -177,3 +183,12 @@ def fix_mpl_svg(file_path, pattern='miterlimit:100000;', subst='miterlimit:1;'):
 
     shutil.move(abs_path, file_path)
     return
+
+def add_mpl_patch(ax, patchname, *args, **kwargs):
+    """
+    wrapper for these two calls:
+    patch = matplotlib.patches.Patch()
+    ax.add_artist(patch)
+    """
+    patch = getattr(patches, patchname)(*args, **kwargs)
+    ax.add_artist(patch)
