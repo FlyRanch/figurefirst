@@ -292,7 +292,7 @@ def write_to_csv(data_filename, figure, panel_id_to_layout_keys=None, header='')
             
     # write header
     __write_break__(file)
-    figurefirst_header = 'This file was automatically generated from source data using FigureFirst: http://flyranch.github.io/figurefirst/'
+    figurefirst_header = '##### This file was automatically generated from source data using FigureFirst: http://flyranch.github.io/figurefirst/'
     file.writelines(header+'\n'+figurefirst_header+'\n')
     
     __write_break__(file)
@@ -308,6 +308,11 @@ def write_to_csv(data_filename, figure, panel_id_to_layout_keys=None, header='')
                 __write_action__(file, action)
                 
     file.close()
+
+def list_layout_keys(data_filename):
+    data = load_data_file(data_filename)
+    for key in data.keys():
+        print(key)
 
 if __name__ == '__main__':
     parser = OptionParser()
