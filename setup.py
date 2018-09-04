@@ -1,5 +1,5 @@
 from distutils.core import setup
-
+import setuptools
 setup(
     name='figurefirst',
     version='0.0.1',
