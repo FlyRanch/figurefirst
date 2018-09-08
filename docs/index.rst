@@ -6,10 +6,16 @@
 Welcome to FigureFirst's documentation!
 =======================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+Contents:
 
+.. toctree::
+    :maxdepth: 2
+
+    introduction
+    basic_usage
+    
+    modules
+    
 
 
 Indices and tables

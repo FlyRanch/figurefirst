@@ -2,7 +2,7 @@ import os
 import dill as pickle
 import numpy as np
 import imp
-import svg_to_axes
+from . import svg_to_axes
 from optparse import OptionParser
 import types
 
