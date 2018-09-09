@@ -13,7 +13,7 @@ With `figurefirst` creating a new figure generally involves four steps:
 
 
 A multipannal figure
----------------------------
+---------------------
 
 To get started it is worth examining how the figurefirst approach compares to generating a similar figure using matplotlib alone. Consider a five-panel figure with non-uniform axes sizes such as the example shown in the `matplotlib gridspec documentation <http://matplotlib.org/users/gridspec.html>`_ .
 
@@ -29,5 +29,24 @@ To generate this figure using only matplotlib and gridspec we would use the foll
 
 Now if we want to plot data to any of these axes, we can direct our plotting commands to the appropriate axes e.g. ax1.plot([1,2,3,4])
 
-To construct a similar plot in figurefirst, we would use Inkscape to draw five boxes in an svg layout document. This layout document would specify the total dimensions of the figure (7.5 by 4.0 in) as well as the placement and aspect ratio of the axes. Then to make the figure we would construct a figurefirst:Figurelayout using the path to the layout document.
+To construct a similar plot in figurefirst, we use Inkscape to draw five boxes in an .svg layout document by drawing boxes where the 5 axes should lie, then tagging these boxes with names eg. ax1,ax2 ect... To make the figure in python we construct a figurefirst:FigureLayout object by passing the path to the layout document. ::
 
+	layout = FigureLayout('/path/to/layout.svg')
+
+Figurefirst will construct the matplotlib figure and store the axes by their tag name in the 'axes' attribute of the layout object. So to plot on ax1 ::
+
+	layout.axes['ax1'].plot([1,2,3,4])
+
+Designing a layout
+-------------------
+
+So how do you design a layout? The easyest approach is to use inkscape and take advantage of the figurefirst extensions to tag the axes with unique names. We create a new document specifying the height and width of the figure in the document properties menu. Next we use the rectangle tool to draw boxes where we want our axis to appear within the figure. Finaly, we give these axes names using the tagaxis extension. The screenshot below shows the tagaxis dialog box being used to tag the top left box as 'ax1'.
+
+Merging matplotlib plots back into the layout
+----------------------------------------------
+
+Simply being able to svg as a specification for axis placement is a usfull feature on it's own, but figurefirst allows you to take things one step further and direct the output of your plotting code back into the svg layout document. This means that any svg vector art that you include in your layout document can now be used as overlays and underlays to your matplotlib figures. To save our new plots we simply call ::
+
+layout.save('/path/to/output_file.svg')
+
+By default figurefirst will create a new svg layer to place all the new matplotlib artwork. Note that merging your newly plotted figures with the layout in this way also provides a mechanism for fast itterative development of your figures: you save the plotted data back in the layout document (passing the original layout file as output_file) then you can now make adustments to the layout, add annotations ect. to the layout with the perspective of how the data lie within the figure. After making these changes we can re-run our plotting code at any time to regenerate the plots without worying about loosing these annotations.
