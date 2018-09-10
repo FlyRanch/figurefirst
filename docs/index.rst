@@ -12,8 +12,9 @@ Contents:
     :maxdepth: 2
 
     introduction
+    installation
     basic_usage
-    
+    examples
     modules
     
 
