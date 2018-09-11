@@ -1,15 +1,23 @@
 Examples
 =======================================
 
-axis_methods_layout
-minimal_multi_fig_multi_ax_template_layout
-figure_templating_layout
-multi_fig_layout
-group_axes_layout
-nested_groups_layout
-hello_world_layout
-pathspec_layout
-jessyink_layout
-spine_spec_layout
-minimal_multi_fig_multi_ax_layout
-svgitem_layout
+hello world
+-----------
+.. image:: ../examples/example_hello_world_output.svg
+
+grouped axes
+------------
+.. image:: ../examples/example_group_axes_output.svg
+
+nested groups
+-------------
+.. image:: ../examples/example_nested_groups_output.svg
+
+axis methods
+------------
+.. image:: ../examples/example_axis_methods_output.svg
+
+figure templating
+-----------------
+.. image:: ../examples/example_figure_templating_output.svg
+
