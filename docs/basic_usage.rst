@@ -12,7 +12,7 @@ With figurefirst creating a new figure generally involves four steps:
 4.	Merge newly created matplotlib figures with the original layout file and save to svg.
 
 
-A multipannal figure
+A multipanel figure
 ---------------------
 
 To get started it is worth examining how the figurefirst approach compares to generating a similar figure using matplotlib alone. Consider a five-panel figure with non-uniform axes sizes such as the example shown in the `matplotlib gridspec documentation <http://matplotlib.org/users/gridspec.html>`_ .
