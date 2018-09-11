@@ -42,7 +42,7 @@ Figurefirst will construct the matplotlib figure and store the axes by their tag
 Designing a layout
 -------------------
 
-So how do you design a layout? The easyest approach is to use inkscape and take advantage of the figurefirst extensions to tag the axes with unique names. We create a new document specifying the height and width of the figure in the document properties menu. Next we use the rectangle tool to draw boxes where we want our axis to appear within the figure. Finaly, we give these axes names using the tagaxis extension. The screenshot below shows the tagaxis dialog box being used to tag a box with the name 'ax1'.
+So how do you design a layout? The easiest approach is to use inkscape and take advantage of the figurefirst extensions to tag the axes with unique names. We create a new document specifying the height and width of the figure in the document properties menu. Next we use the rectangle tool to draw boxes where we want our axis to appear within the figure. Finally, we give these axes names using the tagaxis extension. The screenshot below shows the tagaxis dialog box being used to tag a box with the name 'ax1'.
 
 .. image:: images/tag_dialogue.png
 
@@ -50,10 +50,10 @@ So how do you design a layout? The easyest approach is to use inkscape and take 
 Merging matplotlib plots back into the layout
 ----------------------------------------------
 
-Simply being able to svg as a specification for axis placement is a usfull feature on it's own, but figurefirst allows you to take things one step further and direct the output of your plotting code back into the svg layout document. This means that any svg vector art that you include in your layout document can now be used as overlays and underlays to your matplotlib figures. To save our new plots we simply call ::
+Simply being able to svg as a specification for axis placement is a useful feature on it's own, but figurefirst allows you to take things one step further and direct the output of your plotting code back into the svg layout document. This means that any svg vector art that you include in your layout document can now be used as overlays and underlays to your matplotlib figures. To save our new plots we simply call ::
 
 	layout.save('/path/to/output_file.svg')
 
-By default figurefirst will create a new svg layer to place all the new matplotlib artwork. Note that merging your newly plotted figures with the layout in this way also provides a mechanism for fast itterative development of your figures: you save the plotted data back in the layout document (passing the original layout file as output_file) then you can now make adustments to the layout, add annotations ect. to the layout with the perspective of how the data lie within the figure. After making these changes we can re-run our plotting code at any time to regenerate the plots without worying about loosing these annotations.
+By default figurefirst will create a new svg layer to place all the new matplotlib artwork. Note that merging your newly plotted figures with the layout in this way also provides a mechanism for fast iterative development of your figures: you save the plotted data back in the layout document (passing the original layout file as output_file) then you can now make adjustments to the layout, add annotations ect. to the layout with the perspective of how the data lie within the figure. After making these changes we can re-run our plotting code at any time to regenerate the plots without worrying about loosing these annotations.
 
 
