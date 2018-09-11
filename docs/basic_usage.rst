@@ -30,12 +30,12 @@ To generate this figure using only matplotlib and gridspec we would use the foll
 
 Now if we want to plot data to any of these axes, we can direct our plotting commands to the appropriate axes e.g. ax1.plot([1,2,3,4])
 
-To construct a similar plot in figurefirst, we use Inkscape to create a .svg layout document by drawing boxes where the 5 axes should lie, then tag these boxes with names eg. ax1,ax2 ect... Then to make the figure in python we construct a :class:`figurefirst.svg_to_axes.FigureLayout` object by passing the path to the layout document. ::
+To construct a similar plot in figurefirst, we use Inkscape to create a .svg layout document by drawing boxes where the 5 axes should lie, then tag these boxes with names eg. ax1,ax2 ect... Then to make the figure in python we construct a :class:`~figurefirst.svg_to_axes.FigureLayout` object by passing the path to the layout document. ::
 
 	import figurefirst as fifi
 	layout = fifi.FigureLayout('/path/to/layout.svg')
 
-Figurefirst will construct the matplotlib figure and store the axes by their tag name in the 'axes' attribute of the layout object. So to plot on ax1 ::
+Figurefirst will construct the matplotlib figure and store the axes by their tag name in the 'axes' attribute of the layout object. For example to plot on ax1 ::
 
 	layout.axes['ax1'].plot([1,2,3,4])
 
