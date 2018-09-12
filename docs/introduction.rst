@@ -3,7 +3,7 @@ Introduction
 
 What is figurefirst?
 --------------------
-Constructing figures for publication in scientific journals requires some attention to the details of styling and layout. For example, consider the descriptive analysis of the iris dataset below. The plot on the left was constructed using the matplotlib gridspec tool, and is perfectly acceptable representation of the data; but a more efficient use of the space can be achieved with a little manual adjustments. Note how in the version on the right, the x axis is shared across distributions and how the layout helps clarify the structure of the data. The main objective of figurefirst is to facilitate the construction of these more organic layouts with minimal work.
+Constructing figures for publication in scientific journals requires some attention to the details of styling and layout. For example, consider the descriptive analysis of the iris dataset below. The plot on the left was constructed using the matplotlib gridspec tool, and is perfectly acceptable representation of the data; but a more efficient use of the space can be achieved with a little manual adjustment. Note how in the version on the right, the x axis is shared across distributions and how the layout helps clarify the structure of the data. The main objective of figurefirst is to facilitate the construction of these more organic layouts with minimal work.
 
 .. image:: images/comparison.png
 
