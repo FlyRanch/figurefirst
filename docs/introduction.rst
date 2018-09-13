@@ -20,7 +20,7 @@ Figure first adds a third option: Use a layout document to specify all the styli
 
 How does figurefirst work?
 --------------------------
-The ```figurefirst``` library seeks allow effort devoted to the raw analysis and raw presentation of data to proceed *in parallel* and *independent to* the work styling and formating the figure. The approach we take is to facilitate passing graphical information from the `open-standard <https://www.w3.org/TR/SVG/>`_ scalable vector graphics (svg) file format into objects consumable by the open-source `matplotlib <http://matplotlib.org>`_ python plotting library. This allows authors to take advantage of sophisticated SVG editors such as inkscape to start constructing final-form figures early in the process of manuscript preparation, while retaining the freedom to collect new data and revise analyses.
+The ``figurefirst`` library seeks allow effort devoted to the raw analysis and raw presentation of data to proceed *in parallel* and *independent to* the work styling and formating the figure. The approach we take is to facilitate passing graphical information from the `open-standard <https://www.w3.org/TR/SVG/>`_ scalable vector graphics (svg) file format into objects consumable by the open-source `matplotlib <http://matplotlib.org>`_ python plotting library. This allows authors to take advantage of sophisticated SVG editors such as inkscape to start constructing final-form figures early in the process of manuscript preparation, while retaining the freedom to collect new data and revise analyses.
 
 Should I use figurefirst?
 -----------------------------
