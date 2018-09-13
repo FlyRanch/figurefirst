@@ -10,7 +10,7 @@ Constructing figures for publication in scientific journals requires some attent
 What problem does figurefirst solve?
 ------------------------------------
 Traditionally, there are two basic approaches for solving the flexible layout problem.
-	(1) after deciding on the basic scheme, you can take customize your plotting code to achieve the precise layout you want. This approach is often very time consuming because graphical decisions are difficult to evaluate using a strictly text-oriented approach. Additionally, this approach often leads to plotting functions where most of the code is devoted to styling. This makes the core plotting logic hard to parse.
+	(1) after deciding on the basic scheme, you can customize your plotting code to achieve the precise layout you want. This approach is often very time consuming because graphical decisions are difficult to evaluate using a strictly text-oriented approach. Additionally, this approach often leads to plotting functions where most of the code is devoted to styling. This makes the core plotting logic hard to parse.
 
 	(2) Construct a basic plot and then manually adjust the plots using a vector graphics tool such as Inkscape or Adobe Illustrator. This breaks down if new data need to be plotted, or the plotting function changes. For instance, after recieving reviews you may need to add a control group to your figure. You would need to re-apply all the manual adjustments in illustator at this point.
 
