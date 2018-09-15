@@ -696,7 +696,7 @@ class FigureLayout(object):
     invisible (e.g. your template layers) construct an object that specifies the figure layout fom the svg file layout_filename. 
     """
 
-    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300, hide_layers=[]):
+    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300, hide_layers=['Layer 1']):
         self.dpi = dpi # should be 300 for print figures
         self.autogenlayers = autogenlayers
         self.layout_filename = layout_filename
