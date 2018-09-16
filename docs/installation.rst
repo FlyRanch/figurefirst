@@ -9,12 +9,12 @@ Installation
       
       $ python setup.py install
 
-  To install the inkscape extensions you will need to copy the .inx and .py files from the ``inkscape_extensions`` directory to the appropriate path for inkscape extensions on your system. This is probably ``~/.config/inkscape/extensions/`` on linux/osx or ``C:\Program Files\Inkscape\share\extensions`` on windows.
+  To install the Inkscape extensions you will need to copy the .inx and .py files from the ``inkscape_extensions`` directory to the appropriate path for inkscape extensions on your system. This is probably ``~/.config/inkscape/extensions/`` on Linux/OSX or ``C:\Program Files\Inkscape\share\extensions`` on Windows.
 
-Requrements
+Requirements
 ===========
 
-Figurefirst depends on:
+figurefirst depends on:
 
 * Python 2.7 or Python 3.x
 * numpy
