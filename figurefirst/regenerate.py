@@ -5,6 +5,7 @@ import imp
 import svg_to_axes
 from optparse import OptionParser
 import types
+import traceback
 
 def __is_mpl_call_saveable__(function_name):
     not_saveable = ['add_artist']
@@ -18,7 +19,7 @@ def __save_fifidata__(data_filename, layout_key,
                         title, args_description, 
                         *args, **kwargs):
     if title == 'figurefirst.regenerate.replot':
-        # this is a code word for note saving the data
+        # this is a code word for not saving the data
         return
 
     # load
@@ -38,7 +39,8 @@ def __save_fifidata__(data_filename, layout_key,
                          'title': title,
                          'args_description': args_description,
                          'args': args,
-                         'kwargs': kwargs}
+                         'kwargs': kwargs,
+                         'traceback': traceback.extract_stack()}
 
     # delete duplicate entries
     if 0:
@@ -111,15 +113,22 @@ def replot(layout_filename, output_filename='template', data_filename=''):
     fifidata_file.close()
 
     for layout_key in fifidata.keys():
+        if layout_key == 'Supplemental Data':
+            continue
         for action in fifidata[layout_key]:
             ax = layout.axes[layout_key]
 
             info = ['figurefirst.regenerate.replot'] # trick function into skipping save
             package = action['package']
             function = action['function']
+            if package == 'none':
+                continue
             args = action['args']
             kwargs = action['kwargs']
 
+            print("="*100)
+            print('Package: '+package + '  |  Function: '+str(function))
+            print(action['traceback'])
             if package == 'matplotlib' or package == 'figurefirst':
                 ax.__getattr__('_'+function)(info, *args, **kwargs)
             else:
@@ -161,11 +170,22 @@ def save_data_file(data, filename):
     data = pickle.dump(data, f)
     f.close()
     
-def clear_fifidata(data_filename, layout_key):
+def clear_fifidata(data_filename, layout_key='all'):
+    '''
+    layout_key - either a single layout key, or 'all' to delete everything
+    '''
     data = load_data_file(data_filename)
+    
     if data is not None:
-        if layout_key in data.keys():
-            data[layout_key] = []
+        if layout_key == 'all':
+            layout_keys = [k for k in data.keys()]
+        else:
+            layout_keys = [layout_key]
+
+        for layout_key in layout_keys: 
+            if layout_key in data.keys():
+		print('Clearing: '+str(layout_key))
+                data[layout_key] = []
         save_data_file(data, data_filename)
 
 def compress(filename, max_length=500):
@@ -184,7 +204,9 @@ def compress(filename, max_length=500):
             for i, arg in enumerate(args):
                 new_arg = arg
                 if type(arg) == np.ndarray:
-                    if len(arg) > max_length:
+                    if len(arg.shape) > 1:
+                        pass
+                    elif len(arg) > max_length:
                         xp = np.linspace(0, 1, len(arg))
                         x = np.linspace(0, 1, max_length)
                         new_arg = np.interp(x, xp, arg)
@@ -207,9 +229,17 @@ def compress(filename, max_length=500):
     pickle.dump(fifidata, fifidata_file)
     fifidata_file.close()
 
-def __write_label__(file, label, heading, with_breaks=False):
+    return compressed_fifidatafile
+
+def __write_lines__(file, string, string_replacements={}):
+    if len(string_replacements) > 0:
+        for key, val in string_replacements.items():
+            string = string.replace(key, val)
+    file.writelines(string+'\n')
+
+def __write_label__(file, label, heading, with_breaks=False, string_replacements={}):
     s = '#'*heading + ' ' + label
-    file.writelines(s+'\n')
+    __write_lines__(file, s, string_replacements=string_replacements)
     if with_breaks:
         __write_break__(file)
         
@@ -217,7 +247,7 @@ def __write_break__(file, length=125):
     s = '#'*length
     file.writelines(s+'\n')
     
-def __write_data__(file, data):
+def __write_data__(file, data, decimals=None, string_replacements={}):
     '''
     Supports: 
         - single value
@@ -229,7 +259,7 @@ def __write_data__(file, data):
     
     # single value
     if not hasattr(data, '__iter__'):
-        file.writelines(str(data)+'\n')
+        __write_lines__(file, str(data), string_replacements=string_replacements)
         return
     
     # list of arrays or lists
@@ -237,7 +267,7 @@ def __write_data__(file, data):
         if hasattr(data[0], '__iter__'):
             for i, data_i in enumerate(data):
                 __write_label__(file, 'Number: ' + str(i+1), 6)
-                __write_data__(file, data_i)
+                __write_data__(file, data_i, decimals)
             return
               
     # 2d array
@@ -245,7 +275,7 @@ def __write_data__(file, data):
         if len(data.shape) == 2:
             __write_label__(file, '2-dimensional array, lines = rows', 6)
             for i in range(data.shape[0]):
-                __write_data__(file, data[i])
+                __write_data__(file, data[i], decimals)
             return
     
     # list or 1d array
@@ -253,18 +283,33 @@ def __write_data__(file, data):
         if not hasattr(data[0], '__iter__'):
             if type(data) == np.ndarray:
                 data = data.tolist() # also converts to 32 bit, saves space
+
+            # check if all ints
+            data_types = [int==type(d) for d in data]
+            all_ints = all(elem for elem in data_types)
+            if not all_ints:
+                if decimals is not None:
+                    f = '%.'+str(decimals)+'f'
+                    data = [f % i for i in data]
             s = ', '.join(map(str, data))
-            file.writelines(s+'\n')
+            __write_lines__(file, s, string_replacements=string_replacements)
             
-def __write_action__(file, action):
+def __write_action__(file, action, decimals, string_replacements={}):
     if len(action['args_description']) == 0:
         return
     else:
-        __write_label__(file, action['title'], 3)
-        __write_break__(file, int(len(action['title'])*1.25))
+        layout_key = action['layout_key']
+        layout_key = [__clean_layout_key__(l) for l in layout_key]
+        layout_key = ', '.join(map(str, layout_key))
+        if action['layout_key'] != 'Supplemental Data':
+            __write_label__(file, 'Panel element name: ' + layout_key, 3, string_replacements=string_replacements)
+            __write_label__(file, 'Plot feature name: ' + action['title'], 3, string_replacements=string_replacements)
+        else:
+            __write_label__(file, action['title'], 3, string_replacements=string_replacements)
+        __write_break__(file, int(len('Plot feature name: ' + action['title'])*1.25))
         for i, arg_title in enumerate(action['args_description']):
-            __write_label__(file, arg_title, 4)
-            __write_data__(file, action['args'][i])
+            __write_label__(file, arg_title, 4, string_replacements=string_replacements)
+            __write_data__(file, action['args'][i], decimals, string_replacements=string_replacements)
         __write_break__(file)
             
 def __clean_layout_key__(layout_key):
@@ -276,7 +321,7 @@ def __clean_layout_key__(layout_key):
     s = s.strip("()[]{}")
     return s
 
-def write_to_csv(data_filename, figure, panel_id_to_layout_keys=None, header=''):
+def write_to_csv(data_filename, figure, panel_id_to_layout_keys=None, header='', decimals=None, string_replacements={}):
     '''
     figure - name, or number, for figure
     panel_id_to_layout_keys - dict of panel ids (e.g. 'a') that point to a list of associated layout_keys
@@ -284,30 +329,52 @@ def write_to_csv(data_filename, figure, panel_id_to_layout_keys=None, header='')
     '''
     csv_filename = data_filename.split('.dillpickle')[0]+'_summary.md'
     file = open(csv_filename, 'w+')
-    
+
     data = load_data_file(data_filename)
     if panel_id_to_layout_keys is None:
         panel_id_to_layout_keys = {}
         for layout_key in data.keys():
             panel_id = __clean_layout_key__(layout_key)
             panel_id_to_layout_keys[panel_id] = [layout_key]
+
+    if 'Supplemental Data' in data.keys():
+        panel_id_to_layout_keys['Supplemental Data'] = ['Supplemental Data']
             
     # write header
     __write_break__(file)
     figurefirst_header = '##### This file was automatically generated from source data using FigureFirst: http://flyranch.github.io/figurefirst/'
-    file.writelines(header+'\n'+figurefirst_header+'\n')
+    h = header+'\n'+figurefirst_header+'\n'
+    __write_lines__(file, h, string_replacements=string_replacements)
     
     __write_break__(file)
-    __write_label__(file, 'Figure: '+str(figure), 1, with_breaks=True)
+    __write_label__(file, 'Figure: '+str(figure), 1, with_breaks=True, string_replacements=string_replacements)
     
     panel_id_names = panel_id_to_layout_keys.keys()
     panel_id_names.sort()
+
+    if 'Supplemental Data' in data.keys():
+        # put the supplement at the end
+        idx = panel_id_names.index('Supplemental Data')
+        del(panel_id_names[idx])
+        panel_id_names.append('Supplemental Data')
+
+    # write data
     for panel_id in panel_id_names:
-        __write_label__(file, 'Panel: '+panel_id, 2, with_breaks=True)
+        if panel_id != 'Supplemental Data':
+            __write_label__(file, 'Panel: '+panel_id, 2, with_breaks=True)
+        else:
+            __write_label__(file, panel_id, 2, with_breaks=True)
         layout_keys = panel_id_to_layout_keys[panel_id]
         for layout_key in layout_keys:
             for action in data[layout_key]:
-                __write_action__(file, action)
+                print('######################################')
+                print(layout_key)
+                print(action['package'])
+                print(action['function'])
+                print(action['title'])
+                print(action['args_description'])
+                action['layout_key'] = layout_key
+                __write_action__(file, action, decimals, string_replacements=string_replacements)
                 
     file.close()
 
