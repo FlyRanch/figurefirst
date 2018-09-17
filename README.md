@@ -7,3 +7,5 @@ Read the docs: https://figurefirst.readthedocs.io/en/latest/index.html
 Read our Scipy 2017 proceedings: http://conference.scipy.org/proceedings/scipy2017/lindsay.html
 
 If you use FigureFirst, please cite the above paper to help others find FigureFirst.
+
+Requirements: you may need to install dill (a more advanced version of pickle). 
