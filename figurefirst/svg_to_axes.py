@@ -33,6 +33,7 @@ else:
     import imp
     figurefirst_user_parameters = imp.load_source('figurefirst_user_parameters', figurefirst_user_parameters)
 
+
 try:
     from . import regenerate
     from . import mpl_functions
@@ -378,7 +379,7 @@ class FFSVGGroup(FFItem,object):
             return self.__getattribute__(attr)
 
 class FFGroup(FFItem,object):
-    """ uesed to collect groups objects that will be translated into matplotlib objects
+    """ used to collect groups objects that will be translated into matplotlib objects
     eg. axes and figures, x,y w and h is the collective x,y width and height of all the
     enclosed objects"""
     def __init__(self,tagnode,**kwargs):
@@ -432,6 +433,7 @@ class FFFigure(FFGroup,object):
 class FFTemplateTarget(FFFigure,object):
     """represtents the target of a template. The all the axes within the template
      figure will be scaled to fit within the template target box"""
+
     def __init__(self,tagnode,**kwargs):
         self.template_source = tagnode.getAttribute('figurefirst:template')
         super(FFTemplateTarget,self).__init__(tagnode,**kwargs)
@@ -465,6 +467,7 @@ class FFTemplateTarget(FFFigure,object):
 class FFAxis(FFItem):
     """ Stores the data requred for the creation of a matplotlib axes
     as specified by the layout """
+
     def __init__(self,tagnode,**kwargs):
         super(FFAxis, self).__init__(tagnode,**kwargs)
         x = float(self.node.getAttribute('x'))
@@ -687,41 +690,13 @@ class PatchSpec(PathSpec):
 
 
 class FigureLayout(object):
+    """ autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure, 
+    default: True make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init dpi - default 300, 
+    which is desired for print figures hide_layers - list of inkscape layer names you want to set to 
+    invisible (e.g. your template layers) construct an object that specifies the figure layout fom the svg file layout_filename. 
+    """
 
-    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300, hide_layers=[]):
-        """
-        autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure, default: True
-        make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init
-        dpi - default 300, which is desired for print figures
-        hide_layers - list of inkscape layer names you want to set to invisible (e.g. your template layers)
-        construct an object that specifies the figure layout fom the
-        svg file layout_filename. Currently there are a number of restrictions
-        on the format of this file.
-        1) the top level svg node must contain the xmlns declaration. Also, the aspect ratio
-            of the width and height attributes must match the aspect ratio of the viewBox.
-            <svg xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
-                 width="6in"
-                 height="8n"
-                 viewBox="0 0 600 800"
-                 ... >
-        2) the layer containing the axis labels cannot have a transform attached.
-            it should look something like:
-              <g
-                 inkscape:label="Layer 1"
-                 inkscape:groupmode="layer"
-                 id="layer1"
-                 style="display:none">
-            inkscape is funny about silently adding transforms to layers
-        3) the axis objects are  specified by an xml tag eg.:
-            <rect
-               style="fill:#0000ff;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="rect3205"
-               width="33.142075"
-               height="32.707672"
-               x="24.71546"
-               y="47.592991">
-              <figurefirst:axis
-                 figurefirst:name="frequency.22H05.start" /> """
+    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300, hide_layers=['Layer 1']):
         self.dpi = dpi # should be 300 for print figures
         self.autogenlayers = autogenlayers
         self.layout_filename = layout_filename

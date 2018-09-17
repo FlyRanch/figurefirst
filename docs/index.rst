@@ -6,10 +6,17 @@
 Welcome to FigureFirst's documentation!
 =======================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+Contents:
 
+.. toctree::
+    :maxdepth: 2
+
+    introduction
+    installation
+    basic_usage
+    examples
+    modules
+    
 
 
 Indices and tables
@@ -18,9 +25,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-
-Test section
-============
-
-testing!

@@ -14,4 +14,4 @@ print('#   Testing Python3    #')
 print('########################')
 for example in examples:
 	print("Running:%s"%example)
-	os.system('python3 %s'%(example))
+	os.system('python %s'%(example))
