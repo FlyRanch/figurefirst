@@ -740,6 +740,7 @@ class FigureLayout(object):
         self.layout_user_sx = self.layout_uw/self.layout_width[0], self.layout_width[1]
         self.layout_user_sy = self.layout_uh/self.layout_height[0], self.layout_height[1]
         self.output_xml = minidom.parse(self.layout_filename).cloneNode(True)
+        self.data_filename = self.layout_filename.split('.svg')[0]+'_data.dillpickle'
 
         try:
             figuretree,grouptree,leafs,svgitemtree = self.make_group_tree()
@@ -1305,7 +1306,7 @@ class FigureLayout(object):
         '''
         Save layout.svg, data.svg, figure, axis information into each mpl axis
         '''
-        self.data_filename = self.layout_filename.split('.svg')[0]+'_data.dillpickle'
+        
         breadcrumb = {'layout_key': None,
                       'layout_filename': self.layout_filename,
                       'data_filename': self.data_filename}
@@ -1314,3 +1315,15 @@ class FigureLayout(object):
             key_copy = (k for k in key)
             breadcrumb_copy['layout_key'] = tuple(key_copy)
             axis.breadcrumb = breadcrumb_copy 
+
+    def write_fifidata(self, info, *args, **kwargs):
+        '''
+        Write arbitrary data to the figurefirst data file
+        info - list of strings, e.g. ['title', 'description 1', 'description 2']
+        args - data you want to store in the data file
+        '''
+        print self.data_filename
+        regenerate.__save_fifidata__(self.data_filename, 'Supplemental Data',
+                                     'none', 'none', 
+                                     info[0], info[1:], 
+                                     *args, **kwargs)
