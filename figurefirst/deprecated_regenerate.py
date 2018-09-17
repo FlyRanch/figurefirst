@@ -23,4 +23,6 @@ def mpl_patch(patch, layout, figure, axis, fifidatafile, title, args_description
     ax = layout.axes[(figure, axis)]
     info = [title]
     info.extend(args_description)
-    ax._add_mpl_patch(info, *args, **kwargs)
+    new_args = [patch]
+    new_args.extend(list(args))
+    ax._add_mpl_patch(info, *new_args, **kwargs)
