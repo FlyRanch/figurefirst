@@ -19,3 +19,4 @@ figurefirst depends on:
 * Python 2.7 or Python 3.x
 * numpy
 * matplotlib
+* dill
