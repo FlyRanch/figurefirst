@@ -1297,7 +1297,7 @@ class FigureLayout(object):
         info - list of strings, e.g. ['title', 'description 1', 'description 2']
         args - data you want to store in the data file
         '''
-        print self.data_filename
+        print (self.data_filename)
         regenerate.__save_fifidata__(self.data_filename, 'Supplemental Data',
                                      'none', 'none', 
                                      info[0], info[1:], 
