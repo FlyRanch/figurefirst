@@ -10,6 +10,52 @@ from optparse import OptionParser
 import types
 import traceback
 
+import importlib.util
+import sys
+ 
+def __check_module__(module_name):
+    """
+    Checks if module can be imported without actually
+    importing it
+    """
+    module_spec = importlib.util.find_spec(module_name)
+    if module_spec is None:
+        print('Module: {} NOT found'.format(module_name))
+        return None
+    else:
+        #print('Module: {} can be imported!'.format(module_name))
+        return module_spec
+ 
+ 
+def __import_module_from_spec__(module_spec):
+    """
+    Import the module via the passed in module specification
+    Returns the newly imported module
+    """
+    try:
+        module = importlib.util.module_from_spec(module_spec)
+        module_spec.loader.exec_module(module)
+        return module
+    except:
+        return module_spec.loader.load_module(module_spec.name)
+
+def __import_module_from_name__(module_name):
+    if '.' in module_name:
+        raise ValueError('Use the basename for the module, and include all submodules in the function name. e.g. package_name: figurefirst, function_name: mpl_function.adjust_spines')
+
+    try:
+        if (sys.version_info > (3, 0)):
+            module_spec = __check_module__(module_name)
+            package = __import_module_from_spec__(module_spec)
+            return package
+        else:
+            f, filename, description = imp.find_module(package_name)
+            package = imp.load_module(package_name, f, filename, description)
+            return package
+    except:
+        raise ValueError('Could not find package: ' + package_name + ', maybe you need to install it?')
+
+
 def __is_mpl_call_saveable__(function_name):
     not_saveable = ['add_artist']
     if function_name in not_saveable:
@@ -27,7 +73,7 @@ def __save_fifidata__(data_filename, layout_key,
 
     # load
     if os.path.exists(data_filename):
-        fifidata_file = open(data_filename, 'r')
+        fifidata_file = open(data_filename, 'rb')
         fifidata = pickle.load(fifidata_file)
         fifidata_file.close()
     else:
@@ -63,7 +109,7 @@ def __save_fifidata__(data_filename, layout_key,
     fifidata[layout_key].append(new_figure_action)
 
     # save
-    fifidata_file = open(data_filename, 'w')
+    fifidata_file = open(data_filename, 'wb')
     pickle.dump(fifidata, fifidata_file)
     fifidata_file.close()
 
@@ -77,14 +123,7 @@ def __load_custom_function__(package_name, function_name):
             package_name = function_name.split('.')[0]
             function_name = function_name[len(package_name)+1:]
 
-    try:
-        f, filename, description = imp.find_module(package_name)
-    except:
-        if '.' in package_name:
-            raise ValueError('Use the basename for the module, and include all submodules in the function name. e.g. package_name: figurefirst, function_name: mpl_function.adjust_spines')
-        else:
-            raise ValueError('Could not find package: ' + package_name + ', maybe you need to install it?')
-    package = imp.load_module(package_name, f, filename, description)
+    package = __import_module_from_name__(package_name)
     
     nest = function_name.split('.')
     function = package
@@ -111,7 +150,7 @@ def replot(layout_filename, output_filename='template', data_filename=''):
     layout = svg_to_axes.FigureLayout(layout_filename)
     layout.make_mplfigures(hide=True)
 
-    fifidata_file = open(data_filename, 'r')
+    fifidata_file = open(data_filename, 'rb')
     fifidata = pickle.load(fifidata_file)
     fifidata_file.close()
 
@@ -153,7 +192,7 @@ def load_data_file(filename):
         data_filename = filename
 
     if os.path.exists(data_filename):
-        f = open(data_filename, 'r')
+        f = open(data_filename, 'rb')
         data = pickle.load(f)
         f.close()
     else:
@@ -169,7 +208,7 @@ def save_data_file(data, filename):
     else:
         data_filename = filename
 
-    f = open(data_filename, 'w')
+    f = open(data_filename, 'wb')
     data = pickle.dump(data, f)
     f.close()
     
@@ -187,7 +226,7 @@ def clear_fifidata(data_filename, layout_key='all'):
 
         for layout_key in layout_keys: 
             if layout_key in data.keys():
-		print('Clearing: '+str(layout_key))
+                print('Clearing: '+str(layout_key))
                 data[layout_key] = []
         save_data_file(data, data_filename)
 
@@ -228,7 +267,7 @@ def compress(filename, max_length=500):
             action['args'] = new_args
 
     compressed_fifidatafile = filename.split('.dillpickle')[0] + '_compressed.dillpickle'
-    fifidata_file = open(compressed_fifidatafile, 'w')
+    fifidata_file = open(compressed_fifidatafile, 'wb')
     pickle.dump(fifidata, fifidata_file)
     fifidata_file.close()
 
@@ -352,7 +391,7 @@ def write_to_csv(data_filename, figure, panel_id_to_layout_keys=None, header='',
     __write_break__(file)
     __write_label__(file, 'Figure: '+str(figure), 1, with_breaks=True, string_replacements=string_replacements)
     
-    panel_id_names = panel_id_to_layout_keys.keys()
+    panel_id_names = list(panel_id_to_layout_keys.keys())
     panel_id_names.sort()
 
     if 'Supplemental Data' in data.keys():
