@@ -11,12 +11,12 @@ FigureFirst is developed and tested with Inkscape. Some versions and settings of
 
 ### Installing Inkscape 0.92 on Ubuntu
 You can install Inkscape 0.92 using ppa:
-`sudo add-apt-repository ppa:inkscape.dev/stable`
-`sudo apt update`
-`sudo apt install inkscape`
+* `sudo add-apt-repository ppa:inkscape.dev/stable`
+* `sudo apt update`
+* `sudo apt install inkscape`
 
 ### Optimizing Inkscape settings 
 Try increasing the Rendering Tile Multiplier:
-`Edit > Preference > Rending`
-`Rendering Tile Multiplier = 50`
+* `Edit > Preference > Rending`
+* `Rendering Tile Multiplier = 50`
 Restart Inkscape
