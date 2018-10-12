@@ -38,7 +38,8 @@ def adjust_spines(ax, spines, spine_locations={},
                   smart_bounds=True, xticks=None, yticks=None, 
                   linewidth=1, spine_location_offset=None, default_ticks=False,
                   tick_length=5,
-                  color='black'):
+                  color='black',
+                  direction='in'):
     '''
     ax - matplotlib axis object
     spines - list of spines to include, e.g. ['left', 'bottom']
@@ -127,7 +128,7 @@ def adjust_spines(ax, spines, spine_locations={},
         #line.set_markersize(6)
         line.set_markeredgewidth(linewidth)
 
-    ax.tick_params(length=tick_length, color=color)
+    ax.tick_params(length=tick_length, color=color, direction=direction)
     for spine in spines:
         ax.spines[spine].set_color(color)
 
