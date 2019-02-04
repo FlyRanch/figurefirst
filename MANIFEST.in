@@ -1,0 +1,6 @@
+include LICENSE.txt
+include README.md
+include setup.py
+include requirements.txt
+recursive-include inkscape_extensions *.inx
+recursive-include inkscape_extensions *.py
