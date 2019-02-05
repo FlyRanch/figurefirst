@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import figurefirst as fifi
 import matplotlib.pyplot as plt
 import matplotlib
