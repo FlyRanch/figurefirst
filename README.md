@@ -1,5 +1,5 @@
-# FigureFirst:
-FigureFirst is a python library to decorate and parse SVG files so they can serve as layout documents for matplotlib figures.
+# FigureFirst
+FigureFirst is a python 3.5+ library to decorate and parse SVG files so they can serve as layout documents for matplotlib figures.
 * See our github page for readme and examples: http://flyranch.github.io/figurefirst/
 * Read the docs: https://figurefirst.readthedocs.io/en/latest/index.html
 * Read our Scipy 2017 proceedings: http://conference.scipy.org/proceedings/scipy2017/lindsay.html
@@ -36,3 +36,13 @@ or you can pass a path in manually, e.g..
 ```bash
 figurefirst_ext ~/.config/inkscape/extensions
 ```
+
+
+## Development
+
+- Clone this repo
+- Test locally by running `pytest`
+  - To keep the test output files for inspection, add the `--keep_files` option
+  - To test against all supported python versions, run `tox`
+- Enable your github account with travis for continuous integration
+- Raise a pull request

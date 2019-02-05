@@ -15,7 +15,7 @@ setup(
     version='0.0.1',
     author='Floris van Breugel, Theodore Lindsay, Peter Weir',
     author_email='floris@caltech.edu',
-    packages=find_packages(exclude=("inkscape_extensions",)),
+    packages=find_packages(exclude=("inkscape_extensions", "test")),
     install_requires=["numpy", "matplotlib", "dill"],
     include_package_data=True,
     entry_points={
@@ -23,6 +23,7 @@ setup(
             "figurefirst_ext=figurefirst_scripts.install_inkscape_ext:main"
         ]
     },
+    test_requires=["pytest", "scipy", "tox"],
     data_files=[("inkscape_extensions", ext_files)],
     description='Matplotlib plotting stuff',
     long_description=open('README.md').read(),
