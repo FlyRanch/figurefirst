@@ -18,6 +18,7 @@ setup(
     packages=find_packages(exclude=("inkscape_extensions", "test")),
     install_requires=["numpy", "matplotlib", "dill"],
     include_package_data=True,
+    license='BSD',
     entry_points={
         "console_scripts": [
             "figurefirst_ext=figurefirst_scripts.install_inkscape_ext:main"
