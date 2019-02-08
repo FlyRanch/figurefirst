@@ -1,7 +1,8 @@
-#! /usr/bin/python
+#!/usr/bin/env python
 import os
+from glob import glob
 #from subprocess import call
-examples = [x for x in os.listdir('.') if ('example' in x) and ('.py' in x)]
+examples = glob(os.path.join(os.path.dirname(os.path.realpath(__file__)), "example_*.py"))
 print('########################')
 print('#   Testing Python2    #')
 print('########################')

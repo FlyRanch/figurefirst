@@ -1,3 +1,4 @@
+import os
 from xml.dom import minidom
 import matplotlib.pyplot as plt
 import numpy as np
@@ -495,20 +496,20 @@ class FFAxis(FFItem):
                 layout_filename = self.breadcrumb['layout_filename']
                 layout_key = self.breadcrumb['layout_key']
 
-                # wrap custom functions as if they are matplotlib functions 
+                # wrap custom functions as if they are matplotlib functions
                 # functions must have form: func(ax, *args, *kwargs)
                 # Two options:
                 #     (1) Self contained function, which will be pickled into the data file
                 #     (2) String pointing to a package.module.function (package.module.submodule.function okay too)
                 # syntax: (1) _custom
                 #         (2) first argument is a list
-                #             - if not empty: first element is a unique title,  
-                #                             additional elements should describe the arguments (in order)  
+                #             - if not empty: first element is a unique title,
+                #                             additional elements should describe the arguments (in order)
                 #                             argument descriptions are not required
                 #             - if empty: title is set to function name. duplicate titles are deleted in the data file
-                #                         thus, for non-unique function calls, it is necessary to specify a title 
+                #                         thus, for non-unique function calls, it is necessary to specify a title
                 #         (3) second argument is either a function (which will be pickled) or a string of a full package.module.function path
-                # example: self._plot(['Unique Title', 'Time', 'Response'], 
+                # example: self._plot(['Unique Title', 'Time', 'Response'],
                 #                     user_defined_function, *args, **kwargs)
                 if attr == '_custom':
                     def custom_wrapper(*args, **kwargs):
@@ -522,22 +523,22 @@ class FFAxis(FFItem):
                         function = args[1]
                         package = 'custom'
                         regenerate.__save_fifidata__(data_filename, layout_key,
-                                                     package, function, 
-                                                     title, args_description, 
+                                                     package, function,
+                                                     title, args_description,
                                                      *args[2:], **kwargs)
                         f = regenerate.__load_custom_function__(package, function)
                         f(self['axis'], *args[2:], **kwargs)
                     return custom_wrapper
 
-                
+
                 # wrap matplotlib methods and figurefirst.mpl_functions and save data to a pickle file
                 # syntax: (1) call: prepend '_' to function call (eg. '_plot', '_set_xlim', '_adjust_spines')
                 #         (2) first argument is a list
-                #             - if not empty: first element is a unique title,  
-                #                             additional elements should describe the arguments (in order)  
+                #             - if not empty: first element is a unique title,
+                #                             additional elements should describe the arguments (in order)
                 #                             argument descriptions are not required
                 #             - if empty: title is set to function name. duplicate titles are deleted in the data file
-                #                         thus, for non-unique function calls, it is necessary to specify a title 
+                #                         thus, for non-unique function calls, it is necessary to specify a title
                 # example: self._plot(['Unique Title', 'Time', 'Response'], *args, **kwargs)
                 #
                 # notes: add_artist does not work, other functions like linecollections etc. might not work either?
@@ -555,8 +556,8 @@ class FFAxis(FFItem):
                             package = 'figurefirst'
                             function = attr[1:]
                             regenerate.__save_fifidata__(data_filename, layout_key,
-                                                         package, function, 
-                                                         title, args_description, 
+                                                         package, function,
+                                                         title, args_description,
                                                          *args[1:], **kwargs)
                             f = regenerate.__load_custom_function__(package, function)
                             f(self['axis'], *args[1:], **kwargs)
@@ -576,13 +577,13 @@ class FFAxis(FFItem):
                                 s = 'Function name: ' + function + ' cannot be saved. Try finding a replacement in figurefirst.mpl_functions, or define your own custom wrapper'
                                 raise ValueError(s)
                             regenerate.__save_fifidata__(data_filename, layout_key,
-                                                         package, function, 
-                                                         title, args_description, 
+                                                         package, function,
+                                                         title, args_description,
                                                          *args[1:], **kwargs)
                             self['axis'].__getattribute__(attr[1:])(*args[1:], **kwargs) # This calls a matplotlib method
                         return mpl_wrapper
 
-                
+
 
                 # regular matplotlib or figurefirst.mpl_functions call, will only be recorded if self.record = True
                 else:
@@ -596,8 +597,8 @@ class FFAxis(FFItem):
                                 package = 'figurefirst'
                                 function = attr
                                 regenerate.__save_fifidata__(data_filename, layout_key,
-                                                             package, function, 
-                                                             title, args_description, 
+                                                             package, function,
+                                                             title, args_description,
                                                              *args, **kwargs)
                                 f = regenerate.__load_custom_function__(package, function)
                                 f(self['axis'], *args, **kwargs)
@@ -611,8 +612,8 @@ class FFAxis(FFItem):
                                     s = 'Function name: ' + function + ' cannot be saved. Try finding a replacement in figurefirst.mpl_functions, or define your own custom wrapper, or turn off record.'
                                     raise ValueError(s)
                                 regenerate.__save_fifidata__(data_filename, layout_key,
-                                                             package, function, 
-                                                             title, args_description, 
+                                                             package, function,
+                                                             title, args_description,
                                                              *args, **kwargs)
                                 self['axis'].__getattribute__(attr)(*args, **kwargs) # This calls a matplotlib method
                         return wrapper
@@ -690,16 +691,16 @@ class PatchSpec(PathSpec):
 
 
 class FigureLayout(object):
-    """ autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure, 
-    default: True make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init dpi - default 300, 
-    which is desired for print figures hide_layers - list of inkscape layer names you want to set to 
-    invisible (e.g. your template layers) construct an object that specifies the figure layout fom the svg file layout_filename. 
+    """ autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure,
+    default: True make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init dpi - default 300,
+    which is desired for print figures hide_layers - list of inkscape layer names you want to set to
+    invisible (e.g. your template layers) construct an object that specifies the figure layout fom the svg file layout_filename.
     """
 
     def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300, hide_layers=['Layer 1']):
         self.dpi = dpi # should be 300 for print figures
         self.autogenlayers = autogenlayers
-        self.layout_filename = layout_filename
+        self.layout_filename = os.path.join(layout_filename)
         #from xml.dom import minidom
         #layout_filename = layout_filename
         self.layout = minidom.parse(self.layout_filename).getElementsByTagName('svg')[0]
@@ -744,8 +745,8 @@ class FigureLayout(object):
         # for now
         #assert self.layout_user_sx == self.layout_user_sy
         if np.abs(self.layout_user_sx[0] - self.layout_user_sy[0]) > figurefirst_user_parameters.rounding_tolerance:
-            warnings.warn("""The the scaling of the user units in x and y are different and may result in unexpected 
-                            behavior. Make sure that the aspect ratio defined by the viewbox attribute of the root 
+            warnings.warn("""The the scaling of the user units in x and y are different and may result in unexpected
+                            behavior. Make sure that the aspect ratio defined by the viewbox attribute of the root
                             SVG node is the same as that given by the document hight and width.""")
         if make_mplfigures:
             self.make_mplfigures()
@@ -1045,7 +1046,7 @@ class FigureLayout(object):
                         #print type(leaf)
             if hide:
                 plt.close()
-        
+
         self.make_breadcrumbs_for_axes()
 
     def append_figure_to_layer(self, fig, fflayername,
@@ -1281,7 +1282,7 @@ class FigureLayout(object):
         '''
         Save layout.svg, data.svg, figure, axis information into each mpl axis
         '''
-        
+
         breadcrumb = {'layout_key': None,
                       'layout_filename': self.layout_filename,
                       'data_filename': self.data_filename}
@@ -1289,7 +1290,7 @@ class FigureLayout(object):
             breadcrumb_copy = copy.deepcopy(breadcrumb)
             key_copy = (k for k in key)
             breadcrumb_copy['layout_key'] = tuple(key_copy)
-            axis.breadcrumb = breadcrumb_copy 
+            axis.breadcrumb = breadcrumb_copy
 
     def write_fifidata(self, info, *args, **kwargs):
         '''
@@ -1299,6 +1300,6 @@ class FigureLayout(object):
         '''
         print (self.data_filename)
         regenerate.__save_fifidata__(self.data_filename, 'Supplemental Data',
-                                     'none', 'none', 
-                                     info[0], info[1:], 
+                                     'none', 'none',
+                                     info[0], info[1:],
                                      *args, **kwargs)

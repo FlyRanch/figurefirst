@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from pylab import *
 from figurefirst import FigureLayout,mpl_functions
 
