@@ -35,11 +35,15 @@ else:
     figurefirst_user_parameters = imp.load_source('figurefirst_user_parameters', figurefirst_user_parameters)
 
 
+if PY3:
+    try:
+        from . import regenerate
+    except:
+        import regenerate
+
 try:
-    from . import regenerate
     from . import mpl_functions
 except:
-    import regenerate
     import mpl_functions
 
 XMLNS = "http://flyranch.github.io/figurefirst/"
@@ -511,7 +515,7 @@ class FFAxis(FFItem):
                 #         (3) second argument is either a function (which will be pickled) or a string of a full package.module.function path
                 # example: self._plot(['Unique Title', 'Time', 'Response'],
                 #                     user_defined_function, *args, **kwargs)
-                if attr == '_custom':
+                if PY3 and attr == '_custom':
                     def custom_wrapper(*args, **kwargs):
                         info = args[0]
                         title = args[1]
@@ -542,7 +546,7 @@ class FFAxis(FFItem):
                 # example: self._plot(['Unique Title', 'Time', 'Response'], *args, **kwargs)
                 #
                 # notes: add_artist does not work, other functions like linecollections etc. might not work either?
-                elif attr[0] == '_':
+                elif PY3 and attr[0] == '_':
                     function = attr[1:]
                     if function in mpl_functions.__dict__.keys():
                         def figurefirst_wrapper(*args, **kwargs):
@@ -587,36 +591,39 @@ class FFAxis(FFItem):
 
                 # regular matplotlib or figurefirst.mpl_functions call, will only be recorded if self.record = True
                 else:
-                    if not self.record:
+                    if not PY3:
                         return self['axis'].__getattribute__(attr)
                     else:
-                        if attr in mpl_functions.__dict__.keys():
-                            def wrapper(*args, **kwargs):
-                                title = attr
-                                args_description = []
-                                package = 'figurefirst'
-                                function = attr
-                                regenerate.__save_fifidata__(data_filename, layout_key,
-                                                             package, function,
-                                                             title, args_description,
-                                                             *args, **kwargs)
-                                f = regenerate.__load_custom_function__(package, function)
-                                f(self['axis'], *args, **kwargs)
+                        if not self.record:
+                            return self['axis'].__getattribute__(attr)
                         else:
-                            def wrapper(*args, **kwargs):
-                                title = attr
-                                package = 'matplotlib'
-                                function = attr
-                                args_description = []
-                                if not regenerate.__is_mpl_call_saveable__(function):
-                                    s = 'Function name: ' + function + ' cannot be saved. Try finding a replacement in figurefirst.mpl_functions, or define your own custom wrapper, or turn off record.'
-                                    raise ValueError(s)
-                                regenerate.__save_fifidata__(data_filename, layout_key,
-                                                             package, function,
-                                                             title, args_description,
-                                                             *args, **kwargs)
-                                self['axis'].__getattribute__(attr)(*args, **kwargs) # This calls a matplotlib method
-                        return wrapper
+                            if attr in mpl_functions.__dict__.keys():
+                                def wrapper(*args, **kwargs):
+                                    title = attr
+                                    args_description = []
+                                    package = 'figurefirst'
+                                    function = attr
+                                    regenerate.__save_fifidata__(data_filename, layout_key,
+                                                                 package, function,
+                                                                 title, args_description,
+                                                                 *args, **kwargs)
+                                    f = regenerate.__load_custom_function__(package, function)
+                                    f(self['axis'], *args, **kwargs)
+                            else:
+                                def wrapper(*args, **kwargs):
+                                    title = attr
+                                    package = 'matplotlib'
+                                    function = attr
+                                    args_description = []
+                                    if not regenerate.__is_mpl_call_saveable__(function):
+                                        s = 'Function name: ' + function + ' cannot be saved. Try finding a replacement in figurefirst.mpl_functions, or define your own custom wrapper, or turn off record.'
+                                        raise ValueError(s)
+                                    regenerate.__save_fifidata__(data_filename, layout_key,
+                                                                 package, function,
+                                                                 title, args_description,
+                                                                 *args, **kwargs)
+                                    self['axis'].__getattribute__(attr)(*args, **kwargs) # This calls a matplotlib method
+                            return wrapper
 
             else:
                 return self.__getattribute__(attr)
