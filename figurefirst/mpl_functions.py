@@ -128,7 +128,7 @@ def adjust_spines(ax, spines, spine_locations={},
         #line.set_markersize(6)
         line.set_markeredgewidth(linewidth)
 
-    ax.tick_params(length=tick_length, color=color, direction=direction)
+    ax.tick_params(length=tick_length, color=color, direction=direction, width=linewidth)
     for spine in spines:
         ax.spines[spine].set_color(color)
 
