@@ -1,5 +1,6 @@
 numpy
-matplotlib>=3.0
+matplotlib>=3.0; python_version>'3.3'
+matplotlib>=2.0; python_version<'3.3'
 dill
 pytest
 twine>=1.11.0
