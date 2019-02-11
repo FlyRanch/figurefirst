@@ -1,8 +1,12 @@
 import os
 from setuptools import setup, find_packages
 
-here = os.path.realpath(__file__)
-ext_dir = os.path.join(os.path.dirname(here), 'inkscape_extensions')
+here = os.path.dirname(os.path.realpath(__file__))
+
+with open(os.path.join(here, "README.md")) as f:
+    long_description = f.read()
+
+ext_dir = os.path.join(here, 'inkscape_extensions')
 
 ext_files = [
     os.path.join("inkscape_extensions", fname)
@@ -16,7 +20,12 @@ setup(
     author='Floris van Breugel, Theodore Lindsay, Peter Weir',
     author_email='floris@caltech.edu',
     packages=find_packages(exclude=("inkscape_extensions", "test")),
-    install_requires=["numpy", "matplotlib", "dill"],
+    install_requires=[
+        "numpy",
+        "matplotlib",
+        "dill",
+        "backports.functools_lru_cache; python_version<'3.3'"
+    ],
     include_package_data=True,
     license='BSD',
     entry_points={
@@ -27,6 +36,6 @@ setup(
     test_requires=["pytest", "scipy", "tox"],
     data_files=[("inkscape_extensions", ext_files)],
     description='Matplotlib plotting stuff',
-    long_description=open('README.md').read(),
+    long_description=long_description,
     long_description_content_type="text/markdown"
 )
