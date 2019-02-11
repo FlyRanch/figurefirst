@@ -16,7 +16,7 @@ ext_files = [
 
 setup(
     name='figurefirst',
-    version='0.0.5',
+    version='0.0.6',
     author='Floris van Breugel, Theodore Lindsay, Peter Weir',
     author_email='floris@caltech.edu',
     packages=find_packages(exclude=("inkscape_extensions", "test")),
