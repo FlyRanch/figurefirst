@@ -13,6 +13,9 @@ if (sys.version_info > (3, 0)):
 else:
     PY3 = False
 
+if PY3:
+    unicode = str
+
 # Load some user parameters / defaults
 # By default figurefirst will load the figurefirst_user_parameters.py file from the figurefirst/figurefirst directory.
 # If you would like to set custom parameters, copy that defaults file to another location.
