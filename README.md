@@ -9,7 +9,7 @@ If you use FigureFirst, please cite the above paper to help others find FigureFi
 ## Installation
 
 ```bash
-pip install git+git://github.com/FlyRanch/figurefirst.git
+pip install figurefirst
 ```
 
 ## Use with Inkscape
