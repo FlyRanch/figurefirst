@@ -13,7 +13,7 @@ pip install figurefirst
 ```
 
 ## Quickstart
-*See http://flyranch.github.io/figurefirst/ for more detail*
+*See http://flyranch.github.io/figurefirst/ for more detail, or follow the tutorial notebook: https://github.com/FlyRanch/figurefirst/blob/master/examples/tutorial/tutorial.ipynb*
 1. Create your figure template in Inkscape. 
     *  Make a rectangle for each panel, tag the panel using `extensions > figurefirst > tagaxis`, e.g. `A` or `B`
     *  Group the rectangles (select all, `ctrl-g`), tag the group using `extensions > figurefirst > tagfigure`, e.g. `fig1`
@@ -29,7 +29,9 @@ pip install figurefirst
     *  Add your figure to the layout using `layout.append_figure_to_layer(layout.figures['fig1'], 'fig1', cleartarget=True)`
     *  Save your figure to the svg using `layout.write_svg('fifi_template.svg')`. Use a new name if you wish not to overwrite the template. 
 3. Note that you can have multiple figurefirst "figures" in a single svg file. Each figure will appear as a new layer.  
-
+4. If working in a jupyter notebook, you can display the figure using
+    *  `from IPython.display import display,SVG`
+    *  `display(SVG('fifi_template.svg'))`
 
 ## Use with Inkscape
 FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow. Try Inkscape 0.92: https://inkscape.org/en/release/0.92.3/
