@@ -8,8 +8,19 @@ If you use FigureFirst, please cite the above paper to help others find FigureFi
 
 ## Installation
 
+#### Install `figurefirst` using pip
+
 ```bash
 pip install figurefirst
+```
+#### Installing `figurefirst` inkscape extensions
+
+This package includes a console script, `figurefirst_ext` to install inkscape extensions.
+It tries to infer the default installation path for your OS (do `figurefirst_ext --help` to see what they are),
+or you can pass a path in manually, e.g..
+
+```bash
+figurefirst_ext ~/.config/inkscape/extensions
 ```
 
 ## Quickstart
@@ -36,28 +47,17 @@ pip install figurefirst
 ## Use with Inkscape
 FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow. Try Inkscape 0.92: https://inkscape.org/en/release/0.92.3/
 
-### Installing Inkscape 0.92 on Ubuntu
+#### Installing Inkscape 0.92 on Ubuntu
 You can install Inkscape 0.92 using ppa:
 * `sudo add-apt-repository ppa:inkscape.dev/stable`
 * `sudo apt update`
 * `sudo apt install inkscape`
 
-### Optimizing Inkscape settings
+#### Optimizing Inkscape settings
 Try increasing the Rendering Tile Multiplier:
 * `Edit > Preference > Rending`
 * `Rendering Tile Multiplier = 50`
 Restart Inkscape
-
-### Installing `figurefirst` extensions
-
-This package includes a console script, `figurefirst_ext` to install inkscape extensions.
-It tries to infer the default installation path for your OS (do `figurefirst_ext --help` to see what they are),
-or you can pass a path in manually, e.g..
-
-```bash
-figurefirst_ext ~/.config/inkscape/extensions
-```
-
 
 ## Development
 
