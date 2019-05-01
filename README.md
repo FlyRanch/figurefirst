@@ -12,6 +12,25 @@ If you use FigureFirst, please cite the above paper to help others find FigureFi
 pip install figurefirst
 ```
 
+## Quickstart
+*See http://flyranch.github.io/figurefirst/ for more detail*
+1. Create your figure template in Inkscape. 
+    a. Make a rectangle for each panel, tag the panel using `extensions > figurefirst > tagaxis`, e.g. `A` or `B`
+    b. Group the rectangles (select all, `ctrl-g`), tag the group using `extensions > figurefirst > tagfigure`, e.g. `fig1`
+    c. Save your template, e.g. `fifi_template.svg`
+2. In Python use the following commands to load, plot, and save:
+    a. `import figurefirst as fifi`
+    b. `layout = figurefirst.svg_to_axes.FigureLayout('fifi_template.svg', autogenlayers=True, make_mplfigures=True, hide_layers=[])`
+    c. For each axis, grab the axis handle using: `ax = layout.axes[('fig1', 'B')]`
+    d. Plot on that axis using matplotlib as usual
+    e. After you have plotted all panels, optionally update the aesthetics:
+        * figurefirst.mpl_functions.adjust_spines(ax, ['left', 'bottom'])
+        * figurefirst.mpl_functions.set_fontsize(ax, 6)
+    f. Add your figure to the layout using `layout.append_figure_to_layer(layout.figures['fig1'], 'fig1', cleartarget=True)`
+    g. Save your figure to the svg using `layout.write_svg('fifi_template.svg')`. Use a new name if you wish not to overwrite the template. 
+3. Note that you can have multiple figurefirst "figures" in a single svg file. Each figure will appear as a new layer.  
+
+
 ## Use with Inkscape
 FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow. Try Inkscape 0.92: https://inkscape.org/en/release/0.92.3/
 
