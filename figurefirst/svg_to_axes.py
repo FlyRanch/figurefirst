@@ -767,8 +767,7 @@ class FigureLayout(object):
         if make_mplfigures:
             self.make_mplfigures()
 
-        for layer in hide_layers:
-            self.set_layer_visibility(layer, False)
+        self._hide_layers(*hide_layers)
 
     def __getattr__(self, attr):
         if attr == 'fig':
@@ -1245,19 +1244,22 @@ class FigureLayout(object):
             outfile.write(self.output_xml.toxml().encode('ascii', 'xmlcharrefreplace'))
             outfile.close()
 
-    def save(self,filename,hidelayers = [],targetlayer = None,fix_meterlimt= True):
+    def save(self,filename,hidelayers = (),targetlayer = None,fix_meterlimt= True):
         """convenience function, inserts layers and then calls
         wirte_svg to save"""
         if targetlayer:
             self.insert_figures(fflayername=targetlayer)
         else:
             self.insert_figures()
-        for l in hidelayers:
-            self.set_layer_visibility(l,False)
+        self._hide_layers(*hidelayers)
         self.write_svg(filename)
         from . import mpl_functions
         if fix_meterlimt:
             mpl_functions.fix_mpl_svg(filename)
+
+    def _hide_layers(self, *layer_names):
+        for l in layer_names:
+            self.set_layer_visibility(l, False)
 
     def clear_fflayer(self, fflayername):
         '''
