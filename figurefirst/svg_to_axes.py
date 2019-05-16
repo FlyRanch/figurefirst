@@ -701,13 +701,19 @@ class PatchSpec(PathSpec):
 
 
 class FigureLayout(object):
-    """ autogenlayers - if True, figurefirst will automatically create targetlayers in the svg for each figure,
-    default: True make_mplfigures - if True, figurefirst will call self.make_mplfigures() during init dpi - default 300,
-    which is desired for print figures hide_layers - list of inkscape layer names you want to set to
-    invisible (e.g. your template layers) construct an object that specifies the figure layout fom the svg file layout_filename.
-    """
+    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300, hide_layers=("Layer 1",)):
+        """An object which specifies the figure layout fom the svg file layout_filename.
 
-    def __init__(self, layout_filename, autogenlayers=True,make_mplfigures = False, dpi=300, hide_layers=['Layer 1']):
+        :param layout_filename:
+        :param autogenlayers: bool
+            If True, figurefirst will automatically create target layers in the svg for each figure. Default True.
+        :param make_mplfigures: bool
+            If True, figurefirst will call self.make_mplfigures() during instantiation. Default False.
+        :param dpi: float
+            Dots per inch. Default 300.
+        :param hide_layers: iterable of str
+            Names of inkscape layers you want to make invisible (e.g. your template layers). Default ("Layer 1",).
+        """
         self.dpi = dpi # should be 300 for print figures
         self.autogenlayers = autogenlayers
         self.layout_filename = os.path.join(layout_filename)
@@ -755,14 +761,13 @@ class FigureLayout(object):
         # for now
         #assert self.layout_user_sx == self.layout_user_sy
         if np.abs(self.layout_user_sx[0] - self.layout_user_sy[0]) > figurefirst_user_parameters.rounding_tolerance:
-            warnings.warn("""The the scaling of the user units in x and y are different and may result in unexpected
+            warn("""The the scaling of the user units in x and y are different and may result in unexpected
                             behavior. Make sure that the aspect ratio defined by the viewbox attribute of the root
                             SVG node is the same as that given by the document hight and width.""")
         if make_mplfigures:
             self.make_mplfigures()
 
-        for layer in hide_layers:
-            self.set_layer_visibility(layer, False)
+        self._hide_layers(*hide_layers)
 
     def __getattr__(self, attr):
         if attr == 'fig':
@@ -1239,19 +1244,22 @@ class FigureLayout(object):
             outfile.write(self.output_xml.toxml().encode('ascii', 'xmlcharrefreplace'))
             outfile.close()
 
-    def save(self,filename,hidelayers = [],targetlayer = None,fix_meterlimt= True):
+    def save(self,filename,hidelayers = (),targetlayer = None,fix_meterlimt= True):
         """convenience function, inserts layers and then calls
         wirte_svg to save"""
         if targetlayer:
             self.insert_figures(fflayername=targetlayer)
         else:
             self.insert_figures()
-        for l in hidelayers:
-            self.set_layer_visibility(l,False)
+        self._hide_layers(*hidelayers)
         self.write_svg(filename)
         from . import mpl_functions
         if fix_meterlimt:
             mpl_functions.fix_mpl_svg(filename)
+
+    def _hide_layers(self, *layer_names):
+        for l in layer_names:
+            self.set_layer_visibility(l, False)
 
     def clear_fflayer(self, fflayername):
         '''
