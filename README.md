@@ -31,12 +31,12 @@ figurefirst_ext ~/.config/inkscape/extensions
     *  Save your template, e.g. `fifi_template.svg`
 2. In Python use the following commands to load, plot, and save:
     *  `import figurefirst as fifi`
-    *  `layout = figurefirst.svg_to_axes.FigureLayout('fifi_template.svg', autogenlayers=True, make_mplfigures=True, hide_layers=[])`
+    *  `layout = fifi.svg_to_axes.FigureLayout('fifi_template.svg', autogenlayers=True, make_mplfigures=True, hide_layers=[])`
     *  For each axis, grab the axis handle using: `ax = layout.axes[('fig1', 'B')]`
     *  Plot on that axis using matplotlib as usual
     *  After you have plotted all panels, optionally update the aesthetics:
-        *  `figurefirst.mpl_functions.adjust_spines(ax, ['left', 'bottom'])`
-        *  `figurefirst.mpl_functions.set_fontsize(ax, 6)`
+        *  `fifi.mpl_functions.adjust_spines(ax, ['left', 'bottom'])`
+        *  `fifi.mpl_functions.set_fontsize(ax, 6)`
     *  Add your figure to the layout using `layout.append_figure_to_layer(layout.figures['fig1'], 'fig1', cleartarget=True)`
     *  Save your figure to the svg using `layout.write_svg('fifi_template.svg')`. Use a new name if you wish not to overwrite the template. 
 3. Note that you can have multiple figurefirst "figures" in a single svg file. Each figure will appear as a new layer.  
