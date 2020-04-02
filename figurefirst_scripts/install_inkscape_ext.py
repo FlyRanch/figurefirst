@@ -86,7 +86,7 @@ def main():
         help="Inkscape extension directory. On linux and macos, defaults to\n"
         "~/.config/inkscape/extensions ; "
         "but on macos you might also try\n"
-        "~/Library/Application\ Support/org.inkscape.Inkscape/config/inkscape/extensions/figurefirst ; "
+        "~/Library/Application\ Support/org.inkscape.Inkscape/config/inkscape/extensions ; "
         "On Windows, defaults to "
         "C:\\Program Files\\Inkscape\\share\\extensions"
     )
