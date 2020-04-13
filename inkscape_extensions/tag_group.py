@@ -24,8 +24,8 @@ class FigureFirstGroupTagEffect(inkex.Effect):
         inkex.Effect.__init__(self)
         #import matplotlib
         #Define string option "--name" with "-n" shortcut and default value "World".
-        self.OptionParser.add_option('-n', '--name', action = 'store',
-          type = 'string', dest = 'name', default = 'none',
+        self.arg_parser.add_argument('-n', '--name', action = 'store',
+          type = str, dest = 'name', default = 'none',
           help = 'Name group')
         inkex.NSS[u"figurefirst"] = u"http://flyranch.github.io/figurefirst/"
         try:
@@ -51,7 +51,7 @@ class FigureFirstGroupTagEffect(inkex.Effect):
         if len(self.selected.values())>1: 
             raise Exception('too many items')
         else:
-            el = self.selected.values()[0]
+            el = list(self.selected.values())[0]
         newElm = inkex.etree.Element(inkex.addNS("group", "figurefirst"))
         newElm.attrib[inkex.addNS("name", "figurefirst")] = name
         #print inkex.NSS

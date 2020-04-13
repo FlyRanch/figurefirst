@@ -23,12 +23,12 @@ class FigureFirstMPLMethodsTagEffect(inkex.Effect):
         # Call the base class constructor.
         inkex.Effect.__init__(self)
         #Define string option "--mplmethod" with "-m" shortcut and default value "none".
-        self.OptionParser.add_option('-m', '--mplmethod', action = 'store',
-          type = 'string', dest = 'mplmethod', default = 'none',
+        self.arg_parser.add_argument('-m', '--mplmethod', action = 'store',
+          type = str, dest = 'mplmethod', default = 'none',
           help = 'Method name')
         #Define string option "--mplmethodarg" with "-z" shortcut and default value "none".
-        self.OptionParser.add_option('-a', '--mplmethodarg', action = 'store',
-          type = 'string', dest = 'mplmethodarg', default = 'none',
+        self.OptionParser.a('-a', '--mplmethodarg', action = 'store',
+          type = str, dest = 'mplmethodarg', default = 'none',
           help = 'Method arguments')
         inkex.NSS[u"figurefirst"] = u"http://flyranch.github.io/figurefirst/"
         try:
@@ -56,7 +56,7 @@ class FigureFirstMPLMethodsTagEffect(inkex.Effect):
         if len(self.selected.values())>1: 
             raise Exception('too many items')
         else:
-            el = self.selected.values()[0]
+            el = list(self.selected.values())[0]
         newElm = inkex.etree.Element(inkex.addNS("mplmethods", "figurefirst"))
         newElm.attrib[inkex.addNS(mplmethod, "figurefirst")] = mplmethodarg
         #print inkex.NSS

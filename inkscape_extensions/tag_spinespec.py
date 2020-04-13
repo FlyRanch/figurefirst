@@ -24,8 +24,8 @@ class FigureFirstAxisTagEffect(inkex.Effect):
         inkex.Effect.__init__(self)
         #import matplotlib
         #Define string option "--spinespec" with "-sp" shortcut and default value "left,bottom".
-        self.OptionParser.add_option('-s', '--spinespec', action = 'store',
-          type = 'string', dest = 'spinespec', default = 'left,bottom',
+        self.arg_parser.add_argument('-s', '--spinespec', action = 'store',
+          type =str, dest = 'spinespec', default = 'left,bottom',
           help = "Add a spine specification as a comma separated list of spine locations. \n Valid values are: top,bottom,right or left")
         inkex.NSS[u"figurefirst"] = u"http://flyranch.github.io/figurefirst/"
         try:
@@ -50,7 +50,7 @@ class FigureFirstAxisTagEffect(inkex.Effect):
         if len(self.selected.values())>1: 
             raise Exception('too many items')
         else:
-            el = self.selected.values()[0]
+            el = list(self.selected.values())[0]
         newElm = inkex.etree.Element(inkex.addNS("spinespec", "figurefirst"))
         newElm.attrib[inkex.addNS("spinelist", "figurefirst")] = spinelist
         #print inkex.NSS

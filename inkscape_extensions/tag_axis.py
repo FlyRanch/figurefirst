@@ -10,6 +10,7 @@ sys.path.append('C:\Program Files\Inkscape\share\extensions')
 import inkex
 # The simplestyle module provides functions for style parsing.
 from simplestyle import *
+from lxml import etree
 
 class FigureFirstAxisTagEffect(inkex.Effect):
     """
@@ -24,12 +25,12 @@ class FigureFirstAxisTagEffect(inkex.Effect):
         inkex.Effect.__init__(self)
         #import matplotlib
         #Define string option "--name" with "-n" shortcut and default value "World".
-        self.OptionParser.add_option('-n', '--name', action = 'store',
-          type = 'string', dest = 'name', default = 'none',
+        self.arg_parser.add_argument('-n', '--name', action = 'store',
+          type = str, dest = 'name', default = 'none',
           help = 'Name axis')
         inkex.NSS[u"figurefirst"] = u"http://flyranch.github.io/figurefirst/"
         try:
-            inkex.etree.register_namespace("figurefirst","http://flyranch.github.io/figurefirst/")
+            etree.register_namespace("figurefirst","http://flyranch.github.io/figurefirst/")
         except AttributeError:
             #inkex.etree._NamespaceRegistry.update(inkex.addNS("name", "figurefirst"))
             #This happens on windows version of inkscape - it might be good to check
@@ -48,11 +49,12 @@ class FigureFirstAxisTagEffect(inkex.Effect):
         svg = self.document.getroot()
         # or alternatively
         # Create text element
-        if len(self.selected.values())>1: 
+
+        if len(self.svg.selected.values())>1:
             raise Exception('too many items')
         else:
-            el = self.selected.values()[0]
-        newElm = inkex.etree.Element(inkex.addNS("axis", "figurefirst"))
+            el = list(self.svg.selected.values())[0]
+        newElm = etree.Element(inkex.addNS("axis", "figurefirst"))
         newElm.attrib[inkex.addNS("name", "figurefirst")] = name
         #print inkex.NSS
         el.append(newElm)
