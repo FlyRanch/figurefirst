@@ -35,7 +35,7 @@ Now if we want to plot data to any of these axes, we can direct our plotting com
 To construct a similar plot in figurefirst, we use Inkscape to create an svg layout document by drawing boxes where the five axes should lie, then tag these boxes with names, e.g., ax1, ax2, etc. To make the figure in Python, we then construct a :class:`~figurefirst.svg_to_axes.FigureLayout` object by passing the path to the layout document: ::
 
 	import figurefirst as fifi
-	layout = fifi.FigureLayout('/path/to/layout.svg')
+	layout = fifi.FigureLayout('/path/to/layout.svg', make_mplfigures=True)
 
 figurefirst will construct the matplotlib figure and store the axes by their tag name in the 'axes' attribute of the layout object. For example, to plot on ax1: ::
 
@@ -52,9 +52,17 @@ So how do you design a layout? The easiest approach is to use Inkscape and take 
 Merging matplotlib plots back into the layout
 ----------------------------------------------
 
-Simply being able to use svg as a specification for axis placement is a useful feature on it's own, but figurefirst allows you to take things one step further and direct the output of your plotting code back into the svg layout document. This means that any svg vector art that you include in your layout document can now be used as overlays and underlays to your matplotlib figures. To save our new plots we simply call ::
+Simply being able to use svg as a specification for axis placement is a useful feature on it's own, but figurefirst allows you to take things one step further and direct the output of your plotting code back into the svg layout document.
+This means that any svg vector art that you include in your layout document can now be used as overlays and underlays to your matplotlib figures.
+To save our new plots we simply call ::
 
 	layout.save('/path/to/output_file.svg')
 
-By default figurefirst will create a new svg layer to place all the new matplotlib artwork. Note that merging your newly plotted figures with the layout in this way also provides a mechanism for fast iterative development of your figures. If you save the plotted data back into the layout document (passing the original layout file as output_file), you can now make adjustments to the layout, add annotations, etc., now that you have a better idea of how the data lie within the figure. After making these changes, the plotting code can be re-run at any time to regenerate the plots without worrying about loosing these annotations.
+By default figurefirst will create a new svg layer to place all the new matplotlib artwork.
+Note that merging your newly plotted figures with the layout in this way also provides a mechanism for fast iterative development of your figures.
+If you save the plotted data back into the layout document (passing the original layout file as output_file), you can now make adjustments to the layout, add annotations, etc., now that you have a better idea of how the data lie within the figure.
+After making these changes, the plotting code can be re-run at any time to regenerate the plots without worrying about loosing these annotations.
 
+By default, figurefirst will assume the layer called ``"Layer 1"`` is your template layer, and hide it.
+To disable this, set ``hide_layers=[]`` in the constructor.
+By preference, put non-template elements of your element on another layer.

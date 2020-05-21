@@ -8,26 +8,12 @@ If you use FigureFirst, please cite the above paper to help others find FigureFi
 
 ## Installation
 
+#### Install `figurefirst` using pip
+
 ```bash
 pip install figurefirst
 ```
-
-## Use with Inkscape
-FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow. Try Inkscape 0.92: https://inkscape.org/en/release/0.92.3/
-
-### Installing Inkscape 0.92 on Ubuntu
-You can install Inkscape 0.92 using ppa:
-* `sudo add-apt-repository ppa:inkscape.dev/stable`
-* `sudo apt update`
-* `sudo apt install inkscape`
-
-### Optimizing Inkscape settings
-Try increasing the Rendering Tile Multiplier:
-* `Edit > Preference > Rending`
-* `Rendering Tile Multiplier = 50`
-Restart Inkscape
-
-### Installing `figurefirst` extensions
+#### Installing `figurefirst` inkscape extensions
 
 This package includes a console script, `figurefirst_ext` to install inkscape extensions.
 It tries to infer the default installation path for your OS (do `figurefirst_ext --help` to see what they are),
@@ -37,6 +23,41 @@ or you can pass a path in manually, e.g..
 figurefirst_ext ~/.config/inkscape/extensions
 ```
 
+## Quickstart
+*See http://flyranch.github.io/figurefirst/ for more detail, or follow the tutorial notebook: https://github.com/FlyRanch/figurefirst/blob/master/examples/tutorial/tutorial.ipynb*
+1. Create your figure template in Inkscape. 
+    *  Make a rectangle for each panel, tag the panel using `extensions > figurefirst > tagaxis`, e.g. `A` or `B`
+    *  Group the rectangles (select all, `ctrl-g`), tag the group using `extensions > figurefirst > tagfigure`, e.g. `fig1`
+    *  Save your template, e.g. `fifi_template.svg`
+2. In Python use the following commands to load, plot, and save:
+    *  `import figurefirst as fifi`
+    *  `layout = fifi.svg_to_axes.FigureLayout('fifi_template.svg', autogenlayers=True, make_mplfigures=True, hide_layers=[])`
+    *  For each axis, grab the axis handle using: `ax = layout.axes[('fig1', 'B')]`
+    *  Plot on that axis using matplotlib as usual
+    *  After you have plotted all panels, optionally update the aesthetics:
+        *  `fifi.mpl_functions.adjust_spines(ax, ['left', 'bottom'])`
+        *  `fifi.mpl_functions.set_fontsize(ax, 6)`
+    *  Add your figure to the layout using `layout.append_figure_to_layer(layout.figures['fig1'], 'fig1', cleartarget=True)`
+    *  Save your figure to the svg using `layout.write_svg('fifi_template.svg')`. Use a new name if you wish not to overwrite the template. 
+3. Note that you can have multiple figurefirst "figures" in a single svg file. Each figure will appear as a new layer.  
+4. If working in a jupyter notebook, you can display the figure using
+    *  `from IPython.display import display,SVG`
+    *  `display(SVG('fifi_template.svg'))`
+
+## Use with Inkscape
+FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow. Try Inkscape 0.92: https://inkscape.org/en/release/0.92.3/
+
+#### Installing Inkscape 0.92 on Ubuntu
+You can install Inkscape 0.92 using ppa:
+* `sudo add-apt-repository ppa:inkscape.dev/stable`
+* `sudo apt update`
+* `sudo apt install inkscape`
+
+#### Optimizing Inkscape settings
+Try increasing the Rendering Tile Multiplier:
+* `Edit > Preference > Rending`
+* `Rendering Tile Multiplier = 50`
+Restart Inkscape
 
 ## Development
 
