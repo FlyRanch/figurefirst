@@ -1030,16 +1030,30 @@ class FigureLayout(object):
             figure_elements_by_name_dict[figname] = figure_element
         return figure_elements_by_name_dict[name]
 
-    def make_mplfigures(self, hide=False):
+    def make_mplfigures(self, hide=False, axes_order={}):
         """generates  matplotlib figures from the tree of parsed FFFigure and FFGroup,
-        FFTemplatetargets"""
+        FFTemplatetargets
+
+        axes_order:  {'figure1': [top_axis, next_axis, etc.], 'figure2': []}. Dictionary of the figures, that point to the list of axes, starting with the axis that should be on top first. Any axes not listed will end up on the bottom.
+        """
         for figname,figgroup in self.figures.items():
             if len(figgroup.keys()):
                 leafs = flatten_dict(figgroup)
                 fw_in = tounit(self.layout_width, 'in')
                 fh_in = tounit(self.layout_height, 'in')
                 fig = plt.figure(figsize=(fw_in, fh_in))
-                for leafkey,leaf in leafs.items():
+
+                if figname in axes_order.keys():
+                    ordered_axes_for_fig = [(a,) for a in axes_order[figname]]
+                    for leafkey in leafs.keys():
+                        if leafkey not in ordered_axes_for_fig:
+                            ordered_axes_for_fig.append(leafkey)
+                    ordered_axes_for_fig = ordered_axes_for_fig[::-1]
+                else:
+                    ordered_axes_for_fig = leafs.keys()
+
+                for leafkey in ordered_axes_for_fig:
+                    leaf = leafs[leafkey]
                     left = leaf.x/self.layout_uw
                     width = leaf.w/self.layout_uw
                     height = leaf.h/self.layout_uh
