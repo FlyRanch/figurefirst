@@ -67,3 +67,11 @@ Restart Inkscape
   - To test against all supported python versions, run `tox`
 - Enable your github account with travis for continuous integration
 - Raise a pull request
+
+
+## FAQ
+* How can I control the order of axes that are overlapping? To put axis 'a' on top of axis 'b', when both are in the same group 'fig':
+  *  `layout = fifi.svg_to_axes.FigureLayout('fifi_axis_order.svg', autogenlayers=True, make_mplfigures=False)`
+  *  `layout.make_mplfigures(axes_order={'fig': ['a', 'b']})`
+  
+* After plotting, inkscape is very slow (because there are lots of points/lines). Rasterize using `ax.set_rasterization_zorder(ZORDER)` see https://matplotlib.org/3.1.3/gallery/misc/rasterization_demo.html
