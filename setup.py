@@ -33,7 +33,7 @@ setup(
             "figurefirst_ext=figurefirst_scripts.install_inkscape_ext:main"
         ]
     },
-    test_requires=["pytest", "scipy", "tox"],
+    test_requires=["pytest", "tox"],
     data_files=[("inkscape_extensions", ext_files)],
     description='Matplotlib plotting stuff',
     long_description=long_description,
