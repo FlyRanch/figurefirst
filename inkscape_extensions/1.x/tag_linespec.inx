@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>tagline</_name>
+  <id>org.ekips.filter.tag_linespec</id>
+  <dependency type="executable" location="extensions">tag_linespec.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <param name="name" type="string" _gui-text="Tag an line with a name:">line_name</param>
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+       <submenu _name="FigureFirst"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">tag_linespec.py</command>
+  </script>
+</inkscape-extension>

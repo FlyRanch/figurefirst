@@ -6,6 +6,9 @@ import shutil
 import logging
 from argparse import ArgumentParser
 
+DEFAULT_WIN_PATH = ("c:", "Program Files", "Inkscape", "share", "extensions")
+DEFAULT_POSIX_PATH = ("~", ".config", "inkscape", "extensions")
+
 try:
     input = raw_input
 except NameError:
@@ -47,7 +50,6 @@ def copy_extensions(src_dir, tgt_dir, overwrite_all=False, overwrite_none=False)
             tgt_fpath = os.path.join(tgt_dir, fname)
 
             copy_this = True
-
             if os.path.isfile(tgt_fpath):
                 if overwrite_all:
                     os.remove(tgt_fpath)
@@ -74,11 +76,9 @@ def copy_extensions(src_dir, tgt_dir, overwrite_all=False, overwrite_none=False)
 
 def get_default_target():
     if sys.platform.startswith("win32"):
-        return os.path.join("c:", "Program Files", "Inkscape", "share", "extensions")
+        return os.path.join(*DEFAULT_WIN_PATH)
     elif sys.platform.startswith("linux") or sys.platform.startswith("darwin"):
-        return os.path.expanduser(
-            os.path.join("~", ".config", "inkscape", "extensions")
-        )
+        return os.path.expanduser(os.path.join(*DEFAULT_POSIX_PATH))
 
 
 def main():
@@ -93,6 +93,11 @@ def main():
         "~/Library/Application\ Support/org.inkscape.Inkscape/config/inkscape/extensions ; "
         "On Windows, defaults to "
         "C:\\Program Files\\Inkscape\\share\\extensions",
+    )
+    parser.add_argument(
+        "--inkscape_major_version",
+        default=1,
+        help="Set this to the major version of inkscape you will be using e.g. 1 for inkscape >=1.0",
     )
     parser.add_argument(
         "-f",
@@ -122,8 +127,11 @@ def main():
                 + "Ensure Inkscape is installed correctly, and/or give the extension directory explicitly.\n"
             )
 
-        src_dir = os.path.join(sys.prefix, "inkscape_extensions")
-
+        src_dir = os.path.join(
+            sys.prefix,
+            "inkscape_extensions",
+            f"{float(args.inkscape_major_version):.0f}.x",
+        )
         if args.force and args.ease:
             args.force = False
             args.ease = False
