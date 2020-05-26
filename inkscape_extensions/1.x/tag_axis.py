@@ -62,4 +62,4 @@ class FigureFirstAxisTagEffect(inkex.Effect):
 
 # Create effect instance and apply it.
 effect = FigureFirstAxisTagEffect()
-effect.affect()
+effect.run()

@@ -3,6 +3,7 @@ import sys
 sys.path.append('/usr/share/inkscape/extensions') # or another path, as necessary
 sys.path.append('/Applications/Inkscape.app/Contents/Resources/extensions')
 sys.path.append('C:\Program Files\Inkscape\share\extensions')
+from lxml import etree
 #import xml.etree.ElementTree as ET
 #ET.register_namespace('figurefirst', 'http://www.figurefirst.com')
 
@@ -27,12 +28,12 @@ class FigureFirstMPLMethodsTagEffect(inkex.Effect):
           type = str, dest = 'mplmethod', default = 'none',
           help = 'Method name')
         #Define string option "--mplmethodarg" with "-z" shortcut and default value "none".
-        self.OptionParser.a('-a', '--mplmethodarg', action = 'store',
+        self.arg_parser.add_argument('-a', '--mplmethodarg', action = 'store',
           type = str, dest = 'mplmethodarg', default = 'none',
           help = 'Method arguments')
         inkex.NSS[u"figurefirst"] = u"http://flyranch.github.io/figurefirst/"
         try:
-            inkex.etree.register_namespace("figurefirst","http://flyranch.github.io/figurefirst/")
+            etree.register_namespace("figurefirst","http://flyranch.github.io/figurefirst/")
         except AttributeError:
             #inkex.etree._NamespaceRegistry.update(inkex.addNS("name", "figurefirst"))
             #This happens on windows version of inkscape - it might be good to check
@@ -53,11 +54,11 @@ class FigureFirstMPLMethodsTagEffect(inkex.Effect):
         svg = self.document.getroot()
         # or alternatively
         # Create text element
-        if len(self.selected.values())>1: 
+        if len(self.svg.selected.values())>1:
             raise Exception('too many items')
         else:
-            el = list(self.selected.values())[0]
-        newElm = inkex.etree.Element(inkex.addNS("mplmethods", "figurefirst"))
+            el = list(self.svg.selected.values())[0]
+        newElm = etree.Element(inkex.addNS("mplmethods", "figurefirst"))
         newElm.attrib[inkex.addNS(mplmethod, "figurefirst")] = mplmethodarg
         #print inkex.NSS
         el.append(newElm)
@@ -65,4 +66,4 @@ class FigureFirstMPLMethodsTagEffect(inkex.Effect):
 
 # Create effect instance and apply it.
 effect = FigureFirstMPLMethodsTagEffect()
-effect.affect()
+effect.run()

@@ -3,6 +3,7 @@ import sys
 sys.path.append('/usr/share/inkscape/extensions') # or another path, as necessary
 sys.path.append('/Applications/Inkscape.app/Contents/Resources/extensions')
 sys.path.append('C:\Program Files\Inkscape\share\extensions')
+from lxml import etree
 #import xml.etree.ElementTree as ET
 #ET.register_namespace('figurefirst', 'http://www.figurefirst.com')
 
@@ -29,7 +30,7 @@ class FigureFirstSVGItemTagEffect(inkex.Effect):
           help = 'Name svgitem')
         inkex.NSS[u"figurefirst"] = u"http://flyranch.github.io/figurefirst/"
         try:
-            inkex.etree.register_namespace("figurefirst","http://flyranch.github.io/figurefirst/")
+            etree.register_namespace("figurefirst","http://flyranch.github.io/figurefirst/")
         except AttributeError:
             #inkex.etree._NamespaceRegistry.update(inkex.addNS("name", "figurefirst"))
             #This happens on windows version of inkscape - it might be good to check
@@ -48,11 +49,11 @@ class FigureFirstSVGItemTagEffect(inkex.Effect):
         svg = self.document.getroot()
         # or alternatively
         # Create text element
-        if len(self.selected.values())>1: 
+        if len(self.svg.selected.values())>1:
             raise Exception('too many items')
         else:
-            el = list(self.selected.values())[0]
-        newElm = inkex.etree.Element(inkex.addNS("svgitem", "figurefirst"))
+            el = list(self.svg.selected.values())[0]
+        newElm = etree.Element(inkex.addNS("svgitem", "figurefirst"))
         newElm.attrib[inkex.addNS("name", "figurefirst")] = name
         #print inkex.NSS
         el.append(newElm)
@@ -60,4 +61,4 @@ class FigureFirstSVGItemTagEffect(inkex.Effect):
 
 # Create effect instance and apply it.
 effect = FigureFirstSVGItemTagEffect()
-effect.affect()
+effect.run()
