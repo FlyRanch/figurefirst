@@ -96,7 +96,7 @@ def main():
     )
     parser.add_argument(
         "--inkscape_major_version",
-        default=1,
+        default=0,
         help="Set this to the major version of inkscape you will be using e.g. 1 for inkscape >=1.0",
     )
     parser.add_argument(
