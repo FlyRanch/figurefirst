@@ -467,7 +467,7 @@ class FFFigure(FFGroup, object):
 
     def __getattr__(self, attr):
         try:
-            if attr is "ismplfigure":
+            if attr == "ismplfigure":
                 return False
             val = super(FFFigure, self).__getattr__(attr)
             return val
@@ -539,7 +539,7 @@ class FFAxis(FFItem):
         if attr == "h":
             return (self.p2 - self.p1)[1]
         else:
-            if attr is "ismplaxis":
+            if attr == "ismplaxis":
                 return self.__getattribute__(attr)
             if self.ismplaxis:
                 data_filename = self.breadcrumb["data_filename"]
