@@ -1440,7 +1440,7 @@ class FigureLayout(object):
     def write_svg(self, output_filename):
         """ writes the current output_xml document to output_filename"""
         try:
-            outfile = open(output_filename, "w", encoding="utf-8")
+            outfile = open(output_filename, "w")
             self.output_xml.writexml(outfile, encoding="utf-8")
         except UnicodeEncodeError:
             outfile.close()
