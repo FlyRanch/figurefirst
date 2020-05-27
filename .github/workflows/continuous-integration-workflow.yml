@@ -21,6 +21,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test with pytest
-      run: |
-        pytest
+    - name: Install Tox
+        run: pip install tox
+    - name: Run Tox
+        # Run tox using the version of Python in `PATH`
+        run: tox -e py
