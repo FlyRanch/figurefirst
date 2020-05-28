@@ -2,6 +2,7 @@ import os
 import dill as pickle
 import numpy as np
 import imp
+
 try:
     from . import svg_to_axes
 except:
@@ -12,7 +13,8 @@ import traceback
 
 import importlib.util
 import sys
- 
+
+
 def __check_module__(module_name):
     """
     Checks if module can be imported without actually
@@ -20,13 +22,13 @@ def __check_module__(module_name):
     """
     module_spec = importlib.util.find_spec(module_name)
     if module_spec is None:
-        print('Module: {} NOT found'.format(module_name))
+        print("Module: {} NOT found".format(module_name))
         return None
     else:
-        #print('Module: {} can be imported!'.format(module_name))
+        # print('Module: {} can be imported!'.format(module_name))
         return module_spec
- 
- 
+
+
 def __import_module_from_spec__(module_spec):
     """
     Import the module via the passed in module specification
@@ -39,12 +41,15 @@ def __import_module_from_spec__(module_spec):
     except:
         return module_spec.loader.load_module(module_spec.name)
 
+
 def __import_module_from_name__(module_name):
-    if '.' in module_name:
-        raise ValueError('Use the basename for the module, and include all submodules in the function name. e.g. package_name: figurefirst, function_name: mpl_function.adjust_spines')
+    if "." in module_name:
+        raise ValueError(
+            "Use the basename for the module, and include all submodules in the function name. e.g. package_name: figurefirst, function_name: mpl_function.adjust_spines"
+        )
 
     try:
-        if (sys.version_info > (3, 0)):
+        if sys.version_info > (3, 0):
             module_spec = __check_module__(module_name)
             package = __import_module_from_spec__(module_spec)
             return package
@@ -53,27 +58,38 @@ def __import_module_from_name__(module_name):
             package = imp.load_module(package_name, f, filename, description)
             return package
     except:
-        raise ValueError('Could not find package: ' + package_name + ', maybe you need to install it?')
+        raise ValueError(
+            "Could not find package: "
+            + package_name
+            + ", maybe you need to install it?"
+        )
 
 
 def __is_mpl_call_saveable__(function_name):
-    not_saveable = ['add_artist']
+    not_saveable = ["add_artist"]
     if function_name in not_saveable:
         return False
     else:
         return True
 
-def __save_fifidata__(data_filename, layout_key,
-                        package, function, 
-                        title, args_description, 
-                        *args, **kwargs):
-    if title == 'figurefirst.regenerate.replot':
+
+def __save_fifidata__(
+    data_filename,
+    layout_key,
+    package,
+    function,
+    title,
+    args_description,
+    *args,
+    **kwargs
+):
+    if title == "figurefirst.regenerate.replot":
         # this is a code word for not saving the data
         return
 
     # load
     if os.path.exists(data_filename):
-        fifidata_file = open(data_filename, 'rb')
+        fifidata_file = open(data_filename, "rb")
         fifidata = pickle.load(fifidata_file)
         fifidata_file.close()
     else:
@@ -83,19 +99,21 @@ def __save_fifidata__(data_filename, layout_key,
         fifidata[layout_key] = []
 
     # new figure action (e.g. mpl call)
-    new_figure_action = {'package': package,
-                         'function': function,
-                         'title': title,
-                         'args_description': args_description,
-                         'args': args,
-                         'kwargs': kwargs,
-                         'traceback': traceback.extract_stack()}
+    new_figure_action = {
+        "package": package,
+        "function": function,
+        "title": title,
+        "args_description": args_description,
+        "args": args,
+        "kwargs": kwargs,
+        "traceback": traceback.extract_stack(),
+    }
 
     # delete duplicate entries
     if 0:
         idx = []
         for i, action in enumerate(fifidata[layout_key]):
-            if action['title'] == title:
+            if action["title"] == title:
                 idx.append(i)
         if len(idx) > 0:
             for i in sorted(idx, reverse=True):
@@ -105,35 +123,37 @@ def __save_fifidata__(data_filename, layout_key,
         else:
             fifidata[layout_key].append(new_figure_action)
     #
-    
+
     fifidata[layout_key].append(new_figure_action)
 
     # save
-    fifidata_file = open(data_filename, 'wb')
+    fifidata_file = open(data_filename, "wb")
     pickle.dump(fifidata, fifidata_file)
     fifidata_file.close()
 
+
 def __load_custom_function__(package_name, function_name):
-    if package_name == 'figurefirst':
-        function_name = 'mpl_functions.'+function_name
-    elif package_name == 'custom':
+    if package_name == "figurefirst":
+        function_name = "mpl_functions." + function_name
+    elif package_name == "custom":
         if type(function_name) == types.FunctionType:
             return function_name
         else:
-            package_name = function_name.split('.')[0]
-            function_name = function_name[len(package_name)+1:]
+            package_name = function_name.split(".")[0]
+            function_name = function_name[len(package_name) + 1 :]
 
     package = __import_module_from_name__(package_name)
-    
-    nest = function_name.split('.')
+
+    nest = function_name.split(".")
     function = package
     for attr in nest:
         function = getattr(function, attr)
 
     return function
 
-def replot(layout_filename, output_filename='template', data_filename=''):
-    '''
+
+def replot(layout_filename, output_filename="template", data_filename=""):
+    """
     Regenerate a figure from saved data
 
     layout_filename - path and name for layout svg file
@@ -141,107 +161,115 @@ def replot(layout_filename, output_filename='template', data_filename=''):
     data_filename - path and name for the data.pickle file that was generated by figurefirst with the raw
                     graphical source data and commands. Default of None will search for the data.pickle file
                     in the same directory using the default name. 
-    '''
-    if data_filename == '':
-        data_filename = layout_filename.split('.svg')[0]+'_data.dillpickle'
-    if output_filename == 'template':
+    """
+    if data_filename == "":
+        data_filename = layout_filename.split(".svg")[0] + "_data.dillpickle"
+    if output_filename == "template":
         output_filename = layout_filename
 
     layout = svg_to_axes.FigureLayout(layout_filename)
     layout.make_mplfigures(hide=True)
 
-    fifidata_file = open(data_filename, 'rb')
+    fifidata_file = open(data_filename, "rb")
     fifidata = pickle.load(fifidata_file)
     fifidata_file.close()
 
     for layout_key in fifidata.keys():
-        if layout_key == 'Supplemental Data':
+        if layout_key == "Supplemental Data":
             continue
         for action in fifidata[layout_key]:
             ax = layout.axes[layout_key]
 
-            info = ['figurefirst.regenerate.replot'] # trick function into skipping save
-            package = action['package']
-            function = action['function']
-            if package == 'none':
+            info = [
+                "figurefirst.regenerate.replot"
+            ]  # trick function into skipping save
+            package = action["package"]
+            function = action["function"]
+            if package == "none":
                 continue
-            args = action['args']
-            kwargs = action['kwargs']
+            args = action["args"]
+            kwargs = action["kwargs"]
 
-            print("="*100)
-            print('Package: '+package + '  |  Function: '+str(function))
-            print(action['traceback'])
-            if package == 'matplotlib' or package == 'figurefirst':
-                ax.__getattr__('_'+function)(info, *args, **kwargs)
+            print("=" * 100)
+            print("Package: " + package + "  |  Function: " + str(function))
+            print(action["traceback"])
+            if package == "matplotlib" or package == "figurefirst":
+                ax.__getattr__("_" + function)(info, *args, **kwargs)
             else:
-                ax.__getattr__('_custom')(info, function, *args, **kwargs)
+                ax.__getattr__("_custom")(info, function, *args, **kwargs)
 
     for figure in layout.figures.keys():
         try:
-            layout.append_figure_to_layer(layout.figures[figure], figure, cleartarget=True)
+            layout.append_figure_to_layer(
+                layout.figures[figure], figure, cleartarget=True
+            )
         except:
-            print('Skipping figure: '+figure)
+            print("Skipping figure: " + figure)
 
     layout.write_svg(output_filename)
 
+
 def load_data_file(filename):
-    if filename[-4:] == '.svg':
-        data_filename = filename.split('.svg')[0]+'_data.dillpickle'
-        print('Automatically finding data file: ' + data_filename)
+    if filename[-4:] == ".svg":
+        data_filename = filename.split(".svg")[0] + "_data.dillpickle"
+        print("Automatically finding data file: " + data_filename)
     else:
         data_filename = filename
 
     if os.path.exists(data_filename):
-        f = open(data_filename, 'rb')
+        f = open(data_filename, "rb")
         data = pickle.load(f)
         f.close()
     else:
-        print('No data file: ' + data_filename)
+        print("No data file: " + data_filename)
         data = None
 
     return data
 
+
 def save_data_file(data, filename):
-    if filename[-4:] == '.svg':
-        data_filename = filename.split('.svg')[0]+'_data.dillpickle'
-        print('Automatically finding data file: ' + data_filename)
+    if filename[-4:] == ".svg":
+        data_filename = filename.split(".svg")[0] + "_data.dillpickle"
+        print("Automatically finding data file: " + data_filename)
     else:
         data_filename = filename
 
-    f = open(data_filename, 'wb')
+    f = open(data_filename, "wb")
     data = pickle.dump(data, f)
     f.close()
-    
-def clear_fifidata(data_filename, layout_key='all'):
-    '''
+
+
+def clear_fifidata(data_filename, layout_key="all"):
+    """
     layout_key - either a single layout key, or 'all' to delete everything
-    '''
+    """
     data = load_data_file(data_filename)
-    
+
     if data is not None:
-        if layout_key == 'all':
+        if layout_key == "all":
             layout_keys = [k for k in data.keys()]
         else:
             layout_keys = [layout_key]
 
-        for layout_key in layout_keys: 
+        for layout_key in layout_keys:
             if layout_key in data.keys():
-                print('Clearing: '+str(layout_key))
+                print("Clearing: " + str(layout_key))
                 data[layout_key] = []
         save_data_file(data, data_filename)
 
+
 def compress(filename, max_length=500):
-    '''
+    """
     Attempt to downsize (via interpolation) large arguments. Very experimental. 
     Searches for arguments that are:
         1. A np.ndarray of length > max_length
         2. A list of np.ndarrays where each element of the list is identical in length, and that length > max_length
-    '''
+    """
     fifidata = load_data_file(filename)
 
     for layout_key in fifidata.keys():
         for action in fifidata[layout_key]:
-            args = action['args']
+            args = action["args"]
             new_args = []
             for i, arg in enumerate(args):
                 new_arg = arg
@@ -255,8 +283,8 @@ def compress(filename, max_length=500):
                 elif type(arg) == list and len(arg) > 0:
                     if type(arg[0]) == np.ndarray:
                         lengths = [len(a) for a in arg]
-                        if len(np.unique(lengths)) == 1: # all same length
-                            if lengths[0] > max_length: # too long
+                        if len(np.unique(lengths)) == 1:  # all same length
+                            if lengths[0] > max_length:  # too long
                                 new_arg = []
                                 for a in arg:
                                     xp = np.linspace(0, 1, len(a))
@@ -264,96 +292,121 @@ def compress(filename, max_length=500):
                                     n = np.interp(x, xp, a)
                                     new_arg.append(n)
                 new_args.append(new_arg)
-            action['args'] = new_args
+            action["args"] = new_args
 
-    compressed_fifidatafile = filename.split('.dillpickle')[0] + '_compressed.dillpickle'
-    fifidata_file = open(compressed_fifidatafile, 'wb')
+    compressed_fifidatafile = (
+        filename.split(".dillpickle")[0] + "_compressed.dillpickle"
+    )
+    fifidata_file = open(compressed_fifidatafile, "wb")
     pickle.dump(fifidata, fifidata_file)
     fifidata_file.close()
 
     return compressed_fifidatafile
 
+
 def __write_lines__(file, string, string_replacements={}):
     if len(string_replacements) > 0:
         for key, val in string_replacements.items():
             string = string.replace(key, val)
-    file.writelines(string+'\n')
+    file.writelines(string + "\n")
+
 
 def __write_label__(file, label, heading, with_breaks=False, string_replacements={}):
-    s = '#'*heading + ' ' + label
+    s = "#" * heading + " " + label
     __write_lines__(file, s, string_replacements=string_replacements)
     if with_breaks:
         __write_break__(file)
-        
+
+
 def __write_break__(file, length=125):
-    s = '#'*length
-    file.writelines(s+'\n')
-    
+    s = "#" * length
+    file.writelines(s + "\n")
+
+
 def __write_data__(file, data, decimals=None, string_replacements={}):
-    '''
+    """
     Supports: 
         - single value
         - list
         - 1d array
         - 2d array
         - list of 1d arrays (or lists)
-    '''
-    
+    """
+
     # single value
-    if not hasattr(data, '__iter__'):
+    if not hasattr(data, "__iter__"):
         __write_lines__(file, str(data), string_replacements=string_replacements)
         return
-    
+
     # list of arrays or lists
     if type(data) is list:
-        if hasattr(data[0], '__iter__'):
+        if hasattr(data[0], "__iter__"):
             for i, data_i in enumerate(data):
-                __write_label__(file, 'Number: ' + str(i+1), 6)
+                __write_label__(file, "Number: " + str(i + 1), 6)
                 __write_data__(file, data_i, decimals)
             return
-              
+
     # 2d array
     if type(data) is np.ndarray:
         if len(data.shape) == 2:
-            __write_label__(file, '2-dimensional array, lines = rows', 6)
+            __write_label__(file, "2-dimensional array, lines = rows", 6)
             for i in range(data.shape[0]):
                 __write_data__(file, data[i], decimals)
             return
-    
+
     # list or 1d array
-    if hasattr(data, '__iter__'):
-        if not hasattr(data[0], '__iter__'):
+    if hasattr(data, "__iter__"):
+        if not hasattr(data[0], "__iter__"):
             if type(data) == np.ndarray:
-                data = data.tolist() # also converts to 32 bit, saves space
+                data = data.tolist()  # also converts to 32 bit, saves space
 
             # check if all ints
-            data_types = [int==type(d) for d in data]
+            data_types = [int == type(d) for d in data]
             all_ints = all(elem for elem in data_types)
             if not all_ints:
                 if decimals is not None:
-                    f = '%.'+str(decimals)+'f'
+                    f = "%." + str(decimals) + "f"
                     data = [f % i for i in data]
-            s = ', '.join(map(str, data))
+            s = ", ".join(map(str, data))
             __write_lines__(file, s, string_replacements=string_replacements)
-            
+
+
 def __write_action__(file, action, decimals, string_replacements={}):
-    if len(action['args_description']) == 0:
+    if len(action["args_description"]) == 0:
         return
     else:
-        layout_key = action['layout_key']
+        layout_key = action["layout_key"]
         layout_key = [__clean_layout_key__(l) for l in layout_key]
-        layout_key = ', '.join(map(str, layout_key))
-        if action['layout_key'] != 'Supplemental Data':
-            __write_label__(file, 'Panel element name: ' + layout_key, 3, string_replacements=string_replacements)
-            __write_label__(file, 'Plot feature name: ' + action['title'], 3, string_replacements=string_replacements)
+        layout_key = ", ".join(map(str, layout_key))
+        if action["layout_key"] != "Supplemental Data":
+            __write_label__(
+                file,
+                "Panel element name: " + layout_key,
+                3,
+                string_replacements=string_replacements,
+            )
+            __write_label__(
+                file,
+                "Plot feature name: " + action["title"],
+                3,
+                string_replacements=string_replacements,
+            )
         else:
-            __write_label__(file, action['title'], 3, string_replacements=string_replacements)
-        __write_break__(file, int(len('Plot feature name: ' + action['title'])*1.25))
-        for i, arg_title in enumerate(action['args_description']):
+            __write_label__(
+                file, action["title"], 3, string_replacements=string_replacements
+            )
+        __write_break__(file, int(len("Plot feature name: " + action["title"]) * 1.25))
+        for i, arg_title in enumerate(action["args_description"]):
             __write_label__(file, arg_title, 4, string_replacements=string_replacements)
-            __write_data__(file, action['args'][i], decimals, string_replacements=string_replacements)
+            __write_data__(
+                file,
+                action["args"][i],
+                decimals,
+                string_replacements=string_replacements,
+            )
         __write_break__(file)
-            
+
+
 def __clean_layout_key__(layout_key):
     s = str(layout_key)
     s = s.replace("u'", "")
@@ -363,14 +416,22 @@ def __clean_layout_key__(layout_key):
     s = s.strip("()[]{}")
     return s
 
-def write_to_csv(data_filename, figure, panel_id_to_layout_keys=None, header='', decimals=None, string_replacements={}):
-    '''
+
+def write_to_csv(
+    data_filename,
+    figure,
+    panel_id_to_layout_keys=None,
+    header="",
+    decimals=None,
+    string_replacements={},
+):
+    """
     figure - name, or number, for figure
     panel_id_to_layout_keys - dict of panel ids (e.g. 'a') that point to a list of associated layout_keys
     header - a string (you can include \n and # if you want multiple lines and markdown syntax)
-    '''
-    csv_filename = data_filename.split('.dillpickle')[0]+'_summary.md'
-    file = open(csv_filename, 'w+')
+    """
+    csv_filename = data_filename.split(".dillpickle")[0] + "_summary.md"
+    file = open(csv_filename, "w+")
 
     data = load_data_file(data_filename)
     if panel_id_to_layout_keys is None:
@@ -379,60 +440,81 @@ def write_to_csv(data_filename, figure, panel_id_to_layout_keys=None, header='',
             panel_id = __clean_layout_key__(layout_key)
             panel_id_to_layout_keys[panel_id] = [layout_key]
 
-    if 'Supplemental Data' in data.keys():
-        panel_id_to_layout_keys['Supplemental Data'] = ['Supplemental Data']
-            
+    if "Supplemental Data" in data.keys():
+        panel_id_to_layout_keys["Supplemental Data"] = ["Supplemental Data"]
+
     # write header
     __write_break__(file)
-    figurefirst_header = '##### This file was automatically generated from source data using FigureFirst: http://flyranch.github.io/figurefirst/'
-    h = header+'\n'+figurefirst_header+'\n'
+    figurefirst_header = "##### This file was automatically generated from source data using FigureFirst: http://flyranch.github.io/figurefirst/"
+    h = header + "\n" + figurefirst_header + "\n"
     __write_lines__(file, h, string_replacements=string_replacements)
-    
+
     __write_break__(file)
-    __write_label__(file, 'Figure: '+str(figure), 1, with_breaks=True, string_replacements=string_replacements)
-    
+    __write_label__(
+        file,
+        "Figure: " + str(figure),
+        1,
+        with_breaks=True,
+        string_replacements=string_replacements,
+    )
+
     panel_id_names = list(panel_id_to_layout_keys.keys())
     panel_id_names.sort()
 
-    if 'Supplemental Data' in data.keys():
+    if "Supplemental Data" in data.keys():
         # put the supplement at the end
-        idx = panel_id_names.index('Supplemental Data')
-        del(panel_id_names[idx])
-        panel_id_names.append('Supplemental Data')
+        idx = panel_id_names.index("Supplemental Data")
+        del panel_id_names[idx]
+        panel_id_names.append("Supplemental Data")
 
     # write data
     for panel_id in panel_id_names:
-        if panel_id != 'Supplemental Data':
-            __write_label__(file, 'Panel: '+panel_id, 2, with_breaks=True)
+        if panel_id != "Supplemental Data":
+            __write_label__(file, "Panel: " + panel_id, 2, with_breaks=True)
         else:
             __write_label__(file, panel_id, 2, with_breaks=True)
         layout_keys = panel_id_to_layout_keys[panel_id]
         for layout_key in layout_keys:
             for action in data[layout_key]:
-                print('######################################')
+                print("######################################")
                 print(layout_key)
-                print(action['package'])
-                print(action['function'])
-                print(action['title'])
-                print(action['args_description'])
-                action['layout_key'] = layout_key
-                __write_action__(file, action, decimals, string_replacements=string_replacements)
-                
+                print(action["package"])
+                print(action["function"])
+                print(action["title"])
+                print(action["args_description"])
+                action["layout_key"] = layout_key
+                __write_action__(
+                    file, action, decimals, string_replacements=string_replacements
+                )
+
     file.close()
+
 
 def list_layout_keys(data_filename):
     data = load_data_file(data_filename)
     for key in data.keys():
         print(key)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     parser = OptionParser()
-    parser.add_option("--layout", type="str", dest="layout", default='',
-                        help="path to layout svg")
-    parser.add_option("--output", type="str", dest="output", default='template',
-                        help="path to output svg")
-    parser.add_option("--data", type="str", dest="data", default='',
-                        help="path to fifi data file (a pickle file)")
-    (options, args) = parser.parse_args()  
-    
+    parser.add_option(
+        "--layout", type="str", dest="layout", default="", help="path to layout svg"
+    )
+    parser.add_option(
+        "--output",
+        type="str",
+        dest="output",
+        default="template",
+        help="path to output svg",
+    )
+    parser.add_option(
+        "--data",
+        type="str",
+        dest="data",
+        default="",
+        help="path to fifi data file (a pickle file)",
+    )
+    (options, args) = parser.parse_args()
+
     replot(options.layout, options.output, options.data)

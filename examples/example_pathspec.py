@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import pylab as plb # this notebook is for plotting
 import numpy as np
-import scipy as sp
 import figurefirst as fifi
 
 ################################################
