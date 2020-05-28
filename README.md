@@ -23,6 +23,8 @@ or you can pass a path in manually, e.g..
 figurefirst_ext ~/.config/inkscape/extensions
 ```
 
+This defaults to instaling extensions for inkscape <1.0. If you want to try out Inkscape 1.0 add `--inkscape_major_version 1` to the above command. 
+
 ## Quickstart
 *See http://flyranch.github.io/figurefirst/ for more detail, or follow the tutorial notebook: https://github.com/FlyRanch/figurefirst/blob/master/examples/tutorial/tutorial.ipynb*
 1. Create your figure template in Inkscape. 
@@ -45,7 +47,7 @@ figurefirst_ext ~/.config/inkscape/extensions
     *  `display(SVG('fifi_template.svg'))`
 
 ## Use with Inkscape
-FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow. Try Inkscape 0.92: https://inkscape.org/en/release/0.92.3/
+FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow. Try Inkscape 0.92: https://inkscape.org/en/release/0.92.3/. Currently support for inkscape 1 is experimental, but if you want to try it out, Install the v1.0 compatible extension by specifying the inkscape major version in the extension install script. See [installation](#installation) above.
 
 #### Installing Inkscape 0.92 on Ubuntu
 You can install Inkscape 0.92 using ppa:
@@ -65,6 +67,7 @@ Restart Inkscape
 - Test locally by running `pytest`
   - To keep the test output files for inspection, add the `--keep_files` option
   - To test against all supported python versions, run `tox`
+- We use [black](https://pypi.org/project/black/) for code formatting. 
 - Enable your github account with travis for continuous integration
 - Raise a pull request
 
