@@ -1,4 +1,4 @@
-![](https://github.com/flyranch/figurefirst/workflows/Tests/badge.svg)
+![](https://github.com/flyranch/figurefirst/workflows/Tests/badge.svg?branch=master)
 ![](https://img.shields.io/pypi/v/figurefirst)
 ![](https://img.shields.io/github/license/flyranch/figurefirst)
 ![](https://img.shields.io/badge/code%20style-black-000000.svg)
