@@ -1,3 +1,7 @@
+![](https://github.com/flyranch/figurefirst/workflows/Python%20package/badge.svg)
+![](https://img.shields.io/pypi/v/figurefirst)
+![](https://img.shields.io/github/license/flyranch/figurefirst)
+![](https://img.shields.io/badge/code%20style-black-000000.svg)
 # FigureFirst
 FigureFirst is a python 3.5+ library to decorate and parse SVG files so they can serve as layout documents for matplotlib figures. In principle FigureFirst works on python 2.7, but it is not officially supported. 
 * See our github page for readme and examples: http://flyranch.github.io/figurefirst/
