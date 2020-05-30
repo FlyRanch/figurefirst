@@ -33,6 +33,9 @@ setup(
         "dill",
         "backports.functools_lru_cache; python_version<'3.3'",
     ],
+    extras_require={
+        'dev': ['tox','sphinx','black'],
+        'docs': ['sphinx']},
     include_package_data=True,
     license="BSD",
     entry_points={
