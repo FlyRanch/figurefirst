@@ -37,7 +37,7 @@ setup(
         'dev': ['tox','sphinx','black'],
         'docs': ['sphinx']},
     include_package_data=True,
-    license="BSD",
+    license="MIT",
     entry_points={
         "console_scripts": [
             "figurefirst_ext=figurefirst_scripts.install_inkscape_ext:main"
