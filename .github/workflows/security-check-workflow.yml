@@ -9,13 +9,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+    - name: Security check - Bandit
+      uses: Joel-hanson/bandit-report-artifacts@V1
       with:
-        python-version: 3.8
-    - name: "Install dependencies"
-      run: |
-        python -m pip install --upgrade pip
-        pip install bandit
-    - name: "Run security check using bandit"
-      run: bandit -r figurefirst
+        python_version: 3.8
+        project_path: figurefirst
+        ignore_failure: true
+
+    - name: Security check report artifacts
+      uses: actions/upload-artifact@v1
+      # if: failure()
+      with:
+        name: Security report
+        path: output/security_report.txt
+
+    - name: "Flake8 warnings"
+      uses: TrueBrain/actions-flake8@master
+      with:
+        path: figurefirst
+        only_warn: 1
