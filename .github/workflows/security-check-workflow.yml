@@ -1,0 +1,21 @@
+name: Security-check
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: "Install dependencies"
+      run: |
+        python -m pip install --upgrade pip
+        pip install bandit
+    - name: "Run security check using bandit"
+      run: bandit -r figurefirst
