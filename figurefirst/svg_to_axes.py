@@ -7,6 +7,9 @@ import traceback
 import time
 import sys
 import copy
+import sys
+if sys.version_info < (3, 6):
+    from collections import OrderedDict as dict
 
 if sys.version_info > (3, 0):
     PY3 = True
