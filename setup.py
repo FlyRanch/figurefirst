@@ -23,7 +23,7 @@ ext_files_1 = [
 
 setup(
     name="figurefirst",
-    version="0.0.6",
+    version="0.0.7",
     author="Floris van Breugel, Theodore Lindsay, Peter Weir",
     author_email="floris@caltech.edu",
     packages=find_packages(exclude=("inkscape_extensions", "test")),
