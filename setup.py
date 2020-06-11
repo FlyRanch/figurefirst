@@ -23,7 +23,8 @@ ext_files_1 = [
 
 setup(
     name="figurefirst",
-    version="0.0.7",
+    use_scm_version=True,
+    setup_requires=['setuptools_scm'],
     author="Floris van Breugel, Theodore Lindsay, Peter Weir",
     author_email="floris@caltech.edu",
     packages=find_packages(exclude=("inkscape_extensions", "test")),
