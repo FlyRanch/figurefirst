@@ -6,6 +6,7 @@ from .svg_to_axes import FigureLayout
 from . import mpl_fig_to_figurefirst_svg
 from . import svg_util
 from . import deprecated_regenerate
+
 try:
     from importlib.metadata import version, PackageNotFoundError
 except ImportError:
@@ -19,4 +20,4 @@ if sys.version_info[0] > 2:  # regenerate uses importlib.utils, which requires p
 try:
     __version__ = version(__name__)
 except PackageNotFoundError:
-    print('package not installed')
+    print("package not installed")
