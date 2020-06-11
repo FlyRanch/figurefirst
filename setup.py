@@ -20,10 +20,12 @@ ext_files_1 = [
     for fname in os.listdir(ext_dir_1)
     if fname.endswith(".inx") or fname.endswith(".py")
 ]
+def local_scheme(version):
+    return ""
 
 setup(
     name="figurefirst",
-    use_scm_version=True,
+    use_scm_version={"local_scheme": local_scheme},
     setup_requires=['setuptools_scm'],
     author="Floris van Breugel, Theodore Lindsay, Peter Weir",
     author_email="floris@caltech.edu",
