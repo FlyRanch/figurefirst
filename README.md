@@ -72,7 +72,6 @@ Restart Inkscape
   - To keep the test output files for inspection, add the `--keep_files` option
   - To test against all supported python versions, run `tox`
 - We use [black](https://pypi.org/project/black/) for code formatting. 
-- Enable your github account with travis for continuous integration
 - Raise a pull request
 
 
