@@ -4,7 +4,7 @@ __all__ = [
     "mpl_fig_to_figurefirst_svg",
     "svg_util",
     "deprecated_regenerate",
-    "FigureLayout"
+    "FigureLayout",
 ]
 
 from figurefirst.svg_to_axes import FigureLayout
