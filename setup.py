@@ -21,9 +21,7 @@ ext_files_1 = [
     if fname.endswith(".inx") or fname.endswith(".py")
 ]
 def local_scheme(version):
-    return "_{rev}_{distance}".format(
-        rev=version.node[1:],
-        distance=version.distance)
+    return ""
 
 setup(
     name="figurefirst",
