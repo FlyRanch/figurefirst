@@ -46,8 +46,11 @@ This defaults to installing extensions for inkscape 1.0. If need support for old
     *  `from IPython.display import display,SVG`
     *  `display(SVG('fifi_template.svg'))`
 
+## Quickstart Video Tutorial
+[![FigureFirst Quickstart Tutorial](http://img.youtube.com/vi/wG5R0EMcBuI/0.jpg)](http://www.youtube.com/watch?v=wG5R0EMcBuI "FigureFirst Quickstart Tutorial")
+
 ## Use with Inkscape
-FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow, try using inkcsape 1.0. For leggacy versions of Inkscape specifying the Inkscape major version as 0 in the install script. See [installation](#installation) above.
+FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow, try using inkcsape 1.0. For legacy versions of Inkscape specifying the Inkscape major version as 0 in the install script. See [installation](#installation) above.
 
 #### Installing Inkscape 1.0 on Ubuntu
 You can install Inkscape 1.9 using ppa:
