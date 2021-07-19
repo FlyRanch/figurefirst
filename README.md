@@ -45,6 +45,9 @@ This defaults to installing extensions for inkscape 1.0. If need support for old
 4. If working in a jupyter notebook, you can display the figure using
     *  `from IPython.display import display,SVG`
     *  `display(SVG('fifi_template.svg'))`
+5. If wanting to export to PDF:
+    *  `import cairosvg`
+    *  `cairosvg.svg2pdf(url='fifi_template.svg', write_to='fifi_template.pdf')`
 
 ## Quickstart Video Tutorial
 [![FigureFirst Quickstart Tutorial](http://img.youtube.com/vi/wG5R0EMcBuI/0.jpg)](http://www.youtube.com/watch?v=wG5R0EMcBuI "FigureFirst Quickstart Tutorial")
