@@ -1,0 +1,22 @@
+name: Security-check
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Security check - Bandit
+      uses: Joel-hanson/bandit-report-artifacts@V1
+      with:
+        python_version: 3.8
+        project_path: figurefirst
+        ignore_failure: true
+    - name: "Flake8 warnings"
+      uses: TrueBrain/actions-flake8@master
+      with:
+        path: figurefirst
+        only_warn: 1

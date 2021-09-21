@@ -20,10 +20,13 @@ ext_files_1 = [
     for fname in os.listdir(ext_dir_1)
     if fname.endswith(".inx") or fname.endswith(".py")
 ]
+def local_scheme(version):
+    return ""
 
 setup(
     name="figurefirst",
-    version="0.0.6",
+    use_scm_version={"local_scheme": local_scheme},
+    setup_requires=['setuptools_scm'],
     author="Floris van Breugel, Theodore Lindsay, Peter Weir",
     author_email="floris@caltech.edu",
     packages=find_packages(exclude=("inkscape_extensions", "test")),
@@ -33,8 +36,11 @@ setup(
         "dill",
         "backports.functools_lru_cache; python_version<'3.3'",
     ],
+    extras_require={
+        'dev': ['tox','sphinx','black'],
+        'docs': ['sphinx']},
     include_package_data=True,
-    license="BSD",
+    license="MIT",
     entry_points={
         "console_scripts": [
             "figurefirst_ext=figurefirst_scripts.install_inkscape_ext:main"
