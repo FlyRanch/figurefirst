@@ -1,7 +1,11 @@
-to install copy .inx and .py files to:
+to install copy .inx and .py files to the following paths, depending on your system. For Inkscape 1.1+ you can put the extension files inside their own "figurefirst" directory to help with organization.
 
+UBUNTU:
  ~/.config/inkscape/extensions/
-(ubuntu,osx)
 
+MAC OSX:
+/Applications/Inkscape.org/Contents/Resources/share/inkscape/extensions
+(verify path by opening inkscape and checking: Preferences>System>Inkscape Extensions)
+
+WIDNOWS
 C:\Program Files\Inkscape\share\extensions
-(windows)
