@@ -45,6 +45,9 @@ This defaults to installing extensions for inkscape 1.0. If need support for old
 4. If working in a jupyter notebook, you can display the figure using
     *  `from IPython.display import display,SVG`
     *  `display(SVG('fifi_template.svg'))`
+5. If wanting to export to PDF:
+    *  `import cairosvg`
+    *  `cairosvg.svg2pdf(url='fifi_template.svg', write_to='fifi_template.pdf')`
 
 ## Quickstart Video Tutorial
 [![FigureFirst Quickstart Tutorial](http://img.youtube.com/vi/wG5R0EMcBuI/0.jpg)](http://www.youtube.com/watch?v=wG5R0EMcBuI "FigureFirst Quickstart Tutorial")
@@ -52,11 +55,9 @@ This defaults to installing extensions for inkscape 1.0. If need support for old
 ## Use with Inkscape
 FigureFirst is developed and tested with Inkscape. Some versions and settings of Inkscape are very slow, try using inkcsape 1.0. For legacy versions of Inkscape specifying the Inkscape major version as 0 in the install script. See [installation](#installation) above.
 
-#### Installing Inkscape 1.0 on Ubuntu
-You can install Inkscape 1.9 using ppa:
-* `sudo add-apt-repository ppa:inkscape.dev/stable`
-* `sudo apt update`
-* `sudo apt install inkscape`
+You may find issues with with plugins for Inkscape > 1.0. You can install Inkscape 1.0 via the following link: [Inkscape 1.0](https://inkscape.org/release/inkscape-1.0/)
+
+We welcome pull requests to fix compatibility with more recent version of Inkscape!
 
 #### Optimizing Inkscape settings
 Try increasing the Rendering Tile Multiplier:
