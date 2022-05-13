@@ -87,7 +87,7 @@ def main():
         "target_dir",
         default=get_default_target(),
         nargs="?",
-        help="Inkscape extension directory. On linux and macos, defaults to\n"
+        help="Inkscape extension directory. On linux and mac os, defaults to\n"
         "~/.config/inkscape/extensions ; "
         "but on macos you might also try\n"
         "~/Library/Application\ Support/org.inkscape.Inkscape/config/inkscape/extensions ; "
@@ -130,7 +130,7 @@ def main():
         src_dir = os.path.join(
             sys.prefix,
             "inkscape_extensions",
-            f"{float(args.inkscape_major_version):.0f}.x",
+            f"{float(args.inkscape_major_version):.0f}.1+",
         )
         if args.force and args.ease:
             args.force = False
