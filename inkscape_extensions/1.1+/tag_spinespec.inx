@@ -2,7 +2,6 @@
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
   <_name>tagspinespec</_name>
   <id>org.ekips.filter.tagspinespec</id>
-  <dependency type="executable" location="extensions">tag_spinespec.py</dependency>
   <param name="spinespec" type="string" _gui-text="Add a comma separated list of spine locations: top,bottom,right or left">axis_name</param>
   <effect>
     <object-type>all</object-type>

@@ -2,7 +2,6 @@
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
   <_name>tagaxis</_name>
   <id>org.ekips.filter.tagaxis</id>
-  <dependency type="executable" location="extensions">tag_axis.py</dependency>
   <param name="name" type="string" _gui-text="Tag an axis with a name:">axis_name</param>
   <effect>
     <object-type>all</object-type>

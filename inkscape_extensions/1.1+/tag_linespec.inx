@@ -2,7 +2,6 @@
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
   <_name>tagline</_name>
   <id>org.ekips.filter.tag_linespec</id>
-  <dependency type="executable" location="extensions">tag_linespec.py</dependency>
   <param name="name" type="string" _gui-text="Tag an line with a name:">line_name</param>
   <effect>
     <object-type>all</object-type>
