@@ -1444,7 +1444,7 @@ class FigureLayout(object):
             self.output_xml.writexml(outfile, encoding="utf-8")
         except UnicodeEncodeError:
             outfile.close()
-            outfile = open(output_filename, "w")
+            outfile = open(output_filename, "wb")
             outfile.write(self.output_xml.toxml().encode("ascii", "xmlcharrefreplace"))
             outfile.close()
 
