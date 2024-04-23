@@ -24,7 +24,7 @@ if figurefirst_user_parameters == "default":
     except:
         import figurefirst_user_parameters
 else:
-    import imp
+    import importlib as imp
 
     figurefirst_user_parameters = imp.load_source(
         "figurefirst_user_parameters", figurefirst_user_parameters

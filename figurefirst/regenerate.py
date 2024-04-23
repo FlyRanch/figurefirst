@@ -1,7 +1,7 @@
 import os
 import dill as pickle
 import numpy as np
-import imp
+import importlib as imp
 
 try:
     from . import svg_to_axes
