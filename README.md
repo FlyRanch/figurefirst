@@ -82,3 +82,7 @@ Restart Inkscape
   *  `layout.make_mplfigures(axes_order={'fig': ['a', 'b']})`
   
 * After plotting, inkscape is very slow (because there are lots of points/lines). Rasterize using `ax.set_rasterization_zorder(ZORDER)` see https://matplotlib.org/3.1.3/gallery/misc/rasterization_demo.html
+
+## Additional guides
+
+* FigureFirst tutorial from Sam Burden at UW: https://faculty.washington.edu/sburden/fifi/
